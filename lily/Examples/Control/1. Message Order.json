@@ -1,0 +1,129 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'1. Message Order','width':813,'height':608,'color':'#FFFFFF','mode':'performance','objArray':{
+	'button!uid=1188961875102':{'name':'button','top':18,'left':26,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':24,'width':54,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Bang','inspectorConfig':[{name:"buttonText", value:"Bang", label:"Button Text", type:"string", input:"textarea"}],'objID':'button!uid=1188961875102','type':'object'},
+	'print!uid=2377923883021':{'name':'print','top':213,'left':26,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':126,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'connected first','objID':'print!uid=2377923883021','type':'object'},
+	'print!uid=1188961935473':{'name':'print','top':213,'left':160,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':19,'width':144,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'connected second','objID':'print!uid=1188961935473','type':'object'},
+	'comment!uid=1188962158964':{'name':'comment','top':49,'left':33,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':4,'height':141,'width':268,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'oldest connections go first: when more than one inlet is connected to same outlet, messages are sent in the order the connections were made. in this example, the print object on the left was connected before the print object on the right. when the button is clicked, the \"bang\" message is sent to the left print object before the right object.','inspectorConfig':[{name:"commentText", value:"oldest connections go first: when more than one inlet is connected to same outlet, messages are sent in the order the connections were made. in this example, the print object on the left was connected before the print object on the right. when the button is clicked, the \"bang\" message is sent to the left print object before the right object.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1188962158964','type':'object'},
+	'message!uid=1188962893613':{'name':'message','top':24,'left':345,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':16,'width':88,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Hello World','objID':'message!uid=1188962893613','type':'object'},
+	'print!uid=1188963320784':{'name':'print','top':211,'left':345,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':96,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'left outlet','objID':'print!uid=1188963320784','type':'object'},
+	'comment!uid=1188963390117':{'name':'comment','top':52,'left':354,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':76,'width':402,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'a trigger for bangs only: the bang object has a variable number of outlets determined by the object argument. bang converts any input to a \"bang\" message and sends it to each of its outputs one after the other right to left. in this example, the print object connected to bang\'s right outlet receives the message before the print connected to the left outlet. ','inspectorConfig':[{name:"commentText", value:"a trigger for bangs only: the bang object has a variable number of outlets determined by the object argument. bang converts any input to a \"bang\" message and sends it to each of its outputs one after the other right to left. in this example, the print object connected to bang's right outlet receives the message before the print connected to the left outlet. ", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1188963390117','type':'object'},
+	'trigger!uid=1188967509350':{'name':'trigger','top':306,'left':341,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':11,'width':389,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'i i','objID':'trigger!uid=1188967509350','type':'object'},
+	'asterisk!uid=1188967528662':{'name':'asterisk','top':357,'left':551,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':19,'width':42,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'asterisk!uid=1188967528662','type':'object'},
+	'plus!uid=1188967614751':{'name':'plus','top':409,'left':551,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':19,'width':44,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'plus!uid=1188967614751','type':'object'},
+	'slash!uid=1188967636415':{'name':'slash','top':456,'left':551,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':15,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'10','objID':'slash!uid=1188967636415','type':'object'},
+	'print!uid=1188967711919':{'name':'print','top':498,'left':683,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':17,'height':19,'width':51,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'1:','objID':'print!uid=1188967711919','type':'object'},
+	'print!uid=1188967724799':{'name':'print','top':498,'left':616,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':18,'height':19,'width':51,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'2:','objID':'print!uid=1188967724799','type':'object'},
+	'print!uid=1188967650783':{'name':'print','top':498,'left':551,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':16,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'3:','objID':'print!uid=1188967650783','type':'object'},
+	'comment!uid=1188968055755':{'name':'comment','top':331,'left':349,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':156,'width':193,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'message passing is depth first: when a message is sent, all consequent messages and calculations following from that message must be completed before any parallel message can be sent. in this example, the branch on the right executes completely before the left branch  runs.','inspectorConfig':[{name:"commentText", value:"message passing is depth first: when a message is sent, all consequent messages and calculations following from that message must be completed before any parallel message can be sent. in this example, the branch on the right executes completely before the left branch  runs.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1188968055755','type':'object'},
+	'message!uid=1189730616643':{'name':'message','top':272,'left':341,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':19,'width':22,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'1','objID':'message!uid=1189730616643','type':'object'},
+	'message!uid=2378693908173':{'name':'message','top':278,'left':26,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':10,'width':94,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Hello World','objID':'message!uid=2378693908173','type':'object'},
+	'trigger!uid=2378693895053':{'name':'trigger','top':449,'left':26,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':17,'width':70,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'s s','objID':'trigger!uid=2378693895053','type':'object'},
+	'print!uid=2378694308488':{'name':'print','top':501,'left':139,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':19,'width':105,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'right outlet','objID':'print!uid=2378694308488','type':'object'},
+	'print!uid=2378694335344':{'name':'print','top':501,'left':26,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':96,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'left outlet','objID':'print!uid=2378694335344','type':'object'},
+	'comment!uid=2378694404677':{'name':'comment','top':305,'left':34,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':126,'width':277,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'making message order visible: to make the message path explicit, use trigger to control the order that messages are sent. trigger sends input to each of its outputs from right to left. in this example, the print object connected to trigger\'s right outlet receives the message before the print connected to the left outlet. ','inspectorConfig':[{name:"commentText", value:"making message order visible: to make the message path explicit, use trigger to control the order that messages are sent. trigger sends input to each of its outputs from right to left. in this example, the print object connected to trigger's right outlet receives the message before the print connected to the left outlet. ", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2378694404677','type':'object'},
+	'bang!uid=1189731368781':{'name':'bang','top':159,'left':345,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':24,'height':19,'width':48,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'3','objID':'bang!uid=1189731368781','type':'object'},
+	'print!uid=1188963293928':{'name':'print','top':211,'left':471,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':24,'height':19,'width':116,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'middle outlet','objID':'print!uid=1188963293928','type':'object'},
+	'print!uid=1189731561033':{'name':'print','top':211,'left':627,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':25,'height':19,'width':105,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'right outlet','objID':'print!uid=1189731561033','type':'object'},
+	'print!uid=1188967555031':{'name':'print','top':502,'left':341,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':25,'height':19,'width':51,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'4:','objID':'print!uid=1188967555031','type':'object'},
+	'button!uid=1188961875102.outlet1_print!uid=2377923883021.inlet1':{'inlet':'print!uid=2377923883021.inlet1','outlet':'button!uid=1188961875102.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:26,startTop:49,endLeft:26,endTop:102},
+{'orientation':'horizontal',startLeft:26,startTop:102,endLeft:26,endTop:102},
+{'orientation':'vertical',startLeft:26,startTop:102,endLeft:26,endTop:218}
+]
+},
+	'button!uid=1188961875102.outlet1_print!uid=1188961935473.inlet1':{'inlet':'print!uid=1188961935473.inlet1','outlet':'button!uid=1188961875102.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:26,startTop:49,endLeft:26,endTop:205},
+{'orientation':'horizontal',startLeft:26,startTop:205,endLeft:160,endTop:205},
+{'orientation':'vertical',startLeft:160,startTop:205,endLeft:160,endTop:218}
+]
+},
+	'trigger!uid=1188967509350.outlet2_asterisk!uid=1188967528662.inlet1':{'inlet':'asterisk!uid=1188967528662.inlet1','outlet':'trigger!uid=1188967509350.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:721,startTop:333,endLeft:721,endTop:341},
+{'orientation':'horizontal',startLeft:721,startTop:341,endLeft:551,endTop:341},
+{'orientation':'vertical',startLeft:551,startTop:341,endLeft:551,endTop:362}
+]
+},
+	'asterisk!uid=1188967528662.outlet1_print!uid=1188967711919.inlet1':{'inlet':'print!uid=1188967711919.inlet1','outlet':'asterisk!uid=1188967528662.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:551,startTop:384,endLeft:551,endTop:400.5},
+{'orientation':'horizontal',startLeft:551,startTop:400.5,endLeft:683,endTop:400.5},
+{'orientation':'vertical',startLeft:683,startTop:400.5,endLeft:683,endTop:503}
+]
+},
+	'plus!uid=1188967614751.outlet1_print!uid=1188967724799.inlet1':{'inlet':'print!uid=1188967724799.inlet1','outlet':'plus!uid=1188967614751.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:551,startTop:436,endLeft:551,endTop:448},
+{'orientation':'horizontal',startLeft:551,startTop:448,endLeft:616,endTop:448},
+{'orientation':'vertical',startLeft:616,startTop:448,endLeft:616,endTop:503}
+]
+},
+	'slash!uid=1188967636415.outlet1_print!uid=1188967650783.inlet1':{'inlet':'print!uid=1188967650783.inlet1','outlet':'slash!uid=1188967636415.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:551,startTop:483,endLeft:551,endTop:495},
+{'orientation':'horizontal',startLeft:551,startTop:495,endLeft:551,endTop:495},
+{'orientation':'vertical',startLeft:551,startTop:495,endLeft:551,endTop:503}
+]
+},
+	'asterisk!uid=1188967528662.outlet1_plus!uid=1188967614751.inlet1':{'inlet':'plus!uid=1188967614751.inlet1','outlet':'asterisk!uid=1188967528662.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:551,startTop:384,endLeft:551,endTop:408},
+{'orientation':'horizontal',startLeft:551,startTop:408,endLeft:551,endTop:408},
+{'orientation':'vertical',startLeft:551,startTop:408,endLeft:551,endTop:414}
+]
+},
+	'plus!uid=1188967614751.outlet1_slash!uid=1188967636415.inlet1':{'inlet':'slash!uid=1188967636415.inlet1','outlet':'plus!uid=1188967614751.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:551,startTop:436,endLeft:551,endTop:453.5},
+{'orientation':'horizontal',startLeft:551,startTop:453.5,endLeft:551,endTop:453.5},
+{'orientation':'vertical',startLeft:551,startTop:453.5,endLeft:551,endTop:461}
+]
+},
+	'message!uid=1189730616643.outlet1_trigger!uid=1188967509350.inlet1':{'inlet':'trigger!uid=1188967509350.inlet1','outlet':'message!uid=1189730616643.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:341,startTop:299,endLeft:341,endTop:305.5},
+{'orientation':'horizontal',startLeft:341,startTop:305.5,endLeft:341,endTop:305.5},
+{'orientation':'vertical',startLeft:341,startTop:305.5,endLeft:341,endTop:311}
+]
+},
+	'message!uid=2378693908173.outlet1_trigger!uid=2378693895053.inlet1':{'inlet':'trigger!uid=2378693895053.inlet1','outlet':'message!uid=2378693908173.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:26,startTop:305,endLeft:26,endTop:326.5},
+{'orientation':'horizontal',startLeft:26,startTop:326.5,endLeft:26,endTop:326.5},
+{'orientation':'vertical',startLeft:26,startTop:326.5,endLeft:26,endTop:454}
+]
+},
+	'trigger!uid=2378693895053.outlet2_print!uid=2378694308488.inlet1':{'inlet':'print!uid=2378694308488.inlet1','outlet':'trigger!uid=2378693895053.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:86,startTop:476,endLeft:86,endTop:489},
+{'orientation':'horizontal',startLeft:86,startTop:489,endLeft:139,endTop:489},
+{'orientation':'vertical',startLeft:139,startTop:489,endLeft:139,endTop:506}
+]
+},
+	'trigger!uid=2378693895053.outlet1_print!uid=2378694335344.inlet1':{'inlet':'print!uid=2378694335344.inlet1','outlet':'trigger!uid=2378693895053.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:26,startTop:476,endLeft:26,endTop:494.5},
+{'orientation':'horizontal',startLeft:26,startTop:494.5,endLeft:26,endTop:494.5},
+{'orientation':'vertical',startLeft:26,startTop:494.5,endLeft:26,endTop:506}
+]
+},
+	'bang!uid=1189731368781.outlet1_print!uid=1188963320784.inlet1':{'inlet':'print!uid=1188963320784.inlet1','outlet':'bang!uid=1189731368781.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:345,startTop:186,endLeft:345,endTop:204},
+{'orientation':'horizontal',startLeft:345,startTop:204,endLeft:345,endTop:204},
+{'orientation':'vertical',startLeft:345,startTop:204,endLeft:345,endTop:216}
+]
+},
+	'message!uid=1188962893613.outlet1_bang!uid=1189731368781.inlet1':{'inlet':'bang!uid=1189731368781.inlet1','outlet':'message!uid=1188962893613.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:345,startTop:51,endLeft:345,endTop:110.5},
+{'orientation':'horizontal',startLeft:345,startTop:110.5,endLeft:345,endTop:110.5},
+{'orientation':'vertical',startLeft:345,startTop:110.5,endLeft:345,endTop:164}
+]
+},
+	'bang!uid=1189731368781.outlet2_print!uid=1188963293928.inlet1':{'inlet':'print!uid=1188963293928.inlet1','outlet':'bang!uid=1189731368781.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:364,startTop:186,endLeft:364,endTop:204},
+{'orientation':'horizontal',startLeft:364,startTop:204,endLeft:471,endTop:204},
+{'orientation':'vertical',startLeft:471,startTop:204,endLeft:471,endTop:216}
+]
+},
+	'bang!uid=1189731368781.outlet3_print!uid=1189731561033.inlet1':{'inlet':'print!uid=1189731561033.inlet1','outlet':'bang!uid=1189731368781.outlet3','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:383,startTop:186,endLeft:383,endTop:203.5},
+{'orientation':'horizontal',startLeft:383,startTop:203.5,endLeft:627,endTop:203.5},
+{'orientation':'vertical',startLeft:627,startTop:203.5,endLeft:627,endTop:216}
+]
+},
+	'trigger!uid=1188967509350.outlet1_print!uid=1188967555031.inlet1':{'inlet':'print!uid=1188967555031.inlet1','outlet':'trigger!uid=1188967509350.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:341,startTop:333,endLeft:341,endTop:344.5},
+{'orientation':'horizontal',startLeft:341,startTop:344.5,endLeft:341,endTop:344.5},
+{'orientation':'vertical',startLeft:341,startTop:344.5,endLeft:341,endTop:507}
+]
+}}
+}

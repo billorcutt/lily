@@ -1,0 +1,14 @@
+HOWTO
+
+* Start the demo by opening the file svg-to-osc.json.
+
+* Open a terminal window and start the Chuck patch in this directory- "chuck osc-synth.ck"
+
+* Start the animation by clicking the message ('CirclePacking.sketch') at the top of the patch.
+
+* Press the spacebar to add a node to the sequencer. 
+
+* Press 'c' to generate a new random set of circles.
+
+* Drag the circles to modify the sound.
+

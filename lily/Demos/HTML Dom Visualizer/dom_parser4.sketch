@@ -1,0 +1,271 @@
+var NODE_SIZE = 15;
+var EDGE_LENGTH = 20;
+var EDGE_STRENGTH = 0.2;
+var SPACER_STRENGTH = 1000;
+
+var physics = null;
+var centroid = null;
+
+//where we map dom nodes to display nodes
+var nodeHash = {};
+
+var doc = ENV;
+
+//config
+var maxDepth = 0;
+
+Particle.prototype.tagName = false;
+
+// PROCESSING /////////////////////////////////////
+
+function setup()
+{
+  size( 600, 600 );
+  smooth();
+  frameRate( 24 );
+  strokeWeight( 1 );
+  ellipseMode( "CENTER" );       
+  
+  physics = new ParticleSystem( 0, 0.25 );
+  centroid = new Smoother3D( 0.8 );
+    
+  initialize();
+
+  displayDOM();
+
+}
+
+function draw()
+{
+  physics.tick( 1.0 ); 
+  if ( physics.numberOfParticles() > 1 )
+    updateCentroid();
+  centroid.tick();
+  background( 255 );
+  translate( width/2 , height/2 );
+  scale( centroid.getZ() );
+  translate( -centroid.getX(), -centroid.getY() );
+ 
+  drawNetwork();  
+}
+
+function drawNetwork()
+{      
+  // draw vertices
+  //noStroke();
+  for ( var i = 0; i < physics.numberOfParticles(); ++i )
+  {
+    var v = physics.getParticle( i );
+	var xPos = v.getPosition().getX();
+	var yPos = v.getPosition().getY();
+	var tagLen = (v.tagName && v.tagName.length)?v.tagName.length:10;
+	var nodesize = NODE_SIZE * tagLen;
+	var o = 1/tagLen;
+	
+	fill( 160, o );
+    ellipse( xPos, yPos, nodesize, nodesize );
+
+	//abs(xPos-centroid.getX())
+
+	//sendMess((i+1)+" "+int(map(i,0,15,70,110))+" "+float(map(abs(yPos-centroid.getY()),0,50,0,.5)))
+
+  }
+
+  // draw edges 
+  stroke( 0 );
+  noFill();
+  for ( var i = 0; i < physics.numberOfSprings(); ++i )
+  {
+    var e = physics.getSpring( i );
+    var a = e.getOneEnd();
+    var b = e.getTheOtherEnd();
+    beginShape( "LINES" );
+    vertex( a. getPosition(). getX(), a. getPosition(). getY() );
+    vertex( b. getPosition(). getX(), b. getPosition(). getY() );
+    endShape();
+  }
+}
+
+function keyPressed()
+{
+  if ( key == 'c' )
+  {
+    initialize();
+    return;
+  }
+}
+
+// ME ////////////////////////////////////////////
+
+function updateCentroid()
+{
+    var xMax = Number.NEGATIVE_INFINITY; 
+    var xMin = Number.POSITIVE_INFINITY;
+    var yMin = Number.POSITIVE_INFINITY; 
+    var yMax = Number.NEGATIVE_INFINITY;
+
+  for ( var i = 0; i < physics.numberOfParticles(); ++i )
+  {
+    var p = physics.getParticle( i );
+    xMax = max( xMax, p. getPosition(). getX() );
+    xMin = min( xMin, p. getPosition(). getX() );
+    yMin = min( yMin, p. getPosition(). getY() );
+    yMax = max( yMax, p. getPosition(). getY() );
+  }
+  var deltaX = xMax-xMin;
+  var deltaY = yMax-yMin;
+
+  if ( deltaY > deltaX )
+    centroid.setTarget( xMin + 0.5*deltaX, yMin +0.5*deltaY, height/(deltaY+50) );
+  else
+    centroid.setTarget( xMin + 0.5*deltaX, yMin +0.5*deltaY, width/(deltaX+50) );
+
+}
+
+function addSpacersToNode( p, r )
+{
+  for ( var i = 0; i < physics.numberOfParticles(); ++i )
+  {
+    var q = physics.getParticle( i );
+    if ( p != q && p != r )
+      physics.makeAttraction( p, q, -SPACER_STRENGTH, 20 );
+  }
+}
+
+function makeEdgeBetween( a, b )
+{
+  physics.makeSpring( a, b, EDGE_STRENGTH, EDGE_STRENGTH, EDGE_LENGTH );
+}
+
+function initialize()
+{
+  physics.clear();
+  //physics.makeParticle();
+  centroid.setValue( 0, 0, 1.0 );
+}
+
+function addNode(nodeIdx)
+{ 
+  var p = physics.makeParticle();
+  if(nodeIdx != null) {
+	  var q = physics.getParticle( nodeIdx );
+	  addSpacersToNode( p, q );
+	  makeEdgeBetween( p, q );
+	  p.moveTo( q. getPosition(). getX() + random( -1, 1 ), q. getPosition(). getY() + random( -1, 1 ), 0 );
+  }
+  return p;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+//walk tree to find the deepest point
+function getMaxDepth(root) {
+	
+	function findMaxDepth(node) {
+		var tmp = getDepth(node);
+		maxDepth = (tmp>maxDepth)?tmp:maxDepth;
+	}
+	
+	walkTree(root,findMaxDepth);
+}
+
+//generate an id based on a dom nodes props
+function makeID(node) {
+	var id = node.nodeName + "_" + getDepth(node) + "_" + getPosition(node);
+	return id;
+}
+
+//getter for display nodes
+function getNode(dom_node) {
+	return nodeHash[makeID(dom_node)]||0;
+}
+
+//setter for display nodes
+function setNode(dom_node) {
+	var elID = makeID(dom_node);
+	nodeHash[elID]=(physics.numberOfParticles()-1);
+}
+
+//get the depth of a node
+function getDepth(node) {
+	var count = 0;
+	var n = node;				
+	while(n.parentNode && n.parentNode!=doc) {
+		n=n.parentNode;	
+		count++;
+	}
+	return count;
+}
+
+//get the lateral position for a node
+function getPosition(node) {
+	var count = 0;
+	var n = node;				
+	while(n.previousSibling) {
+		n=n.previousSibling;	
+		count++;
+	}
+	return count;
+}
+
+//get the total number of sibling nodes
+function getNumSiblings(node) {
+	return node.parentNode.childNodes.length;
+}
+
+//depth first dom traversal
+function walkTree(node,cb) {
+	
+	if(!node) return; //bail if null
+	
+	//process node
+	if(node.nodeName != "#text") cb(node);				
+	
+	//helper 
+	function getNextNode(node) {
+		var n = node;			
+		while(n.parentNode && n.parentNode!=doc.documentElement) {
+			n=n.parentNode;					
+			if(n.nextSibling) return n.nextSibling;
+		}
+		return n.nextSibling;
+	}				
+					
+	if(node.firstChild) {
+		setTimeout(function(){walkTree(node.firstChild,cb)},1);
+	} else if(node.nextSibling) {
+		setTimeout(function(){walkTree(node.nextSibling,cb)},1);
+	} else {
+		setTimeout(function(){walkTree(getNextNode(node),cb)},1);
+	}
+	
+}
+
+//process each node as we walk the tree
+function processNode(node) {
+
+	//println(node.nodeName);
+					
+	//draw the top level node
+	if(node.parentNode===doc) {
+		var p = addNode(null);
+		p.tagName=node.tagName;
+		setNode(node);
+	}
+
+	if(node.childNodes) {
+		var arr = node.childNodes;
+		for(var i=0;i<arr.length;i++) {
+			var p = addNode(getNode(node));
+		    p.tagName=node.tagName;			
+			setNode(arr[i]);
+		}
+	}
+	
+}
+
+function displayDOM() {
+	walkTree(doc.documentElement,processNode);
+}

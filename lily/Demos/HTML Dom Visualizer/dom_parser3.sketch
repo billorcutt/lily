@@ -1,0 +1,171 @@
+size(600, 600);  // Size should be the first statement
+stroke(0);     // Set line drawing color to black
+fill(0)
+background(255); //background to white
+strokeWeight(.25);
+
+//where we map dom nodes to display nodes
+var nodeHash = {};
+
+var doc = ENV;
+
+//config
+var maxDepth = 0;
+
+//walk tree to find the deepest point
+function getMaxDepth(root) {
+	
+	function findMaxDepth(node) {
+		var tmp = getDepth(node);
+		maxDepth = (tmp>maxDepth)?tmp:maxDepth;
+	}
+	
+	walkTree(root,findMaxDepth);
+}
+
+//generate an id based on a dom nodes props
+function makeID(node) {
+	var id = node.nodeName + "_" + getDepth(node) + "_" + getPosition(node);
+	return id;
+}
+
+//getter for display nodes
+function getNode(dom_node) {
+	return nodeHash[makeID(dom_node)]||{};
+}
+
+//setter for display nodes
+function setNode(dom_node,display_node) {
+	var elID = makeID(dom_node);
+	nodeHash[elID]=display_node;
+}
+
+//get the depth of a node
+function getDepth(node) {
+	var count = 0;
+	var n = node;				
+	while(n.parentNode && n.parentNode!=doc) {
+		n=n.parentNode;	
+		count++;
+	}
+	return count;
+}
+
+//get the lateral position for a node
+function getPosition(node) {
+	var count = 0;
+	var n = node;				
+	while(n.previousSibling) {
+		n=n.previousSibling;	
+		count++;
+	}
+	return count;
+}
+
+//get the total number of sibling nodes
+function getNumSiblings(node) {
+	return node.parentNode.childNodes.length;
+}
+
+//depth first dom traversal
+function walkTree(node,cb) {
+	
+	if(!node) return; //bail if null
+	
+	//process node
+	cb(node);				
+	
+	//helper 
+	function getNextNode(node) {
+		var n = node;			
+		while(n.parentNode && n.parentNode!=doc.documentElement) {
+			n=n.parentNode;					
+			if(n.nextSibling) return n.nextSibling;
+		}
+		return n.nextSibling;
+	}				
+					
+	if(node.firstChild) {
+		setTimeout(function(){walkTree(node.firstChild,cb)},1);
+	} else if(node.nextSibling) {
+		setTimeout(function(){walkTree(node.nextSibling,cb)},1);
+	} else {
+		setTimeout(function(){walkTree(getNextNode(node),cb)},1);
+	}
+	
+}
+
+//process each node as we walk the tree
+function processNode(node) {
+
+	//println(node.nodeName);
+					
+	//draw the top level node
+	if(node.parentNode===doc) {
+		var box = drawNode(calculateNode(null,node));
+		setNode(node,box);
+	}
+
+	if(node.childNodes) {
+		var arr = node.childNodes;
+		for(var i=0;i<arr.length;i++) {
+			if(arr[i].nodeName != "#text") {
+				var box = drawNode(calculateNode(node,arr[i]));
+				setNode(arr[i],box);
+			}
+		}
+	}
+
+	
+}
+
+//calculate where the node will go
+function calculateNode(parent,current) {
+	
+	//top level node
+	if(!parent) {
+		return {x:(width/2), y:((height/2)), r:5, a:0, o:0, opacity:1, name:current.nodeName, par:true}; //big
+	}
+	
+	var displayNode = getNode(parent);
+	var nodeRot = parseInt(displayNode.getAttribute("rot_angle")); //just get rx here since we making circles
+	var left = parseInt(displayNode.getAttribute("cx"));
+	var top = parseInt(displayNode.getAttribute("cy"));			
+	var sibsLen = getNumSiblings(current);
+	var nodePos = getPosition(current);
+	var angle = ((TWO_PI/sibsLen)*nodePos)+nodeRot;
+	var nodeDepth = getDepth(current);
+	var radius = (5);		
+	var offset = 20;
+	var alpha = 1/(nodeDepth+1);
+
+	//final values
+	var currLeft = left;
+	var currTop = top;
+	var currRadius = radius;
+	var currAngle = angle;
+		
+	return {x:currLeft, y:currTop, r:currRadius, a:currAngle, o:offset, opacity:alpha ,name:current.nodeName, par:false};
+
+}
+
+//draw the display node
+function drawNode(obj) {
+
+	if(obj.par) ellipse(obj.x,obj.y,(obj.r),(obj.r));
+
+	var x = random(0,width);
+	var y = random(0,height);
+			
+	var circle = ellipse((x),(y),(obj.r),(obj.r));
+			
+	line(obj.x,obj.y,(x),(y))
+	return circle;
+}
+
+function displayDOM() {
+	getMaxDepth(doc.documentElement); 
+	walkTree(doc.documentElement,processNode);
+}
+
+displayDOM();

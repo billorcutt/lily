@@ -1,0 +1,13 @@
+HTTP/1.0 200 OK
+Content-Type: text/html
+
+<html>
+<head><title>Lily httpd</title></head>
+<body>
+	<h1>Served by Lily httpd @ http://localhost:8080/</h1>
+	<h2>Use the buttons below to control the quicktime audio loop on the patch</h2>
+	<input type="button" value="Start the loop" onclick="document.getElementById('requestFrame').src='http://localhost:8080/start'">&nbsp;&nbsp;
+	<input type="button" value="Stop the loop" onclick="document.getElementById('requestFrame').src='http://localhost:8080/stop'"><br>
+	<iframe id="requestFrame" style="margin:0px;padding:0px;border:0px" width="0" height="0"></iframe>
+	</body>
+</html>

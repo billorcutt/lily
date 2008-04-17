@@ -1,0 +1,53 @@
+//http://www.processing.org/learning/examples/sinecosine.html
+
+var myi = 45;
+var myj = 225; 
+var pos1 = 0; 
+var pos2 = 0; 
+var pos3 = 0; 
+var pos4 = 0;
+var mysc = 40;
+
+function setup() 
+{
+  size(200, 200);
+  noStroke();
+  smooth();
+  frameRate(60);
+}
+
+function draw() 
+{
+  background(0);
+  
+  fill(51);
+  rect(60, 60, 80, 80);
+
+  fill(255);
+  ellipse(pos1, 36, 32, 32);
+
+  fill(153);
+  ellipse(36, pos2, 32, 32);
+
+  fill(255);
+  ellipse(pos3, 164, 32, 32);
+
+  fill(153);
+  ellipse(164, pos4, 32, 32);
+
+  myi += 3;
+  myj -= 3;
+
+  if(myi > 405) {
+    myi = 45;
+    myj = 225;
+  }
+
+  var ang1 = radians(myi); // convert degrees to radians
+  var ang2 = radians(myj); // convert degrees to radians
+
+  pos1 = width/2 + (mysc * cos(ang1));
+  pos2 = width/2 + (mysc * sin(ang1));
+  pos3 = width/2 + (mysc * cos(ang2));
+  pos4 = width/2 + (mysc * sin(ang2));
+}

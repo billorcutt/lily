@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$4+Lat1"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="3.0b3"
+                   em:maxVersion="3.0b*" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="{3eba6510-7445-11db-9fe1-0800200c9a66}"
+                   em:name="Lily"
+                   em:version="0.1-public_beta-2"
+                   em:creator="Bill Orcutt"
+                   em:description="Visual programming for the Mozilla framework."
+                   em:homepageURL="http://www.lilyapp.org/"
+                   em:optionsURL="chrome://lily/content/prefs.xul"
+                   em:iconURL="chrome://lily/content/lily.png"
+                   em:type="2"
+				   em:updateURL="http://www.lilyapp.org/update.rdf"
+                   em:updateKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDO/btkbyY/63dTwVURV7PmKhXc8ObyKlKmCdzglVvDj+oRjAccPN1t0iUs15tWLIVQH0bgc9SpqcwLJ0RKgL8WTky2vq6aGJ8NID/VLURW9Kko28IVxO065tN8aZPK2ddvrxHiTRp/Syj4bkS+cRxooqyPUyCkpC5nR+L/ShvmnQIDAQAB">
+    <em:targetApplication RDF:resource="rdf:#$4+Lat1"/>
+  </RDF:Description>
+</RDF:RDF>

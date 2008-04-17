@@ -1,0 +1,101 @@
+var patch={'version':'0.1-public_beta-2','platform':'apple','title':'thispatch-help','width':588,'height':517,'color':'#FFFFFF','mode':'performance','objArray':{
+	'thispatch!uid=1169957596804':{'name':'thispatch','top':325,'left':233,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':17,'height':19,'width':61,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'thispatch!uid=1169957596804','type':'object'},
+	'message!uid=1169957611597':{'name':'message','top':119,'left':322,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':19,'width':83,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'savePatch()','objID':'message!uid=1169957611597','type':'object'},
+	'message!uid=1169971085673':{'name':'message','top':76,'left':19,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':96,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'getAllObjIDs()','objID':'message!uid=1169971085673','type':'object'},
+	'message!uid=1169971300556':{'name':'message','top':149,'left':29,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':19,'width':85,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'closePatch()','objID':'message!uid=1169971300556','type':'object'},
+	'message!uid=2339929532563':{'name':'message','top':81,'left':437,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':19,'width':76,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'getAllObj()','objID':'message!uid=2339929532563','type':'object'},
+	'message!uid=1169972815324':{'name':'message','top':77,'left':123,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':118,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'openHelp(\"print\")','objID':'message!uid=1169972815324','type':'object'},
+	'message!uid=1169974425993':{'name':'message','top':112,'left':134,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':19,'width':153,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'open(\"helloworld.json\")','objID':'message!uid=1169974425993','type':'object'},
+	'comment!uid=1170008981758':{'name':'comment','top':13,'left':283,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':11,'width':288,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'Send messages to a patch to interact with it.','inspectorConfig':[{name:"commentText", value:"Send messages to a patch to interact with it.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1170008981758','type':'object'},
+	'message!uid=1170010395492':{'name':'message','top':235,'left':19,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':19,'width':195,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'getObjectsByClass(\"message\")','objID':'message!uid=1170010395492','type':'object'},
+	'message!uid=2340020837343':{'name':'message','top':204,'left':248,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':19,'width':202,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'getObjectsByGroupName(\"foo\")','objID':'message!uid=2340020837343','type':'object'},
+	'print!uid=1169957600788':{'name':'print','top':376,'left':22,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':18,'height':19,'width':80,'visibility':'visible','hiddenInPerf':false,'groupName':'foo','cssName':'','customColor':'false','args':'@@foo','objID':'print!uid=1169957600788','type':'object'},
+	'message!uid=1183850071187':{'name':'message','top':82,'left':299,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':17,'height':19,'width':128,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'setFullScreen(true)','objID':'message!uid=1183850071187','type':'object'},
+	'comment!uid=1183850418992':{'name':'comment','top':276,'left':23,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':18,'height':56,'width':200,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'see the thispatch tutorial under \"Scripting\" in Examples folder and the api documentation for a complete listing of methods available to thispatch.','inspectorConfig':[{name:"commentText", value:"see the thispatch tutorial under \"Scripting\" in Examples folder and the api documentation for a complete listing of methods available to thispatch.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183850418992','type':'object'},
+	'message!uid=1188181336304':{'name':'message','top':239,'left':275,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':19,'width':41,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'path','objID':'message!uid=1188181336304','type':'object'},
+	'comment!uid=1188181416807':{'name':'comment','top':309,'left':317,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':51,'width':125,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'returns the parent directory of the patch if saved','inspectorConfig':[{name:"commentText", value:"returns the parent directory of the patch if saved", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1188181416807','type':'object'},
+	'comment!uid=1188181621153':{'name':'comment','top':45,'left':401,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':21,'height':10,'width':165,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'various patch commands','inspectorConfig':[{name:"commentText", value:"various patch commands", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1188181621153','type':'object'},
+	'message!uid=1188181650610':{'name':'message','top':282,'left':296,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':22,'height':20,'width':79,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'parentPath','objID':'message!uid=1188181650610','type':'object'},
+	'comment!uid=2376363109701':{'name':'comment','top':235,'left':323,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':15,'width':125,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'returns the path of the patch if saved','inspectorConfig':[{name:"commentText", value:"returns the path of the patch if saved", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2376363109701','type':'object'},
+	'launchurl!uid=29586286546361':{'name':'launchurl','top':1,'left':15,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':54,'width':110,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Thispatch THISPATCH','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Thispatch", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"THISPATCH", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=29586286546361','type':'object'},
+	'launchurl!uid=1192468297575':{'name':'launchurl','top':376,'left':114,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':20,'height':16,'width':382,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/lilydocs/files/patch-js.html Lily Patch Docs: http://wiki.lilyapp.org/lilydocs/files/patch-js.html','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/lilydocs/files/patch-js.html", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"Lily Patch Docs: http://wiki.lilyapp.org/lilydocs/files/patch-js.html", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=1192468297575','type':'object'},
+	'message!uid=1192512099605':{'name':'message','top':120,'left':455,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':21,'height':19,'width':82,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'newPatch()','objID':'message!uid=1192512099605','type':'object'},
+	'message!uid=1169957611597.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=1169957611597.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:322,startTop:146,endLeft:322,endTop:195},
+{'orientation':'horizontal',startLeft:322,startTop:195,endLeft:233,endTop:195},
+{'orientation':'vertical',startLeft:233,startTop:195,endLeft:233,endTop:330}
+]
+},
+	'message!uid=1169971085673.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=1169971085673.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:19,startTop:103,endLeft:19,endTop:219.5},
+{'orientation':'horizontal',startLeft:19,startTop:219.5,endLeft:233,endTop:219.5},
+{'orientation':'vertical',startLeft:233,startTop:219.5,endLeft:233,endTop:330}
+]
+},
+	'message!uid=1169971300556.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=1169971300556.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:29,startTop:176,endLeft:29,endTop:194.5},
+{'orientation':'horizontal',startLeft:29,startTop:194.5,endLeft:233,endTop:194.5},
+{'orientation':'vertical',startLeft:233,startTop:194.5,endLeft:233,endTop:330}
+]
+},
+	'message!uid=2339929532563.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=2339929532563.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:437,startTop:108,endLeft:437,endTop:194.5},
+{'orientation':'horizontal',startLeft:437,startTop:194.5,endLeft:233,endTop:194.5},
+{'orientation':'vertical',startLeft:233,startTop:194.5,endLeft:233,endTop:330}
+]
+},
+	'message!uid=1169972815324.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=1169972815324.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:123,startTop:104,endLeft:123,endTop:169.5},
+{'orientation':'horizontal',startLeft:123,startTop:169.5,endLeft:233,endTop:169.5},
+{'orientation':'vertical',startLeft:233,startTop:169.5,endLeft:233,endTop:330}
+]
+},
+	'message!uid=1169974425993.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=1169974425993.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:134,startTop:139,endLeft:134,endTop:182.5},
+{'orientation':'horizontal',startLeft:134,startTop:182.5,endLeft:233,endTop:182.5},
+{'orientation':'vertical',startLeft:233,startTop:182.5,endLeft:233,endTop:330}
+]
+},
+	'message!uid=1170010395492.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=1170010395492.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:19,startTop:262,endLeft:19,endTop:275},
+{'orientation':'horizontal',startLeft:19,startTop:275,endLeft:233,endTop:275},
+{'orientation':'vertical',startLeft:233,startTop:275,endLeft:233,endTop:330}
+]
+},
+	'message!uid=2340020837343.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=2340020837343.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:248,startTop:231,endLeft:248,endTop:273},
+{'orientation':'horizontal',startLeft:248,startTop:273,endLeft:233,endTop:273},
+{'orientation':'vertical',startLeft:233,startTop:273,endLeft:233,endTop:330}
+]
+},
+	'thispatch!uid=1169957596804.outlet1_print!uid=1169957600788.inlet1':{'inlet':'print!uid=1169957600788.inlet1','outlet':'thispatch!uid=1169957596804.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:233,startTop:352,endLeft:233,endTop:369.5},
+{'orientation':'horizontal',startLeft:233,startTop:369.5,endLeft:22,endTop:369.5},
+{'orientation':'vertical',startLeft:22,startTop:369.5,endLeft:22,endTop:381}
+]
+},
+	'message!uid=1183850071187.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=1183850071187.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:299,startTop:109,endLeft:299,endTop:195},
+{'orientation':'horizontal',startLeft:299,startTop:195,endLeft:233,endTop:195},
+{'orientation':'vertical',startLeft:233,startTop:195,endLeft:233,endTop:330}
+]
+},
+	'message!uid=1188181336304.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=1188181336304.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:275,startTop:266,endLeft:275,endTop:286},
+{'orientation':'horizontal',startLeft:275,startTop:286,endLeft:233,endTop:286},
+{'orientation':'vertical',startLeft:233,startTop:286,endLeft:233,endTop:330}
+]
+},
+	'message!uid=1188181650610.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=1188181650610.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:296,startTop:309,endLeft:296,endTop:318.5},
+{'orientation':'horizontal',startLeft:296,startTop:318.5,endLeft:233,endTop:318.5},
+{'orientation':'vertical',startLeft:233,startTop:318.5,endLeft:233,endTop:330}
+]
+},
+	'message!uid=1192512099605.outlet1_thispatch!uid=1169957596804.inlet1':{'inlet':'thispatch!uid=1169957596804.inlet1','outlet':'message!uid=1192512099605.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:455,startTop:147,endLeft:455,endTop:195},
+{'orientation':'horizontal',startLeft:455,startTop:195,endLeft:233,endTop:195},
+{'orientation':'vertical',startLeft:233,startTop:195,endLeft:233,endTop:330}
+]
+}}
+}

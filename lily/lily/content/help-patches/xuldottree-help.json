@@ -1,0 +1,88 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'xul.tree-help','width':629,'height':733,'color':'#FFFFFF','mode':'performance','objArray':{
+	'message!uid=1188435872538':{'name':'message','top':214,'left':37,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':371,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'{count:$2,name:\"foobar\",id:$1,email:\"foo$1@gmail.com\"}','objID':'message!uid=1188435872538','type':'object'},
+	'button!uid=1188455766527':{'name':'button','top':73,'left':22,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':4,'height':24,'width':24,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"buttonText", value:"", label:"Button Text", type:"string", input:"textarea"}],'objID':'button!uid=1188455766527','type':'object'},
+	'random!uid=1188455860535':{'name':'random','top':114,'left':56,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':19,'width':80,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'random!uid=1188455860535','type':'object'},
+	'pack!uid=1188455874976':{'name':'pack','top':162,'left':21,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':19,'width':57,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'0 0','objID':'pack!uid=1188455874976','type':'object'},
+	'message!uid=1188493876532':{'name':'message','top':245,'left':57,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':42,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'clear','objID':'message!uid=1188493876532','type':'object'},
+	'xuldottree!uid=1188537616278':{'name':'xuldottree','top':340,'left':20,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':224,'width':568,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'\"\" \"\" \"\"','objID':'xuldottree!uid=1188537616278','type':'object'},
+	'toSource!uid=1188864407485':{'name':'toSource','top':582,'left':20,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':59,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'toSource!uid=1188864407485','type':'object'},
+	'print!uid=1188864423613':{'name':'print','top':622,'left':509,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':72,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'count','objID':'print!uid=1188864423613','type':'object'},
+	'message!uid=1188864596533':{'name':'message','top':244,'left':227,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':11,'width':65,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'delete 3','objID':'message!uid=1188864596533','type':'object'},
+	'comment!uid=3555040768340':{'name':'comment','top':12,'left':446,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':11,'width':144,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Display data in a table','inspectorConfig':[{name:"commentText", value:"Display data in a table", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3555040768340','type':'object'},
+	'launchurl!uid=4737624871015':{'name':'launchurl','top':3,'left':21,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':17,'width':188,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Xul.tree XUL.TREE','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Xul.tree", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"XUL.TREE", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=4737624871015','type':'object'},
+	'uzi!uid=1188455772999':{'name':'uzi','top':76,'left':56,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':19,'width':51,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'uzi!uid=1188455772999','type':'object'},
+	'print!uid=1188445566549':{'name':'print','top':626,'left':20,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':19,'width':64,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'data','objID':'print!uid=1188445566549','type':'object'},
+	'comment!uid=3555041582687':{'name':'comment','top':236,'left':295,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':66,'width':114,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<delete> takes one argument: the index of the row to delete.','inspectorConfig':[{name:"commentText", value:"<delete> takes one argument: the index of the row to delete.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3555041582687','type':'object'},
+	'comment!uid=4743907533568':{'name':'comment','top':140,'left':83,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':66,'width':513,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Input hash objects are added to the next available row. The entire input data object is stored but only those items with matching column headers are displayed. When a row is clicked, the row color changes and the data object for that row is output from the left outlet and the index is output from the right.','inspectorConfig':[{name:"commentText", value:"Input hash objects are added to the next available row. The entire input data object is stored but only those items with matching column headers are displayed. When a row is clicked, the row color changes and the data object for that row is output from the left outlet and the index is output from the right.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=4743907533568','type':'object'},
+	'comment!uid=5932773493598':{'name':'comment','top':245,'left':104,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':51,'width':114,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<clear> resets the table to its initial state','inspectorConfig':[{name:"commentText", value:"<clear> resets the table to its initial state", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=5932773493598','type':'object'},
+	'comment!uid=10654306919443':{'name':'comment','top':626,'left':86,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':10,'width':286,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Object arguments: header text/data columns','inspectorConfig':[{name:"commentText", value:"Object arguments: header text/data columns", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=10654306919443','type':'object'},
+	'comment!uid=1188866591530':{'name':'comment','top':311,'left':27,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':18,'height':13,'width':492,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'clicking on a header sorts the column. dragging a header reorders the columns.','inspectorConfig':[{name:"commentText", value:"clicking on a header sorts the column. dragging a header reorders the columns.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1188866591530','type':'object'},
+	'comment!uid=1188866890922':{'name':'comment','top':582,'left':87,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':11,'width':496,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'click a row to output its data from the left outlet and index from the right outlet','inspectorConfig':[{name:"commentText", value:"click a row to output its data from the left outlet and index from the right outlet", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1188866890922','type':'object'},
+	'comment!uid=1189815070510':{'name':'comment','top':75,'left':112,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':10,'width':307,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Click the button to populate the table with data.','inspectorConfig':[{name:"commentText", value:"Click the button to populate the table with data.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1189815070510','type':'object'},
+	'random!uid=1188455860535.outlet1_pack!uid=1188455874976.inlet1':{'inlet':'pack!uid=1188455874976.inlet1','outlet':'random!uid=1188455860535.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:56,startTop:141,endLeft:56,endTop:155},
+{'orientation':'horizontal',startLeft:56,startTop:155,endLeft:21,endTop:155},
+{'orientation':'vertical',startLeft:21,startTop:155,endLeft:21,endTop:167}
+]
+},
+	'pack!uid=1188455874976.outlet1_message!uid=1188435872538.inlet1':{'inlet':'message!uid=1188435872538.inlet1','outlet':'pack!uid=1188455874976.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:21,startTop:189,endLeft:21,endTop:197},
+{'orientation':'horizontal',startLeft:21,startTop:197,endLeft:37,endTop:197},
+{'orientation':'vertical',startLeft:37,startTop:197,endLeft:37,endTop:219}
+]
+},
+	'message!uid=1188435872538.outlet1_xuldottree!uid=1188537616278.inlet1':{'inlet':'xuldottree!uid=1188537616278.inlet1','outlet':'message!uid=1188435872538.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:37,startTop:241,endLeft:37,endTop:307},
+{'orientation':'horizontal',startLeft:37,startTop:307,endLeft:20,endTop:307},
+{'orientation':'vertical',startLeft:20,startTop:307,endLeft:20,endTop:345}
+]
+},
+	'message!uid=1188493876532.outlet1_xuldottree!uid=1188537616278.inlet1':{'inlet':'xuldottree!uid=1188537616278.inlet1','outlet':'message!uid=1188493876532.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:57,startTop:272,endLeft:57,endTop:306.5},
+{'orientation':'horizontal',startLeft:57,startTop:306.5,endLeft:20,endTop:306.5},
+{'orientation':'vertical',startLeft:20,startTop:306.5,endLeft:20,endTop:345}
+]
+},
+	'xuldottree!uid=1188537616278.outlet1_toSource!uid=1188864407485.inlet1':{'inlet':'toSource!uid=1188864407485.inlet1','outlet':'xuldottree!uid=1188537616278.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:20,startTop:574,endLeft:20,endTop:580},
+{'orientation':'horizontal',startLeft:20,startTop:580,endLeft:20,endTop:580},
+{'orientation':'vertical',startLeft:20,startTop:580,endLeft:20,endTop:587}
+]
+},
+	'xuldottree!uid=1188537616278.outlet2_print!uid=1188864423613.inlet1':{'inlet':'print!uid=1188864423613.inlet1','outlet':'xuldottree!uid=1188537616278.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:578,startTop:574,endLeft:578,endTop:616},
+{'orientation':'horizontal',startLeft:578,startTop:616,endLeft:509,endTop:616},
+{'orientation':'vertical',startLeft:509,startTop:616,endLeft:509,endTop:627}
+]
+},
+	'message!uid=1188864596533.outlet1_xuldottree!uid=1188537616278.inlet1':{'inlet':'xuldottree!uid=1188537616278.inlet1','outlet':'message!uid=1188864596533.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:227,startTop:271,endLeft:227,endTop:306.5},
+{'orientation':'horizontal',startLeft:227,startTop:306.5,endLeft:20,endTop:306.5},
+{'orientation':'vertical',startLeft:20,startTop:306.5,endLeft:20,endTop:345}
+]
+},
+	'button!uid=1188455766527.outlet1_uzi!uid=1188455772999.inlet1':{'inlet':'uzi!uid=1188455772999.inlet1','outlet':'button!uid=1188455766527.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:22,startTop:104,endLeft:22,endTop:71},
+{'orientation':'horizontal',startLeft:22,startTop:71,endLeft:56,endTop:71},
+{'orientation':'vertical',startLeft:56,startTop:71,endLeft:56,endTop:81}
+]
+},
+	'uzi!uid=1188455772999.outlet3_pack!uid=1188455874976.inlet2':{'inlet':'pack!uid=1188455874976.inlet2','outlet':'uzi!uid=1188455772999.outlet3','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:97,startTop:103,endLeft:97,endTop:111},
+{'orientation':'horizontal',startLeft:97,startTop:111,endLeft:69,endTop:111},
+{'orientation':'vertical',startLeft:69,startTop:111,endLeft:69,endTop:167}
+]
+},
+	'uzi!uid=1188455772999.outlet1_random!uid=1188455860535.inlet1':{'inlet':'random!uid=1188455860535.inlet1','outlet':'uzi!uid=1188455772999.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:56,startTop:103,endLeft:56,endTop:111},
+{'orientation':'horizontal',startLeft:56,startTop:111,endLeft:56,endTop:111},
+{'orientation':'vertical',startLeft:56,startTop:111,endLeft:56,endTop:119}
+]
+},
+	'toSource!uid=1188864407485.outlet1_print!uid=1188445566549.inlet1':{'inlet':'print!uid=1188445566549.inlet1','outlet':'toSource!uid=1188864407485.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:20,startTop:609,endLeft:20,endTop:615.5},
+{'orientation':'horizontal',startLeft:20,startTop:615.5,endLeft:20,endTop:615.5},
+{'orientation':'vertical',startLeft:20,startTop:615.5,endLeft:20,endTop:631}
+]
+}}
+}

@@ -1,0 +1,90 @@
+var patch={'version':'0.1-public_beta-2','platform':'apple','title':'send-osc','width':421,'height':483,'color':'#FFFFFF','mode':'performance','objArray':{
+	'oscsend!uid=1191466367257':{'name':'oscsend','top':386,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':153,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'127.0.0.1 6449','objID':'oscsend!uid=1191466367257','type':'object'},
+	'prepend!uid=1191466386626':{'name':'prepend','top':350,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':119,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'/foo/notes','objID':'prepend!uid=1191466386626','type':'object'},
+	'random!uid=1191466424562':{'name':'random','top':153,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':19,'width':72,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'50','objID':'random!uid=1191466424562','type':'object'},
+	'plus!uid=1191466449050':{'name':'plus','top':235,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':4,'height':19,'width':36,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'30','objID':'plus!uid=1191466449050','type':'object'},
+	'pack!uid=1191466537074':{'name':'pack','top':284,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':57,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'0 0','objID':'pack!uid=1191466537074','type':'object'},
+	'message!uid=1191466566738':{'name':'message','top':318,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':14,'width':57,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'$1 $2','objID':'message!uid=1191466566738','type':'object'},
+	'bang!uid=1191466603746':{'name':'bang','top':114,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':47,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'2','objID':'bang!uid=1191466603746','type':'object'},
+	'metro!uid=1191466652781':{'name':'metro','top':75,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':70,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'200','objID':'metro!uid=1191466652781','type':'object'},
+	'check!uid=1191466671709':{'name':'check','top':16,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':10,'width':10,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'check!uid=1191466671709','type':'object'},
+	'random!uid=1191466478114':{'name':'random','top':171,'left':105,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':72,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'40','objID':'random!uid=1191466478114','type':'object'},
+	'plus!uid=1191467294375':{'name':'plus','top':207,'left':105,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':36,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'10','objID':'plus!uid=1191467294375','type':'object'},
+	'slash!uid=1191467307688':{'name':'slash','top':246,'left':105,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':19,'width':59,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100.00','objID':'slash!uid=1191467307688','type':'object'},
+	'comment!uid=1191468445095':{'name':'comment','top':32,'left':119,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':126,'width':258,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'test program to send osc messages to a chuck osc receiver (the file r.ck in this directory). run the patch with the terminal command \"chuck r.ck\". click the checkbox to start sending random note messages to the chuck patch. you should hear some random bleeps from the chuck program. ','inspectorConfig':[{name:"commentText", value:"test program to send osc messages to a chuck osc receiver (the file r.ck in this directory). run the patch with the terminal command \"chuck r.ck\". click the checkbox to start sending random note messages to the chuck patch. you should hear some random bleeps from the chuck program. ", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1191468445095','type':'object'},
+	'launchurl!uid=1191469426968':{'name':'launchurl','top':10,'left':189,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':17,'height':16,'width':184,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://chuck.cs.princeton.edu/','inspectorConfig':[{name:"linkURL", value:"http://chuck.cs.princeton.edu/", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=1191469426968','type':'object'},
+	'comment!uid=1191469461289':{'name':'comment','top':8,'left':93,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':15,'height':18,'width':106,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'requires chuck:','inspectorConfig':[{name:"commentText", value:"requires chuck:", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1191469461289','type':'object'},
+	'comment!uid=1191516183272':{'name':'comment','top':170,'left':202,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':96,'width':168,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'if you don\'t have chuck or want to install it, its also possible to run this patch with the receive-osc lily patch in this directory and see the same effect.','inspectorConfig':[{name:"commentText", value:"if you don't have chuck or want to install it, its also possible to run this patch with the receive-osc lily patch in this directory and see the same effect.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1191516183272','type':'object'},
+	'prepend!uid=1191466386626.outlet1_oscsend!uid=1191466367257.inlet1':{'inlet':'oscsend!uid=1191466367257.inlet1','outlet':'prepend!uid=1191466386626.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:24,startTop:377,endLeft:24,endTop:382.5},
+{'orientation':'horizontal',startLeft:24,startTop:382.5,endLeft:24,endTop:382.5},
+{'orientation':'vertical',startLeft:24,startTop:382.5,endLeft:24,endTop:391}
+]
+},
+	'random!uid=1191466424562.outlet1_plus!uid=1191466449050.inlet1':{'inlet':'plus!uid=1191466449050.inlet1','outlet':'random!uid=1191466424562.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:24,startTop:180,endLeft:24,endTop:174},
+{'orientation':'horizontal',startLeft:24,startTop:174,endLeft:24,endTop:174},
+{'orientation':'vertical',startLeft:24,startTop:174,endLeft:24,endTop:240}
+]
+},
+	'plus!uid=1191466449050.outlet1_pack!uid=1191466537074.inlet1':{'inlet':'pack!uid=1191466537074.inlet1','outlet':'plus!uid=1191466449050.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:24,startTop:262,endLeft:24,endTop:270.5},
+{'orientation':'horizontal',startLeft:24,startTop:270.5,endLeft:24,endTop:270.5},
+{'orientation':'vertical',startLeft:24,startTop:270.5,endLeft:24,endTop:289}
+]
+},
+	'pack!uid=1191466537074.outlet1_message!uid=1191466566738.inlet1':{'inlet':'message!uid=1191466566738.inlet1','outlet':'pack!uid=1191466537074.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:24,startTop:311,endLeft:24,endTop:315.5},
+{'orientation':'horizontal',startLeft:24,startTop:315.5,endLeft:24,endTop:315.5},
+{'orientation':'vertical',startLeft:24,startTop:315.5,endLeft:24,endTop:323}
+]
+},
+	'message!uid=1191466566738.outlet1_prepend!uid=1191466386626.inlet1':{'inlet':'prepend!uid=1191466386626.inlet1','outlet':'message!uid=1191466566738.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:24,startTop:345,endLeft:24,endTop:348.5},
+{'orientation':'horizontal',startLeft:24,startTop:348.5,endLeft:24,endTop:348.5},
+{'orientation':'vertical',startLeft:24,startTop:348.5,endLeft:24,endTop:355}
+]
+},
+	'bang!uid=1191466603746.outlet1_random!uid=1191466424562.inlet1':{'inlet':'random!uid=1191466424562.inlet1','outlet':'bang!uid=1191466603746.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:24,startTop:141,endLeft:24,endTop:150},
+{'orientation':'horizontal',startLeft:24,startTop:150,endLeft:24,endTop:150},
+{'orientation':'vertical',startLeft:24,startTop:150,endLeft:24,endTop:158}
+]
+},
+	'metro!uid=1191466652781.outlet1_bang!uid=1191466603746.inlet1':{'inlet':'bang!uid=1191466603746.inlet1','outlet':'metro!uid=1191466652781.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:24,startTop:102,endLeft:24,endTop:110},
+{'orientation':'horizontal',startLeft:24,startTop:110,endLeft:24,endTop:110},
+{'orientation':'vertical',startLeft:24,startTop:110,endLeft:24,endTop:119}
+]
+},
+	'check!uid=1191466671709.outlet1_metro!uid=1191466652781.inlet1':{'inlet':'metro!uid=1191466652781.inlet1','outlet':'check!uid=1191466671709.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:24,startTop:47,endLeft:24,endTop:49},
+{'orientation':'horizontal',startLeft:24,startTop:49,endLeft:24,endTop:49},
+{'orientation':'vertical',startLeft:24,startTop:49,endLeft:24,endTop:80}
+]
+},
+	'bang!uid=1191466603746.outlet2_random!uid=1191466478114.inlet1':{'inlet':'random!uid=1191466478114.inlet1','outlet':'bang!uid=1191466603746.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:62,startTop:141,endLeft:62,endTop:147.5},
+{'orientation':'horizontal',startLeft:62,startTop:147.5,endLeft:105,endTop:147.5},
+{'orientation':'vertical',startLeft:105,startTop:147.5,endLeft:105,endTop:176}
+]
+},
+	'random!uid=1191466478114.outlet1_plus!uid=1191467294375.inlet1':{'inlet':'plus!uid=1191467294375.inlet1','outlet':'random!uid=1191466478114.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:105,startTop:198,endLeft:105,endTop:202.5},
+{'orientation':'horizontal',startLeft:105,startTop:202.5,endLeft:105,endTop:202.5},
+{'orientation':'vertical',startLeft:105,startTop:202.5,endLeft:105,endTop:212}
+]
+},
+	'plus!uid=1191467294375.outlet1_slash!uid=1191467307688.inlet1':{'inlet':'slash!uid=1191467307688.inlet1','outlet':'plus!uid=1191467294375.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:105,startTop:234,endLeft:105,endTop:240.5},
+{'orientation':'horizontal',startLeft:105,startTop:240.5,endLeft:105,endTop:240.5},
+{'orientation':'vertical',startLeft:105,startTop:240.5,endLeft:105,endTop:251}
+]
+},
+	'slash!uid=1191467307688.outlet1_pack!uid=1191466537074.inlet2':{'inlet':'pack!uid=1191466537074.inlet2','outlet':'slash!uid=1191467307688.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:105,startTop:273,endLeft:105,endTop:281},
+{'orientation':'horizontal',startLeft:105,startTop:281,endLeft:72,endTop:281},
+{'orientation':'vertical',startLeft:72,startTop:281,endLeft:72,endTop:289}
+]
+}}
+}

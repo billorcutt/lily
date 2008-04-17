@@ -1,0 +1,35 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'yahoo.gettime-help','width':413,'height':276,'color':'#FFFFFF','mode':'performance','objArray':{
+	'button!uid=1169140481148':{'name':'button','top':103,'left':15,'color':'#FFFFFF','fontSize':'10','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':24,'width':24,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','inspectorConfig':[{name:"buttonText", value:"", label:"Button Text", type:"string", input:"textarea"}],'objID':'button!uid=1169140481148','type':'object'},
+	'print!uid=1169140502092':{'name':'print','top':161,'left':16,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':19,'width':56,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'ms','objID':'print!uid=1169140502092','type':'object'},
+	'print!uid=1169140522749':{'name':'print','top':162,'left':155,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':100,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'gmt string','objID':'print!uid=1169140522749','type':'object'},
+	'yahoodotgettime!uid=1169620204062':{'name':'yahoodotgettime','top':104,'left':45,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':19,'width':92,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'yahoodotgettime!uid=1169620204062','type':'object'},
+	'print!uid=1169620238118':{'name':'print','top':164,'left':317,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':19,'width':67,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'done','objID':'print!uid=1169620238118','type':'object'},
+	'launchurl!uid=56819310894880':{'name':'launchurl','top':4,'left':16,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':42,'width':154,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Yahoo.gettime YAHOO.GETTIME','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Yahoo.gettime", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"YAHOO.GETTIME", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=56819310894880','type':'object'},
+	'comment!uid=1184797522157':{'name':'comment','top':64,'left':15,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':278,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Get the current time using Yahoo Web API.','inspectorConfig':[{name:"commentText", value:"Get the current time using Yahoo Web API.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184797522157','type':'object'},
+	'launchurl!uid=1184797635113':{'name':'launchurl','top':192,'left':14,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':8,'height':16,'width':371,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://developer.yahoo.com/util/timeservice/V1/getTime.html','inspectorConfig':[{name:"linkURL", value:"http://developer.yahoo.com/util/timeservice/V1/getTime.html", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=1184797635113','type':'object'},
+	'comment!uid=1184797699055':{'name':'comment','top':96,'left':146,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':10,'width':232,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<bang> returns the time on Yahoo\'s servers.','inspectorConfig':[{name:"commentText", value:"<bang> returns the time on Yahoo's servers.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184797699055','type':'object'},
+	'button!uid=1169140481148.outlet1_yahoodotgettime!uid=1169620204062.inlet1':{'inlet':'yahoodotgettime!uid=1169620204062.inlet1','outlet':'button!uid=1169140481148.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:15,startTop:134,endLeft:15,endTop:98},
+{'orientation':'horizontal',startLeft:15,startTop:98,endLeft:45,endTop:98},
+{'orientation':'vertical',startLeft:45,startTop:98,endLeft:45,endTop:109}
+]
+},
+	'yahoodotgettime!uid=1169620204062.outlet1_print!uid=1169140502092.inlet1':{'inlet':'print!uid=1169140502092.inlet1','outlet':'yahoodotgettime!uid=1169620204062.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:45,startTop:131,endLeft:45,endTop:148.5},
+{'orientation':'horizontal',startLeft:45,startTop:148.5,endLeft:16,endTop:148.5},
+{'orientation':'vertical',startLeft:16,startTop:148.5,endLeft:16,endTop:166}
+]
+},
+	'yahoodotgettime!uid=1169620204062.outlet2_print!uid=1169140522749.inlet1':{'inlet':'print!uid=1169140522749.inlet1','outlet':'yahoodotgettime!uid=1169620204062.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:86,startTop:131,endLeft:86,endTop:150},
+{'orientation':'horizontal',startLeft:86,startTop:150,endLeft:155,endTop:150},
+{'orientation':'vertical',startLeft:155,startTop:150,endLeft:155,endTop:167}
+]
+},
+	'yahoodotgettime!uid=1169620204062.outlet3_print!uid=1169620238118.inlet1':{'inlet':'print!uid=1169620238118.inlet1','outlet':'yahoodotgettime!uid=1169620204062.outlet3','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:128,startTop:131,endLeft:128,endTop:150},
+{'orientation':'horizontal',startLeft:128,startTop:150,endLeft:317,endTop:151},
+{'orientation':'vertical',startLeft:317,startTop:151,endLeft:317,endTop:169}
+]
+}}
+}

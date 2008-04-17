@@ -1,0 +1,27 @@
+//http://www.processing.org/learning/examples/recursion2.html
+
+
+function setup() 
+{
+  size(200, 200);
+  noStroke();
+  smooth();
+  drawCircle(100, 100, 80, 8);
+}
+
+function drawCircle(x, y, radius, level) 
+{                    
+  var tt = 126 * level/6.0;
+  fill(tt, 153);
+  ellipse(x, y, radius*2, radius*2);      
+  if(level > 1) {
+    level = level - 1;
+    var num = int(random(2, 6));
+    for(var i=0; i<num; i++) {
+      var a = random(0, TWO_PI);
+      var nx = x + cos(a) * 6.0 * level;
+      var ny = y + sin(a) * 6.0 * level;
+      drawCircle(nx, ny, radius/2, level);
+    }
+  }
+}

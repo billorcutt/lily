@@ -1,0 +1,94 @@
+var patch={'version':'0.1-public_beta-2','platform':'apple','title':'storage-help','width':557,'height':789,'color':'#FFFFFF','mode':'performance','objArray':{
+	'storage!uid=2334534102451':{'name':'storage','top':575,'left':233,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':50,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'storage!uid=2334534102451','type':'object'},
+	'message!uid=2334534122195':{'name':'message','top':83,'left':21,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':10,'width':91,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'open testDB','objID':'message!uid=2334534122195','type':'object'},
+	'print!uid=2334534152332':{'name':'print','top':689,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=2334534152332','type':'object'},
+	'message!uid=2334534314178':{'name':'message','top':135,'left':54,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':16,'width':425,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'CREATE TABLE lilytest (myDataID INT PRIMARY KEY, myData TEXT)','objID':'message!uid=2334534314178','type':'object'},
+	'prepend!uid=2334534667312':{'name':'prepend','top':436,'left':93,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':105,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'execute','objID':'prepend!uid=2334534667312','type':'object'},
+	'message!uid=2334536328086':{'name':'message','top':185,'left':120,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':15,'width':181,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'PRAGMA table_info(lilytest)','objID':'message!uid=2334536328086','type':'object'},
+	'uzi!uid=2334890835944':{'name':'uzi','top':245,'left':173,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':51,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'100','objID':'uzi!uid=2334890835944','type':'object'},
+	'message!uid=2334890857379':{'name':'message','top':245,'left':237,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':17,'width':294,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'INSERT INTO lilytest VALUES ($1,\'$1-lilytest\')','objID':'message!uid=2334890857379','type':'object'},
+	'message!uid=2334893717086':{'name':'message','top':317,'left':175,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':15,'width':155,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'SELECT * FROM lilytest','objID':'message!uid=2334893717086','type':'object'},
+	'toSource!uid=2334905318325':{'name':'toSource','top':622,'left':89,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':59,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'toSource!uid=2334905318325','type':'object'},
+	'message!uid=2334905595281':{'name':'message','top':366,'left':208,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':17,'width':136,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'DROP TABLE lilytest','objID':'message!uid=2334905595281','type':'object'},
+	'button!uid=1182649799877':{'name':'button','top':245,'left':140,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':24,'width':24,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"buttonText", value:"", label:"Button Text", type:"string", input:"textarea"}],'objID':'button!uid=1182649799877','type':'object'},
+	'comment!uid=1182650589553':{'name':'comment','top':13,'left':280,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':15,'height':14,'width':246,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Store and retrieve data using a SQLite database.','inspectorConfig':[{name:"commentText", value:"Store and retrieve data using a SQLite database.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1182650589553','type':'object'},
+	'comment!uid=1182650785360':{'name':'comment','top':422,'left':209,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':51,'width':273,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'SQL statements are passed as arguments to <execute>. Any result is output as a message of key/value pairs.','inspectorConfig':[{name:"commentText", value:"SQL statements are passed as arguments to <execute>. Any result is output as a message of key/value pairs.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1182650785360','type':'object'},
+	'comment!uid=2365301632067':{'name':'comment','top':77,'left':132,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':36,'width':363,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<open> opens a database with the supplied name. If the db doesn\'t exist it is created.','inspectorConfig':[{name:"commentText", value:"<open> opens a database with the supplied name. If the db doesn't exist it is created.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2365301632067','type':'object'},
+	'message!uid=1182651088780':{'name':'message','top':490,'left':117,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':18,'height':19,'width':42,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'close','objID':'message!uid=1182651088780','type':'object'},
+	'comment!uid=1182651230636':{'name':'comment','top':490,'left':166,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':10,'width':226,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<close> closes the open db if any','inspectorConfig':[{name:"commentText", value:"<close> closes the open db if any", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1182651230636','type':'object'},
+	'comment!uid=1182651418844':{'name':'comment','top':684,'left':90,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':13,'width':176,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'SQLite language reference:','inspectorConfig':[{name:"commentText", value:"SQLite language reference:", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1182651418844','type':'object'},
+	'launchurl!uid=1182651452135':{'name':'launchurl','top':688,'left':257,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':21,'height':16,'width':192,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://www.sqlite.org/lang.html http://www.sqlite.org/lang.html','inspectorConfig':[{name:"linkURL", value:"http://www.sqlite.org/lang.html", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"http://www.sqlite.org/lang.html", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=1182651452135','type':'object'},
+	'launchurl!uid=1182651721029':{'name':'launchurl','top':1,'left':20,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':22,'height':54,'width':221,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Storage STORAGE','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Storage", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"STORAGE", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=1182651721029','type':'object'},
+	'message!uid=2334534122195.outlet1_storage!uid=2334534102451.inlet1':{'inlet':'storage!uid=2334534102451.inlet1','outlet':'message!uid=2334534122195.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:21,startTop:110,endLeft:21,endTop:565},
+{'orientation':'horizontal',startLeft:21,startTop:565,endLeft:233,endTop:565},
+{'orientation':'vertical',startLeft:233,startTop:565,endLeft:233,endTop:580}
+]
+},
+	'prepend!uid=2334534667312.outlet1_storage!uid=2334534102451.inlet1':{'inlet':'storage!uid=2334534102451.inlet1','outlet':'prepend!uid=2334534667312.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:93,startTop:463,endLeft:93,endTop:564.5},
+{'orientation':'horizontal',startLeft:93,startTop:564.5,endLeft:233,endTop:564.5},
+{'orientation':'vertical',startLeft:233,startTop:564.5,endLeft:233,endTop:580}
+]
+},
+	'message!uid=2334534314178.outlet1_prepend!uid=2334534667312.inlet1':{'inlet':'prepend!uid=2334534667312.inlet1','outlet':'message!uid=2334534314178.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:54,startTop:162,endLeft:54,endTop:271},
+{'orientation':'horizontal',startLeft:54,startTop:271,endLeft:93,endTop:271},
+{'orientation':'vertical',startLeft:93,startTop:271,endLeft:93,endTop:441}
+]
+},
+	'message!uid=2334536328086.outlet1_prepend!uid=2334534667312.inlet1':{'inlet':'prepend!uid=2334534667312.inlet1','outlet':'message!uid=2334536328086.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:120,startTop:212,endLeft:120,endTop:242.5},
+{'orientation':'horizontal',startLeft:120,startTop:242.5,endLeft:93,endTop:242.5},
+{'orientation':'vertical',startLeft:93,startTop:242.5,endLeft:93,endTop:441}
+]
+},
+	'message!uid=2334890857379.outlet1_prepend!uid=2334534667312.inlet1':{'inlet':'prepend!uid=2334534667312.inlet1','outlet':'message!uid=2334890857379.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:237,startTop:272,endLeft:237,endTop:296},
+{'orientation':'horizontal',startLeft:237,startTop:296,endLeft:93,endTop:296},
+{'orientation':'vertical',startLeft:93,startTop:296,endLeft:93,endTop:441}
+]
+},
+	'message!uid=2334893717086.outlet1_prepend!uid=2334534667312.inlet1':{'inlet':'prepend!uid=2334534667312.inlet1','outlet':'message!uid=2334893717086.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:175,startTop:344,endLeft:175,endTop:364.5},
+{'orientation':'horizontal',startLeft:175,startTop:364.5,endLeft:93,endTop:364.5},
+{'orientation':'vertical',startLeft:93,startTop:364.5,endLeft:93,endTop:441}
+]
+},
+	'storage!uid=2334534102451.outlet1_toSource!uid=2334905318325.inlet1':{'inlet':'toSource!uid=2334905318325.inlet1','outlet':'storage!uid=2334534102451.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:233,startTop:602,endLeft:233,endTop:614},
+{'orientation':'horizontal',startLeft:233,startTop:614,endLeft:89,endTop:614},
+{'orientation':'vertical',startLeft:89,startTop:614,endLeft:89,endTop:627}
+]
+},
+	'toSource!uid=2334905318325.outlet1_print!uid=2334534152332.inlet1':{'inlet':'print!uid=2334534152332.inlet1','outlet':'toSource!uid=2334905318325.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:89,startTop:649,endLeft:89,endTop:660.5},
+{'orientation':'horizontal',startLeft:89,startTop:660.5,endLeft:24,endTop:660.5},
+{'orientation':'vertical',startLeft:24,startTop:660.5,endLeft:24,endTop:694}
+]
+},
+	'message!uid=2334905595281.outlet1_prepend!uid=2334534667312.inlet1':{'inlet':'prepend!uid=2334534667312.inlet1','outlet':'message!uid=2334905595281.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:208,startTop:393,endLeft:208,endTop:413},
+{'orientation':'horizontal',startLeft:208,startTop:413,endLeft:93,endTop:413},
+{'orientation':'vertical',startLeft:93,startTop:413,endLeft:93,endTop:441}
+]
+},
+	'uzi!uid=2334890835944.outlet3_message!uid=2334890857379.inlet1':{'inlet':'message!uid=2334890857379.inlet1','outlet':'uzi!uid=2334890835944.outlet3','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:214,startTop:272,endLeft:214,endTop:238},
+{'orientation':'horizontal',startLeft:214,startTop:238,endLeft:237,endTop:238},
+{'orientation':'vertical',startLeft:237,startTop:238,endLeft:237,endTop:250}
+]
+},
+	'button!uid=1182649799877.outlet1_uzi!uid=2334890835944.inlet1':{'inlet':'uzi!uid=2334890835944.inlet1','outlet':'button!uid=1182649799877.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:140,startTop:276,endLeft:140,endTop:237.5},
+{'orientation':'horizontal',startLeft:140,startTop:237.5,endLeft:173,endTop:237.5},
+{'orientation':'vertical',startLeft:173,startTop:237.5,endLeft:173,endTop:250}
+]
+},
+	'message!uid=1182651088780.outlet1_storage!uid=2334534102451.inlet1':{'inlet':'storage!uid=2334534102451.inlet1','outlet':'message!uid=1182651088780.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:117,startTop:517,endLeft:117,endTop:552},
+{'orientation':'horizontal',startLeft:117,startTop:552,endLeft:233,endTop:552},
+{'orientation':'vertical',startLeft:233,startTop:552,endLeft:233,endTop:580}
+]
+}}
+}

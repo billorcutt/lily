@@ -1,0 +1,703 @@
+CHANGE LOG
+
+-----------------
+
+LILY-0.1-PUBLIC-BETA-1 (January 15, 2008)
+
+-----------------
+
+* removing the debug menu
+
+* adding a init check for qt
+
+* fixing linux bug
+
+* updating font for linux
+
+* add a clear message to message
+
+* fix busted default radii in ellipse
+
+* add a "current" method to dom extern
+
+* increase httpd buffer size
+
+* fix cleanup bug in key & mouse- add destructor to key & mouse to remove listeners
+
+* add code to loadbang to prevent a loadbang from firing more than once.
+
+* fix bug in getContainerID function in wow/subpatch/patcher
+
+* adding support to open hidden patches in an invisible iframe in host window.
+
+* add borderopacity method to svg
+
+* add an opacity method to animator
+
+* modify mouse & key adding an option to listen to the content window
+
+* modify table so that if table border=0, then external border is hidden
+
+* fix bug so subpatches receive a loadbang event
+
+* add getSize & getPos methods to element
+
+* add getWin & getSelectedNode to host
+
+* add inspector & props to circle/ellipse/rect
+
+* add size & position methods to host
+
+* add a bang on connect to socket listener
+
+* fix a bug in the socket destructor
+
+* make uzi more flexible in the inputs it accepts
+
+* add a childNodes method to dom. add completion bangs to methods that return a node collection.
+
+* add an external "wow" to display a Lily patch in a transparent iframe over the content window.
+
+* adding an external "menu" add a simple menu item to the tools menu.
+
+* add a clearmarkers method to google maps
+
+* add a mouseover inspector to dom
+
+* adding atob & btoa to string
+
+* fixing a bug in eval
+
+* modify get to handle binary data.
+
+* add a writebinary method to textfile.
+
+* add verdana equivalent for linux.
+
+* increasing permissions in resources dir. fixes bug 34
+
+* fix syntax error in eval.
+
+* add tmp file capability to textfile.
+
+* move arraylist & hashmap impls to svg utils
+
+* add strokeCap & strokeJoin.
+
+* fix bug with color() by changing name to makeColor() (avoids conflict with object property "color")
+
+* add support for mouseMoved
+
+* fix bug where svg was evalling scripts into the main window space.
+
+* add size args to svg
+
+* remove unused 3rd party js
+
+* remove debug code from model
+
+* fix bug in contextmenu affecting saving as addon/app
+
+* fix bug where nested patchers were not being saved when saved as xpi/app
+
+* fix bug 27- enable subpatch & patcher to take arguments
+
+* add parseURL method to string.
+
+* modify set method in date to take a timestamp
+
+* add license blocks to files that were missing it
+
+* add missing meta data in a few places
+
+* add a no resize flag to yui.calendar
+
+-----------------
+
+LILY-0.1-BETA-4 (October 16, 2007)
+
+-----------------
+
+* add a safety check to googlemaps
+
+* fix bug affecting patch titles with "." in the title
+
+* add reload method to iframe class. fixes bugs in googlemaps & slider.
+
+* add a 2nd outlet to googlemaps to get loadbang.
+
+* fix loadbang bug affecting subpatches. update examples & docs.
+
+* change "hide in performance" to "hide on lock"
+
+* fix bug affecting multiple connections between the same inlet/outlet pair
+
+* fix bug where iframe/button/checkbox is resized after a font change.
+
+* fix bug where pasting sends a "patch loaded" message
+
+* update build script to include examples
+
+* fix bug where passing null to getNode would cause error
+
+* rewrite the patch dependency code to be recursive.
+
+* add code to resize patch window to content.
+
+* add an urn object
+
+* expand qt's play method to take a start, stop & rate parameters. change timescale to use ms.
+
+* modify element to enable setting properties on the element.
+
+* add documentation to patch.js
+
+* add code to external base class to size fonts differently depending on platform
+
+* removed a bunch of patch methods from the object external and moved them to thispatch
+
+* add a platform value to the serialized patch string
+
+* add external http that listens to requests made by the host window.
+
+* add a filepicker option to the inspector and code to use it in pic, qt, subpatch.
+
+* make comments transparent by default.
+
+* add some safety checks to animator- node must exist
+
+* fix bug with moveto and moveby patch methods
+
+* change text external name to textfile. update any files using text.
+
+* changed object arguments to httpd.
+
+* added borders width/color/style to panel
+
+* add a bang method to toggle check.
+
+* add a <set> method to calendar
+
+* modify lfo to make output more fine grained.
+
+* add socket listener extern.
+
+* add a <bang> method to the dom. add 2nd outlet for dom. 
+
+* xhr now supports return type of JSON
+
+* remove the url arg from the get extern
+
+* add a parseHHTML method to the DOM extern
+
+* rename randomcolor external to color. repurposing it as a general color utility. add some color conversion methods
+
+* add <getCellColor> method to table
+
+* add method to uzi to take a number and output that number of bangs
+
+* fix bug involving null and select
+
+* add a todegrees and toradians method to math
+
+* add a clear method to input.
+
+* add a <shuffle> method to the array extern.
+
+* add a getposition method to base object class
+
+* modify animator to make the from argument optional. uses the nodes current value
+
+* add event handling methods to element
+
+* fix bug where fur missed the initial focus event
+
+* fix bug affecting typeof and html node objects
+
+* add a resize listener to patchinfo
+
+* add a chunk method to array
+
+* update sdk. 
+
+* modify patch so that subpatches can access their parent patches.
+
+* add new object coll that saves data to the patch.
+
+* add a <replace> method to element.
+
+* add some top level methods to patch class for scripting purposes. 
+
+* add a new object patchinfo. 
+
+* add <delete> method to element
+
+* adding an SVG image external
+
+* fix bug with filter affecting objects without matching properties
+
+* change progress external name to "activity".
+
+* adding new extern contextmenu
+
+* modify pic to use background image.
+
+* change key to use keypress instead of keydown.
+
+* added bang method to toggle metro
+
+* added a method setComment to comment value
+
+* change typeof to output array as type "array"
+
+* change truncate object to reset after stream pause
+
+* change default reset value on firstout to 500ms
+
+* add export dialog to xpi/app save as
+
+* fix global variable in lib. 
+
+* remove xulrunner-stub for windows. 
+
+* add default string for save dialog.
+
+* fix bug in open method in patch class where reference to file was not being saved
+
+* remove implode extern
+
+* change to hash object to accept arbitrary properties
+
+* add functionality to object to accept arbitrary properties
+
+* enable launchurl to open patchs from a file path. 
+
+* add xultree external.
+
+* fix bug in stripextension hasextension methods multiple "." would cause error. check in stub for xul.tree
+
+* fix bug where font color was overriding the style specified in custom html.
+
+* fix bug in convertType in utils affecting hashes.
+
+* fix bug in message where correct type was not reflected if a replace inserted json
+
+* added method to object to convert a object source code to an object.
+
+* add some safety checks to dom. 
+
+* fix a bug in element affecting output nodelists.
+
+* fix a bug in the iframe class affecting object size
+
+* fix a bug in dropdown affecting option length.
+
+* fix a bug in dropdown where output would occur even if a node was null
+
+* modify filter to take multiple filtering arguments.
+
+* add two methods to thispatch: <path> (returns the path to the patch) & <parent> (returns the path to the parent directory)
+
+* add an inspector to the iframe object to modify the src and the borders
+
+* add methods to iframe to enable communication with the iframe html content
+
+* modify patcher to use iframe to load subpatch.
+
+* add object subpatch and ability to load patches in iframes.
+
+* fixing a bug with the inspector & borders in pic. 
+
+* add method to filepicker to select folders
+
+* add an inlet to dropdown to the value of an option
+
+* add external dir
+
+* adding an extern to do alert/prompt/confirm
+
+* updating scriptaculous & jquery to their most recent versions.
+
+* upgrade yui
+
+* fix bug in pic inspector
+
+* add external svg.
+
+* add a new external map. 
+
+* fix bug where launcher window was visible on windows.
+
+-----------------
+
+LILY-0.1-BETA-3A (August 1, 2007)
+
+-----------------
+
+* add a debug method to generate some object documentation.
+
+* remove debug code that was left in ramp. remove constraints on input in the graphics objects.
+	
+* hiding the titlebar on the launcher window.
+	
+* add support for font color and menu items to use it.
+	
+* fix flickr-yui-thumbs-lightbox.json
+
+* change flickr interestingness & digg objects to use unix epoch time in milliseconds
+
+* fix bug in split affecting \n and other escaped characters
+	
+* adding a drop object.
+	
+* add navigator object & help.
+	
+* fix a bug where the xpi patch window is oriented horizontally. 
+	
+* Fix bug where inspector window on windows was sizing incorrectly.
+	
+* fix bug where window on windows is opening at the wrong size.
+	
+* add flag to prevent resizing- add it to checkbox on windows
+
+* fix bug on windows where filepicker would cause host window to jump in front of patch window
+
+* fix gap in button
+
+* fix bug in filepicker where cancel would return undefined.
+
+* add methods to beep to play external sound files
+	
+* fix bug where prefs window was busted on windows.
+		
+* remove harded-coded reference to the meta key in the resize code. add a command to the getinfo key.
+	
+* fix bug where resources directory was being deleted in an app or xpi.
+
+-----------------
+
+LILY-0.1-BETA-3 (July 22, 2007)
+
+-----------------
+
+* update and annotate all object help files. change font size to 12px.
+
+* update all object help text and add a one-line object summary to the object metadata.
+
+* enable the display of object summaries & argument options in the status area as part of object creation
+
+* add illegal character scrubbing to flickr service output
+
+* fix bug where math objects would break connections when updating arguments
+
+* fix bug where connections would be stranded when updating object arguments
+
+* add application/add-on icons
+
+* fix bug to prevent comment/message from dragging while in edit mode.
+
+* fix bug where an error message was not displayed when attempting to create an object with an incorrect classname.
+
+* fix bug affecting the font menu in patches with different capitalizations of the same font name. 
+
+* fix an intermittent bug affecting xml parsing in yahoodotimagesearch & yahoodotvideosearch.
+
+* remove webservice.
+
+* change the twitter polling interval to one minute
+
+* fix bug in shiftspace where "bang" on complete wasn't firing
+
+* fix bug in regexp affecting regexps with spaces in them.
+
+* fix an intermittent bug affecting xml parsing in google.search
+
+* add zoomIn, zoomOut, panTo, satellite and map methods to google map object. add an outlet and a method to output the coordinates when the map is clicked.
+
+* fix bug in digg.events affecting start/stop dates and sort params
+
+* add responseText to the error message when xmlhttprequest encounters a problem
+
+* make group & user options in flickr search mutually exclusive.
+
+* add a <parse> method to date
+
+* fix bug in flickr interestingness list affecting default params
+
+* fix bug where edit shortcuts were functional while patch was locked
+
+* fix bug where parentheses in an object argument caused bad things to happen
+
+* fix bug where ramp failed if an endpoint was 0
+
+* make table scrollable, able to handle html, fix bug where multiple event listeners were being set, add a length method, fix dom errors caused by deleting table rows, fix bug using negative index to delRow method
+
+* fix various small issues with tagcloud
+
+* fix bug in pic where object was not being resized
+
+* add "thumb" method to string object, make "link" method open in new window.
+
+* fix positioning bug in lightbox
+
+* add illegal character scrubbing to wikipedia output
+
+* remove render
+
+* remove thumbs
+
+* add resize method to iframe
+
+* moved help patch resource stuff in help patch file. now clearing out the resources directory on init.
+
+* made change to enable an external to bundled with all its dependencies in a zip file or simply as a resource archive with a .rsrc extension.
+
+* namespaced animator class
+
+* add setFullScreen method to patch
+
+* add closePatch method to patch for thispatch
+
+* fix various bugs in param handling in ramp
+
+* removed borders in slider
+
+* fixed some appearance bugs in link & launchurl object
+
+* add a set method to delay to change the delay time
+
+* removed patch object- will move this functionality to thispatch object
+
+* add a getselected method to host
+
+* add save as app item
+
+* Add save as add on
+
+* improve argument handling in string. add reverse and iter methods
+
+* fix bug in message where <set> wasn't working
+
+* fix bug in object <replace> method
+
+* remove prepend <set> method
+
+* remove value <send> method
+
+* fix bug with data parsing in simplemessagesystem
+
+* add a bang on complete to post object
+
+* fix bug where illegal characters entered as object arguments would cause the object to fail
+
+* added better illegal character handling in link, launchurl & marquee
+
+* fixed a bug where "xx" was appearing in an empty dropdown
+
+* added a "min" and an "E" method to the math object.
+
+* change open help patch code to look for help patches in the search folder and the calling patch folder
+
+* fix bug in buffer that was causing "undefined" outputs in certain situations.
+	
+* improve autocomplete click handling and add some additional padding on either side.
+
+* implement gradient & transform methods to the svg objects- rect, circle & ellipse. remove the line object.
+
+* make slider expand the slider handle and active area.
+
+* modify the qt object to work with video, load urls across the protocols and resize to the media. add two outlets- one to provide movie info, the other to provide notification when the movie is loaded. add drag resizing to the qt object.
+
+* fix gaps in connections. 
+	
+* fix bug where message gets fat after toggleeditability.
+	
+* fix bug in connection where segements would jump on deselect. 
+	
+* fix bug where a js error was being thrown on app shutdown.
+
+* fix bug where font & color menus were not updating if there was no deselect after a font/color change.
+
+* fix bug where connections were not moving when object was resized.
+
+* fix bug where brackets were causing a js regexp error in the object input.
+
+* fix bug where executing sql in storage object while db was closed threw error.
+
+* add default pointer to css. add an extra argument to launchurl for link text. 
+
+* add a done button to the inspector. add a transparency checkbox to the color picker.
+
+* add support for runtime loading of objects. add support for loading externs at runtime in the local path directory. 
+
+* converting color menus to a modal dialog.
+	
+* fixing bug where radio buttons in inspector were throwing an error.
+	
+* fix bug affecting loading iframe in patch window.
+	
+* fix moveTop & moveTopBy. rework array object. add a 2nd inlet to append and get rid of <set> message.
+	
+* tweak the font preloading to happen async. . slight change to help screen.
+	
+* add help screen.
+	
+* add lock/unlock icon to status bar. 
+	
+* add api keys into preferences and clean up dialog- fix small inspector/prefs related bugs.
+	
+* move the names stuff into the inspector.
+	
+* enable inserting help file links in the debug window.
+	
+* added the ability to open an objects help patch before object creation by option clicking the input text box (assumes the object's name has been entered).
+	
+* print info to the status bar- the x&y position during drag and the height&width during resize.
+
+* adding a drunk extern
+
+* add a context menu to the patch
+
+* Fix patch title bug- patch title is now directly taken from the patch file name each time the patch is opened. added a way via arguments to thispatcher to modify a patch title for cases where using the file name is not desired. 
+	
+* add closebang object.
+
+* prompt to user to save when attempting to close a modified patch
+	
+* add a progress object.
+	
+* add new object element for working with dom elements.  rework dom and add methods for working with xml & html doms.  rework host with various methods for interacting with the host window. remove hostinfo and fold it into host.
+
+* fix bug where filter object was not converting arguments to the correct type. 
+
+
+-----------------
+
+LILY-0.1-BETA-2a (May 21, 2007)
+
+-----------------
+
+* Add rounded corners option to the panel object's inspector.
+
+* Add an app wide default font preference.
+
+* fix array handling in the circle object's strokeDashArray method.
+
+* Add a default command- "thisObject"- to all inlets to provide an interface to an object's interior methods.
+
+* Fix a bug in the patch close code where a js error was being thrown in certain circumstances.
+
+* Fix font code so that all available fonts are displayed.
+
+* Changed patch read & write method to use the newer UTF-8 aware methods. Added an i18n demo patch.
+
+* Added methods to the concat object to do manual, element by element concatenation. 
+
+* Fixed a bug where modifying an objects color via the color menu produced inconsistent results. Using the object color menu is now always a permanent change. Sending the message "setColor" to an object is always temporary, like changing the value of a number object.
+
+* Added a transparent option to the object color menu.
+
+* Fixed bug where font menu retained the value from the previous font change.
+
+* Fix a bug where the font menu did not display font info for selected objects. 
+
+* Enhanced error messages in the debug window- objects can now display error message that provide a link to open the object's help file.
+
+* Fixed a bug that caused the inspector window checkbox in the windows menu to be out of sync with the actual state of the inspector window.
+
+* Fixed a bug that caused the debug window checkbox in the windows menu to be out of sync with the actual state of the debug window.
+
+* Fixed a bug that caused the patch edit checkbox in the patch menu to be out of sync with the patch's actual edit state.
+
+* Removed plugin.jar from the distribution- leftover from osc development.
+
+
+-----------------
+
+LILY-0.1-BETA-2 (May 14, 2007)
+
+-----------------
+
+* Comment out menu items to open help/external/patch directories since they don't work when packaged as an xpi.
+
+* Fix bug involving backslashes in object arguments that affected the regexp object.
+
+* Internalize references to external resources in help files.
+
+* Fix var object so that the argument is saved as the correct type.
+
+* Remove the nth method from pack.
+
+* Clean up externals - make all unnecessarily public properties private.
+
+* Added two digg api objects: digg.stories & digg.events.
+
+* Removed unused preferences.
+
+* Added a context menu item to open a lily patch from a link in a web page.
+
+* Added versioning to patches, so that the lily version is saved with the patch.
+
+* Fix bug where category help menus are sorted correctly.
+
+* Added oscsend & oscreceive objects.
+
+* Fix bug in LFO object now has a method & argument to set cycles/second.
+
+* Fix bug involving array handling in route & routeall.
+
+* Fix destructor bug in socket & SMS.
+
+* Fix help text for filepicker object.
+
+* Removed the googleIMG object as unmaintainable.
+
+* Add object ltag that tags a stream- based on Peter Elsea's object of the same name.
+
+* Almost fixed bug where the message object would change appearance slightly after multiple edits.
+
+* Fixed a bug where the select element in an inspector was not saving/setting its value.
+
+* Fixed bug where event handlers in thumbs/table were not being removed when the object was deleted.
+
+* Add a second outlet to all comparison objects providing gate functionality.
+
+* Add a twitter object.
+
+* Added params to flickr search to specify groups/tags/user/geotagged/coordinates.
+
+* Add a socket object.
+
+* Add a simplemessagesystem object.
+
+* Add objects- host, dom & hostinfo to enable interaction with the main browser window.
+
+* Fix a bug where the patch window init was sometimes running before the window was loaded.
+
+* Fix filter object to pass strings unmodified to the "nomatch" outlet.
+
+* Add an inlet to buffer object to set the contents of the buffer to the input array.
+
+* Change version info on install.rdf to prevent installation on FF 1.x.
+
+* Add a "nopad" param to the concat object.
+
+* Fix a flickering bug in slideshow and modify it to use the animator class.
+
+* Fix a flicker bug in marquee.
+
+* Add a tagcloud object.
+
+* Make the menu code more defensive.
+
+* Add a completion outlet to iter.
+
+* Fixed a bug in the message object where messages were being saved in the incorrect format.
+
+* Add a shiftspace object.
+
+* Add an object chunk.
+
+* Fix help text in antipode object.
+
+* Enable to string object to operate on arrays of strings.

@@ -1,0 +1,34 @@
+var patch={'version':'0.1-beta-2a','title':'googledotwebsearch-help','width':543,'height':382,'color':'#FFFFFF','mode':'performance','objArray':{
+	'googledotwebsearch!uid=1169591567695':{'name':'googledotwebsearch','top':203,'left':167,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':1,'height':19,'width':111,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'googledotwebsearch!uid=1169591567695','type':'object'},
+	'print!uid=1169591588765':{'name':'print','top':297,'left':31,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':3,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=1169591588765','type':'object'},
+	'print!uid=1169591653684':{'name':'print','top':291,'left':469,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':5,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=1169591653684','type':'object'},
+	'message!uid=3508777098112':{'name':'message','top':75,'left':20,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':4,'height':11,'width':103,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'1 10 madonna','objID':'message!uid=3508777098112','type':'object'},
+	'toSource!uid=1169596175679':{'name':'toSource','top':248,'left':105,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':12,'height':19,'width':59,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'toSource!uid=1169596175679','type':'object'},
+	'comment!uid=1169619670549':{'name':'comment','top':294,'left':74,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':14,'height':10,'width':317,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'Web search result record keys: title, summary, url','inspectorConfig':[{name:"commentText", value:"Web search result record keys: title, summary, url", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1169619670549','type':'object'},
+	'launchurl!uid=54449717357014':{'name':'launchurl','top':4,'left':16,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':11,'height':42,'width':154,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Google.websearch GOOGLE.WEBSEARCH','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Google.websearch", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"GOOGLE.WEBSEARCH", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=54449717357014','type':'object'},
+	'comment!uid=3554114566333':{'name':'comment','top':102,'left':23,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':14,'height':81,'width':403,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'search requests are input to the left inlet and consist of three mandatory parameters: the page offset, the number of records to get, and the terms to search for. results are output one record at a time from the left outlet. a \"bang\" is output from the right outlet when the operation is complete.','inspectorConfig':[{name:"commentText", value:"search requests are input to the left inlet and consist of three mandatory parameters: the page offset, the number of records to get, and the terms to search for. results are output one record at a time from the left outlet. a \"bang\" is output from the right outlet when the operation is complete.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3554114566333','type':'object'},
+	'googledotwebsearch!uid=1169591567695.outlet2_print!uid=1169591653684.inlet1':{'inlet':'print!uid=1169591653684.inlet1','outlet':'googledotwebsearch!uid=1169591567695.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:268,startTop:229,endLeft:268,endTop:245},
+{'orientation':'horizontal',startLeft:268,startTop:245,endLeft:469,endTop:245},
+{'orientation':'vertical',startLeft:469,startTop:245,endLeft:469,endTop:296}
+]
+},
+	'message!uid=3508777098112.outlet1_googledotwebsearch!uid=1169591567695.inlet1':{'inlet':'googledotwebsearch!uid=1169591567695.inlet1','outlet':'message!uid=3508777098112.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:20,startTop:101,endLeft:20,endTop:198},
+{'orientation':'horizontal',startLeft:20,startTop:198,endLeft:167,endTop:198},
+{'orientation':'vertical',startLeft:167,startTop:198,endLeft:167,endTop:208}
+]
+},
+	'toSource!uid=1169596175679.outlet1_print!uid=1169591588765.inlet1':{'inlet':'print!uid=1169591588765.inlet1','outlet':'toSource!uid=1169596175679.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:105,startTop:274,endLeft:105,endTop:287.5},
+{'orientation':'horizontal',startLeft:105,startTop:287.5,endLeft:31,endTop:287.5},
+{'orientation':'vertical',startLeft:31,startTop:287.5,endLeft:31,endTop:302}
+]
+},
+	'googledotwebsearch!uid=1169591567695.outlet1_toSource!uid=1169596175679.inlet1':{'inlet':'toSource!uid=1169596175679.inlet1','outlet':'googledotwebsearch!uid=1169591567695.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:167,startTop:229,endLeft:167,endTop:239.5},
+{'orientation':'horizontal',startLeft:167,startTop:239.5,endLeft:105,endTop:239.5},
+{'orientation':'vertical',startLeft:105,startTop:239.5,endLeft:105,endTop:253}
+]
+}}
+}

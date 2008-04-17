@@ -1,0 +1,35 @@
+//http://www.processing.org/learning/examples/follow2.html
+
+var x = [0,0];
+var y = [0,0];
+var segLength = 50;
+
+function setup() {
+  size(200, 200);
+  smooth(); 
+  strokeWeight(20.0);
+  stroke(0, 100);
+}
+
+function draw() {
+  background(226);
+  dragSegment(0, mouseX, mouseY);
+  dragSegment(1, x[0], y[0]);
+}
+
+function dragSegment(i, xin, yin) {
+  var dx = xin - x[i];
+  var dy = yin - y[i];
+  var angle = atan2(dy, dx);  
+  x[i] = xin - cos(angle) * segLength;
+  y[i] = yin - sin(angle) * segLength;
+  segment(x[i], y[i], angle);
+}
+
+function segment(x, y, a) {
+  pushMatrix();
+  translate(x, y);
+  rotate(a);
+  line(0, 0, segLength, 0);
+  popMatrix();
+}

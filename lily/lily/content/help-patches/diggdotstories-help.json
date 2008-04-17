@@ -1,0 +1,105 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'digg.stories-help','width':639,'height':742,'color':'#FFFFFF','mode':'performance','objArray':{
+	'diggdotstories!uid=1178146098566':{'name':'diggdotstories','top':523,'left':265,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':93,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'10','objID':'diggdotstories!uid=1178146098566','type':'object'},
+	'message!uid=1178146105211':{'name':'message','top':70,'left':17,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':43,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'story','objID':'message!uid=1178146105211','type':'object'},
+	'print!uid=1178146117053':{'name':'print','top':641,'left':19,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=1178146117053','type':'object'},
+	'toSource!uid=1178147035137':{'name':'toSource','top':563,'left':216,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':19,'width':59,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'toSource!uid=1178147035137','type':'object'},
+	'message!uid=1178148863779':{'name':'message','top':269,'left':17,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':14,'width':144,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'storyID 984,983,982','objID':'message!uid=1178148863779','type':'object'},
+	'message!uid=1178150033983':{'name':'message','top':414,'left':17,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':57,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'popular','objID':'message!uid=1178150033983','type':'object'},
+	'message!uid=1178150135918':{'name':'message','top':69,'left':290,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':15,'width':99,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'upcoming 1 5','objID':'message!uid=1178150135918','type':'object'},
+	'message!uid=1178150438025':{'name':'message','top':333,'left':290,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':10,'width':142,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'container Technology','objID':'message!uid=1178150438025','type':'object'},
+	'message!uid=1178150517750':{'name':'message','top':405,'left':290,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':207,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'upcomingContainer Technology','objID':'message!uid=1178150517750','type':'object'},
+	'message!uid=2356301049770':{'name':'message','top':369,'left':290,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':10,'width':193,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'popularContainer Technology','objID':'message!uid=2356301049770','type':'object'},
+	'message!uid=1178150615620':{'name':'message','top':295,'left':290,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':13,'width':143,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'upcomingTopic Apple','objID':'message!uid=1178150615620','type':'object'},
+	'message!uid=2356301238916':{'name':'message','top':225,'left':290,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':13,'width':81,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'topic Apple','objID':'message!uid=2356301238916','type':'object'},
+	'message!uid=2356301248954':{'name':'message','top':259,'left':290,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':10,'width':134,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'popularTopic Apple','objID':'message!uid=2356301248954','type':'object'},
+	'launchurl!uid=1178806632853':{'name':'launchurl','top':41,'left':368,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':18,'height':16,'width':203,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'http://apidoc.digg.com/ListStories','inspectorConfig':[{name:"linkURL", value:"http://apidoc.digg.com/ListStories", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=1178806632853','type':'object'},
+	'launchurl!uid=44972079871438':{'name':'launchurl','top':1,'left':13,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':42,'width':154,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Digg.stories DIGG.STORIES','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Digg.stories", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"DIGG.STORIES", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=44972079871438','type':'object'},
+	'comment!uid=2369266361812':{'name':'comment','top':11,'left':367,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':10,'width':251,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Get story data using the Digg Web API.','inspectorConfig':[{name:"commentText", value:"Get story data using the Digg Web API.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2369266361812','type':'object'},
+	'comment!uid=5920898985186':{'name':'comment','top':600,'left':92,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':10,'width':299,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Object argument: number of rows to fetch [1]','inspectorConfig':[{name:"commentText", value:"Object argument: number of rows to fetch [1]", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=5920898985186','type':'object'},
+	'print!uid=2362860253281':{'name':'print','top':607,'left':404,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':17,'height':19,'width':67,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'done','objID':'print!uid=2362860253281','type':'object'},
+	'comment!uid=5878457319079':{'name':'comment','top':635,'left':63,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':10,'width':559,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'digg story record keys: title, description, submit_date, diggs, id, topic {name, short_name}, container {name, short_name} ','inspectorConfig':[{name:"commentText", value:"digg story record keys: title, description, submit_date, diggs, id, topic {name, short_name}, container {name, short_name} ", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=5878457319079','type':'object'},
+	'comment!uid=3553907280790':{'name':'comment','top':95,'left':22,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':157,'width':257,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<story> takes nine optional params: the page offset, the number of results to return, the start date, the end date, the start promote date, the end promote date (all in unix epoch time in milliseconds), the sort order, the domain of the story and the story link. <story> returns all stories matching the input params. if no params are specified, <story> returns the last hour\'s stories.','inspectorConfig':[{name:"commentText", value:"<story> takes nine optional params: the page offset, the number of results to return, the start date, the end date, the start promote date, the end promote date (all in unix epoch time in milliseconds), the sort order, the domain of the story and the story link. <story> returns all stories matching the input params. if no params are specified, <story> returns the last hour's stories.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3553907280790','type':'object'},
+	'comment!uid=3553907904741':{'name':'comment','top':298,'left':20,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':96,'width':204,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<storyID> takes the same optional nine params as <story> plus one mandatory parameter: a comma separated list of story ids. <storyID> returns the given stories. ','inspectorConfig':[{name:"commentText", value:"<storyID> takes the same optional nine params as <story> plus one mandatory parameter: a comma separated list of story ids. <storyID> returns the given stories. ", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3553907904741','type':'object'},
+	'comment!uid=4738550109594':{'name':'comment','top':431,'left':297,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':40,'width':298,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<topic>, <popularTopic>, <upcomingTopic>, <container>, <popularContainer>, <upcomingContainer> take the same parameters as the other methods, plus one mandatory parameter: a topic/container  name ','inspectorConfig':[{name:"commentText", value:"<topic>, <popularTopic>, <upcomingTopic>, <container>, <popularContainer>, <upcomingContainer> take the same parameters as the other methods, plus one mandatory parameter: a topic/container  name ", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=4738550109594','type':'object'},
+	'comment!uid=4738550603645':{'name':'comment','top':95,'left':294,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':112,'width':235,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<upcoming> takes the same nine optional params as <story>. <upcoming> returns popular stories matching the input parameters. if no params are present, <upcoming> returns the last hour\'s upcoming stories.','inspectorConfig':[{name:"commentText", value:"<upcoming> takes the same nine optional params as <story>. <upcoming> returns popular stories matching the input parameters. if no params are present, <upcoming> returns the last hour's upcoming stories.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=4738550603645','type':'object'},
+	'comment!uid=5923200671320':{'name':'comment','top':455,'left':17,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':126,'width':189,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<popular> takes the same nine optional params as <story>. <popular> returns popular stories matching the input parameters. if no params are present, <popular> returns the last hour\'s popular stories.','inspectorConfig':[{name:"commentText", value:"<popular> takes the same nine optional params as <story>. <popular> returns popular stories matching the input parameters. if no params are present, <popular> returns the last hour's popular stories.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=5923200671320','type':'object'},
+	'comment!uid=2369298142242':{'name':'comment','top':524,'left':363,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':10,'width':194,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'digg.events takes one optional argument: the number of results to fetch. defaults to 1.','inspectorConfig':[{name:"commentText", value:"digg.events takes one optional argument: the number of results to fetch. defaults to 1.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2369298142242','type':'object'},
+	'message!uid=1178146105211.outlet1_diggdotstories!uid=1178146098566.inlet1':{'inlet':'diggdotstories!uid=1178146098566.inlet1','outlet':'message!uid=1178146105211.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:17,startTop:97,endLeft:17,endTop:264},
+{'orientation':'horizontal',startLeft:17,startTop:264,endLeft:265,endTop:264},
+{'orientation':'vertical',startLeft:265,startTop:264,endLeft:265,endTop:528}
+]
+},
+	'diggdotstories!uid=1178146098566.outlet1_toSource!uid=1178147035137.inlet1':{'inlet':'toSource!uid=1178147035137.inlet1','outlet':'diggdotstories!uid=1178146098566.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:265,startTop:550,endLeft:265,endTop:557.5},
+{'orientation':'horizontal',startLeft:265,startTop:557.5,endLeft:216,endTop:557.5},
+{'orientation':'vertical',startLeft:216,startTop:557.5,endLeft:216,endTop:568}
+]
+},
+	'toSource!uid=1178147035137.outlet1_print!uid=1178146117053.inlet1':{'inlet':'print!uid=1178146117053.inlet1','outlet':'toSource!uid=1178147035137.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:216,startTop:590,endLeft:216,endTop:595},
+{'orientation':'horizontal',startLeft:216,startTop:595,endLeft:19,endTop:595},
+{'orientation':'vertical',startLeft:19,startTop:595,endLeft:19,endTop:646}
+]
+},
+	'message!uid=1178148863779.outlet1_diggdotstories!uid=1178146098566.inlet1':{'inlet':'diggdotstories!uid=1178146098566.inlet1','outlet':'message!uid=1178148863779.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:17,startTop:296,endLeft:17,endTop:452.5},
+{'orientation':'horizontal',startLeft:17,startTop:452.5,endLeft:265,endTop:452.5},
+{'orientation':'vertical',startLeft:265,startTop:452.5,endLeft:265,endTop:528}
+]
+},
+	'message!uid=1178150033983.outlet1_diggdotstories!uid=1178146098566.inlet1':{'inlet':'diggdotstories!uid=1178146098566.inlet1','outlet':'message!uid=1178150033983.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:17,startTop:441,endLeft:17,endTop:452.5},
+{'orientation':'horizontal',startLeft:17,startTop:452.5,endLeft:265,endTop:452.5},
+{'orientation':'vertical',startLeft:265,startTop:452.5,endLeft:265,endTop:528}
+]
+},
+	'message!uid=1178150135918.outlet1_diggdotstories!uid=1178146098566.inlet1':{'inlet':'diggdotstories!uid=1178146098566.inlet1','outlet':'message!uid=1178150135918.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:290,startTop:96,endLeft:290,endTop:453},
+{'orientation':'horizontal',startLeft:290,startTop:453,endLeft:265,endTop:453},
+{'orientation':'vertical',startLeft:265,startTop:453,endLeft:265,endTop:528}
+]
+},
+	'message!uid=1178150438025.outlet1_diggdotstories!uid=1178146098566.inlet1':{'inlet':'diggdotstories!uid=1178146098566.inlet1','outlet':'message!uid=1178150438025.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:290,startTop:360,endLeft:290,endTop:452.5},
+{'orientation':'horizontal',startLeft:290,startTop:452.5,endLeft:265,endTop:452.5},
+{'orientation':'vertical',startLeft:265,startTop:452.5,endLeft:265,endTop:528}
+]
+},
+	'message!uid=2356301049770.outlet1_diggdotstories!uid=1178146098566.inlet1':{'inlet':'diggdotstories!uid=1178146098566.inlet1','outlet':'message!uid=2356301049770.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:290,startTop:396,endLeft:290,endTop:452.5},
+{'orientation':'horizontal',startLeft:290,startTop:452.5,endLeft:265,endTop:452.5},
+{'orientation':'vertical',startLeft:265,startTop:452.5,endLeft:265,endTop:528}
+]
+},
+	'message!uid=1178150517750.outlet1_diggdotstories!uid=1178146098566.inlet1':{'inlet':'diggdotstories!uid=1178146098566.inlet1','outlet':'message!uid=1178150517750.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:290,startTop:432,endLeft:290,endTop:453},
+{'orientation':'horizontal',startLeft:290,startTop:453,endLeft:265,endTop:453},
+{'orientation':'vertical',startLeft:265,startTop:453,endLeft:265,endTop:528}
+]
+},
+	'message!uid=2356301238916.outlet1_diggdotstories!uid=1178146098566.inlet1':{'inlet':'diggdotstories!uid=1178146098566.inlet1','outlet':'message!uid=2356301238916.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:290,startTop:252,endLeft:290,endTop:452.5},
+{'orientation':'horizontal',startLeft:290,startTop:452.5,endLeft:265,endTop:452.5},
+{'orientation':'vertical',startLeft:265,startTop:452.5,endLeft:265,endTop:528}
+]
+},
+	'message!uid=2356301248954.outlet1_diggdotstories!uid=1178146098566.inlet1':{'inlet':'diggdotstories!uid=1178146098566.inlet1','outlet':'message!uid=2356301248954.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:290,startTop:286,endLeft:290,endTop:453},
+{'orientation':'horizontal',startLeft:290,startTop:453,endLeft:265,endTop:453},
+{'orientation':'vertical',startLeft:265,startTop:453,endLeft:265,endTop:528}
+]
+},
+	'message!uid=1178150615620.outlet1_diggdotstories!uid=1178146098566.inlet1':{'inlet':'diggdotstories!uid=1178146098566.inlet1','outlet':'message!uid=1178150615620.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:290,startTop:322,endLeft:290,endTop:453},
+{'orientation':'horizontal',startLeft:290,startTop:453,endLeft:265,endTop:453},
+{'orientation':'vertical',startLeft:265,startTop:453,endLeft:265,endTop:528}
+]
+},
+	'diggdotstories!uid=1178146098566.outlet2_print!uid=2362860253281.inlet1':{'inlet':'print!uid=2362860253281.inlet1','outlet':'diggdotstories!uid=1178146098566.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:351,startTop:550,endLeft:351,endTop:588},
+{'orientation':'horizontal',startLeft:351,startTop:588,endLeft:404,endTop:588},
+{'orientation':'vertical',startLeft:404,startTop:588,endLeft:404,endTop:612}
+]
+}}
+}

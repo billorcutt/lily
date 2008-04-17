@@ -1,0 +1,41 @@
+var patch={'version':'0.1-beta-2a','title':'change-help','width':399,'height':316,'color':'#FFFFFF','mode':'performance','objArray':{
+	'change!uid=1168536541483':{'name':'change','top':155,'left':181,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':2,'height':19,'width':49,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'change!uid=1168536541483','type':'object'},
+	'message!uid=2337073103316':{'name':'message','top':77,'left':65,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':3,'height':19,'width':21,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'1','objID':'message!uid=2337073103316','type':'object'},
+	'message!uid=3505609655827':{'name':'message','top':77,'left':13,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':3,'height':19,'width':21,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'0','objID':'message!uid=3505609655827','type':'object'},
+	'print!uid=1168536635174':{'name':'print','top':240,'left':17,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':7,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=1168536635174','type':'object'},
+	'message!uid=2337073278007':{'name':'message','top':77,'left':161,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':3,'height':19,'width':21,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'3','objID':'message!uid=2337073278007','type':'object'},
+	'message!uid=3505609830518':{'name':'message','top':77,'left':114,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':3,'height':19,'width':21,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'2','objID':'message!uid=3505609830518','type':'object'},
+	'comment!uid=1168536782607':{'name':'comment','top':225,'left':63,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':10,'height':23,'width':274,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'only messages different from the preceding message are output.','inspectorConfig':[{name:"commentText", value:"only messages different from the preceding message are output.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1168536782607','type':'object'},
+	'comment!uid=2351098246222':{'name':'comment','top':14,'left':218,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':10,'height':29,'width':158,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'Filter out messages that haven\'t changed.','inspectorConfig':[{name:"commentText", value:"Filter out messages that haven't changed.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2351098246222','type':'object'},
+	'launchurl!uid=1182563522374':{'name':'launchurl','top':3,'left':11,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':11,'height':54,'width':195,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Change CHANGE','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Change", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"CHANGE", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=1182563522374','type':'object'},
+	'message!uid=3505609655827.outlet1_change!uid=1168536541483.inlet1':{'inlet':'change!uid=1168536541483.inlet1','outlet':'message!uid=3505609655827.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:13,startTop:103,endLeft:13,endTop:139},
+{'orientation':'horizontal',startLeft:13,startTop:139,endLeft:181,endTop:139},
+{'orientation':'vertical',startLeft:181,startTop:139,endLeft:181,endTop:160}
+]
+},
+	'message!uid=2337073103316.outlet1_change!uid=1168536541483.inlet1':{'inlet':'change!uid=1168536541483.inlet1','outlet':'message!uid=2337073103316.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:65,startTop:103,endLeft:65,endTop:139},
+{'orientation':'horizontal',startLeft:65,startTop:139,endLeft:181,endTop:139},
+{'orientation':'vertical',startLeft:181,startTop:139,endLeft:181,endTop:160}
+]
+},
+	'change!uid=1168536541483.outlet1_print!uid=1168536635174.inlet1':{'inlet':'print!uid=1168536635174.inlet1','outlet':'change!uid=1168536541483.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:181,startTop:181,endLeft:181,endTop:199},
+{'orientation':'horizontal',startLeft:181,startTop:199,endLeft:17,endTop:199},
+{'orientation':'vertical',startLeft:17,startTop:199,endLeft:17,endTop:245}
+]
+},
+	'message!uid=2337073278007.outlet1_change!uid=1168536541483.inlet1':{'inlet':'change!uid=1168536541483.inlet1','outlet':'message!uid=2337073278007.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:161,startTop:103,endLeft:161,endTop:138.5},
+{'orientation':'horizontal',startLeft:161,startTop:138.5,endLeft:181,endTop:138.5},
+{'orientation':'vertical',startLeft:181,startTop:138.5,endLeft:181,endTop:160}
+]
+},
+	'message!uid=3505609830518.outlet1_change!uid=1168536541483.inlet1':{'inlet':'change!uid=1168536541483.inlet1','outlet':'message!uid=3505609830518.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:114,startTop:103,endLeft:114,endTop:138.5},
+{'orientation':'horizontal',startLeft:114,startTop:138.5,endLeft:181,endTop:138.5},
+{'orientation':'vertical',startLeft:181,startTop:138.5,endLeft:181,endTop:160}
+]
+}}
+}

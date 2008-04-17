@@ -1,0 +1,49 @@
+Release notes for lily-0.1-public-beta-2. 
+
+System/Browser Requirements
+Firefox 3.x
+Any OS capable of running FF 2.x (Mac OSX, Windows, Linux). 
+Java 1.5+ & the Java browser plugin //required for oscsend & oscreceive externals
+QuickTime 7.2+ and the QT browser plugin //required for the qt external
+
+Installation
+Drag lily.xpi into the Firefox browser window. You'll be prompted to begin the installation process. Once installation 
+is complete, restart Firefox. After restart, you should see the Lily menu under Firefox's "Tools" menu.
+
+Where is Lily installed?
+Lily is installed in the "extensions" folder in the Firefox profile folder. The folder is identified by its UID - 
+{3eba6510-7445-11db-9fe1-0800200c9a66}. The default locations for the profile folder for various operating systems are below: 
+
+Windows NT 4.x	
+C:\Winnt\Profiles\\Application Data\Mozilla\Firefox\Profiles\\
+
+Windows 2000 and XP	
+C:\Documents and Settings\\Application Data\Mozilla\Firefox\Profiles\\
+
+Windows Vista	
+C:\Users\\AppData\Roaming\Mozilla\Firefox\Profiles\\
+
+Unix	
+~/.mozilla/firefox//
+
+Mac OS X	
+~/Library/Mozilla/Firefox/Profiles//
+~/Library/Application Support/Firefox/Profiles//
+
+
+How do I uninstall?
+You can uninstall Lily by selecting the "Add-ons" menu item ("Tools" -> "Add-ons") and clicking "Uninstall" for Lily in the Add-ons window.
+
+
+Known Issues
+	*	When instantiating an OSC object (oscsend/oscreceive) for the first time, there's a pause while Java starts up- this can take several seconds.
+	*	When closing patch windows, the user is frequently prompted to save when nothing has changed.
+	*	On Windows, QT external has significant (200ms) latency when playing a sound. 
+	*	On Linux, QT is unsupported.
+
+
+
+
+
+
+

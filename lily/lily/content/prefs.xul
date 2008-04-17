@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<prefwindow type="prefwindow" title="Lily Preferences" buttons="," xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+	<tabbox id="LilyTabList" style="margin-top:20px;margin-left:40px;margin-right:40px;margin-bottom:20px">
+	
+		<tabs>
+			<tab id="lilyPrefsTab" label="Preferences"/>
+			<tab id="lilyAPIKeyTab" label="API Keys"/>
+		</tabs>
+	
+		<tabpanels id="lilyPrefsTabPanels">
+
+		<tabpanel id="lilyPrefsPanel">
+
+				<vbox id="lilyPrefsVBox" style="height:350px">
+					<hbox id="lilyPrefsHBox1" style="width:440px;padding:10px">
+						<label style="width:110px" value="Object Search Path" control="searchPathLabel"/>
+						<textbox name="extensions.lily.searchPath" style="width:260px" preference="searchPath" id="searchField"/>
+						<button oncommand="selectDirectory('searchField')" label="..."/>
+					</hbox>
+
+					<hbox id="lilyPrefsHBox2" style="width:400px;padding:10px">
+						<label style="width:110px" value="Application Font" control="appFontLabel"/>					
+						<menulist style="width:220px" id="menu_PrefFontFace" label="Select a Font">
+					        <menupopup id="menu_PrefFontFacePopup" />
+						</menulist>
+						<menulist style="width:90px" id="menu_PrefFontSize" label="Select a Font Size">
+					        <menupopup id="menu_PrefFontSizePopup"/>
+						</menulist>
+					</hbox>
+				</vbox>				
+
+		</tabpanel>
+		
+		<tabpanel id="lilyAPIKeyPanel">
+			<browser id="browserPrefsElement" src="chrome://lily/content/blank.html" flex="1"/>
+		</tabpanel>
+		
+	  </tabpanels>
+	
+	<hbox style="width:440px">
+		<button id="lilyPrefButtonOK" label="Done"/>
+	</hbox>
+	
+	</tabbox>
+
+	<preferences>
+		<preference id="searchPath" name="extensions.lily.searchPath" type="string"/>
+	</preferences>	
+	
+	<script type="application/x-javascript" src="chrome://lily/content/utils.js"/>
+	<script type="application/x-javascript" src="chrome://lily/content/prefs.js"/>
+
+</prefwindow>
+
+
+
+
+
+

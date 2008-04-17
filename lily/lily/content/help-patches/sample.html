@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>	
+	<title>Communicating with HTML</title>
+	
+	<script>
+		function receiveData(obj) {
+			document.getElementById("input"+obj.target).value=obj.data;
+		}
+	</script>
+	
+	<style>
+		body {size:14px;}
+		input {margin:4px;}
+	</style>
+	
+</head>
+<body>
+<center>
+<input type="button" value="send data to 1" onclick="sendData(1,'message from button 1')">
+<input type="button" value="send data to 2" onclick="sendData(2,'message from button 2')">
+<input type="button" value="send data to 3" onclick="sendData(3,'message from button 3')">
+<input id="input1" size="12" type="text">
+<input id="input2" size="12" type="text">
+<input id="input3" size="12" type="text">
+</center>
+
+</body>
+</html>

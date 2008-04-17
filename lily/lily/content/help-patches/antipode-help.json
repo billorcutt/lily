@@ -1,0 +1,42 @@
+var patch={'version':'0.1-beta-2a','title':'antipode-help','width':479,'height':413,'color':'#FFFFFF','mode':'performance','objArray':{
+	'antipode!uid=1170999682101':{'name':'antipode','top':245,'left':151,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':2,'height':19,'width':57,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'antipode!uid=1170999682101','type':'object'},
+	'message!uid=4679101947822':{'name':'message','top':88,'left':27,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':3,'height':17,'width':137,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'-122.4153 37.7496','objID':'message!uid=4679101947822','type':'object'},
+	'message!uid=2339836883587':{'name':'message','top':134,'left':55,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':3,'height':19,'width':223,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'{latitude:39.90,longitude:116.38}','objID':'message!uid=2339836883587','type':'object'},
+	'message!uid=2339838271356':{'name':'message','top':176,'left':86,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':3,'height':19,'width':284,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'{latitude:25.789264,longitude:-80.138728}','objID':'message!uid=2339838271356','type':'object'},
+	'toSource!uid=1183174060885':{'name':'toSource','top':293,'left':79,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':10,'height':19,'width':59,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'toSource!uid=1183174060885','type':'object'},
+	'print!uid=1183174076469':{'name':'print','top':339,'left':23,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':11,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'print!uid=1183174076469','type':'object'},
+	'comment!uid=1183174430056':{'name':'comment','top':15,'left':288,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':12,'height':19,'width':131,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Output the antipode for a coordinate.','inspectorConfig':[{name:"commentText", value:"Output the antipode for a coordinate.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183174430056','type':'object'},
+	'comment!uid=1183174546889':{'name':'comment','top':74,'left':171,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':13,'height':21,'width':240,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Input coordinates as a list in the form \"longitude latitude\" or as a hash in the form {latitutude, longitude}.','inspectorConfig':[{name:"commentText", value:"Input coordinates as a list in the form \"longitude latitude\" or as a hash in the form {latitutude, longitude}.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183174546889','type':'object'},
+	'comment!uid=2366349401492':{'name':'comment','top':288,'left':140,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':13,'height':10,'width':208,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Coordinates are output as a hash in the form {latitude, longitude}','inspectorConfig':[{name:"commentText", value:"Coordinates are output as a hash in the form {latitude, longitude}", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2366349401492','type':'object'},
+	'launchurl!uid=17746694357756':{'name':'launchurl','top':3,'left':15,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':11,'height':54,'width':239,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Antipode ANTIPODE','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Antipode", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"ANTIPODE", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=17746694357756','type':'object'},
+	'message!uid=4679101947822.outlet1_antipode!uid=1170999682101.inlet1':{'inlet':'antipode!uid=1170999682101.inlet1','outlet':'message!uid=4679101947822.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:27,startTop:114,endLeft:27,endTop:237},
+{'orientation':'horizontal',startLeft:27,startTop:237,endLeft:151,endTop:237},
+{'orientation':'vertical',startLeft:151,startTop:237,endLeft:151,endTop:250}
+]
+},
+	'message!uid=2339836883587.outlet1_antipode!uid=1170999682101.inlet1':{'inlet':'antipode!uid=1170999682101.inlet1','outlet':'message!uid=2339836883587.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:55,startTop:160,endLeft:55,endTop:237},
+{'orientation':'horizontal',startLeft:55,startTop:237,endLeft:151,endTop:237},
+{'orientation':'vertical',startLeft:151,startTop:237,endLeft:151,endTop:250}
+]
+},
+	'message!uid=2339838271356.outlet1_antipode!uid=1170999682101.inlet1':{'inlet':'antipode!uid=1170999682101.inlet1','outlet':'message!uid=2339838271356.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:86,startTop:202,endLeft:86,endTop:236.5},
+{'orientation':'horizontal',startLeft:86,startTop:236.5,endLeft:151,endTop:236.5},
+{'orientation':'vertical',startLeft:151,startTop:236.5,endLeft:151,endTop:250}
+]
+},
+	'antipode!uid=1170999682101.outlet1_toSource!uid=1183174060885.inlet1':{'inlet':'toSource!uid=1183174060885.inlet1','outlet':'antipode!uid=1170999682101.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:151,startTop:271,endLeft:151,endTop:284.5},
+{'orientation':'horizontal',startLeft:151,startTop:284.5,endLeft:79,endTop:284.5},
+{'orientation':'vertical',startLeft:79,startTop:284.5,endLeft:79,endTop:298}
+]
+},
+	'toSource!uid=1183174060885.outlet1_print!uid=1183174076469.inlet1':{'inlet':'print!uid=1183174076469.inlet1','outlet':'toSource!uid=1183174060885.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:79,startTop:319,endLeft:79,endTop:330.5},
+{'orientation':'horizontal',startLeft:79,startTop:330.5,endLeft:23,endTop:330.5},
+{'orientation':'vertical',startLeft:23,startTop:330.5,endLeft:23,endTop:344}
+]
+}}
+}

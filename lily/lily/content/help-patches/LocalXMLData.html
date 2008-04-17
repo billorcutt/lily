@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Local XML Data</title>
+
+<script>
+
+	var xmlResultStub = '<?xml version="1.0"?><ResultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:yahoo:lcl" xsi:schemaLocation="urn:yahoo:lcl http://api.local.yahoo.com/LocalSearchService/V2/LocalSearchResponse.xsd" totalResultsAvailable="0" totalResultsReturned="0" firstResultPosition="0"><ResultSetMapUrl>http://maps.yahoo.com/broadband/?q1=Sunnyvale%2C+CA+94089&amp;tt=pizza&amp;tp=1</ResultSetMapUrl></ResultSet>';
+
+	function receiveData(obj) {
+		loadTable(obj);
+	}
+
+</script>
+
+
+
+<style type="text/css">
+/*margin and padding on body element
+  can introduce errors in determining
+  element position and are not recommended;
+  we turn them off as a foundation for YUI
+  CSS treatments. */
+body {
+	margin:10;
+	padding:10;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="http://developer.yahoo.com/yui/build/fonts/fonts-min.css?_yuiversion=2.3.1" />
+<link rel="stylesheet" type="text/css" href="http://developer.yahoo.com/yui/build/datatable/assets/skins/sam/datatable.css?_yuiversion=2.3.1" />
+<script type="text/javascript" src="http://developer.yahoo.com/yui/build/utilities/utilities.js?_yuiversion=2.3.1"></script>
+<script type="text/javascript" src="http://developer.yahoo.com/yui/build/datasource/datasource-beta.js?_yuiversion=2.3.1"></script>
+<script type="text/javascript" src="http://developer.yahoo.com/yui/build/datatable/datatable-beta.js?_yuiversion=2.3.1"></script>
+
+<!--there is no custom header content for this example-->
+
+</head>
+
+<body class=" yui-skin-sam">
+
+<!--BEGIN SOURCE CODE FOR EXAMPLE =============================== -->
+
+<div id="localxml"></div>
+
+<script type="text/javascript">
+
+	function loadTable(xmlDoc) {
+				
+		var myColumnDefs = [
+			{key:"Title", label:"Name", sortable:true, formatter:this.formatUrl},
+			{key:"Phone"},
+			{key:"City"},
+			{key:"AverageRating", label:"Rating",formatter:YAHOO.widget.DataTable.formatNumber, sortable:true}
+		];
+
+		this.myDataSource = new YAHOO.util.DataSource(xmlDoc);
+		this.myDataSource.responseType = YAHOO.util.DataSource.TYPE_XML;
+
+		this.myDataSource.responseSchema = {
+			resultNode: "Result",
+			fields: ["Title","Phone","City",{key:"AverageRating",parser:YAHOO.util.DataSource.parseNumber},"ClickUrl"]
+		};
+
+		this.myDataTable = new YAHOO.widget.DataTable("localxml", myColumnDefs, this.myDataSource);
+	}
+
+	YAHOO.util.Event.addListener(window, "load",function(){
+		var parser = new DOMParser();
+		var xmlDoc = parser.parseFromString(xmlResultStub, "text/xml");
+		loadTable(xmlDoc);
+	});
+	
+</script>
+
+<!--END SOURCE CODE FOR EXAMPLE =============================== -->
+
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,18 @@
+//http://www.processing.org/learning/examples/variables.html
+
+size(200, 200);
+background(0);
+stroke(153);
+
+var a = 20;
+var b = 50;
+var c = a*8;
+var d = a*9;
+var e = b-a;
+var f = b*2;
+var g = f+e;
+
+line(a, f, b, g);
+line(b, e, b, g);
+line(b, e, d, c);
+line(a, e, d-e, c);

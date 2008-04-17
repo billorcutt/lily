@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://<PROJECT-NAME>/locale/lily.dtd">
+
+<window style="background:transparent !important" id="<PROJECT-NAME>LauncherWindow" title="" hidechrome="true" width="0" height="0" persist="screenX screenY width height sizemode" windowtype="<PROJECT-NAME>:hidden" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" onload="Lily.openAppPatch('<PATCH-FILE-NAME>',<PATCH-HIDDEN>)">
+
+	<script type="application/x-javascript" src="chrome://global/content/nsDragAndDrop.js"/>
+	<script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
+
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/lib.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/utils.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/debug.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/inspector.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/model.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/patch.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/connection.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/object.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/services.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/lily.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/menus.js"/>
+
+    <stringbundleset id="stringbundleset">
+		<stringbundle id="strings_lily" src="chrome://<PROJECT-NAME>/locale/lily.properties"/>
+    </stringbundleset>
+
+</window>

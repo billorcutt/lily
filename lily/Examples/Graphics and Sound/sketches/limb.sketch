@@ -1,0 +1,32 @@
+//http://www.processing.org/learning/examples/limb.html
+
+var x = 50;
+var y = 100;
+var angle1 = 0.0;
+var angle2 = 0.0;
+var segLength = 50;
+
+function setup() {
+  size(200, 200);
+  smooth(); 
+  strokeWeight(20.0);
+  stroke(0, 100);
+}
+
+function draw() {
+  background(226);
+  
+  angle1 = (mouseX/width - 0.5) * -PI;
+  angle2 = (mouseY/height - 0.5) * PI;
+  
+  pushMatrix();
+  segment(x, y, angle1); 
+  segment(segLength, 0, angle2);
+  popMatrix();
+}
+
+function segment(x, y, a) {
+  translate(x, y);
+  rotate(a);
+  line(0, 0, segLength, 0);
+}

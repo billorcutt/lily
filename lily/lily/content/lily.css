@@ -1,0 +1,106 @@
+	html {
+		height:100%;
+		width:100%;
+	}
+	body {
+		height:100%;
+		width:100%;		
+		margin:0px;
+		padding:0px;
+	}
+	.segment {
+		position:absolute; 
+		top:0px; 
+		left:0px; 
+		width:1px; 
+		height:1px
+	}	
+	.canvas {
+		background: white; 	
+		position:absolute;
+		left: 0px;		
+		top: 0px; 
+		width:100%;
+		height:100%;		
+		z-index:0;
+		position:fixed;
+	}
+	.inletWrapper {
+ 		height:2px; 
+ 		width:100%; 
+	}
+	.outletWrapper {
+ 		height:2px; 
+ 		width:100%; 
+	}
+	.contentContainer {
+		border:solid;
+		border-color: transparent;
+		border-width:1px;
+ 		width:100%;
+		cursor:default;
+		-moz-user-select: none;
+	}
+	.contentContainerSelected {
+		border:solid;
+		border-color: black;		
+		border-width:2px;
+ 		width:100%;
+		cursor:default;			
+	}	
+	.contentContainerNoWrap {
+		border:solid;
+		border-color: black;
+		border-width:1px;
+ 		width:100%;
+		white-space:nowrap;
+		cursor:default;
+		-moz-user-select: none;			
+	}
+	.contentContainerSelectedNoWrap {
+		border:solid;
+		border-color: black;		
+		border-width:2px;
+ 		width:100%;
+		white-space:nowrap;
+		cursor:default;						
+	}
+	.vanillaObj {  
+		z-index:2;
+		cursor:default;		
+	}
+	.vanillaObjSelected { 
+		z-index:2;
+		cursor:default;		
+	}
+	.defaultEntry { 
+		border: 0px; 		
+		padding: 2px;
+		text-align: center;
+		cursor:text;
+		-moz-user-select: normal;				
+	}
+	.vanillaInlets { 
+		width:10px; 
+		height:3px;
+		background:black;
+		visibility:hidden;
+	}
+	.vanillaOutlets { 
+		width:10px; 
+		height:3px; 		
+		background:black;
+		visibility:hidden;		
+	}	
+	.vanillaInletsSelected { 
+		width:10px; 
+		height:2px; 
+		background:black;
+		visibility:hidden	
+	}	
+	.vanillaOutletsSelected { 
+		width:10px; 
+		height:2px; 
+		background:black;
+		visibility:hidden
+	}	

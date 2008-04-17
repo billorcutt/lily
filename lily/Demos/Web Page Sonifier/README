@@ -1,0 +1,8 @@
+HOWTO
+
+* Start the demo by opening the file web-page-sonifier.json.
+
+* When the patch file opens, the browser enters a DOM inspector mode and mousing over a DOM node, highlights that node. Clicking on a node writes the element's data (its innerHTML value if it's a text element or the binary data if it's an image) as a sound file and the file is then loaded in a quicktime player in the patch. 
+
+* The quicktime players are triggered with OSC messages- the OSC listener is running on port 8000 with the namespace of "/40h/press". These are the defaults for the monome controller. The patch also sends messages ('/40h/led' 1/0) to the controller at ip 127.0.0.1 and port 8080.
+

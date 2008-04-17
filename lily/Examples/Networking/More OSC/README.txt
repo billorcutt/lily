@@ -1,0 +1,1 @@
+These examples require chuck- http://chuck.cs.princeton.edu/

@@ -1,0 +1,45 @@
+//http://www.processing.org/learning/examples/distance1d.html
+
+var thin = 8;
+var thick = 36;
+var xpos1 = 134.0;
+var xpos2 = 44.0;
+var xpos3 = 58.0;
+var xpos4 = 120.0;
+
+function setup() 
+{
+  size(200, 200);
+  noStroke();
+  frameRate(60);
+}
+
+function draw() 
+{
+  background(0);
+  
+  var mx = mouseX * 0.4 - width/5.0;
+  
+  fill(102);
+  rect(xpos2, 0, thick, height/2);
+  fill(204);
+  rect(xpos1, 0, thin, height/2);
+  fill(102);
+  rect(xpos4, height/2, thick, height/2);
+  fill(204);
+  rect(xpos3, height/2, thin, height/2);
+	
+  xpos1 += mx/16;
+  xpos2 += mx/64;
+  xpos3 -= mx/16;
+  xpos4 -= mx/64;
+  
+  if(xpos1 < -thin)  { xpos1 =  width; }
+  if(xpos1 >  width) { xpos1 = -thin; }
+  if(xpos2 < -thick) { xpos2 =  width; }
+  if(xpos2 >  width) { xpos2 = -thick; }
+  if(xpos3 < -thin)  { xpos3 =  width; }
+  if(xpos3 >  width) { xpos3 = -thin; }
+  if(xpos4 < -thick) { xpos4 =  width; }
+  if(xpos4 >  width) { xpos4 = -thick; }
+}

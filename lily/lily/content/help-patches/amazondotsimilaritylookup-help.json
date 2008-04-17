@@ -1,0 +1,49 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'amazon.similaritylookup-help','width':699,'height':410,'color':'#FFFFFF','mode':'performance','objArray':{
+	'amazondotsimilaritylookup!uid=1169707169662':{'name':'amazondotsimilaritylookup','top':173,'left':123,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':150,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'amazondotsimilaritylookup!uid=1169707169662','type':'object'},
+	'message!uid=1169707177830':{'name':'message','top':108,'left':139,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':98,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'B000000W5N','objID':'message!uid=1169707177830','type':'object'},
+	'toSource!uid=1169707504822':{'name':'toSource','top':223,'left':73,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':19,'width':59,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'toSource!uid=1169707504822','type':'object'},
+	'print!uid=1169707522758':{'name':'print','top':298,'left':11,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':4,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=1169707522758','type':'object'},
+	'print!uid=1169707814630':{'name':'print','top':299,'left':400,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':19,'width':67,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'done','objID':'print!uid=1169707814630','type':'object'},
+	'message!uid=2339415364542':{'name':'message','top':106,'left':9,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':94,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'B000002UAR','objID':'message!uid=2339415364542','type':'object'},
+	'message!uid=2339415688580':{'name':'message','top':109,'left':248,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':10,'width':181,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'B000024D4R B000002U82','objID':'message!uid=2339415688580','type':'object'},
+	'launchurl!uid=43787433536752':{'name':'launchurl','top':2,'left':11,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':42,'width':154,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Amazon.similaritylookup AMAZON.SIMILARITYLOOKUP','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Amazon.similaritylookup", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"AMAZON.SIMILARITYLOOKUP", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=43787433536752','type':'object'},
+	'comment!uid=2369238444583':{'name':'comment','top':65,'left':9,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':10,'width':347,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Search for similar items using the Amazon Web API.','inspectorConfig':[{name:"commentText", value:"Search for similar items using the Amazon Web API.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2369238444583','type':'object'},
+	'comment!uid=4693779029697':{'name':'comment','top':297,'left':54,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':16,'width':345,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'product record keys: asin, group, title, url, img, author ','inspectorConfig':[{name:"commentText", value:"product record keys: asin, group, title, url, img, author ", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=4693779029697','type':'object'},
+	'comment!uid=3524070552497':{'name':'comment','top':134,'left':279,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':80,'width':284,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'input amazon product ids - up in 10 in a list - return the product records of similar products in a hash table format, one record per hash output from the left outlet. right outlet issues a \"bang\" when the operation is complete.','inspectorConfig':[{name:"commentText", value:"input amazon product ids - up in 10 in a list - return the product records of similar products in a hash table format, one record per hash output from the left outlet. right outlet issues a \"bang\" when the operation is complete.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3524070552497','type':'object'},
+	'message!uid=1169707177830.outlet1_amazondotsimilaritylookup!uid=1169707169662.inlet1':{'inlet':'amazondotsimilaritylookup!uid=1169707169662.inlet1','outlet':'message!uid=1169707177830.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:139,startTop:135,endLeft:139,endTop:154},
+{'orientation':'horizontal',startLeft:139,startTop:154,endLeft:123,endTop:154},
+{'orientation':'vertical',startLeft:123,startTop:154,endLeft:123,endTop:178}
+]
+},
+	'amazondotsimilaritylookup!uid=1169707169662.outlet1_toSource!uid=1169707504822.inlet1':{'inlet':'toSource!uid=1169707504822.inlet1','outlet':'amazondotsimilaritylookup!uid=1169707169662.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:123,startTop:200,endLeft:123,endTop:210},
+{'orientation':'horizontal',startLeft:123,startTop:210,endLeft:73,endTop:210},
+{'orientation':'vertical',startLeft:73,startTop:210,endLeft:73,endTop:228}
+]
+},
+	'toSource!uid=1169707504822.outlet1_print!uid=1169707522758.inlet1':{'inlet':'print!uid=1169707522758.inlet1','outlet':'toSource!uid=1169707504822.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:73,startTop:250,endLeft:73,endTop:262.5},
+{'orientation':'horizontal',startLeft:73,startTop:262.5,endLeft:11,endTop:262.5},
+{'orientation':'vertical',startLeft:11,startTop:262.5,endLeft:11,endTop:303}
+]
+},
+	'amazondotsimilaritylookup!uid=1169707169662.outlet2_print!uid=1169707814630.inlet1':{'inlet':'print!uid=1169707814630.inlet1','outlet':'amazondotsimilaritylookup!uid=1169707169662.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:265,startTop:200,endLeft:265,endTop:250},
+{'orientation':'horizontal',startLeft:265,startTop:250,endLeft:400,endTop:250},
+{'orientation':'vertical',startLeft:400,startTop:250,endLeft:400,endTop:304}
+]
+},
+	'message!uid=2339415364542.outlet1_amazondotsimilaritylookup!uid=1169707169662.inlet1':{'inlet':'amazondotsimilaritylookup!uid=1169707169662.inlet1','outlet':'message!uid=2339415364542.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:9,startTop:133,endLeft:9,endTop:145.5},
+{'orientation':'horizontal',startLeft:9,startTop:145.5,endLeft:123,endTop:145.5},
+{'orientation':'vertical',startLeft:123,startTop:145.5,endLeft:123,endTop:178}
+]
+},
+	'message!uid=2339415688580.outlet1_amazondotsimilaritylookup!uid=1169707169662.inlet1':{'inlet':'amazondotsimilaritylookup!uid=1169707169662.inlet1','outlet':'message!uid=2339415688580.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:248,startTop:136,endLeft:248,endTop:164},
+{'orientation':'horizontal',startLeft:248,startTop:164,endLeft:123,endTop:164},
+{'orientation':'vertical',startLeft:123,startTop:164,endLeft:123,endTop:178}
+]
+}}
+}

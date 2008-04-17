@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+<!ENTITY % lilyDTD SYSTEM "chrome://lily/locale/lily.dtd">
+%lilyDTD;
+]>
+
+<window
+	onclose="opener.Lily.quit(true);return false;"
+	onload="window.arguments[0]();"
+	onfocus="opener.Lily.makePatchCurrent(window.arguments[1]);"
+	onclick="opener.Lily.makePatchCurrent(window.arguments[1]);"	
+	title="Untitled"
+    orient="vertical"	
+    id="lilyReadOnlyPatchWindow"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<keyset id="lilyReadOnlyKeySet">
+	  <key id="lilyReadOnlyQuitKey" modifiers="accel" key="Q" oncommand="opener.Lily.quit(true)"/>
+	</keyset>
+	
+	<!-- Menubar  -->
+	<menubar id="lilyReadOnlyMenubar">
+		<menuitem id="menu_FileQuitItem" label="&lily.Quit;" oncommand="opener.Lily.quit(true)"/>				
+	</menubar>	
+	
+	<vbox flex="1">
+		<browser type="content-primary" flex="1" id="browserElement" src="chrome://lily/content/patch.xhtml"/>
+		<statusbar>
+			<statusbarpanel tooltiptext="Read only." class="statusbarpanel-iconic" src="chrome://lily/content/images/lock_open.png" id="lilyIconPanel" width="20"/>
+			<statusbarpanel style="height:24px;font-size:18px;font-family:verdana,DejaVu Sans,sans-serif;" id="lilyStatusPanel" flex="1"/>
+		</statusbar>
+	</vbox>
+	
+</window>

@@ -1,0 +1,24 @@
+//http://www.processing.org/learning/examples/modulo.html
+
+var num = 20;
+var myc = 0;
+
+function setup()
+{
+  size(200,200);
+  fill(255);
+  frameRate(30);
+}
+
+function draw() 
+{ 
+  background(0);
+  myc+=0.1;
+  for(var myi=1; myi<height/num; myi++) { 
+    var myx = (myc%myi)*myi*myi;
+    stroke(102);
+    line(0, myi*num, myx, myi*num);
+    noStroke();
+    rect(myx, myi*num-num/2, 8, num);
+  } 
+}

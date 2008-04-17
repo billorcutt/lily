@@ -1,0 +1,33 @@
+//http://www.processing.org/learning/examples/scale.html
+
+
+var mya = 0.0;
+var mys = 0.0;
+
+function setup()
+{
+  size(200,200);
+  noStroke();
+  rectMode("CENTER");
+  frameRate(30);
+}
+
+function draw()
+{
+
+  background(102);
+  
+  mya = mya + 0.04;
+  mys = cos(mya)*2;
+  
+  translate(width/2, height/2);
+  scale(mys); 
+  fill(51);
+  rect(0, 0, 50, 50); 
+  
+  translate(75, 0);
+  fill(255);
+  scale(mys);
+  rect(0, 0, 50, 50);   
+    
+}

@@ -1,0 +1,29 @@
+//http://www.processing.org/learning/examples/rotate.html
+
+function setup()
+{
+  size(200,200);
+  noStroke();
+  fill(255);
+  frameRate(30);
+}
+
+var angle=0;
+var cosine=0;
+var jitter=0;
+
+function draw()
+{
+  background(102);
+  
+  if(second()%2 == 0){
+    jitter = (random(-0.1, 0.1));
+  }
+  angle = angle + jitter;
+  cosine = cos(angle);
+  
+  translate(width/2, height/2);
+  rotate(cosine);
+  rectMode("CENTER");
+  rect(0, 0, 115, 115);   
+}

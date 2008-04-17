@@ -1,0 +1,8 @@
+HOWTO
+
+* Start the demo by opening the file offline-image-archiver.json.
+
+* The context menu will have an item called "Save this image". Select it while clicking on an image to archive the image.
+
+* Open a browser and navigate to http://localhost:8080/archiver?offset=0 to view your archived images
+

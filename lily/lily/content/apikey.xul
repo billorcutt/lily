@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  id="apiKeyEditDialog"
+  title="Edit API Key"
+  ondialogaccept="return onOK();"
+  onload="initWindow();"
+  persist="screenX screenY width height"
+  windowtype="apiKeyEditWindowType" style="font-size:18px;font-family:verdana,DejaVu Sans,sans-serif">
+
+	<script>
+		//onload handler
+		function initWindow() {
+		
+			if(!window.arguments) {
+				return;
+			}
+			
+			if(window.arguments[0].dataIn.id) {
+				var obj = window.arguments[0].dataIn;
+			
+				document.getElementById("lilyAPIEditName").value=obj.name;
+				document.getElementById("lilyAPIEditKey").value=obj.key;
+				document.getElementById("lilyAPIEditURL").value=obj.url;
+				document.getElementById("lilyAPIEditHashKey").value=obj.id;
+			
+				if(obj.id)
+					document.getElementById("lilyAPIEditHashKey").disabled=true;
+			} else {
+			
+			}
+							
+		}
+		
+		// Called once if and only if the user clicks OK
+		function onOK() {
+				
+			window.arguments[0].dataOut = 	{
+												key:document.getElementById("lilyAPIEditKey").value, 
+												url:document.getElementById("lilyAPIEditURL").value, 
+												name:document.getElementById("lilyAPIEditName").value, 
+												id:document.getElementById("lilyAPIEditHashKey").value
+											};
+
+		   return true;
+		}		
+		
+	</script>
+
+	<grid style="width:600px;padding:10px">
+		<columns><column/><column/></columns>
+		<rows>
+			<row><label value="API Name:"/><textbox style="width:420px" id="lilyAPIEditName"/></row>
+			<row><label value="API Key:"/><textbox style="width:420px" id="lilyAPIEditKey"/></row>
+			<row><label value="URL:"/><textbox style="width:420px" id="lilyAPIEditURL"/></row>
+			<row><label value="API Key ID:"/><textbox style="width:420px" id="lilyAPIEditHashKey"/></row>
+		</rows>
+	</grid>
+
+</dialog>

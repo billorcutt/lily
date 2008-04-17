@@ -1,0 +1,35 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'thresh-help','width':422,'height':341,'color':'#FFFFFF','mode':'performance','objArray':{
+	'thresh!uid=1167525669486':{'name':'thresh','top':161,'left':87,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':19,'width':73,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'500','objID':'thresh!uid=1167525669486','type':'object'},
+	'print!uid=1167526075726':{'name':'print','top':218,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':93,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'elements','objID':'print!uid=1167526075726','type':'object'},
+	'print!uid=1167525757444':{'name':'print','top':217,'left':117,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':19,'width':93,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'collection','objID':'print!uid=1167525757444','type':'object'},
+	'ramp!uid=1167527353404':{'name':'ramp','top':77,'left':51,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':113,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'1 100 1000','objID':'ramp!uid=1167527353404','type':'object'},
+	'button!uid=1167527388695':{'name':'button','top':76,'left':17,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':24,'width':24,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','inspectorConfig':[{name:"buttonText", value:"", label:"Button Text", type:"string", input:"textarea"}],'objID':'button!uid=1167527388695','type':'object'},
+	'launchurl!uid=3548803717610':{'name':'launchurl','top':3,'left':15,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':54,'width':188,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Thresh THRESH','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Thresh", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"THRESH", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=3548803717610','type':'object'},
+	'comment!uid=4731942643533':{'name':'comment','top':248,'left':16,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':10,'width':274,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Object Arguments: threshold interval [100]','inspectorConfig':[{name:"commentText", value:"Object Arguments: threshold interval [100]", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=4731942643533','type':'object'},
+	'comment!uid=1183141081939':{'name':'comment','top':103,'left':170,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':88,'width':228,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Input messages are pushed into an array. When the message stream pauses, the array is output and buffer cleared. The object argument sets the threshold time (in milliseconds) between messages.','inspectorConfig':[{name:"commentText", value:"Input messages are pushed into an array. When the message stream pauses, the array is output and buffer cleared. The object argument sets the threshold time (in milliseconds) between messages.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183141081939','type':'object'},
+	'comment!uid=2366282145882':{'name':'comment','top':12,'left':210,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':24,'width':163,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Collect a stream of messages into an array.','inspectorConfig':[{name:"commentText", value:"Collect a stream of messages into an array.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2366282145882','type':'object'},
+	'thresh!uid=1167525669486.outlet1_print!uid=1167525757444.inlet1':{'inlet':'print!uid=1167525757444.inlet1','outlet':'thresh!uid=1167525669486.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:87,startTop:188,endLeft:87,endTop:198.5},
+{'orientation':'horizontal',startLeft:87,startTop:198.5,endLeft:117,endTop:198.5},
+{'orientation':'vertical',startLeft:117,startTop:198.5,endLeft:117,endTop:222}
+]
+},
+	'ramp!uid=1167527353404.outlet1_print!uid=1167526075726.inlet1':{'inlet':'print!uid=1167526075726.inlet1','outlet':'ramp!uid=1167527353404.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:51,startTop:104,endLeft:51,endTop:163.5},
+{'orientation':'horizontal',startLeft:51,startTop:163.5,endLeft:18,endTop:163.5},
+{'orientation':'vertical',startLeft:18,startTop:163.5,endLeft:18,endTop:223}
+]
+},
+	'ramp!uid=1167527353404.outlet1_thresh!uid=1167525669486.inlet1':{'inlet':'thresh!uid=1167525669486.inlet1','outlet':'ramp!uid=1167527353404.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:51,startTop:104,endLeft:51,endTop:142.5},
+{'orientation':'horizontal',startLeft:51,startTop:142.5,endLeft:87,endTop:142.5},
+{'orientation':'vertical',startLeft:87,startTop:142.5,endLeft:87,endTop:166}
+]
+},
+	'button!uid=1167527388695.outlet1_ramp!uid=1167527353404.inlet1':{'inlet':'ramp!uid=1167527353404.inlet1','outlet':'button!uid=1167527388695.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:17,startTop:107,endLeft:17,endTop:118.5},
+{'orientation':'horizontal',startLeft:17,startTop:118.5,endLeft:51,endTop:118.5},
+{'orientation':'vertical',startLeft:51,startTop:118.5,endLeft:51,endTop:82}
+]
+}}
+}

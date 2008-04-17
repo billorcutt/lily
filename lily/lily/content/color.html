@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<script type="text/javascript" src="chrome://lily/content/lib/jquery/jquery.js"></script>
+		<script src="chrome://lily/content/lib/jquery/plugins/farbtastic10/farbtastic.js"></script>
+		<link rel="stylesheet" type="text/css" href="chrome://lily/content/lib/jquery/plugins/farbtastic10/farbtastic.css"></link>
+
+		<script>
+
+			var mainWindow = window.QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+			                   .getInterface(Components.interfaces.nsIWebNavigation)
+			                   .QueryInterface(Components.interfaces.nsIDocShellTreeItem)
+			                   .rootTreeItem
+			                   .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+			                   .getInterface(Components.interfaces.nsIDOMWindow);
+
+			var initColor=mainWindow.arguments[1].color;
+			var windowType=mainWindow.arguments[1].type;
+			var colorpicker=null;
+
+			function validColor(color) {
+
+				if((color.length==7&&color.charAt(0)=="#")||color=="transparent")
+					return true;
+				else
+					return false;
+			}
+
+			function change(color) {
+				if(validColor(color)) {
+					colorpicker.setColor(color);
+					mainWindow.arguments[0](color);
+
+					if(color!="transparent")
+						document.getElementById("transparentCheckbox").checked=false;
+					else
+						document.getElementById("transparentCheckbox").checked=true;
+
+					if(color!=document.getElementById("displayHex").value)
+						document.getElementById("displayHex").value=color;
+				}
+			}
+
+			function initColorPicker() {
+
+				colorpicker=$.farbtastic($('#picker'),change);
+				document.getElementById("displayHex").addEventListener("change",function(){change(this.value)},false);
+
+				if(windowType=="patch"||windowType=="font")
+					document.getElementById("transparencyDiv").style.display="none";
+				else
+					document.getElementById("transparencyDiv").style.display="block";
+
+
+				if(initColor && initColor!="transparent") {
+					colorpicker.setColor(initColor);
+					document.getElementById("displayHex").value=initColor;
+				} else if(initColor && initColor=="transparent") {
+					colorpicker.setColor("white");
+					document.getElementById("transparentCheckbox").checked=true;
+					document.getElementById("displayHex").value=initColor;
+				} else {
+					colorpicker.setColor("white");
+					document.getElementById("displayHex").value="";
+				}
+
+			}
+
+			function closeWindow() {
+				change(document.getElementById("displayHex").value);
+				mainWindow.close();
+			}
+
+			function setTransparency(bool) {
+				if(bool) {
+					document.getElementById("displayHex").value="transparent";
+					change("transparent");
+				} else {
+					document.getElementById("displayHex").value="";
+				}
+			}
+
+		</script>
+
+	</head>
+	<body style="background:white" id="bodyElement" onload="initColorPicker();">
+		<div style="margin-left:20px;margin-top:25px" id="picker"></div>
+		<div style="margin:auto;text-align:center;font-size:18px;font-family:verdana,DejaVu Sans,sans-serif;margin-top:20px" id="transparencyDiv">
+			<input onclick="setTransparency(this.checked);" style="height:18px;width:18px;margin-right:20px;font-size:18px;font-family:verdana,DejaVu Sans,sans-serif" id="transparentCheckbox" type="checkbox"/> Transparent
+		</div>
+		<div style="margin:auto;text-align:center" id="display">
+			<input style="margin-top:20px;font-size:18px;font-family:verdana,DejaVu Sans,sans-serif;width:180px" id="displayHex" type="text" value=""/>
+		</div>
+		<div style="margin:auto;text-align:center" id="buttons">
+			<input style="margin-top:20px;font-size:18px;font-family:verdana,DejaVu Sans,sans-serif;margin:10px" type="button" value="Revert" onclick="change(initColor)"/>
+			<input style="margin-top:20px;font-size:18px;font-family:verdana,DejaVu Sans,sans-serif;margin:10px" type="button" value="Done" onclick="closeWindow();"/>
+		</div>
+	</body>
+</html>

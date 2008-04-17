@@ -1,0 +1,49 @@
+var patch={'version':'0.1-beta-3a','platform':'apple','title':'poltocar-help','width':442,'height':330,'color':'#FFFFFF','mode':'performance','objArray':{
+	'cartopol!uid=2382002965745':{'name':'cartopol','top':198,'left':63,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':53,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'cartopol!uid=2382002965745','type':'object'},
+	'number!uid=2382003020016':{'name':'number','top':78,'left':20,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':23,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=2382003020016','type':'object'},
+	'bang!uid=2382003260255':{'name':'bang','top':141,'left':86,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':35,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'bang!uid=2382003260255','type':'object'},
+	'number!uid=2382003273215':{'name':'number','top':75,'left':158,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':19,'width':23,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=2382003273215','type':'object'},
+	'launchurl!uid=23681093897861':{'name':'launchurl','top':3,'left':15,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':52,'width':163,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Poltocar POLTOCAR','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Poltocar", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"POLTOCAR", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=23681093897861','type':'object'},
+	'comment!uid=4751258974711':{'name':'comment','top':11,'left':275,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':36,'width':150,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Convert polar to cartesian coordinates','inspectorConfig':[{name:"commentText", value:"Convert polar to cartesian coordinates", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=4751258974711','type':'object'},
+	'comment!uid=2384853177821':{'name':'comment','top':74,'left':194,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':21,'width':77,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'theta/angle','inspectorConfig':[{name:"commentText", value:"theta/angle", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2384853177821','type':'object'},
+	'comment!uid=3577279619155':{'name':'comment','top':77,'left':56,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':21,'width':44,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'radius','inspectorConfig':[{name:"commentText", value:"radius", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3577279619155','type':'object'},
+	'comment!uid=2384853426638':{'name':'comment','top':190,'left':126,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':36,'width':200,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'number or <bang> input in left inlet triggers output','inspectorConfig':[{name:"commentText", value:"number or <bang> input in left inlet triggers output", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2384853426638','type':'object'},
+	'print!uid=2382003044777':{'name':'print','top':263,'left':21,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':45,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'x','objID':'print!uid=2382003044777','type':'object'},
+	'print!uid=2382003060897':{'name':'print','top':264,'left':154,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':45,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'y','objID':'print!uid=2382003060897','type':'object'},
+	'number!uid=2382003020016.outlet1_cartopol!uid=2382002965745.inlet1':{'inlet':'cartopol!uid=2382002965745.inlet1','outlet':'number!uid=2382003020016.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:20,startTop:104,endLeft:20,endTop:183},
+{'orientation':'horizontal',startLeft:20,startTop:183,endLeft:63,endTop:183},
+{'orientation':'vertical',startLeft:63,startTop:183,endLeft:63,endTop:203}
+]
+},
+	'bang!uid=2382003260255.outlet1_cartopol!uid=2382002965745.inlet1':{'inlet':'cartopol!uid=2382002965745.inlet1','outlet':'bang!uid=2382003260255.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:86,startTop:167,endLeft:86,endTop:188.5},
+{'orientation':'horizontal',startLeft:86,startTop:188.5,endLeft:63,endTop:188.5},
+{'orientation':'vertical',startLeft:63,startTop:188.5,endLeft:63,endTop:203}
+]
+},
+	'number!uid=2382003273215.outlet1_bang!uid=2382003260255.inlet1':{'inlet':'bang!uid=2382003260255.inlet1','outlet':'number!uid=2382003273215.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:158,startTop:101,endLeft:158,endTop:129},
+{'orientation':'horizontal',startLeft:158,startTop:129,endLeft:86,endTop:129},
+{'orientation':'vertical',startLeft:86,startTop:129,endLeft:86,endTop:146}
+]
+},
+	'number!uid=2382003273215.outlet1_cartopol!uid=2382002965745.inlet2':{'inlet':'cartopol!uid=2382002965745.inlet2','outlet':'number!uid=2382003273215.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:158,startTop:101,endLeft:158,endTop:183},
+{'orientation':'horizontal',startLeft:158,startTop:183,endLeft:106,endTop:183},
+{'orientation':'vertical',startLeft:106,startTop:183,endLeft:106,endTop:203}
+]
+},
+	'cartopol!uid=2382002965745.outlet1_print!uid=2382003044777.inlet1':{'inlet':'print!uid=2382003044777.inlet1','outlet':'cartopol!uid=2382002965745.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:63,startTop:224,endLeft:63,endTop:246},
+{'orientation':'horizontal',startLeft:63,startTop:246,endLeft:21,endTop:246},
+{'orientation':'vertical',startLeft:21,startTop:246,endLeft:21,endTop:268}
+]
+},
+	'cartopol!uid=2382002965745.outlet2_print!uid=2382003060897.inlet1':{'inlet':'print!uid=2382003060897.inlet1','outlet':'cartopol!uid=2382002965745.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:106,startTop:224,endLeft:106,endTop:244},
+{'orientation':'horizontal',startLeft:106,startTop:244,endLeft:154,endTop:244},
+{'orientation':'vertical',startLeft:154,startTop:244,endLeft:154,endTop:269}
+]
+}}
+}

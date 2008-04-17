@@ -1,0 +1,79 @@
+//http://processing.org/learning/examples/nonlinear.html
+
+var mysize = 8;
+var legth = 50;
+
+var aSize = 0;           // Height of the shape
+var aPos = 0;          // Position of shape
+var aSpeed = 0;        // Speed of the shape
+var aDirection = 1;  // Left or Right
+
+var bPos = 0; 
+var bSpeed = 0;
+var bDirection = 1;
+
+var cPos = 0;
+var cSpeed = 0;
+var cDirection = 1;
+
+var dPos = 0;
+var dSpeed = 0;
+var dDirection = 1;
+
+
+function setup() 
+{
+  size(200, 200);
+  noStroke();
+  frameRate(60);
+  aPos = bPos = cPos = dPos = width/2;
+}
+
+function draw() 
+{
+  background(102);
+  fill(255);
+
+  aSpeed = squared(aPos/(width-mysize)) * 2.0;
+  aPos = aPos + ((aSpeed*2.0+0.5) * aDirection );
+  if (aPos > width-mysize || aPos < 0) { aDirection = aDirection * -1; }
+  rect(aPos, 0, mysize, 50);
+  
+  bSpeed = quad(bPos/(width-mysize)) * 2.0;
+  bPos = bPos + ((bSpeed*2.0+0.5) * bDirection );
+  if (bPos > width-mysize || bPos < 0) { bDirection = bDirection * -1; }
+  rect(bPos, 50, mysize, 50);
+  
+  cSpeed = hump(cPos/(width-mysize)) * 2.0;
+  cPos = cPos + ((cSpeed*2.0+0.5) * cDirection );
+  if (cPos > width-mysize || cPos < 0) { cDirection = cDirection * -1; }
+  rect(cPos, 100, mysize, 50);
+  
+  dSpeed = quadHump(dPos/(width-mysize)) * 2.0;
+  dPos = dPos + ((dSpeed*2.0+0.5) * dDirection );
+  if (dPos > width-mysize || dPos < 0) { dDirection = dDirection * -1; }
+  rect(dPos, 150, mysize, 50);
+  
+}
+
+function quad(sa) {
+  return sa*sa*sa*sa;
+}
+
+function quadHump(sa) {
+  sa = (sa - 0.5); //scale from -2 to 2
+  sa = sa*sa*sa*sa * 16;
+  return sa;
+}
+
+function hump(sa) {
+  sa = (sa - 0.5) * 2; //scale from -2 to 2
+  sa = sa*sa;
+  if(sa > 1) { sa = 1; }
+  return 1-sa;
+}
+
+function squared(sa) {
+  sa = sa*sa;
+  return sa;
+}

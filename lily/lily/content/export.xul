@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window [
+<!ENTITY % lilyDTD SYSTEM "chrome://<PROJECT-NAME>/locale/lily.dtd">
+%lilyDTD;
+]>
+
+<overlay id="<PROJECT-NAME>Overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://global/content/nsDragAndDrop.js"/>
+	<script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
+
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/lib.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/utils.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/debug.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/inspector.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/model.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/patch.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/connection.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/object.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/services.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/lily.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/menus.js"/>
+
+    <stringbundleset id="stringbundleset"> 
+		<stringbundle id="strings_lily" src="chrome://<PROJECT-NAME>/locale/lily.properties"/>
+    </stringbundleset>
+
+	<menupopup id="contentAreaContextMenu">		
+		<menuseparator id="lilyExternContextMenuSeparator"/>
+	</menupopup>
+
+	<broadcasterset id="mainBroadcasterSet"> 
+		<broadcaster id="lilyPatchWindowSidebar" 
+		             autoCheck="false"
+		             type="checkbox"
+		             group="sidebar"
+		             sidebarurl="chrome://<PROJECT-NAME>/content/patch.xhtml"
+		             oncommand="toggleSidebar('lilyPatchWindowSidebar');" />
+	</broadcasterset>
+	
+	<!-- Sidebar -->
+	<vbox id="appcontent">
+		<iframe id="lilyHiddenIframe" collapsed="true"></iframe>
+	    <splitter id="lilyContentSplitter" collapsed="true"/>
+	    <vbox id="lilyContentBox" collapsed="true" persist="height">
+	        <toolbox id="lilyToolbox">
+	            <toolbar id="lilyToolbar">
+	                <toolbarbutton id="lilyCloseButton" label="close" oncommand="Lily.closeSideBarPatch();"/>
+	            </toolbar>
+	        </toolbox>
+	        <hbox id="lilyPanelBox" flex="1">
+				<browser src="chrome://<PROJECT-NAME>/content/patch.xhtml" id="lilyHorizontalSideBar" flex="1"/>
+			</hbox>
+	    </vbox>
+	</vbox>	
+		
+	<!-- Tools Menu -->
+	<menupopup id="menu_ToolsPopup">
+	    <menuitem	type="checkbox" 
+					autocheck="true" 
+					checked="false" 
+					id="open<PROJECT-NAME>PatchItem" 
+					label="<PROJECT-NAME>" 
+					oncommand="Lily.openAddOnPatch('<PROJECT-NAME>',this,<PROJECT-HIDE>)"/>
+	</menupopup>
+	
+</overlay>

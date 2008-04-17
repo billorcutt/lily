@@ -1,0 +1,57 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'dialog-help','width':425,'height':489,'color':'#FFFFFF','mode':'performance','objArray':{
+	'comment!uid=3553703348625':{'name':'comment','top':11,'left':218,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':13,'width':171,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Display an alert, confirm or prompt dialog.','inspectorConfig':[{name:"commentText", value:"Display an alert, confirm or prompt dialog.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3553703348625','type':'object'},
+	'message!uid=1187297467959':{'name':'message','top':74,'left':20,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':10,'width':91,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Hello World!','objID':'message!uid=1187297467959','type':'object'},
+	'message!uid=1187297480287':{'name':'message','top':73,'left':130,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':4,'height':14,'width':102,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Are you sure?','objID':'message!uid=1187297480287','type':'object'},
+	'message!uid=1187297499135':{'name':'message','top':74,'left':258,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':11,'width':135,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Tell me something.','objID':'message!uid=1187297499135','type':'object'},
+	'prepend!uid=2374595056565':{'name':'prepend','top':224,'left':20,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':19,'width':85,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'alert','objID':'prepend!uid=2374595056565','type':'object'},
+	'prepend!uid=1187297525335':{'name':'prepend','top':224,'left':258,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':19,'width':101,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'prompt','objID':'prepend!uid=1187297525335','type':'object'},
+	'prepend!uid=2374595069952':{'name':'prepend','top':225,'left':130,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':103,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'confirm','objID':'prepend!uid=2374595069952','type':'object'},
+	'dialog!uid=1187297558671':{'name':'dialog','top':301,'left':73,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':19,'width':40,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'dialog!uid=1187297558671','type':'object'},
+	'print!uid=1187297563015':{'name':'print','top':394,'left':339,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'print!uid=1187297563015','type':'object'},
+	'comment!uid=1187297818958':{'name':'comment','top':101,'left':263,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':111,'width':113,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<prompt> takes one argument: the message to display in a prompt dialog. returns the user entered text ','inspectorConfig':[{name:"commentText", value:"<prompt> takes one argument: the message to display in a prompt dialog. returns the user entered text ", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1187297818958','type':'object'},
+	'comment!uid=2374595670579':{'name':'comment','top':105,'left':25,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':10,'width':100,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<alert> takes one argument: the message to display in a alert box','inspectorConfig':[{name:"commentText", value:"<alert> takes one argument: the message to display in a alert box", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2374595670579','type':'object'},
+	'comment!uid=2374595720199':{'name':'comment','top':99,'left':135,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':96,'width':113,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<confirm> takes one argument: the message to display in a confirm dialog. returns true/false ','inspectorConfig':[{name:"commentText", value:"<confirm> takes one argument: the message to display in a confirm dialog. returns true/false ", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2374595720199','type':'object'},
+	'launchurl!uid=39055560034812':{'name':'launchurl','top':1,'left':15,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':51,'width':62,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Dialog DIALOG','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Dialog", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"DIALOG", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=39055560034812','type':'object'},
+	'dialog!uid=1187297558671.outlet1_print!uid=1187297563015.inlet1':{'inlet':'print!uid=1187297563015.inlet1','outlet':'dialog!uid=1187297558671.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:73,startTop:328,endLeft:73,endTop:362.5},
+{'orientation':'horizontal',startLeft:73,startTop:362.5,endLeft:339,endTop:362.5},
+{'orientation':'vertical',startLeft:339,startTop:362.5,endLeft:339,endTop:399}
+]
+},
+	'prepend!uid=2374595056565.outlet1_dialog!uid=1187297558671.inlet1':{'inlet':'dialog!uid=1187297558671.inlet1','outlet':'prepend!uid=2374595056565.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:20,startTop:251,endLeft:20,endTop:267},
+{'orientation':'horizontal',startLeft:20,startTop:267,endLeft:73,endTop:267},
+{'orientation':'vertical',startLeft:73,startTop:267,endLeft:73,endTop:306}
+]
+},
+	'prepend!uid=2374595069952.outlet1_dialog!uid=1187297558671.inlet1':{'inlet':'dialog!uid=1187297558671.inlet1','outlet':'prepend!uid=2374595069952.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:130,startTop:252,endLeft:130,endTop:266.5},
+{'orientation':'horizontal',startLeft:130,startTop:266.5,endLeft:73,endTop:266.5},
+{'orientation':'vertical',startLeft:73,startTop:266.5,endLeft:73,endTop:306}
+]
+},
+	'prepend!uid=1187297525335.outlet1_dialog!uid=1187297558671.inlet1':{'inlet':'dialog!uid=1187297558671.inlet1','outlet':'prepend!uid=1187297525335.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:258,startTop:251,endLeft:258,endTop:266.5},
+{'orientation':'horizontal',startLeft:258,startTop:266.5,endLeft:73,endTop:266.5},
+{'orientation':'vertical',startLeft:73,startTop:266.5,endLeft:73,endTop:306}
+]
+},
+	'message!uid=1187297467959.outlet1_prepend!uid=2374595056565.inlet1':{'inlet':'prepend!uid=2374595056565.inlet1','outlet':'message!uid=1187297467959.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:20,startTop:101,endLeft:20,endTop:169.5},
+{'orientation':'horizontal',startLeft:20,startTop:169.5,endLeft:20,endTop:169.5},
+{'orientation':'vertical',startLeft:20,startTop:169.5,endLeft:20,endTop:229}
+]
+},
+	'message!uid=1187297480287.outlet1_prepend!uid=2374595069952.inlet1':{'inlet':'prepend!uid=2374595069952.inlet1','outlet':'message!uid=1187297480287.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:130,startTop:100,endLeft:130,endTop:169},
+{'orientation':'horizontal',startLeft:130,startTop:169,endLeft:130,endTop:169},
+{'orientation':'vertical',startLeft:130,startTop:169,endLeft:130,endTop:230}
+]
+},
+	'message!uid=1187297499135.outlet1_prepend!uid=1187297525335.inlet1':{'inlet':'prepend!uid=1187297525335.inlet1','outlet':'message!uid=1187297499135.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:258,startTop:101,endLeft:258,endTop:169},
+{'orientation':'horizontal',startLeft:258,startTop:169,endLeft:258,endTop:169},
+{'orientation':'vertical',startLeft:258,startTop:169,endLeft:258,endTop:229}
+]
+}}
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$WGGL83"
+                   em:version="0.1-public_beta-2.01">
+    <em:targetApplication RDF:resource="rdf:#$ZGGL83"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:extension:{3eba6510-7445-11db-9fe1-0800200c9a66}"
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAB5mB7H2cu+AVEefZyrGTA6W7BFNp6toVbBlohI4CjXZyoT/NlVJQY1n2h38MI3eX/x8U7mBo+ZIzwUND3IDmQdZ/sago0jpzW9S5rRPJM/3nCsD7laqtQ295ANElwhtIFy25ZU4VOqW7N94Bgqp2dWQHufK2LELIOknjSkFyuZT">
+    <em:updates RDF:resource="rdf:#$VGGL83"/>
+  </RDF:Description>
+  <RDF:Seq RDF:about="rdf:#$VGGL83">
+    <RDF:li RDF:resource="rdf:#$WGGL83"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="rdf:#$ZGGL83"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="3.0b4"
+                   em:maxVersion="3.0b*"
+                   em:updateHash="sha1:5cfff014a8da4a9d8ca57d247f3d771eb72a5eb6"
+                   em:updateLink="http://blog.lilyapp.org/downloads/current/lily.xpi"
+                   em:updateInfoURL="http://blog.lilyapp.org/" />
+</RDF:RDF>

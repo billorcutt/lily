@@ -1,0 +1,27 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'oracle-help','width':253,'height':320,'color':'#FFFFFF','mode':'performance','objArray':{
+	'oracle!uid=1162781088714':{'name':'oracle','top':117,'left':47,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':41,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'oracle!uid=1162781088714','type':'object'},
+	'print!uid=1162781094912':{'name':'print','top':201,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=1162781094912','type':'object'},
+	'print!uid=1162781103211':{'name':'print','top':203,'left':154,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':67,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'done','objID':'print!uid=1162781103211','type':'object'},
+	'button!uid=1168273045506':{'name':'button','top':112,'left':16,'color':'#FFFFFF','fontSize':'10','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':24,'width':24,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','inspectorConfig':[{name:"buttonText", value:"", label:"Button Text", type:"string", input:"textarea"}],'objID':'button!uid=1168273045506','type':'object'},
+	'comment!uid=1168273922491':{'name':'comment','top':121,'left':96,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':54,'width':133,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'<bang> returns a random word from wordie.org','inspectorConfig':[{name:"commentText", value:"<bang> returns a random word from wordie.org", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1168273922491','type':'object'},
+	'launchurl!uid=56819162073448':{'name':'launchurl','top':4,'left':13,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':33,'width':47,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Oracle ORACLE','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Oracle", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"ORACLE", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=56819162073448','type':'object'},
+	'comment!uid=1184722906707':{'name':'comment','top':67,'left':14,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':22,'width':169,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Random word service','inspectorConfig':[{name:"commentText", value:"Random word service", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184722906707','type':'object'},
+	'oracle!uid=1162781088714.outlet1_print!uid=1162781094912.inlet1':{'inlet':'print!uid=1162781094912.inlet1','outlet':'oracle!uid=1162781088714.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:47,startTop:144,endLeft:47,endTop:193},
+{'orientation':'horizontal',startLeft:47,startTop:193,endLeft:18,endTop:193},
+{'orientation':'vertical',startLeft:18,startTop:193,endLeft:18,endTop:206}
+]
+},
+	'oracle!uid=1162781088714.outlet2_print!uid=1162781103211.inlet1':{'inlet':'print!uid=1162781103211.inlet1','outlet':'oracle!uid=1162781088714.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:79,startTop:144,endLeft:79,endTop:193.5},
+{'orientation':'horizontal',startLeft:79,startTop:193.5,endLeft:154,endTop:193.5},
+{'orientation':'vertical',startLeft:154,startTop:193.5,endLeft:154,endTop:208}
+]
+},
+	'button!uid=1168273045506.outlet1_oracle!uid=1162781088714.inlet1':{'inlet':'oracle!uid=1162781088714.inlet1','outlet':'button!uid=1168273045506.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:16,startTop:143,endLeft:16,endTop:109},
+{'orientation':'horizontal',startLeft:16,startTop:109,endLeft:47,endTop:109},
+{'orientation':'vertical',startLeft:47,startTop:109,endLeft:47,endTop:122}
+]
+}}
+}

@@ -1,0 +1,23 @@
+var patch={'version':'0.1-beta-3a','title':'[subpatch]','width':305,'height':266,'color':'#FFFFFF','mode':'performance','objArray':{
+	'asterisk!uid=1160025269560':{'name':'asterisk','top':118,'left':31,'color':'#FFFFFF','fontSize':'10px','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':42,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'asterisk!uid=1160025269560','type':'object'},
+	'inlet!uid=1159973109000':{'name':'inlet','top':20,'left':93,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':4,'height':19,'width':180,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'\"number to be squared\"','objID':'inlet!uid=1159973109000','type':'object'},
+	'outlet!uid=1159973118998':{'name':'outlet','top':195,'left':99,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':155,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'\"squared number\"','objID':'outlet!uid=1159973118998','type':'object'},
+	'inlet!uid=1159973109000.outlet1_asterisk!uid=1160025269560.inlet2':{'inlet':'asterisk!uid=1160025269560.inlet2','outlet':'inlet!uid=1159973109000.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:93,startTop:46,endLeft:93,endTop:96},
+{'orientation':'horizontal',startLeft:93,startTop:96,endLeft:63,endTop:96},
+{'orientation':'vertical',startLeft:63,startTop:96,endLeft:63,endTop:123}
+]
+},
+	'inlet!uid=1159973109000.outlet1_asterisk!uid=1160025269560.inlet1':{'inlet':'asterisk!uid=1160025269560.inlet1','outlet':'inlet!uid=1159973109000.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:93,startTop:46,endLeft:93,endTop:96},
+{'orientation':'horizontal',startLeft:93,startTop:96,endLeft:31,endTop:96},
+{'orientation':'vertical',startLeft:31,startTop:96,endLeft:31,endTop:123}
+]
+},
+	'asterisk!uid=1160025269560.outlet1_outlet!uid=1159973118998.inlet1':{'inlet':'outlet!uid=1159973118998.inlet1','outlet':'asterisk!uid=1160025269560.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:31,startTop:144,endLeft:31,endTop:168},
+{'orientation':'horizontal',startLeft:31,startTop:168,endLeft:99,endTop:168},
+{'orientation':'vertical',startLeft:99,startTop:168,endLeft:99,endTop:200}
+]
+}}
+}

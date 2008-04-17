@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+	<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+	<!DOCTYPE window SYSTEM "chrome://lily/locale/lily.dtd">
+	<window id="lilyExportDialog" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="Save Patch As" onload="init()">
+		<script>
+			<![CDATA[
+			
+				var returnObject = window.arguments[0];
+				var platform = returnObject.platform;
+			
+				function saveDialog() {
+			
+					returnObject["saved"]=true;
+					
+					var textboxes = document.getElementsByTagName("textbox");
+					for(var i=0;i<textboxes.length;i++) {
+						returnObject[textboxes[i].id]=textboxes[i].value;
+					}
+					
+					var checkboxes = document.getElementsByTagName("checkbox");
+					for(var i=0;i<checkboxes.length;i++) {
+						returnObject[checkboxes[i].id]=checkboxes[i].checked;
+					}					
+
+					window.close();
+				}
+			
+				function cancelDialog() {
+					returnObject["saved"]=false;
+					window.close();
+				}
+				
+				function pickFile(id,dialogText) {
+				
+					var el = document.getElementById(id);
+				
+					var file=null;
+					const nsIFilePicker = Components.interfaces.nsIFilePicker;
+
+					var fp = Components.classes["@mozilla.org/filepicker;1"]
+					                   .createInstance(nsIFilePicker);
+
+					if(id!="xulRunnerLocation") {
+						fp.init(window, dialogText, nsIFilePicker.modeOpen);
+						fp.appendFilters(nsIFilePicker.filterAll);
+					} else {
+						fp.init(window, dialogText, nsIFilePicker.modeGetFolder);
+						fp.appendFilters(nsIFilePicker.filterAll);
+					}
+
+					var rv = fp.show();
+					if(navigator.platform.indexOf("Mac")==-1) window.blur();		
+					if (rv == nsIFilePicker.returnOK) {
+						file = fp.file;
+						el.value = file.path;		
+					} else {
+						//el.value = "";
+					}
+					
+				}
+				
+				//init the dialog
+				function init() {
+					if(returnObject.type=="addon") {
+						  document.getElementById("xulRunnerRow").setAttribute("hidden",true);
+					} else {
+						document.getElementById("homepageRow").setAttribute("hidden",true); //hide homepage
+						document.getElementById("descRow").setAttribute("hidden",true); //hide description
+						if(platform=="apple") {
+							
+							var file = Components.classes["@mozilla.org/file/local;1"]
+							                     .createInstance(Components.interfaces.nsILocalFile);
+							file.initWithPath("/Library/Frameworks/XUL.framework/");
+							
+							if(file.exists())
+								document.getElementById("xulRunnerLocation").setAttribute("value","/Library/Frameworks/XUL.framework/");
+						}
+					}
+				}
+				
+			]]>
+		</script>
+		<vbox style="overflow: auto; font-size: 12px; font-family:verdana,DejaVu Sans,sans-serif; margin:20px">
+			<grid>
+				<columns>
+					<column/>
+					<column flex="1"/>									
+				</columns>
+				<rows>
+					<row>
+						<label control="name" value="Project Name"/>
+						<hbox>
+							<textbox flex="1" id="name"/>						
+							<label control="name" value="Hide Main Window"/>
+							<spacer style="width:10px"/>
+							<checkbox id="hideMainCbx" />
+						</hbox>					
+					</row>
+					<row>
+						<label control="creator" value="Creator"/>
+						<hbox>
+							<textbox flex="1" id="creator" value="Lily"/>							
+							<label control="name" value="Hide Debug Window"/>
+							<checkbox checked="true" id="hideDebugCbx"/>
+						</hbox>
+					</row>					
+					<row>
+						<label control="version" value="Version"/>
+						<hbox>						
+							<textbox id="version" value="0.1"/>
+							<label control="emailAddress" value="Email"/>
+							<textbox flex="1" id="emailAddress"/>						
+						</hbox>
+					</row>					
+					<row id="homepageRow">
+						<label control="homepageURL" value="Homepage"/>
+						<textbox id="homepageURL" value="http://www.lilyapp.org/"/>					
+					</row>
+					<row hidden="true">
+						<label control="iconURL" value="Project Icon"/>
+						<hbox><textbox flex="1" id="iconURL"/><button onclick="pickFile('iconURL','Select an icon')" id="iconButton" label="..."/></hbox>					
+					</row>
+					<row id="xulRunnerRow">
+						<label id="xulRunnerLocationLabel" control="xulRunnerLocation" value="XulRunner"/>
+						<hbox><textbox flex="1" id="xulRunnerLocation"/><button onclick="pickFile('xulRunnerLocation','Select the location of xulrunner directory')" id="xulrunnerButton" label="..."/></hbox>					
+					</row>
+					<row id="descRow">
+						<label control="description" value="Description"/>
+						<textbox multiline="true" id="description" value="Made with Lily."/>						
+					</row>													
+				</rows>
+			</grid>
+			<hbox style="padding-top:10px;padding-bottom:0px;">
+				<spacer flex="1"/>
+				<button style="padding-bottom:0px;" label="Cancel" onclick="cancelDialog();"/>
+				<button style="padding-bottom:0px;" default="true" label="Save" onclick="saveDialog();"/>				
+			</hbox>			
+		</vbox>
+	</window>

@@ -1,0 +1,151 @@
+var patch={'version':'0.1-beta-3a','platform':'apple','title':'googledotmap-help','width':688,'height':844,'color':'#FFFFFF','mode':'performance','objArray':{
+	'message!uid=1168836745218':{'name':'message','top':269,'left':139,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':10,'width':205,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'center 25.789264 -80.138728','objID':'message!uid=1168836745218','type':'object'},
+	'message!uid=2337674228762':{'name':'message','top':188,'left':38,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':16,'width':239,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'addmarker 37.752893 -122.408255','objID':'message!uid=2337674228762','type':'object'},
+	'googledotmap!uid=1169614466428':{'name':'googledotmap','top':456,'left':26,'color':'#FFFFFF','fontSize':'10','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':255,'width':602,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'googledotmap!uid=1169614466428','type':'object'},
+	'message!uid=3508102255789':{'name':'message','top':101,'left':26,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':19,'width':260,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'{latitude:37.7496,longitude:-122.4153}','objID':'message!uid=3508102255789','type':'object'},
+	'print!uid=1184705710855':{'name':'print','top':774,'left':26,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'print!uid=1184705710855','type':'object'},
+	'toSource!uid=1184707621141':{'name':'toSource','top':733,'left':26,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':59,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'toSource!uid=1184707621141','type':'object'},
+	'trigger!uid=1170428103900':{'name':'trigger','top':394,'left':38,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':76,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'10 o','objID':'trigger!uid=1170428103900','type':'object'},
+	'message!uid=1184707687317':{'name':'message','top':132,'left':351,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':19,'width':329,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'pan 37.819548028632354 -122.26547241210938','objID':'message!uid=1184707687317','type':'object'},
+	'message!uid=1184707770693':{'name':'message','top':95,'left':351,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':19,'width':265,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'pan 41.902277040963696 -87.5390625','objID':'message!uid=1184707770693','type':'object'},
+	'message!uid=1184708226685':{'name':'message','top':394,'left':345,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':19,'width':67,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'zoomOut','objID':'message!uid=1184708226685','type':'object'},
+	'message!uid=2369416458358':{'name':'message','top':393,'left':277,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':19,'width':59,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'zoomIn','objID':'message!uid=2369416458358','type':'object'},
+	'message!uid=1184709889107':{'name':'message','top':393,'left':208,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':19,'width':39,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'map','objID':'message!uid=1184709889107','type':'object'},
+	'message!uid=2369419781325':{'name':'message','top':394,'left':135,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':19,'width':60,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'satellite','objID':'message!uid=2369419781325','type':'object'},
+	'message!uid=1184710740174':{'name':'message','top':395,'left':594,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':18,'height':19,'width':30,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'17','objID':'message!uid=1184710740174','type':'object'},
+	'message!uid=1184713912900':{'name':'message','top':395,'left':557,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':18,'height':19,'width':22,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'8','objID':'message!uid=1184713912900','type':'object'},
+	'message!uid=1184713926515':{'name':'message','top':395,'left':520,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':19,'width':21,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'4','objID':'message!uid=1184713926515','type':'object'},
+	'trigger!uid=1184714418327':{'name':'trigger','top':394,'left':431,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':16,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'4 s','objID':'trigger!uid=1184714418327','type':'object'},
+	'launchurl!uid=52080278461914':{'name':'launchurl','top':7,'left':25,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':42,'width':154,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Google.maps GOOGLE.MAPS','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Google.maps", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"GOOGLE.MAPS", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=52080278461914','type':'object'},
+	'comment!uid=1184716236849':{'name':'comment','top':16,'left':383,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':21,'width':271,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Display a location using the Google Map API.','inspectorConfig':[{name:"commentText", value:"Display a location using the Google Map API.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184716236849','type':'object'},
+	'comment!uid=1184716705092':{'name':'comment','top':165,'left':361,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':66,'width':300,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<pan> takes two arguments: latitude & longitude. if the coordinates are in the visible part of the map, then the map pans smoothly to the point; if not, the map jumps to the point','inspectorConfig':[{name:"commentText", value:"<pan> takes two arguments: latitude & longitude. if the coordinates are in the visible part of the map, then the map pans smoothly to the point; if not, the map jumps to the point", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184716705092','type':'object'},
+	'comment!uid=1184716855375':{'name':'comment','top':308,'left':146,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':21,'height':66,'width':131,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<satellite> and <map> methods change the map type.','inspectorConfig':[{name:"commentText", value:"<satellite> and <map> methods change the map type.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184716855375','type':'object'},
+	'comment!uid=2369433807361':{'name':'comment','top':290,'left':439,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':21,'height':66,'width':212,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'input numbers in the range 1-17 sets the zoom level for the map. the higher the number, the greater the level of zoom.','inspectorConfig':[{name:"commentText", value:"input numbers in the range 1-17 sets the zoom level for the map. the higher the number, the greater the level of zoom.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2369433807361','type':'object'},
+	'comment!uid=2369434002212':{'name':'comment','top':299,'left':283,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':21,'height':51,'width':131,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<zoomIn> and <zoomOut> methods increment or decrement the map zoom level.','inspectorConfig':[{name:"commentText", value:"<zoomIn> and <zoomOut> methods increment or decrement the map zoom level.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2369434002212','type':'object'},
+	'comment!uid=1184717220118':{'name':'comment','top':128,'left':31,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':24,'height':51,'width':258,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'input coordinate lists or objects in the with the keys \"longitude\", \"latitude\" center the map on that location.','inspectorConfig':[{name:"commentText", value:"input coordinate lists or objects in the with the keys \"longitude\", \"latitude\" center the map on that location.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184717220118','type':'object'},
+	'comment!uid=1184717298953':{'name':'comment','top':215,'left':43,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':25,'height':36,'width':294,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<addmarker> adds a marker to the location supplied in the method arguments.','inspectorConfig':[{name:"commentText", value:"<addmarker> adds a marker to the location supplied in the method arguments.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184717298953','type':'object'},
+	'comment!uid=1184717393141':{'name':'comment','top':257,'left':43,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':26,'height':20,'width':90,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<center> centers the map on the location supplied in the method arguments.','inspectorConfig':[{name:"commentText", value:"<center> centers the map on the location supplied in the method arguments.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184717393141','type':'object'},
+	'comment!uid=1184717480433':{'name':'comment','top':723,'left':89,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':27,'height':10,'width':526,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'clicking the map outputs the click coordinates as an object with keys \"longitude\" and \"latitude\"','inspectorConfig':[{name:"commentText", value:"clicking the map outputs the click coordinates as an object with keys \"longitude\" and \"latitude\"", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184717480433','type':'object'},
+	'message!uid=4692819809287':{'name':'message','top':70,'left':26,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':10,'width':145,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'37.7496 -122.4153','objID':'message!uid=4692819809287','type':'object'},
+	'message!uid=1168836745218.outlet1_googledotmap!uid=1169614466428.inlet1':{'inlet':'googledotmap!uid=1169614466428.inlet1','outlet':'message!uid=1168836745218.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:139,startTop:295,endLeft:139,endTop:379},
+{'orientation':'horizontal',startLeft:139,startTop:379,endLeft:26,endTop:379},
+{'orientation':'vertical',startLeft:26,startTop:379,endLeft:26,endTop:461}
+]
+},
+	'message!uid=2337674228762.outlet1_googledotmap!uid=1169614466428.inlet1':{'inlet':'googledotmap!uid=1169614466428.inlet1','outlet':'message!uid=2337674228762.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:38,startTop:214,endLeft:38,endTop:379},
+{'orientation':'horizontal',startLeft:38,startTop:379,endLeft:26,endTop:379},
+{'orientation':'vertical',startLeft:26,startTop:379,endLeft:26,endTop:461}
+]
+},
+	'googledotmap!uid=1169614466428.outlet1_toSource!uid=1184707621141.inlet1':{'inlet':'toSource!uid=1184707621141.inlet1','outlet':'googledotmap!uid=1169614466428.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:26,startTop:720,endLeft:26,endTop:729},
+{'orientation':'horizontal',startLeft:26,startTop:729,endLeft:26,endTop:729},
+{'orientation':'vertical',startLeft:26,startTop:729,endLeft:26,endTop:738}
+]
+},
+	'toSource!uid=1184707621141.outlet1_print!uid=1184705710855.inlet1':{'inlet':'print!uid=1184705710855.inlet1','outlet':'toSource!uid=1184707621141.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:26,startTop:759,endLeft:26,endTop:769},
+{'orientation':'horizontal',startLeft:26,startTop:769,endLeft:26,endTop:769},
+{'orientation':'vertical',startLeft:26,startTop:769,endLeft:26,endTop:779}
+]
+},
+	'message!uid=3508102255789.outlet1_trigger!uid=1170428103900.inlet1':{'inlet':'trigger!uid=1170428103900.inlet1','outlet':'message!uid=3508102255789.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:26,startTop:127,endLeft:26,endTop:378.5},
+{'orientation':'horizontal',startLeft:26,startTop:378.5,endLeft:38,endTop:378.5},
+{'orientation':'vertical',startLeft:38,startTop:378.5,endLeft:38,endTop:399}
+]
+},
+	'trigger!uid=1170428103900.outlet1_googledotmap!uid=1169614466428.inlet2':{'inlet':'googledotmap!uid=1169614466428.inlet2','outlet':'trigger!uid=1170428103900.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:38,startTop:420,endLeft:38,endTop:441},
+{'orientation':'horizontal',startLeft:38,startTop:441,endLeft:618,endTop:441},
+{'orientation':'vertical',startLeft:618,startTop:441,endLeft:618,endTop:461}
+]
+},
+	'trigger!uid=1170428103900.outlet2_googledotmap!uid=1169614466428.inlet1':{'inlet':'googledotmap!uid=1169614466428.inlet1','outlet':'trigger!uid=1170428103900.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:104,startTop:420,endLeft:104,endTop:449.5},
+{'orientation':'horizontal',startLeft:104,startTop:449.5,endLeft:26,endTop:449.5},
+{'orientation':'vertical',startLeft:26,startTop:449.5,endLeft:26,endTop:461}
+]
+},
+	'message!uid=2369416458358.outlet1_googledotmap!uid=1169614466428.inlet1':{'inlet':'googledotmap!uid=1169614466428.inlet1','outlet':'message!uid=2369416458358.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:277,startTop:419,endLeft:277,endTop:449.5},
+{'orientation':'horizontal',startLeft:277,startTop:449.5,endLeft:26,endTop:449.5},
+{'orientation':'vertical',startLeft:26,startTop:449.5,endLeft:26,endTop:461}
+]
+},
+	'message!uid=1184708226685.outlet1_googledotmap!uid=1169614466428.inlet1':{'inlet':'googledotmap!uid=1169614466428.inlet1','outlet':'message!uid=1184708226685.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:345,startTop:420,endLeft:345,endTop:450},
+{'orientation':'horizontal',startLeft:345,startTop:450,endLeft:26,endTop:450},
+{'orientation':'vertical',startLeft:26,startTop:450,endLeft:26,endTop:461}
+]
+},
+	'message!uid=2369419781325.outlet1_googledotmap!uid=1169614466428.inlet1':{'inlet':'googledotmap!uid=1169614466428.inlet1','outlet':'message!uid=2369419781325.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:135,startTop:420,endLeft:135,endTop:450},
+{'orientation':'horizontal',startLeft:135,startTop:450,endLeft:26,endTop:450},
+{'orientation':'vertical',startLeft:26,startTop:450,endLeft:26,endTop:461}
+]
+},
+	'message!uid=1184709889107.outlet1_googledotmap!uid=1169614466428.inlet1':{'inlet':'googledotmap!uid=1169614466428.inlet1','outlet':'message!uid=1184709889107.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:208,startTop:419,endLeft:208,endTop:449.5},
+{'orientation':'horizontal',startLeft:208,startTop:449.5,endLeft:26,endTop:449.5},
+{'orientation':'vertical',startLeft:26,startTop:449.5,endLeft:26,endTop:461}
+]
+},
+	'message!uid=1184710740174.outlet1_googledotmap!uid=1169614466428.inlet2':{'inlet':'googledotmap!uid=1169614466428.inlet2','outlet':'message!uid=1184710740174.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:594,startTop:421,endLeft:594,endTop:440.5},
+{'orientation':'horizontal',startLeft:594,startTop:440.5,endLeft:618,endTop:440.5},
+{'orientation':'vertical',startLeft:618,startTop:440.5,endLeft:618,endTop:461}
+]
+},
+	'message!uid=1184713912900.outlet1_googledotmap!uid=1169614466428.inlet2':{'inlet':'googledotmap!uid=1169614466428.inlet2','outlet':'message!uid=1184713912900.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:557,startTop:421,endLeft:557,endTop:440.5},
+{'orientation':'horizontal',startLeft:557,startTop:440.5,endLeft:618,endTop:440.5},
+{'orientation':'vertical',startLeft:618,startTop:440.5,endLeft:618,endTop:461}
+]
+},
+	'message!uid=1184713926515.outlet1_googledotmap!uid=1169614466428.inlet2':{'inlet':'googledotmap!uid=1169614466428.inlet2','outlet':'message!uid=1184713926515.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:520,startTop:421,endLeft:520,endTop:440.5},
+{'orientation':'horizontal',startLeft:520,startTop:440.5,endLeft:618,endTop:440.5},
+{'orientation':'vertical',startLeft:618,startTop:440.5,endLeft:618,endTop:461}
+]
+},
+	'message!uid=1184707770693.outlet1_trigger!uid=1184714418327.inlet1':{'inlet':'trigger!uid=1184714418327.inlet1','outlet':'message!uid=1184707770693.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:351,startTop:121,endLeft:351,endTop:294},
+{'orientation':'horizontal',startLeft:351,startTop:294,endLeft:431,endTop:294},
+{'orientation':'vertical',startLeft:431,startTop:294,endLeft:431,endTop:399}
+]
+},
+	'message!uid=1184707687317.outlet1_trigger!uid=1184714418327.inlet1':{'inlet':'trigger!uid=1184714418327.inlet1','outlet':'message!uid=1184707687317.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:351,startTop:158,endLeft:351,endTop:293.5},
+{'orientation':'horizontal',startLeft:351,startTop:293.5,endLeft:431,endTop:293.5},
+{'orientation':'vertical',startLeft:431,startTop:293.5,endLeft:431,endTop:399}
+]
+},
+	'trigger!uid=1184714418327.outlet2_googledotmap!uid=1169614466428.inlet1':{'inlet':'googledotmap!uid=1169614466428.inlet1','outlet':'trigger!uid=1184714418327.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:488,startTop:420,endLeft:488,endTop:450},
+{'orientation':'horizontal',startLeft:488,startTop:450,endLeft:26,endTop:450},
+{'orientation':'vertical',startLeft:26,startTop:450,endLeft:26,endTop:461}
+]
+},
+	'trigger!uid=1184714418327.outlet1_googledotmap!uid=1169614466428.inlet2':{'inlet':'googledotmap!uid=1169614466428.inlet2','outlet':'trigger!uid=1184714418327.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:431,startTop:420,endLeft:431,endTop:440.5},
+{'orientation':'horizontal',startLeft:431,startTop:440.5,endLeft:618,endTop:440.5},
+{'orientation':'vertical',startLeft:618,startTop:440.5,endLeft:618,endTop:461}
+]
+},
+	'message!uid=4692819809287.outlet1_googledotmap!uid=1169614466428.inlet1':{'inlet':'googledotmap!uid=1169614466428.inlet1','outlet':'message!uid=4692819809287.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:26,startTop:96,endLeft:26,endTop:282},
+{'orientation':'horizontal',startLeft:26,startTop:282,endLeft:26,endTop:282},
+{'orientation':'vertical',startLeft:26,startTop:282,endLeft:26,endTop:461}
+]
+},
+	'print!uid=1193020623846':{'name':'print','top':780,'left':564,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':29,'height':19,'width':76,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'loaded','objID':'print!uid=1193020623846','type':'object'},
+	'googledotmap!uid=1169614466428.outlet2_print!uid=1193020623846.inlet1':{'inlet':'print!uid=1193020623846.inlet1','outlet':'googledotmap!uid=1169614466428.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:618,startTop:720,endLeft:618,endTop:773.5},
+{'orientation':'horizontal',startLeft:618,startTop:773.5,endLeft:564,endTop:773.5},
+{'orientation':'vertical',startLeft:564,startTop:773.5,endLeft:564,endTop:785}
+]
+}}
+}

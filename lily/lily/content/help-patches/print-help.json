@@ -1,0 +1,48 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'print-help','width':450,'height':382,'color':'#FFFFFF','mode':'performance','objArray':{
+	'print!uid=1159718590847':{'name':'print','top':246,'left':19,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=1159718590847','type':'object'},
+	'message!uid=1159718596987':{'name':'message','top':84,'left':19,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':16,'width':81,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'hello world','objID':'message!uid=1159718596987','type':'object'},
+	'comment!uid=1162100367520':{'name':'comment','top':14,'left':172,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':21,'width':240,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'Print a message to the Debug Window.','inspectorConfig':[{name:"commentText", value:"Print a message to the Debug Window.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1162100367520','type':'object'},
+	'comment!uid=2324200899585':{'name':'comment','top':115,'left':172,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':32,'width':195,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'any input is printed to the debug window- to see the contents of a hash use a toSource object before print.','inspectorConfig':[{name:"commentText", value:"any input is printed to the debug window- to see the contents of a hash use a toSource object before print.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2324200899585','type':'object'},
+	'message!uid=1162100690244':{'name':'message','top':84,'left':111,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':37,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'123','objID':'message!uid=1162100690244','type':'object'},
+	'message!uid=1162100709160':{'name':'message','top':83,'left':162,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':96,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'{\"id\":12345}','objID':'message!uid=1162100709160','type':'object'},
+	'comment!uid=1183750778046':{'name':'comment','top':277,'left':20,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':14,'width':158,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Object argument: label','inspectorConfig':[{name:"commentText", value:"Object argument: label", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183750778046','type':'object'},
+	'print!uid=1162100287888':{'name':'print','top':280,'left':233,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':173,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'name id\'ing this object','objID':'print!uid=1162100287888','type':'object'},
+	'launchurl!uid=33131187592916':{'name':'launchurl','top':1,'left':15,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':54,'width':141,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Print PRINT','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Print", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"PRINT", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=33131187592916','type':'object'},
+	'comment!uid=3507951824277':{'name':'comment','top':198,'left':25,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':10,'width':202,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'argument to print identifies the output in the debug window.','inspectorConfig':[{name:"commentText", value:"argument to print identifies the output in the debug window.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3507951824277','type':'object'},
+	'message!uid=1159718596987.outlet1_print!uid=1159718590847.inlet1':{'inlet':'print!uid=1159718590847.inlet1','outlet':'message!uid=1159718596987.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:19,startTop:111,endLeft:19,endTop:168.5},
+{'orientation':'horizontal',startLeft:19,startTop:168.5,endLeft:19,endTop:168.5},
+{'orientation':'vertical',startLeft:19,startTop:168.5,endLeft:19,endTop:251}
+]
+},
+	'message!uid=1162100709160.outlet1_print!uid=1159718590847.inlet1':{'inlet':'print!uid=1159718590847.inlet1','outlet':'message!uid=1162100709160.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:162,startTop:110,endLeft:162,endTop:193.5},
+{'orientation':'horizontal',startLeft:162,startTop:193.5,endLeft:19,endTop:193.5},
+{'orientation':'vertical',startLeft:19,startTop:193.5,endLeft:19,endTop:251}
+]
+},
+	'message!uid=1162100690244.outlet1_print!uid=1159718590847.inlet1':{'inlet':'print!uid=1159718590847.inlet1','outlet':'message!uid=1162100690244.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:111,startTop:111,endLeft:111,endTop:194},
+{'orientation':'horizontal',startLeft:111,startTop:194,endLeft:19,endTop:194},
+{'orientation':'vertical',startLeft:19,startTop:194,endLeft:19,endTop:251}
+]
+},
+	'message!uid=1159718596987.outlet1_print!uid=1162100287888.inlet1':{'inlet':'print!uid=1162100287888.inlet1','outlet':'message!uid=1159718596987.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:19,startTop:111,endLeft:19,endTop:193.5},
+{'orientation':'horizontal',startLeft:19,startTop:193.5,endLeft:233,endTop:193.5},
+{'orientation':'vertical',startLeft:233,startTop:193.5,endLeft:233,endTop:285}
+]
+},
+	'message!uid=1162100709160.outlet1_print!uid=1162100287888.inlet1':{'inlet':'print!uid=1162100287888.inlet1','outlet':'message!uid=1162100709160.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:162,startTop:110,endLeft:162,endTop:194},
+{'orientation':'horizontal',startLeft:162,startTop:194,endLeft:233,endTop:194},
+{'orientation':'vertical',startLeft:233,startTop:194,endLeft:233,endTop:285}
+]
+},
+	'message!uid=1162100690244.outlet1_print!uid=1162100287888.inlet1':{'inlet':'print!uid=1162100287888.inlet1','outlet':'message!uid=1162100690244.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:111,startTop:111,endLeft:111,endTop:193.5},
+{'orientation':'horizontal',startLeft:111,startTop:193.5,endLeft:233,endTop:193.5},
+{'orientation':'vertical',startLeft:233,startTop:193.5,endLeft:233,endTop:285}
+]
+}}
+}

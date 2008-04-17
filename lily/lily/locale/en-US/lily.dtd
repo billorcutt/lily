@@ -1,0 +1,60 @@
+<!ENTITY  lily.Lily               	"Lily">
+<!ENTITY  lily.Options              "Options...">
+<!ENTITY  lily.Enable               "Enable">
+
+<!ENTITY  lily.FileMenu             "File">
+<!ENTITY  lily.New              	"New">
+<!ENTITY  lily.Open              	"Open...">
+<!ENTITY  lily.OpenHidden           "Open Hidden...">
+<!ENTITY  lily.CloseHidden          "Close Hidden">
+<!ENTITY  lily.OpenSideBar          "Open Patch in Sidebar...">
+<!ENTITY  lily.OpenReadOnly         "Open as Read Only...">
+<!ENTITY  lily.Save              	"Save">
+<!ENTITY  lily.SaveAs              	"Save As...">
+<!ENTITY  lily.SaveAsAddOn          "Save As Add-on...">
+<!ENTITY  lily.SaveAsApp            "Save As App...">
+<!ENTITY  lily.Close              	"Close">
+<!ENTITY  lily.Quit              	"Quit">
+
+<!ENTITY  lily.EditMenu             "Edit">
+<!ENTITY  lily.Paste              	"Paste">
+<!ENTITY  lily.Copy              	"Copy">
+<!ENTITY  lily.Cut              	"Cut">
+<!ENTITY  lily.Clear              	"Clear">
+<!ENTITY  lily.SelectAll            "Select All">
+
+<!ENTITY  lily.PatchMenu            "Patch">
+<!ENTITY  lily.Edit		            "Edit">
+<!ENTITY  lily.ZoomIn		        "Zoom In">
+<!ENTITY  lily.ZoomOut		        "Zoom Out">
+<!ENTITY  lily.ZoomReset		    "Zoom Reset">
+<!ENTITY  lily.Hide		            "Hide on Lock">
+<!ENTITY  lily.Show		            "Show on Lock">
+<!ENTITY  lily.PatchFolder          "Open Patch Directory">
+
+<!ENTITY  lily.ObjectMenu           "Externals">
+<!ENTITY  lily.GetInfo              "Get Info...">
+<!ENTITY  lily.Font              	"Font">
+<!ENTITY  lily.Color              	"Color...">
+<!ENTITY  lily.Name			        "Edit Names...">
+<!ENTITY  lily.BringForward         "Bring Forward">
+<!ENTITY  lily.SendBack          	"Send Back">
+<!ENTITY  lily.ExtFolder          	"Open Externals Directory">
+
+<!ENTITY  lily.HelpMenu            	"External Help">
+<!ENTITY  lily.OpenHelp           	"Help Screen">
+<!ENTITY  lily.ObjectHelp           "External Help">
+<!ENTITY  lily.ReportABug           "Report a Bug...">
+<!ENTITY  lily.helpFolder          	"Open Help Directory">
+
+<!ENTITY  lily.DebugMenu            "Debug">
+<!ENTITY  lily.SetDebug             "Show All Errors">
+<!ENTITY  lily.SetTrace             "Show All Messages">
+<!ENTITY  lily.DumpListeners        "Dump Listeners">
+<!ENTITY  lily.InstallFolder        "Open Install Directory">
+
+
+<!ENTITY  lily.WindowMenu          	"Window">
+<!ENTITY  lily.DebugWindow          "Debug Window">
+<!ENTITY  lily.InspectorWindow      "Inspector">
+<!ENTITY  lily.ColorPicker      	"Color Picker">

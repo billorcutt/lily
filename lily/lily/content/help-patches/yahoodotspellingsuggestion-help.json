@@ -1,0 +1,41 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'yahoo.spellingsuggestion-help','width':768,'height':381,'color':'#FFFFFF','mode':'performance','objArray':{
+	'yahoodotspellingsuggestion!uid=1169504676679':{'name':'yahoodotspellingsuggestion','top':223,'left':82,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':154,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'yahoodotspellingsuggestion!uid=1169504676679','type':'object'},
+	'message!uid=1169504682342':{'name':'message','top':101,'left':205,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':77,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'madonnna','objID':'message!uid=1169504682342','type':'object'},
+	'print!uid=1169504698805':{'name':'print','top':282,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=1169504698805','type':'object'},
+	'print!uid=1169527686567':{'name':'print','top':285,'left':645,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':67,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'done','objID':'print!uid=1169527686567','type':'object'},
+	'message!uid=2339032401323':{'name':'message','top':98,'left':17,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':75,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'sourdoogh','objID':'message!uid=2339032401323','type':'object'},
+	'message!uid=2339032544811':{'name':'message','top':100,'left':110,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':76,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'maax/msp','objID':'message!uid=2339032544811','type':'object'},
+	'launchurl!uid=61558508396132':{'name':'launchurl','top':4,'left':16,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':42,'width':154,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Yahoo.spellingsuggestion YAHOO.SPELLINGSUGGESTION','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Yahoo.spellingsuggestion", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"YAHOO.SPELLINGSUGGESTION", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=61558508396132','type':'object'},
+	'comment!uid=2369520189201':{'name':'comment','top':160,'left':87,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':52,'width':303,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'input terms are spellchecked and the spellchecked terms are output from the left outlet. a \"bang\" is issued from the right outlet.','inspectorConfig':[{name:"commentText", value:"input terms are spellchecked and the spellchecked terms are output from the left outlet. a \"bang\" is issued from the right outlet.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2369520189201','type':'object'},
+	'comment!uid=1184800799527':{'name':'comment','top':66,'left':15,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':18,'width':321,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Check the spelling of a word using Yahoo Web API.','inspectorConfig':[{name:"commentText", value:"Check the spelling of a word using Yahoo Web API.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184800799527','type':'object'},
+	'message!uid=1169504682342.outlet1_yahoodotspellingsuggestion!uid=1169504676679.inlet1':{'inlet':'yahoodotspellingsuggestion!uid=1169504676679.inlet1','outlet':'message!uid=1169504682342.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:205,startTop:128,endLeft:205,endTop:154.5},
+{'orientation':'horizontal',startLeft:205,startTop:154.5,endLeft:82,endTop:154.5},
+{'orientation':'vertical',startLeft:82,startTop:154.5,endLeft:82,endTop:228}
+]
+},
+	'yahoodotspellingsuggestion!uid=1169504676679.outlet1_print!uid=1169504698805.inlet1':{'inlet':'print!uid=1169504698805.inlet1','outlet':'yahoodotspellingsuggestion!uid=1169504676679.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:82,startTop:250,endLeft:82,endTop:269},
+{'orientation':'horizontal',startLeft:82,startTop:269,endLeft:18,endTop:269},
+{'orientation':'vertical',startLeft:18,startTop:269,endLeft:18,endTop:287}
+]
+},
+	'yahoodotspellingsuggestion!uid=1169504676679.outlet2_print!uid=1169527686567.inlet1':{'inlet':'print!uid=1169527686567.inlet1','outlet':'yahoodotspellingsuggestion!uid=1169504676679.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:230,startTop:250,endLeft:230,endTop:266},
+{'orientation':'horizontal',startLeft:230,startTop:266,endLeft:645,endTop:266},
+{'orientation':'vertical',startLeft:645,startTop:266,endLeft:645,endTop:290}
+]
+},
+	'message!uid=2339032401323.outlet1_yahoodotspellingsuggestion!uid=1169504676679.inlet1':{'inlet':'yahoodotspellingsuggestion!uid=1169504676679.inlet1','outlet':'message!uid=2339032401323.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:17,startTop:125,endLeft:17,endTop:169},
+{'orientation':'horizontal',startLeft:17,startTop:169,endLeft:82,endTop:169},
+{'orientation':'vertical',startLeft:82,startTop:169,endLeft:82,endTop:228}
+]
+},
+	'message!uid=2339032544811.outlet1_yahoodotspellingsuggestion!uid=1169504676679.inlet1':{'inlet':'yahoodotspellingsuggestion!uid=1169504676679.inlet1','outlet':'message!uid=2339032544811.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:110,startTop:127,endLeft:110,endTop:142},
+{'orientation':'horizontal',startLeft:110,startTop:142,endLeft:82,endTop:142},
+{'orientation':'vertical',startLeft:82,startTop:142,endLeft:82,endTop:228}
+]
+}}
+}

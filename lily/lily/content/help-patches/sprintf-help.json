@@ -1,0 +1,74 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'sprintf-help','width':530,'height':614,'color':'#FFFFFF','mode':'performance','objArray':{
+	'sprintf!uid=1167580232056':{'name':'sprintf','top':197,'left':73,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':143,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'%02dblahstring','objID':'sprintf!uid=1167580232056','type':'object'},
+	'number!uid=1167580246381':{'name':'number','top':145,'left':25,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':19,'width':22,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=1167580246381','type':'object'},
+	'print!uid=1167580255729':{'name':'print','top':306,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':4,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=1167580255729','type':'object'},
+	'message!uid=1167580377552':{'name':'message','top':346,'left':26,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':15,'width':73,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'FOO BAR','objID':'message!uid=1167580377552','type':'object'},
+	'print!uid=1167580383760':{'name':'print','top':473,'left':26,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=1167580383760','type':'object'},
+	'print!uid=1167581075649':{'name':'print','top':306,'left':263,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=1167581075649','type':'object'},
+	'message!uid=1167581386241':{'name':'message','top':146,'left':261,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':17,'width':72,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'50 50 50','objID':'message!uid=1167581386241','type':'object'},
+	'sprintf!uid=1167580303128':{'name':'sprintf','top':230,'left':379,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':15,'height':19,'width':113,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'%f %x %o','objID':'sprintf!uid=1167580303128','type':'object'},
+	'message!uid=2338153457300':{'name':'message','top':147,'left':409,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':19,'width':79,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'[50,50,50]','objID':'message!uid=2338153457300','type':'object'},
+	'sprintf!uid=1167580367804':{'name':'sprintf','top':406,'left':57,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':19,'width':123,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'foo%sbar%s','objID':'sprintf!uid=1167580367804','type':'object'},
+	'launchurl!uid=30763201682525':{'name':'launchurl','top':1,'left':15,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':54,'width':198,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Sprintf SPRINTF','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Sprintf", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"SPRINTF", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=30763201682525','type':'object'},
+	'comment!uid=1183531762494':{'name':'comment','top':13,'left':267,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':15,'width':204,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Format messages using sprintf.','inspectorConfig':[{name:"commentText", value:"Format messages using sprintf.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183531762494','type':'object'},
+	'comment!uid=3550413795279':{'name':'comment','top':514,'left':23,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':15,'width':205,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Object arguments: [formatting]','inspectorConfig':[{name:"commentText", value:"Object arguments: [formatting]", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3550413795279','type':'object'},
+	'number!uid=2351112395012':{'name':'number','top':345,'left':262,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':19,'width':22,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=2351112395012','type':'object'},
+	'print!uid=2351112404360':{'name':'print','top':467,'left':269,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':4,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'print!uid=2351112404360','type':'object'},
+	'comment!uid=1183561241629':{'name':'comment','top':61,'left':14,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':48,'width':482,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'implementation of the standard sprintf function. input messages are formatted using the format tags in the object arguments. Most programmings have a sprintf function- see an online reference for a explanation of how sprintf works','inspectorConfig':[{name:"commentText", value:"implementation of the standard sprintf function. input messages are formatted using the format tags in the object arguments. Most programmings have a sprintf function- see an online reference for a explanation of how sprintf works", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183561241629','type':'object'},
+	'launchurl!uid=1183561683077':{'name':'launchurl','top':513,'left':230,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':23,'height':16,'width':268,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://perldoc.perl.org/functions/sprintf.html','inspectorConfig':[{name:"linkURL", value:"http://perldoc.perl.org/functions/sprintf.html", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=1183561683077','type':'object'},
+	'sprintf!uid=2351112380687':{'name':'sprintf','top':406,'left':314,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':18,'height':19,'width':67,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'%c','objID':'sprintf!uid=2351112380687','type':'object'},
+	'number!uid=1167580246381.outlet1_sprintf!uid=1167580232056.inlet1':{'inlet':'sprintf!uid=1167580232056.inlet1','outlet':'number!uid=1167580246381.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:25,startTop:172,endLeft:25,endTop:185},
+{'orientation':'horizontal',startLeft:25,startTop:185,endLeft:73,endTop:185},
+{'orientation':'vertical',startLeft:73,startTop:185,endLeft:73,endTop:202}
+]
+},
+	'sprintf!uid=1167580232056.outlet1_print!uid=1167580255729.inlet1':{'inlet':'print!uid=1167580255729.inlet1','outlet':'sprintf!uid=1167580232056.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:73,startTop:224,endLeft:73,endTop:240},
+{'orientation':'horizontal',startLeft:73,startTop:240,endLeft:24,endTop:240},
+{'orientation':'vertical',startLeft:24,startTop:240,endLeft:24,endTop:311}
+]
+},
+	'message!uid=1167581386241.outlet1_sprintf!uid=1167580303128.inlet1':{'inlet':'sprintf!uid=1167580303128.inlet1','outlet':'message!uid=1167581386241.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:261,startTop:173,endLeft:261,endTop:209},
+{'orientation':'horizontal',startLeft:261,startTop:209,endLeft:379,endTop:209},
+{'orientation':'vertical',startLeft:379,startTop:209,endLeft:379,endTop:235}
+]
+},
+	'sprintf!uid=1167580303128.outlet1_print!uid=1167581075649.inlet1':{'inlet':'print!uid=1167581075649.inlet1','outlet':'sprintf!uid=1167580303128.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:379,startTop:257,endLeft:379,endTop:276},
+{'orientation':'horizontal',startLeft:379,startTop:276,endLeft:263,endTop:276},
+{'orientation':'vertical',startLeft:263,startTop:276,endLeft:263,endTop:311}
+]
+},
+	'message!uid=2338153457300.outlet1_sprintf!uid=1167580303128.inlet1':{'inlet':'sprintf!uid=1167580303128.inlet1','outlet':'message!uid=2338153457300.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:409,startTop:174,endLeft:409,endTop:214},
+{'orientation':'horizontal',startLeft:409,startTop:214,endLeft:379,endTop:214},
+{'orientation':'vertical',startLeft:379,startTop:214,endLeft:379,endTop:235}
+]
+},
+	'message!uid=1167580377552.outlet1_sprintf!uid=1167580367804.inlet1':{'inlet':'sprintf!uid=1167580367804.inlet1','outlet':'message!uid=1167580377552.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:26,startTop:373,endLeft:26,endTop:394},
+{'orientation':'horizontal',startLeft:26,startTop:394,endLeft:57,endTop:394},
+{'orientation':'vertical',startLeft:57,startTop:394,endLeft:57,endTop:411}
+]
+},
+	'sprintf!uid=1167580367804.outlet1_print!uid=1167580383760.inlet1':{'inlet':'print!uid=1167580383760.inlet1','outlet':'sprintf!uid=1167580367804.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:57,startTop:433,endLeft:57,endTop:455},
+{'orientation':'horizontal',startLeft:57,startTop:455,endLeft:26,endTop:455},
+{'orientation':'vertical',startLeft:26,startTop:455,endLeft:26,endTop:478}
+]
+},
+	'number!uid=2351112395012.outlet1_sprintf!uid=2351112380687.inlet1':{'inlet':'sprintf!uid=2351112380687.inlet1','outlet':'number!uid=2351112395012.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:262,startTop:372,endLeft:262,endTop:390},
+{'orientation':'horizontal',startLeft:262,startTop:390,endLeft:314,endTop:390},
+{'orientation':'vertical',startLeft:314,startTop:390,endLeft:314,endTop:411}
+]
+},
+	'sprintf!uid=2351112380687.outlet1_print!uid=2351112404360.inlet1':{'inlet':'print!uid=2351112404360.inlet1','outlet':'sprintf!uid=2351112380687.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:314,startTop:433,endLeft:314,endTop:445},
+{'orientation':'horizontal',startLeft:314,startTop:445,endLeft:269,endTop:445},
+{'orientation':'vertical',startLeft:269,startTop:445,endLeft:269,endTop:472}
+]
+}}
+}

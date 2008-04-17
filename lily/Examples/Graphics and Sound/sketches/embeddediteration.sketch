@@ -1,0 +1,20 @@
+
+//http://www.processing.org/learning/examples/embeddediteration.html
+
+var box_size = 11; 
+var box_space = 12; 
+var margin = 7; 
+
+size(200, 200); 
+background(0); 
+noStroke(); 
+
+// Draw gray boxes 
+
+for(var i = margin; i < width-margin; i += box_space) { 
+  for(var j = margin; j < height-margin; j += box_space) { 
+    fill(255 - box_size*10); 
+    rect(j, i, box_size, box_size); 
+  } 
+  box_size = box_size - 0.6; 
+}

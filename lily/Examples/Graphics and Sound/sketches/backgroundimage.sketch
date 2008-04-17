@@ -1,0 +1,24 @@
+//http://www.processing.org/learning/examples/backgroundimage.html
+
+var bg=null;
+var a=0; 
+
+function setup() 
+{
+  size(200,200);
+  frameRate(30);
+  // The background image must be the same size as the parameters
+  // varo the size() method. In this program, the size of "milan_rubbish.jpg"
+  // is 200 x 200 pixels.
+  bg = loadImage("chrome://lily/content/help-patches/milan_rubbish.jpg",null); //ignore the image callback since we dont need image size
+}
+
+function draw() 
+{
+  background(bg);
+
+  a = (a + 1)%(width+32);
+  stroke(226, 204, 0);
+  line(0, a, width, a-26);
+  line(0, a-6, width, a-32);
+}

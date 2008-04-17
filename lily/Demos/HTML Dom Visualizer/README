@@ -1,0 +1,8 @@
+HOWTO
+
+* Start the demo by opening the file html-dom-visualizer.json.
+
+* Clicking the message boxes at the top ("dom_parser1.sketch", etc) executes that particular visualization script on whatever HTML document is currently loaded in the browser window.
+
+* Performance varies depending on the HTML doc & sketch. Sketch 4 in particular is slow with whatever document is used.
+

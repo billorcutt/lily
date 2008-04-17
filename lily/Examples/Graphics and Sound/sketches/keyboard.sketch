@@ -1,0 +1,33 @@
+//http://www.processing.org/learning/examples/keyboard.html
+
+var numChars = 26;
+var colors = new Array(numChars);
+var keyIndex = 0;
+var keyScale = 0;
+var rectWidth = 0;
+
+    
+function setup()
+{
+  size(200, 200);
+  noStroke();
+  background(0);
+  keyScale = 200/numChars-1.0;
+  rectWidth = width/4;
+}
+
+function draw()
+{ 
+  if(isKeyPressed) {
+    if(key >= 'A' && key <= 'z') {
+      if(key <= 'Z') {
+        keyIndex = keyCode-String.charCodeAt('A');
+      } else {
+        keyIndex = keyCode-String.charCodeAt('a');
+      }
+      fill(millis()%255);
+      var beginRect = rectWidth/2 + keyIndex*keyScale-rectWidth/2;
+      rect(beginRect, 0.0, rectWidth, height);
+    }
+  }
+}

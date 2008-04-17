@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+<!ENTITY % lilyDTD SYSTEM "chrome://lily/locale/lily.dtd">
+%lilyDTD;
+]>
+
+<window
+	onclose="opener.Lily.close(window.arguments[1]);return false;"
+	onload="window.arguments[0]();"
+	onfocus="opener.Lily.makePatchCurrent(window.arguments[1]);"
+	onclick="opener.Lily.makePatchCurrent(window.arguments[1]);"	
+	title="Untitled"
+    id="lilyHiddenPatchWindow"
+	style="background:transparent !important"
+	hidechrome="true" 
+	width="0" 
+	height="0" 
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<keyset id="lilyReadOnlyKeySet">
+	  <key id="lilyReadOnlyCloseKey" modifiers="accel" key="W" oncommand="opener.Lily.close()"/>
+	</keyset>
+	
+	<vbox height="0" width="0" style="height:0px;width:0px">
+		<browser type="content-primary" id="browserElement" src="chrome://lily/content/patch.xhtml"/>
+		<statusbar>
+			<statusbarpanel style="display:none;" class="statusbarpanel-iconic" src="chrome://lily/content/images/lock_open.png" id="lilyIconPanel" hidden="true" height="0" width="0"/>
+			<statusbarpanel style="display:none;font-size:0;font-family:verdana,DejaVu Sans,sans-serif;" id="lilyStatusPanel" height="0" width="0" hidden="true"/>
+		</statusbar>
+	</vbox>
+	
+</window>

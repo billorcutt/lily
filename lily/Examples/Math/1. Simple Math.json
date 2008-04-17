@@ -1,0 +1,125 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'1. Simple Math','width':810,'height':518,'color':'#FFFFFF','mode':'performance','objArray':{
+	'number!uid=1189518181681':{'name':'number','top':34,'left':44,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':23,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=1189518181681','type':'object'},
+	'plus!uid=1189518191105':{'name':'plus','top':81,'left':44,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':44,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'plus!uid=1189518191105','type':'object'},
+	'print!uid=1189518405546':{'name':'print','top':412,'left':133,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':74,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Divide','objID':'print!uid=1189518405546','type':'object'},
+	'print!uid=1189518389130':{'name':'print','top':412,'left':215,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':84,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Multiply','objID':'print!uid=1189518389130','type':'object'},
+	'print!uid=1189518362218':{'name':'print','top':411,'left':306,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':89,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Subtract','objID':'print!uid=1189518362218','type':'object'},
+	'print!uid=1189518320946':{'name':'print','top':411,'left':401,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':62,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Plus','objID':'print!uid=1189518320946','type':'object'},
+	'comment!uid=1190056521616':{'name':'comment','top':27,'left':99,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':42,'width':324,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'addition, subtraction, multiplication, division and modulo: input numbers trigger a calculation using the object argument and the input number as the operands.','inspectorConfig':[{name:"commentText", value:"addition, subtraction, multiplication, division and modulo: input numbers trigger a calculation using the object argument and the input number as the operands.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1190056521616','type':'object'},
+	'minus!uid=1189518205346':{'name':'minus','top':142,'left':44,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':39,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'minus!uid=1189518205346','type':'object'},
+	'asterisk!uid=1189518221298':{'name':'asterisk','top':215,'left':44,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':42,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'asterisk!uid=1189518221298','type':'object'},
+	'print!uid=1190056700959':{'name':'print','top':412,'left':44,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':80,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Modulo','objID':'print!uid=1190056700959','type':'object'},
+	'modulo!uid=1190056728095':{'name':'modulo','top':349,'left':44,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':16,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'10','objID':'modulo!uid=1190056728095','type':'object'},
+	'slash!uid=1189518250258':{'name':'slash','top':289,'left':44,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':19,'width':39,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'slash!uid=1189518250258','type':'object'},
+	'number!uid=1190056940119':{'name':'number','top':260,'left':511,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':19,'width':23,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=1190056940119','type':'object'},
+	'plus!uid=1190056951343':{'name':'plus','top':349,'left':511,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':11,'width':70,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'0','objID':'plus!uid=1190056951343','type':'object'},
+	'number!uid=1190056984399':{'name':'number','top':398,'left':511,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':15,'height':19,'width':23,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=1190056984399','type':'object'},
+	'comment!uid=1190057124420':{'name':'comment','top':61,'left':511,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':66,'width':264,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'calculating a square: the input number is first sent to the right inlet as an operand and then sent to left inlet where it is multiplied by itself.','inspectorConfig':[{name:"commentText", value:"calculating a square: the input number is first sent to the right inlet as an operand and then sent to left inlet where it is multiplied by itself.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1190057124420','type':'object'},
+	'number!uid=1190057265743':{'name':'number','top':36,'left':507,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':17,'height':19,'width':23,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=1190057265743','type':'object'},
+	'trigger!uid=1190057272927':{'name':'trigger','top':137,'left':507,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':18,'height':17,'width':56,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'i i','objID':'trigger!uid=1190057272927','type':'object'},
+	'asterisk!uid=1190057287327':{'name':'asterisk','top':175,'left':507,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':14,'width':61,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'1','objID':'asterisk!uid=1190057287327','type':'object'},
+	'number!uid=1190057385840':{'name':'number','top':206,'left':507,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':19,'width':23,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=1190057385840','type':'object'},
+	'comment!uid=2380114583228':{'name':'comment','top':287,'left':517,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':51,'width':243,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'calculating a running total: output is fed back into the right inlet where it will be added to next input number','inspectorConfig':[{name:"commentText", value:"calculating a running total: output is fed back into the right inlet where it will be added to next input number", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2380114583228','type':'object'},
+	'number!uid=1189518181681.outlet1_plus!uid=1189518191105.inlet1':{'inlet':'plus!uid=1189518191105.inlet1','outlet':'number!uid=1189518181681.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:44,startTop:61,endLeft:44,endTop:71},
+{'orientation':'horizontal',startLeft:44,startTop:71,endLeft:44,endTop:71},
+{'orientation':'vertical',startLeft:44,startTop:71,endLeft:44,endTop:86}
+]
+},
+	'plus!uid=1189518191105.outlet1_print!uid=1189518320946.inlet1':{'inlet':'print!uid=1189518320946.inlet1','outlet':'plus!uid=1189518191105.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:44,startTop:108,endLeft:44,endTop:122},
+{'orientation':'horizontal',startLeft:44,startTop:122,endLeft:401,endTop:122},
+{'orientation':'vertical',startLeft:401,startTop:122,endLeft:401,endTop:416}
+]
+},
+	'minus!uid=1189518205346.outlet1_print!uid=1189518362218.inlet1':{'inlet':'print!uid=1189518362218.inlet1','outlet':'minus!uid=1189518205346.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:44,startTop:169,endLeft:44,endTop:195},
+{'orientation':'horizontal',startLeft:44,startTop:195,endLeft:306,endTop:195},
+{'orientation':'vertical',startLeft:306,startTop:195,endLeft:306,endTop:416}
+]
+},
+	'plus!uid=1189518191105.outlet1_minus!uid=1189518205346.inlet1':{'inlet':'minus!uid=1189518205346.inlet1','outlet':'plus!uid=1189518191105.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:44,startTop:108,endLeft:44,endTop:138},
+{'orientation':'horizontal',startLeft:44,startTop:138,endLeft:44,endTop:138},
+{'orientation':'vertical',startLeft:44,startTop:138,endLeft:44,endTop:147}
+]
+},
+	'asterisk!uid=1189518221298.outlet1_print!uid=1189518389130.inlet1':{'inlet':'print!uid=1189518389130.inlet1','outlet':'asterisk!uid=1189518221298.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:44,startTop:242,endLeft:44,endTop:262},
+{'orientation':'horizontal',startLeft:44,startTop:262,endLeft:215,endTop:262},
+{'orientation':'vertical',startLeft:215,startTop:262,endLeft:215,endTop:417}
+]
+},
+	'minus!uid=1189518205346.outlet1_asterisk!uid=1189518221298.inlet1':{'inlet':'asterisk!uid=1189518221298.inlet1','outlet':'minus!uid=1189518205346.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:44,startTop:169,endLeft:44,endTop:208},
+{'orientation':'horizontal',startLeft:44,startTop:208,endLeft:44,endTop:208},
+{'orientation':'vertical',startLeft:44,startTop:208,endLeft:44,endTop:220}
+]
+},
+	'modulo!uid=1190056728095.outlet1_print!uid=1190056700959.inlet1':{'inlet':'print!uid=1190056700959.inlet1','outlet':'modulo!uid=1190056728095.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:44,startTop:376,endLeft:44,endTop:399},
+{'orientation':'horizontal',startLeft:44,startTop:399,endLeft:44,endTop:399},
+{'orientation':'vertical',startLeft:44,startTop:399,endLeft:44,endTop:417}
+]
+},
+	'asterisk!uid=1189518221298.outlet1_slash!uid=1189518250258.inlet1':{'inlet':'slash!uid=1189518250258.inlet1','outlet':'asterisk!uid=1189518221298.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:44,startTop:242,endLeft:44,endTop:281.5},
+{'orientation':'horizontal',startLeft:44,startTop:281.5,endLeft:44,endTop:281.5},
+{'orientation':'vertical',startLeft:44,startTop:281.5,endLeft:44,endTop:294}
+]
+},
+	'slash!uid=1189518250258.outlet1_print!uid=1189518405546.inlet1':{'inlet':'print!uid=1189518405546.inlet1','outlet':'slash!uid=1189518250258.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:44,startTop:316,endLeft:44,endTop:335},
+{'orientation':'horizontal',startLeft:44,startTop:335,endLeft:133,endTop:335},
+{'orientation':'vertical',startLeft:133,startTop:335,endLeft:133,endTop:417}
+]
+},
+	'slash!uid=1189518250258.outlet1_modulo!uid=1190056728095.inlet1':{'inlet':'modulo!uid=1190056728095.inlet1','outlet':'slash!uid=1189518250258.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:44,startTop:316,endLeft:44,endTop:337.5},
+{'orientation':'horizontal',startLeft:44,startTop:337.5,endLeft:44,endTop:337.5},
+{'orientation':'vertical',startLeft:44,startTop:337.5,endLeft:44,endTop:354}
+]
+},
+	'number!uid=1190056940119.outlet1_plus!uid=1190056951343.inlet1':{'inlet':'plus!uid=1190056951343.inlet1','outlet':'number!uid=1190056940119.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:511,startTop:287,endLeft:511,endTop:325},
+{'orientation':'horizontal',startLeft:511,startTop:325,endLeft:511,endTop:325},
+{'orientation':'vertical',startLeft:511,startTop:325,endLeft:511,endTop:354}
+]
+},
+	'plus!uid=1190056951343.outlet1_number!uid=1190056984399.inlet1':{'inlet':'number!uid=1190056984399.inlet1','outlet':'plus!uid=1190056951343.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:511,startTop:376,endLeft:511,endTop:384},
+{'orientation':'horizontal',startLeft:511,startTop:384,endLeft:511,endTop:384},
+{'orientation':'vertical',startLeft:511,startTop:384,endLeft:511,endTop:403}
+]
+},
+	'number!uid=1190057265743.outlet1_trigger!uid=1190057272927.inlet1':{'inlet':'trigger!uid=1190057272927.inlet1','outlet':'number!uid=1190057265743.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:507,startTop:63,endLeft:507,endTop:71},
+{'orientation':'horizontal',startLeft:507,startTop:71,endLeft:507,endTop:71},
+{'orientation':'vertical',startLeft:507,startTop:71,endLeft:507,endTop:142}
+]
+},
+	'trigger!uid=1190057272927.outlet1_asterisk!uid=1190057287327.inlet1':{'inlet':'asterisk!uid=1190057287327.inlet1','outlet':'trigger!uid=1190057272927.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:507,startTop:164,endLeft:507,endTop:170},
+{'orientation':'horizontal',startLeft:507,startTop:170,endLeft:507,endTop:170},
+{'orientation':'vertical',startLeft:507,startTop:170,endLeft:507,endTop:180}
+]
+},
+	'number!uid=1190056984399.outlet1_plus!uid=1190056951343.inlet2':{'inlet':'plus!uid=1190056951343.inlet2','outlet':'number!uid=1190056984399.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:511,startTop:425,endLeft:511,endTop:434.5},
+{'orientation':'horizontal',startLeft:511,startTop:434.5,endLeft:571,endTop:434.5},
+{'orientation':'vertical',startLeft:571,startTop:434.5,endLeft:571,endTop:354}
+]
+},
+	'trigger!uid=1190057272927.outlet2_asterisk!uid=1190057287327.inlet2':{'inlet':'asterisk!uid=1190057287327.inlet2','outlet':'trigger!uid=1190057272927.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:559,startTop:164,endLeft:559,endTop:169},
+{'orientation':'horizontal',startLeft:559,startTop:169,endLeft:559,endTop:169},
+{'orientation':'vertical',startLeft:559,startTop:169,endLeft:559,endTop:180}
+]
+},
+	'asterisk!uid=1190057287327.outlet1_number!uid=1190057385840.inlet1':{'inlet':'number!uid=1190057385840.inlet1','outlet':'asterisk!uid=1190057287327.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:507,startTop:202,endLeft:507,endTop:205},
+{'orientation':'horizontal',startLeft:507,startTop:205,endLeft:507,endTop:205},
+{'orientation':'vertical',startLeft:507,startTop:205,endLeft:507,endTop:211}
+]
+}}
+}

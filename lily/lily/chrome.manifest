@@ -1,0 +1,4 @@
+content lily file:content/ xpcnativewrappers=no
+locale lily en-US file:locale/en-US/
+skin lily classic/1.0 skin/
+overlay chrome://browser/content/browser.xul chrome://lily/content/lily.xul

@@ -1,0 +1,65 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'yahoo.geocoding-help','width':507,'height':462,'color':'#FFFFFF','mode':'performance','objArray':{
+	'yahoodotgeocoding!uid=1169483935468':{'name':'yahoodotgeocoding','top':212,'left':19,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':105,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'yahoodotgeocoding!uid=1169483935468','type':'object'},
+	'print!uid=1169487989944':{'name':'print','top':329,'left':414,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':67,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'done','objID':'print!uid=1169487989944','type':'object'},
+	'toSource!uid=1169488042330':{'name':'toSource','top':279,'left':19,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':59,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'toSource!uid=1169488042330','type':'object'},
+	'launchurl!uid=55634513427375':{'name':'launchurl','top':4,'left':16,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':42,'width':154,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Yahoo.geocoding YAHOO.GEOCODING','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Yahoo.geocoding", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"YAHOO.GEOCODING", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=55634513427375','type':'object'},
+	'message!uid=1184796269213':{'name':'message','top':104,'left':19,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':19,'width':54,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'94110','objID':'message!uid=1184796269213','type':'object'},
+	'message!uid=1184796303895':{'name':'message','top':104,'left':77,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':15,'width':236,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'1618 Michigan Ave, Miami Beach, FL','objID':'message!uid=1184796303895','type':'object'},
+	'message!uid=1184796375858':{'name':'message','top':140,'left':99,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':29,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'CA','objID':'message!uid=1184796375858','type':'object'},
+	'message!uid=1184796407732':{'name':'message','top':137,'left':255,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':53,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'France','objID':'message!uid=1184796407732','type':'object'},
+	'message!uid=1184796458447':{'name':'message','top':138,'left':164,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':19,'width':49,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Miami','objID':'message!uid=1184796458447','type':'object'},
+	'launchurl!uid=1184796608315':{'name':'launchurl','top':360,'left':133,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':13,'height':16,'width':339,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://developer.yahoo.com/maps/rest/V1/geocode.html','inspectorConfig':[{name:"linkURL", value:"http://developer.yahoo.com/maps/rest/V1/geocode.html", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=1184796608315','type':'object'},
+	'comment!uid=1184796633108':{'name':'comment','top':67,'left':15,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':10,'width':274,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Get geolocation data using Yahoo Web API.','inspectorConfig':[{name:"commentText", value:"Get geolocation data using Yahoo Web API.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184796633108','type':'object'},
+	'comment!uid=1184796700186':{'name':'comment','top':98,'left':315,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':15,'height':137,'width':185,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'input location information (address, zip, city, state and/or country) outputs a block of location info, including coordinates, zip, city, state, country. the right outlet issues a \"bang\" when the operation is complete.','inspectorConfig':[{name:"commentText", value:"input location information (address, zip, city, state and/or country) outputs a block of location info, including coordinates, zip, city, state, country. the right outlet issues a \"bang\" when the operation is complete.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184796700186','type':'object'},
+	'comment!uid=1184797031182':{'name':'comment','top':357,'left':16,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':18,'width':123,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'more api info here','inspectorConfig':[{name:"commentText", value:"more api info here", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1184797031182','type':'object'},
+	'comment!uid=2354416765177':{'name':'comment','top':278,'left':86,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':16,'width':271,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'geocoding result record keys: latitude, longitude, address, zip, city, state, country','inspectorConfig':[{name:"commentText", value:"geocoding result record keys: latitude, longitude, address, zip, city, state, country", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2354416765177','type':'object'},
+	'print!uid=1169488035922':{'name':'print','top':330,'left':19,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':17,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'print!uid=1169488035922','type':'object'},
+	'yahoodotgeocoding!uid=1169483935468.outlet2_print!uid=1169487989944.inlet1':{'inlet':'print!uid=1169487989944.inlet1','outlet':'yahoodotgeocoding!uid=1169483935468.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:117,startTop:239,endLeft:117,endTop:257.5},
+{'orientation':'horizontal',startLeft:117,startTop:257.5,endLeft:414,endTop:257.5},
+{'orientation':'vertical',startLeft:414,startTop:257.5,endLeft:414,endTop:334}
+]
+},
+	'yahoodotgeocoding!uid=1169483935468.outlet1_toSource!uid=1169488042330.inlet1':{'inlet':'toSource!uid=1169488042330.inlet1','outlet':'yahoodotgeocoding!uid=1169483935468.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:19,startTop:239,endLeft:19,endTop:246.5},
+{'orientation':'horizontal',startLeft:19,startTop:246.5,endLeft:19,endTop:246.5},
+{'orientation':'vertical',startLeft:19,startTop:246.5,endLeft:19,endTop:284}
+]
+},
+	'message!uid=1184796303895.outlet1_yahoodotgeocoding!uid=1169483935468.inlet1':{'inlet':'yahoodotgeocoding!uid=1169483935468.inlet1','outlet':'message!uid=1184796303895.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:77,startTop:131,endLeft:77,endTop:204.5},
+{'orientation':'horizontal',startLeft:77,startTop:204.5,endLeft:19,endTop:204.5},
+{'orientation':'vertical',startLeft:19,startTop:204.5,endLeft:19,endTop:217}
+]
+},
+	'message!uid=1184796269213.outlet1_yahoodotgeocoding!uid=1169483935468.inlet1':{'inlet':'yahoodotgeocoding!uid=1169483935468.inlet1','outlet':'message!uid=1184796269213.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:19,startTop:131,endLeft:19,endTop:204.5},
+{'orientation':'horizontal',startLeft:19,startTop:204.5,endLeft:19,endTop:204.5},
+{'orientation':'vertical',startLeft:19,startTop:204.5,endLeft:19,endTop:217}
+]
+},
+	'message!uid=1184796375858.outlet1_yahoodotgeocoding!uid=1169483935468.inlet1':{'inlet':'yahoodotgeocoding!uid=1169483935468.inlet1','outlet':'message!uid=1184796375858.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:99,startTop:167,endLeft:99,endTop:205},
+{'orientation':'horizontal',startLeft:99,startTop:205,endLeft:19,endTop:205},
+{'orientation':'vertical',startLeft:19,startTop:205,endLeft:19,endTop:217}
+]
+},
+	'message!uid=1184796407732.outlet1_yahoodotgeocoding!uid=1169483935468.inlet1':{'inlet':'yahoodotgeocoding!uid=1169483935468.inlet1','outlet':'message!uid=1184796407732.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:255,startTop:164,endLeft:255,endTop:205},
+{'orientation':'horizontal',startLeft:255,startTop:205,endLeft:19,endTop:205},
+{'orientation':'vertical',startLeft:19,startTop:205,endLeft:19,endTop:217}
+]
+},
+	'message!uid=1184796458447.outlet1_yahoodotgeocoding!uid=1169483935468.inlet1':{'inlet':'yahoodotgeocoding!uid=1169483935468.inlet1','outlet':'message!uid=1184796458447.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:164,startTop:165,endLeft:164,endTop:205},
+{'orientation':'horizontal',startLeft:164,startTop:205,endLeft:19,endTop:205},
+{'orientation':'vertical',startLeft:19,startTop:205,endLeft:19,endTop:217}
+]
+},
+	'toSource!uid=1169488042330.outlet1_print!uid=1169488035922.inlet1':{'inlet':'print!uid=1169488035922.inlet1','outlet':'toSource!uid=1169488042330.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:19,startTop:306,endLeft:19,endTop:327.5},
+{'orientation':'horizontal',startLeft:19,startTop:327.5,endLeft:19,endTop:327.5},
+{'orientation':'vertical',startLeft:19,startTop:327.5,endLeft:19,endTop:335}
+]
+}}
+}

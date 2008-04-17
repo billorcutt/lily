@@ -1,0 +1,57 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'scriptaculous.slider-help','width':615,'height':495,'color':'#FFFFFF','mode':'performance','objArray':{
+	'scriptaculousdotslider!uid=1169017887445':{'name':'scriptaculousdotslider','top':213,'left':213,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':30,'width':200,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"rangeStart", value:1, label:"Range Start", type:"number", input:"text"}, {name:"rangeEnd", value:20, label:"Range End", type:"number", input:"text"}, {name:"orientation", value:"horizontal", label:"Orientation", type:"string", options:[{label:"Vertical", value:"vertical"}, {label:"Horizontal", value:"horizontal"}], input:"radio"}],'objID':'scriptaculousdotslider!uid=1169017887445','type':'object'},
+	'print!uid=2338035945695':{'name':'print','top':387,'left':213,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':19,'width':83,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'on slide','objID':'print!uid=2338035945695','type':'object'},
+	'print!uid=1169017971725':{'name':'print','top':388,'left':403,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':100,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'on change','objID':'print!uid=1169017971725','type':'object'},
+	'prepend!uid=1169019400944':{'name':'prepend','top':170,'left':213,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':76,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'set','objID':'prepend!uid=1169019400944','type':'object'},
+	'number!uid=1169019440494':{'name':'number','top':79,'left':22,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':58,'width':43,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'1 20','inspectorConfig':[{name:"minValue", value:1, label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:20, label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=1169019440494','type':'object'},
+	'scriptaculousdotslider!uid=1169019566964':{'name':'scriptaculousdotslider','top':150,'left':525,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':200,'width':30,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'1 20 vertical','inspectorConfig':[{name:"rangeStart", value:1, label:"Range Start", type:"number", input:"text"}, {name:"rangeEnd", value:20, label:"Range End", type:"number", input:"text"}, {name:"orientation", value:"vertical", label:"Orientation", type:"string", options:[{label:"Vertical", value:"vertical"}, {label:"Horizontal", value:"horizontal"}], input:"radio"}],'objID':'scriptaculousdotslider!uid=1169019566964','type':'object'},
+	'comment!uid=1183086846384':{'name':'comment','top':211,'left':24,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':10,'width':180,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'dragging the slider outputs the slider value from the left outlet. when the drag stops the final value is output from the right outlet.','inspectorConfig':[{name:"commentText", value:"dragging the slider outputs the slider value from the left outlet. when the drag stops the final value is output from the right outlet.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183086846384','type':'object'},
+	'comment!uid=1183086979249':{'name':'comment','top':161,'left':296,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':18,'width':214,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'<set> changes the slider value and outputs from the right outlet.','inspectorConfig':[{name:"commentText", value:"<set> changes the slider value and outputs from the right outlet.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183086979249','type':'object'},
+	'comment!uid=1183087097611':{'name':'comment','top':260,'left':224,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':31,'width':174,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'use the inspector to set the range of slider values and its orientation','inspectorConfig':[{name:"commentText", value:"use the inspector to set the range of slider values and its orientation", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183087097611','type':'object'},
+	'comment!uid=1183087529715':{'name':'comment','top':364,'left':23,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':21,'width':116,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'uses scriptaculous','inspectorConfig':[{name:"commentText", value:"uses scriptaculous", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183087529715','type':'object'},
+	'launchurl!uid=1183087571251':{'name':'launchurl','top':383,'left':25,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#0000FF','opacity':1,'zIndex':12,'height':16,'width':132,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://script.aculo.us/','inspectorConfig':[{name:"linkURL", value:"http://script.aculo.us/", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=1183087571251','type':'object'},
+	'comment!uid=1183087637211':{'name':'comment','top':69,'left':339,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':11,'width':262,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Output or display numbers using a slider.','inspectorConfig':[{name:"commentText", value:"Output or display numbers using a slider.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183087637211','type':'object'},
+	'launchurl!uid=1189812748397':{'name':'launchurl','top':5,'left':22,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':13,'height':54,'width':573,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Scriptaculous.slider SCRIPTACULOUS.SLIDER','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Scriptaculous.slider", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"SCRIPTACULOUS.SLIDER", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=1189812748397','type':'object'},
+	'scriptaculousdotslider!uid=1169017887445.outlet1_print!uid=2338035945695.inlet1':{'inlet':'print!uid=2338035945695.inlet1','outlet':'scriptaculousdotslider!uid=1169017887445.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:213,startTop:253,endLeft:213,endTop:287},
+{'orientation':'horizontal',startLeft:213,startTop:287,endLeft:213,endTop:287},
+{'orientation':'vertical',startLeft:213,startTop:287,endLeft:213,endTop:392}
+]
+},
+	'scriptaculousdotslider!uid=1169017887445.outlet2_print!uid=1169017971725.inlet1':{'inlet':'print!uid=1169017971725.inlet1','outlet':'scriptaculousdotslider!uid=1169017887445.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:403,startTop:253,endLeft:403,endTop:287},
+{'orientation':'horizontal',startLeft:403,startTop:287,endLeft:403,endTop:287},
+{'orientation':'vertical',startLeft:403,startTop:287,endLeft:403,endTop:393}
+]
+},
+	'prepend!uid=1169019400944.outlet1_scriptaculousdotslider!uid=1169017887445.inlet1':{'inlet':'scriptaculousdotslider!uid=1169017887445.inlet1','outlet':'prepend!uid=1169019400944.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:213,startTop:197,endLeft:213,endTop:208.5},
+{'orientation':'horizontal',startLeft:213,startTop:208.5,endLeft:213,endTop:208.5},
+{'orientation':'vertical',startLeft:213,startTop:208.5,endLeft:213,endTop:218}
+]
+},
+	'number!uid=1169019440494.outlet1_prepend!uid=1169019400944.inlet1':{'inlet':'prepend!uid=1169019400944.inlet1','outlet':'number!uid=1169019440494.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:22,startTop:146,endLeft:22,endTop:159.5},
+{'orientation':'horizontal',startLeft:22,startTop:159.5,endLeft:213,endTop:159.5},
+{'orientation':'vertical',startLeft:213,startTop:159.5,endLeft:213,endTop:175}
+]
+},
+	'scriptaculousdotslider!uid=1169019566964.outlet1_print!uid=2338035945695.inlet1':{'inlet':'print!uid=2338035945695.inlet1','outlet':'scriptaculousdotslider!uid=1169019566964.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:525,startTop:360,endLeft:525,endTop:369},
+{'orientation':'horizontal',startLeft:525,startTop:369,endLeft:213,endTop:369},
+{'orientation':'vertical',startLeft:213,startTop:369,endLeft:213,endTop:392}
+]
+},
+	'scriptaculousdotslider!uid=1169019566964.outlet2_print!uid=1169017971725.inlet1':{'inlet':'print!uid=1169017971725.inlet1','outlet':'scriptaculousdotslider!uid=1169019566964.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:545,startTop:360,endLeft:545,endTop:380.5},
+{'orientation':'horizontal',startLeft:545,startTop:380.5,endLeft:403,endTop:380.5},
+{'orientation':'vertical',startLeft:403,startTop:380.5,endLeft:403,endTop:393}
+]
+},
+	'prepend!uid=1169019400944.outlet1_scriptaculousdotslider!uid=1169019566964.inlet1':{'inlet':'scriptaculousdotslider!uid=1169019566964.inlet1','outlet':'prepend!uid=1169019400944.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:213,startTop:197,endLeft:213,endTop:121},
+{'orientation':'horizontal',startLeft:213,startTop:121,endLeft:525,endTop:121},
+{'orientation':'vertical',startLeft:525,startTop:121,endLeft:525,endTop:155}
+]
+}}
+}

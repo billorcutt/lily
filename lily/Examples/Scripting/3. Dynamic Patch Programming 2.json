@@ -1,0 +1,114 @@
+var patch={'version':'0.1-beta-3a','title':'3. Dynamic Patch Programming 2','width':454,'height':539,'color':'#FFFFFF','mode':'performance','objArray':{
+	'object!uid=1171352096645':{'name':'object','top':467,'left':14,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':10,'width':115,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'object!uid=1171352096645','type':'object'},
+	'pack!uid=1171352351371':{'name':'pack','top':298,'left':14,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':4,'height':19,'width':57,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'0 0','objID':'pack!uid=1171352351371','type':'object'},
+	'button!uid=1171352471562':{'name':'button','top':150,'left':15,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':21,'width':148,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Make Random Colors','inspectorConfig':[{name:"buttonText", value:"Make Random Colors", label:"Button Text", type:"string", input:"textarea"}],'objID':'button!uid=1171352471562','type':'object'},
+	'asterisk!uid=1171352673497':{'name':'asterisk','top':226,'left':14,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':19,'width':42,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'100','objID':'asterisk!uid=1171352673497','type':'object'},
+	'message!uid=1171352967733':{'name':'message','top':424,'left':14,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':26,'height':10,'width':84,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'setColor $1','objID':'message!uid=1171352967733','type':'object'},
+	'color!uid=1171353030864':{'name':'color','top':382,'left':14,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':27,'height':19,'width':80,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','objID':'color!uid=1171353030864','type':'object'},
+	'trigger!uid=1171353924465':{'name':'trigger','top':227,'left':61,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':62,'height':17,'width':68,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'i i','objID':'trigger!uid=1171353924465','type':'object'},
+	'minus!uid=1189656365459':{'name':'minus','top':191,'left':14,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'1','objID':'minus!uid=1189656365459','type':'object'},
+	'plus!uid=1189656432771':{'name':'plus','top':261,'left':14,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':19,'width':36,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'25','objID':'plus!uid=1189656432771','type':'object'},
+	'comment!uid=1189660033501':{'name':'comment','top':185,'left':139,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':141,'width':262,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'in this example, clicking the button first triggers the uzi external- each number output from uzi deletes any existing panel at that slot and then creates a new panel using commands sent to thispatch. the new panel instance is output from thispatch\'s outlet and is saved in the object external where an object method \"setColor\" is invoked.','inspectorConfig':[{name:"commentText", value:"in this example, clicking the button first triggers the uzi external- each number output from uzi deletes any existing panel at that slot and then creates a new panel using commands sent to thispatch. the new panel instance is output from thispatch's outlet and is saved in the object external where an object method \"setColor\" is invoked.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1189660033501','type':'object'},
+	'uzi!uid=1171352403614':{'name':'uzi','top':153,'left':172,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':19,'width':48,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'4','objID':'uzi!uid=1171352403614','type':'object'},
+	'panel!uid=1189736770060':{'name':'panel','top':12,'left':13,'color':'#cccccc','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':124,'width':425,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'true','inspectorConfig':[{name:"cornerRoundness", value:0, label:"% Corner Roundness", type:"number", input:"text"}, {name:"borderWidth", value:0, label:"Border Width", type:"number", input:"text"}, {name:"borderColor", value:"#000000", label:"Border Color", type:"text", input:"text"}, {name:"borderStyle", value:"solid", label:"Border Style", type:"string", options:[{label:"None", value:"none"}, {label:"Dashed", value:"dashed"}, {label:"Dotted", value:"dotted"}, {label:"Double", value:"double"}, {label:"Groove", value:"groove"}, {label:"Inset", value:"inset"}, {label:"Outset", value:"outset"}, {label:"Ridge", value:"ridge"}, {label:"Solid", value:"solid"}], input:"select"}],'objID':'panel!uid=1189736770060','type':'object'},
+	'trigger!uid=1171352891865':{'name':'trigger','top':340,'left':14,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':14,'width':115,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'random l','objID':'trigger!uid=1171352891865','type':'object'},
+	'message!uid=4695853853208':{'name':'message','top':383,'left':119,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':19,'width':293,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'createObject(\"panel\",null,25,$1,\"obj$2\",null)','objID':'message!uid=4695853853208','type':'object'},
+	'thispatch!uid=3531616261384':{'name':'thispatch','top':424,'left':119,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':60,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','inspectorConfig':[{name:"patchTitle", value:"3. Dynamic Patch Programming 2", label:"Patch Title", type:"text", input:"text"}, {name:"useParentPatch", value:0, label:"Use Parent Patch", type:"boolean", input:"checkbox"}],'objID':'thispatch!uid=3531616261384','type':'object'},
+	'message!uid=4698511092395':{'name':'message','top':342,'left':135,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':14,'width':158,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'deleteObject(\"obj$1\")','objID':'message!uid=4698511092395','type':'object'},
+	'color!uid=1171353030864.outlet1_message!uid=1171352967733.inlet1':{'inlet':'message!uid=1171352967733.inlet1','outlet':'color!uid=1171353030864.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:14,startTop:408,endLeft:14,endTop:418},
+{'orientation':'horizontal',startLeft:14,startTop:418,endLeft:14,endTop:418},
+{'orientation':'vertical',startLeft:14,startTop:418,endLeft:14,endTop:429}
+]
+},
+	'message!uid=1171352967733.outlet1_object!uid=1171352096645.inlet1':{'inlet':'object!uid=1171352096645.inlet1','outlet':'message!uid=1171352967733.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:14,startTop:450,endLeft:14,endTop:459.5},
+{'orientation':'horizontal',startLeft:14,startTop:459.5,endLeft:14,endTop:459.5},
+{'orientation':'vertical',startLeft:14,startTop:459.5,endLeft:14,endTop:472}
+]
+},
+	'trigger!uid=1171353924465.outlet1_pack!uid=1171352351371.inlet2':{'inlet':'pack!uid=1171352351371.inlet2','outlet':'trigger!uid=1171353924465.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:61,startTop:253,endLeft:61,endTop:289.5},
+{'orientation':'horizontal',startLeft:61,startTop:289.5,endLeft:61,endTop:289.5},
+{'orientation':'vertical',startLeft:61,startTop:289.5,endLeft:61,endTop:303}
+]
+},
+	'minus!uid=1189656365459.outlet1_asterisk!uid=1171352673497.inlet1':{'inlet':'asterisk!uid=1171352673497.inlet1','outlet':'minus!uid=1189656365459.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:14,startTop:217,endLeft:14,endTop:227.5},
+{'orientation':'horizontal',startLeft:14,startTop:227.5,endLeft:14,endTop:227.5},
+{'orientation':'vertical',startLeft:14,startTop:227.5,endLeft:14,endTop:231}
+]
+},
+	'asterisk!uid=1171352673497.outlet1_plus!uid=1189656432771.inlet1':{'inlet':'plus!uid=1189656432771.inlet1','outlet':'asterisk!uid=1171352673497.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:14,startTop:252,endLeft:14,endTop:262},
+{'orientation':'horizontal',startLeft:14,startTop:262,endLeft:14,endTop:262},
+{'orientation':'vertical',startLeft:14,startTop:262,endLeft:14,endTop:266}
+]
+},
+	'plus!uid=1189656432771.outlet1_pack!uid=1171352351371.inlet1':{'inlet':'pack!uid=1171352351371.inlet1','outlet':'plus!uid=1189656432771.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:14,startTop:287,endLeft:14,endTop:294},
+{'orientation':'horizontal',startLeft:14,startTop:294,endLeft:14,endTop:294},
+{'orientation':'vertical',startLeft:14,startTop:294,endLeft:14,endTop:303}
+]
+},
+	'button!uid=1171352471562.outlet1_uzi!uid=1171352403614.inlet1':{'inlet':'uzi!uid=1171352403614.inlet1','outlet':'button!uid=1171352471562.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:15,startTop:178,endLeft:15,endTop:149.5},
+{'orientation':'horizontal',startLeft:15,startTop:149.5,endLeft:172,endTop:149.5},
+{'orientation':'vertical',startLeft:172,startTop:149.5,endLeft:172,endTop:158}
+]
+},
+	'uzi!uid=1171352403614.outlet3_trigger!uid=1171353924465.inlet1':{'inlet':'trigger!uid=1171353924465.inlet1','outlet':'uzi!uid=1171352403614.outlet3','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:210,startTop:179,endLeft:210,endTop:185.5},
+{'orientation':'horizontal',startLeft:210,startTop:185.5,endLeft:61,endTop:185.5},
+{'orientation':'vertical',startLeft:61,startTop:185.5,endLeft:61,endTop:232}
+]
+},
+	'uzi!uid=1171352403614.outlet3_minus!uid=1189656365459.inlet1':{'inlet':'minus!uid=1189656365459.inlet1','outlet':'uzi!uid=1171352403614.outlet3','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:210,startTop:179,endLeft:210,endTop:185.5},
+{'orientation':'horizontal',startLeft:210,startTop:185.5,endLeft:14,endTop:185.5},
+{'orientation':'vertical',startLeft:14,startTop:185.5,endLeft:14,endTop:196}
+]
+},
+	'pack!uid=1171352351371.outlet1_trigger!uid=1171352891865.inlet1':{'inlet':'trigger!uid=1171352891865.inlet1','outlet':'pack!uid=1171352351371.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:14,startTop:324,endLeft:14,endTop:332.5},
+{'orientation':'horizontal',startLeft:14,startTop:332.5,endLeft:14,endTop:332.5},
+{'orientation':'vertical',startLeft:14,startTop:332.5,endLeft:14,endTop:345}
+]
+},
+	'trigger!uid=1171352891865.outlet1_color!uid=1171353030864.inlet1':{'inlet':'color!uid=1171353030864.inlet1','outlet':'trigger!uid=1171352891865.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:14,startTop:366,endLeft:14,endTop:375.5},
+{'orientation':'horizontal',startLeft:14,startTop:375.5,endLeft:14,endTop:375.5},
+{'orientation':'vertical',startLeft:14,startTop:375.5,endLeft:14,endTop:387}
+]
+},
+	'message!uid=4695853853208.outlet1_thispatch!uid=3531616261384.inlet1':{'inlet':'thispatch!uid=3531616261384.inlet1','outlet':'message!uid=4695853853208.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:119,startTop:409,endLeft:119,endTop:416.5},
+{'orientation':'horizontal',startLeft:119,startTop:416.5,endLeft:119,endTop:416.5},
+{'orientation':'vertical',startLeft:119,startTop:416.5,endLeft:119,endTop:429}
+]
+},
+	'message!uid=4698511092395.outlet1_thispatch!uid=3531616261384.inlet1':{'inlet':'thispatch!uid=3531616261384.inlet1','outlet':'message!uid=4698511092395.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:135,startTop:368,endLeft:135,endTop:377.5},
+{'orientation':'horizontal',startLeft:135,startTop:377.5,endLeft:119,endTop:377.5},
+{'orientation':'vertical',startLeft:119,startTop:377.5,endLeft:119,endTop:429}
+]
+},
+	'trigger!uid=1171353924465.outlet2_message!uid=4698511092395.inlet1':{'inlet':'message!uid=4698511092395.inlet1','outlet':'trigger!uid=1171353924465.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:119,startTop:253,endLeft:119,endTop:335.5},
+{'orientation':'horizontal',startLeft:119,startTop:335.5,endLeft:135,endTop:335.5},
+{'orientation':'vertical',startLeft:135,startTop:335.5,endLeft:135,endTop:347}
+]
+},
+	'trigger!uid=1171352891865.outlet2_message!uid=4695853853208.inlet1':{'inlet':'message!uid=4695853853208.inlet1','outlet':'trigger!uid=1171352891865.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:119,startTop:366,endLeft:119,endTop:377},
+{'orientation':'horizontal',startLeft:119,startTop:377,endLeft:119,endTop:377},
+{'orientation':'vertical',startLeft:119,startTop:377,endLeft:119,endTop:388}
+]
+},
+	'thispatch!uid=3531616261384.outlet1_object!uid=1171352096645.inlet2':{'inlet':'object!uid=1171352096645.inlet2','outlet':'thispatch!uid=3531616261384.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:119,startTop:450,endLeft:119,endTop:458.5},
+{'orientation':'horizontal',startLeft:119,startTop:458.5,endLeft:119,endTop:458.5},
+{'orientation':'vertical',startLeft:119,startTop:458.5,endLeft:119,endTop:472}
+]
+}}
+}

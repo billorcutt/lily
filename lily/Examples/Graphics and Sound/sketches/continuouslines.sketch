@@ -1,0 +1,13 @@
+//http://processing.org/learning/examples/continuouslines.html
+
+function setup() {
+  size(200, 200);
+  background(102);
+}
+
+function draw() {
+  stroke(255);
+  if(isMousePressed) {
+    line(mouseX, mouseY, pmouseX, pmouseY);
+  }
+}

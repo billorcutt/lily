@@ -1,0 +1,199 @@
+/*
+	js port of the processing applet by Sean McCullough- http://www.cricketschirping.com/weblog/?p=1047
+*/
+
+//import noc.*;
+
+var circles = null; //ArrayList
+var iterationCounter = 0;
+var dragCircle = null;
+var numCircles = 10;
+var notes = [36,38,40,41,43,45,47, 48,50,52,53,55,57,59, 60,62,64,65,67,69,71, 72,74,76,77,79,81,83, 84,86,88,89,91,93,95, 96,98,100,101,103,105];
+
+function Circle(_x,_y,_radius,_id) {
+	this.id = _id||0;
+	this.x = _x||0;
+	this.y = _y||0;
+	this.radius = _radius||0;
+	this.myColor = makeColor(64,64,64,64);
+
+	this.draw=function() {
+		//fill(this.myColor);
+		//stroke(this.myColor);
+		fill(map(int(this.distanceToCenter()),0,150,50,255),.5);		
+		stroke(0);		
+		strokeWeight(5);
+		ellipse(int(this.x), int(this.y), int(this.radius*2), int(this.radius*2));
+		var distMod = int(map(int(this.distanceToCenter()),0,150,0,42));
+		sendMess(int(this.id)+1+" "+notes[distMod]+" "+map(int(this.radius),5,(15*numCircles),0,1));
+	}
+
+	this.contains=function(_x,_y) {
+		var dx = this.x - _x;
+		var dy = this.y - _y;
+		return sqrt(dx*dx + dy*dy) <= this.radius;
+	}
+
+	this.distanceToCenter=function() {
+		var dx = this.x - width/2;
+		var dy = this.y - height/2;
+		return (sqrt(dx*dx + dy*dy));
+	} 
+
+	this.intersects=function(c) {
+		var dx = c.x - this.x;
+		var dy = c.y - this.y;
+		var d = sqrt(dx*dx + dy*dy);
+		return d < this.radius || d < c.radius;
+	}
+}
+
+function setup() {
+	size( 400, 400 );
+	smooth();
+	fill( 0 );
+	frameRate( 20 );
+	circles = createRandomCircles(numCircles);
+	background(255);
+}
+
+function draw() {
+	background( 255 );
+	for (var i=0; i<circles.size(); i++) {
+	  getCircle(i).draw();
+	} 
+	for (var i=1; i<numCircles; i++) {
+	  iterateLayout(i);
+	}
+}
+
+function comp(p1, p2) {
+	var a = p1;
+	var b = p2;
+	if (a.distanceToCenter() < b.distanceToCenter()) 
+		return 1;
+	else if (a.distanceToCenter() > b.distanceToCenter())
+		return -1;
+	else
+		return 0;
+}
+
+function Vector3D(_x,_y,_z) {
+	
+	this.x = _x||0;
+	this.y = _y||0;
+	this.z = _z||0;
+	
+    this.mult=function(f)
+    {
+        this.x *= f;
+        this.y *= f;
+        this.z *= f;
+    }	
+
+    this.normalize=function()
+    {
+        var f 	= Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+	    this.x 	= this.x / f;
+		this.y 	= this.y / f;
+		this.z 	= this.z / f;
+    }
+}
+
+function iterateLayout(iterationCounter) {
+
+	var circs = circles.toArray();
+	circs.sort(comp);
+
+	//fix overlaps
+	var ci = null; 
+	var cj = null;
+	var v = new Vector3D();
+
+	for (var i=0; i<circs.length; i++) {
+		ci = circs[i];
+		for (var j=i+1; j<circs.length; j++) {
+		  	if (i != j) {
+				cj = circs[j];
+				var dx = cj.x - ci.x;
+				var dy = cj.y - ci.y;
+				var r = ci.radius + cj.radius;
+				var d = (dx*dx) + (dy*dy);
+				if (d < (r * r) - 0.01 ) {
+
+					v.x = dx;
+					v.y = dy;
+
+					v.normalize();
+					v.mult((r-sqrt(d))*0.5);
+
+					if (cj != dragCircle) {
+					  cj.x += v.x;
+					  cj.y += v.y;
+					}
+
+					if (ci != dragCircle) {     
+					  ci.x -= v.x;
+					  ci.y -= v.y;       
+					}
+				}
+			}
+		}
+	}
+
+	//Contract
+	var damping = 0.1/float((iterationCounter));
+	for (var i=0; i<circs.length; i++) {
+		var c = circs[i];
+		if (c != dragCircle) {
+			v.x = c.x-width/2;
+			v.y = c.y-height/2;
+			v.mult(damping);
+			c.x -= v.x;
+			c.y -= v.y;
+		}
+	}
+}
+
+function createRandomCircles(n) {
+	var circlesList = new ArrayList();
+	//colorMode(HSB, 255);
+	while (n-- > 0) {
+		var c = new Circle(random(width), random(height), random(n)+random(50), n);
+		//c.myColor = makeColor(random(255), 128, 200, 128);
+		//c.myColor = makeColor(random(255),random(255),random(255),.5);
+		c.myColor = makeColor(0,.5);
+		circlesList.add(c);
+	}
+	//colorMode(RGB,255);
+	return circlesList;
+}
+
+function getCircle(i) {
+  return circles.get(i);
+}
+
+function keyPressed() {
+  circles = createRandomCircles(numCircles);
+}
+
+function mousePressed() {
+  dragCircle = null;
+  for(var i=0; i<circles.size(); i++) {
+    var c = getCircle(i);
+    if (c.contains(mouseX, mouseY)) {
+      dragCircle = c;
+    }  
+  }
+}
+
+function mouseDragged() {
+  if (dragCircle != null) {
+    dragCircle.x = mouseX;
+    dragCircle.y = mouseY;
+  }
+}
+
+function mouseReleased() {
+  dragCircle = null;
+}

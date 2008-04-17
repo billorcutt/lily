@@ -1,0 +1,28 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'fur-help','width':364,'height':303,'color':'#FFFFFF','mode':'performance','objArray':{
+	'fur!uid=1162951120025':{'name':'fur','top':67,'left':20,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'fur!uid=1162951120025','type':'object'},
+	'select!uid=1162951130890':{'name':'select','top':129,'left':57,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':64,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'0 1','objID':'select!uid=1162951130890','type':'object'},
+	'print!uid=1162951124832':{'name':'print','top':201,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':61,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'blur','objID':'print!uid=1162951124832','type':'object'},
+	'print!uid=2325902262031':{'name':'print','top':203,'left':262,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':69,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'focus','objID':'print!uid=2325902262031','type':'object'},
+	'comment!uid=1168236950438':{'name':'comment','top':10,'left':127,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':30,'width':200,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Output messages when a patch gains and loses focus.','inspectorConfig':[{name:"commentText", value:"Output messages when a patch gains and loses focus.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1168236950438','type':'object'},
+	'launchurl!uid=37865050664350':{'name':'launchurl','top':1,'left':15,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':54,'width':92,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Fur FUR','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Fur", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"FUR", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=37865050664350','type':'object'},
+	'comment!uid=2351938666030':{'name':'comment','top':198,'left':111,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':17,'width':124,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'focus + blur = fur','inspectorConfig':[{name:"commentText", value:"focus + blur = fur", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2351938666030','type':'object'},
+	'comment!uid=1183701766000':{'name':'comment','top':109,'left':144,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':46,'width':160,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'outputs a 1 when the patch is focused, 0 when the patch is blurred','inspectorConfig':[{name:"commentText", value:"outputs a 1 when the patch is focused, 0 when the patch is blurred", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1183701766000','type':'object'},
+	'fur!uid=1162951120025.outlet1_select!uid=1162951130890.inlet1':{'inlet':'select!uid=1162951130890.inlet1','outlet':'fur!uid=1162951120025.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:20,startTop:94,endLeft:20,endTop:107},
+{'orientation':'horizontal',startLeft:20,startTop:107,endLeft:57,endTop:107},
+{'orientation':'vertical',startLeft:57,startTop:107,endLeft:57,endTop:134}
+]
+},
+	'select!uid=1162951130890.outlet1_print!uid=1162951124832.inlet1':{'inlet':'print!uid=1162951124832.inlet1','outlet':'select!uid=1162951130890.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:57,startTop:156,endLeft:57,endTop:186},
+{'orientation':'horizontal',startLeft:57,startTop:186,endLeft:24,endTop:186},
+{'orientation':'vertical',startLeft:24,startTop:186,endLeft:24,endTop:206}
+]
+},
+	'select!uid=1162951130890.outlet2_print!uid=2325902262031.inlet1':{'inlet':'print!uid=2325902262031.inlet1','outlet':'select!uid=1162951130890.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:85,startTop:156,endLeft:85,endTop:186.5},
+{'orientation':'horizontal',startLeft:85,startTop:186.5,endLeft:262,endTop:186.5},
+{'orientation':'vertical',startLeft:262,startTop:186.5,endLeft:262,endTop:208}
+]
+}}
+}

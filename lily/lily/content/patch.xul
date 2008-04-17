@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+<!ENTITY % lilyDTD SYSTEM "chrome://lily/locale/lily.dtd">
+%lilyDTD;
+]>
+
+<window
+	onclose="opener.Lily.close(window.arguments[1]);return false;"
+	onload="window.arguments[0]();"
+	onfocus="opener.Lily.makePatchCurrent(window.arguments[1]);"
+	onclick="opener.Lily.makePatchCurrent(window.arguments[1]);"	
+	title="Untitled"
+    id="lilyPatchWindow"
+    orient="vertical"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script>window["windowID"] = window.arguments[1]</script>
+
+	<script type="application/x-javascript" 
+	       src="chrome://global/content/globalOverlay.js"/>
+
+	<keyset id="lilyKeySet">
+	
+	  <key id="lilyNewKey" modifiers="accel" key="N" oncommand="opener.Lily.newPatch()"/>
+	  <key id="lilyOpenKey" modifiers="accel" key="O" oncommand="opener.Lily.openPatch()"/>	
+	  <key id="lilySaveKey" modifiers="accel" key="S" oncommand="opener.Lily.savePatch()"/>
+	  <key id="lilyCloseKey" modifiers="accel" key="W" oncommand="opener.Lily.close(window.arguments[1])"/>
+
+	  <key id="lilyCopyKey" modifiers="accel" key="C" oncommand="opener.Lily.copy()"/>
+	  <key id="lilyCutKey" modifiers="accel" key="X" oncommand="opener.Lily.cut()"/>
+	  <key id="lilyPasteKey" modifiers="accel" key="V"/>
+	  <key id="lilyClearKey" keycode="VK_BACK" oncommand="opener.Lily.clear()"/>
+	  <key id="lilySelectAllKey" modifiers="accel" key="A" oncommand="opener.Lily.selectAll()"/>
+
+	  <key id="lilyToggleEditKey" modifiers="accel" key="E" oncommand="opener.Lily.toggleEdit()"/>
+	
+	  <key id="lilyGetInfoKey" modifiers="accel" key="I" oncommand="opener.Lily.getInfo()"/>
+	  <key id="lilyHideInPerfKey" modifiers="accel" key="L" oncommand="opener.Lily.hideInPerf()"/>
+	  <key id="lilyShowInPerfKey" modifiers="accel" key="K" oncommand="opener.Lily.showInPerf()"/>	
+	  <key id="lilyBringForwardKey" modifiers="accel" key="0" oncommand="opener.Lily.bringForward()"/>
+	  <key id="lilySendBackKey" modifiers="accel" key="9" oncommand="opener.Lily.sendBack()"/>
+	
+	  <key id="lilyHelpMessageKey" modifiers="shift accel" key="H" oncommand="opener.Lily.openHelpMessage()"/>	
+
+	</keyset>
+	
+	<!-- Menubar  -->
+	<menubar id="lilyMenuBar">
+
+		<!-- File Menu -->
+		<menu id="menu_LilyFilePopup" label="&lily.FileMenu;">
+	        <menupopup id="menu_FilePopupMenu" onpopupshowing="opener.LilyMenuBar.setFileMenu(this,window)">
+	            <menuitem id="newPatchItem" key="lilyNewKey" label="&lily.New;" oncommand="opener.Lily.newPatch()"/>
+	            <menuitem id="openPatchItem" key="lilyOpenKey" label="&lily.Open;" oncommand="opener.Lily.openPatch()"/>
+	            <!--<menuitem id="openReadOnlyPatchItem" label="&lily.OpenReadOnly;" oncommand="opener.Lily.openPatch(null,null,true)"/>-->	
+	            <menuitem id="savePatchItem" key="lilySaveKey" label="&lily.Save;" oncommand="opener.Lily.savePatch()"/>
+	            <menuitem id="saveAsPatchItem" label="&lily.SaveAs;" oncommand="opener.Lily.saveAsPatch()"/>	
+	            <menuitem id="saveAsAddOnPatchItem" label="&lily.SaveAsAddOn;" oncommand="opener.Lily.savePatchAsAddOn()"/>	
+	            <menuitem id="saveAsAppPatchItem" label="&lily.SaveAsApp;" oncommand="opener.Lily.savePatchAsApp()"/>		
+	            <menuitem id="closePatchItem" label="&lily.Close;" oncommand="opener.Lily.close()"/>				
+			</menupopup>
+		</menu>
+
+		<!-- Edit Menu -->
+		<menu id="menu_LilyEditPopup" label="&lily.EditMenu;">
+	        <menupopup id="menu_EditPopupMenu" onpopupshowing="opener.LilyMenuBar.setEditMenu(this)">
+	            <menuitem id="copyItemLily" key="lilyCopyKey" label="&lily.Copy;" oncommand="opener.Lily.copy()"/>
+	            <menuitem id="cutItemLily" key="lilyCutKey" label="&lily.Cut;" oncommand="opener.Lily.cut()"/>	
+	            <menuitem id="pasteItemLily" key="lilyPasteKey" label="&lily.Paste;"/>
+	            <menuitem id="clearItemLily" key="lilyClearKey" label="&lily.Clear;" oncommand="opener.Lily.clear()"/>
+	            <menuitem id="selectAllItemLily" key="lilySelectAllKey" label="&lily.SelectAll;" oncommand="opener.Lily.selectAll()"/>		
+			</menupopup>
+		</menu>
+
+		<!-- Patch Menu -->
+		<menu id="menu_LilyPatchPopup" label="&lily.PatchMenu;">
+	        <menupopup id="menu_PatchPopupMenu" onpopupshowing="opener.LilyMenuBar.setPatchMenu(this)">
+	            <menuitem id="patchEditOption" key="lilyToggleEditKey" label="&lily.Edit;" type="checkbox" autocheck="true" checked="false" option="patchEdit" oncommand="opener.Lily.toggleEdit()"/>
+				<menuitem id="menu_PatchColor" label="&lily.Color;" oncommand="opener.Lily.openColorPicker('patch')"/>
+				<!--<menuitem id="menu_PatchZoomIn" label="&lily.ZoomIn;" oncommand="opener.Lily.zoomIn()"/>
+				<menuitem id="menu_PatchZoomOut" label="&lily.ZoomOut;" oncommand="opener.Lily.zoomOut()"/>
+				<menuitem id="menu_PatchZoomReset" label="&lily.ZoomReset;" oncommand="opener.Lily.zoomReset()"/>-->																	
+			</menupopup>
+		</menu>	
+
+		<!-- Object Menu -->				
+		<menu id="menu_LilyObjectPopup" label="&lily.ObjectMenu;">
+	        <menupopup id="menu_ObjectPopupMenu" onpopupshowing="opener.LilyMenuBar.setObjectMenu(this)">
+				<menu id="menu_ObjectNew" label="&lily.New;">
+		        	<menupopup statustext="false" id="menu_ObjectNewPopup" onpopupshowing="opener.LilyMenuBar.setObjectList(this,false,'','opener')"/>
+				</menu>							
+	            <menuitem id="getInfoItem" key="lilyGetInfoKey" label="&lily.GetInfo;" oncommand="setTimeout(function(){opener.Lily.getInfo()},100)"/>
+				<menuitem id="hideInPerfItem" key="lilyHideInPerfKey" label="&lily.Hide;" oncommand="opener.Lily.hideInPerf()"/>	
+	            <menuitem id="showInPerfItem" key="lilyShowInPerfKey" label="&lily.Show;" oncommand="opener.Lily.showInPerf()"/>			
+				<menu id="menu_ObjectFont" label="&lily.Font;">
+			        <menupopup statustext="false" id="menu_ObjectFontPopup" onpopupshowing="opener.LilyMenuBar.setFontValue(this);"/>
+				</menu>
+				<menuitem id="menu_ObjectColor" label="&lily.Color;" oncommand="opener.Lily.openColorPicker('object')"/>														
+				<menuitem id="bringForwardItem" key="lilyBringForwardKey" label="&lily.BringForward;" oncommand="opener.Lily.bringForward()"/>
+				<menuitem id="sendBackItem" key="lilySendBackKey" label="&lily.SendBack;" oncommand="opener.Lily.sendBack()"/>
+			</menupopup>
+		</menu>	
+
+		<!-- Window Menu -->													
+		<menu id="menu_LilyWindowPopup" label="&lily.WindowMenu;">
+	        <menupopup id="menu_WindowsPopupMenu" onpopupshowing="opener.LilyMenuBar.setWindowMenu(this,window)">
+	            <menuitem id="debugWindowOption" label="&lily.DebugWindow;" type="checkbox" autocheck="true" checked="false" option="debugWindow" oncommand="opener.LilyDebugWindow.toggle(this)"/>
+	            <menuitem id="inspectorWindowOption" label="&lily.InspectorWindow;" type="checkbox" autocheck="true" checked="false" option="inspectorWindow" oncommand="opener.LilyInspectorWindow.toggle(this)"/>		
+				<menuseparator id="lilyWindowSeparator"/>
+			</menupopup>			
+		</menu>
+
+		<!-- Help Menu -->				
+		<menu id="menu_LilyHelpPopup" label="&lily.HelpMenu;">
+	        <menupopup id="menu_HelpPopupMenu">
+
+            	<menuitem id="openLilyHelpScreenItem" key="lilyHelpMessageKey" label="&lily.OpenHelp;" oncommand="opener.Lily.openHelpMessage()"/>	
+            	<menuitem id="openLilyPrefsItem" label="&lily.Options;" oncommand="opener.Lily.openPrefs()"/>
+            	<menuitem id="reportALilyBug" label="&lily.ReportABug;" oncommand="window.open('http://bugs.lilyapp.org/index.cgi')"/>	
+	
+				<menu id="menu_ObjectHelp" label="&lily.ObjectHelp;">
+			        <menupopup statustext="false" id="menu_ObjectHelpPopup" onpopupshowing="opener.LilyMenuBar.setObjectList(this,true,'','opener')"/>
+				</menu>			
+			</menupopup>
+		</menu>
+
+		<!-- Debug Menu -->								
+		<menu id="menu_LilyDebugPopup" label="&lily.DebugMenu;">
+	        <menupopup id="menu_DebugPopupMenu" onpopupshowing="opener.LilyMenuBar.setDebugMenu(window)">
+				<menuitem id="setDebugItem" type="checkbox" autocheck="true" checked="true" label="&lily.SetDebug;" oncommand="opener.Lily.toggleDebug(this)"/>
+				<menuitem id="setTraceItem" type="checkbox" autocheck="true" checked="false" label="&lily.SetTrace;" oncommand="opener.Lily.toggleTrace(this)"/>
+				<menuitem id="dumpListenerItem" label="&lily.DumpListeners;" oncommand="opener.Lily.dumpListeners()"/>
+				<!--
+				<menuitem id="docExternListItem" label="Generate External Object List Docs" oncommand="opener.LilyObjectList.genExternListDocs()"/>
+				<menuitem id="docExternListItem" label="Generate External Object Detail Docs" oncommand="opener.LilyObjectList.genExternDetailDocs()"/>
+				-->
+			</menupopup>
+		</menu>
+
+	</menubar>	
+	
+	<!-- Context Menu -->
+	<menupopup id="lilyContextMenu">
+
+	    <menuitem style="display:none" id="contextHelpItem" label="&lily.HelpMenu;" oncommand="opener.Lily.openSelectedHelp()"/>
+
+		<menuseparator style="display:none" id="contextHelpSeparator"/>	
+
+	    <menuitem style="display:none" id="contextCopyItem" label="&lily.Copy;" oncommand="opener.Lily.copy()"/>
+	    <menuitem style="display:none" id="contextCutItem" label="&lily.Cut;" oncommand="opener.Lily.cut()"/>	
+	    <menuitem style="display:none" id="contextPasteItem" label="&lily.Paste;"/>
+	    <menuitem style="display:none" id="contextClearItem" label="&lily.Clear;" oncommand="opener.Lily.clear()"/>	
+
+		<menuseparator style="display:none" id="contextEditSeparator"/>
+
+		<menuitem style="display:none" id="contextPatchEditOption" label="&lily.Edit;" type="checkbox" autocheck="true" checked="false" option="patchEdit" oncommand="opener.Lily.toggleEdit()"/>
+		<menuitem style="display:none" id="contextMenu_PatchColor" label="&lily.Color;" oncommand="opener.Lily.openColorPicker('patch')"/>
+		<menu style="display:none" id="contextMenu_ObjectNew" label="&lily.New;">
+	        <menupopup id="contextMenu_ObjectNewPopup" onpopupshowing="opener.LilyMenuBar.setObjectList(this,false,'context','opener')"/>
+		</menu>
+
+		<menuseparator style="display:none" id="contextPatchSeparator"/>
+
+		<menuitem style="display:none" id="contextMenu_ObjectColor" label="&lily.Color;" oncommand="opener.Lily.openColorPicker('object')"/>
+        <menuitem style="display:none" id="contextGetInfoItem" label="&lily.GetInfo;" oncommand="opener.Lily.getInfo()"/>
+		<menuitem style="display:none" id="contextHideInPerfItem" label="&lily.Hide;" oncommand="opener.Lily.hideInPerf()"/>	
+        <menuitem style="display:none" id="contextShowInPerfItem" label="&lily.Show;" oncommand="opener.Lily.showInPerf()"/>			
+		<menu style="display:none" id="contextMenu_ObjectFont" label="&lily.Font;">
+	        <menupopup id="contextMenu_ObjectFontPopup" onpopupshowing="opener.LilyMenuBar.setFontValue(this);"/>
+		</menu>
+		<menuitem style="display:none" id="contextBringForwardItem" label="&lily.BringForward;" oncommand="opener.Lily.bringForward()"/>
+		<menuitem style="display:none" id="contextSendBackItem" label="&lily.SendBack;" oncommand="opener.Lily.sendBack()"/>
+
+		<menuseparator style="display:none" id="contextObjectSeparator"/>		
+
+	</menupopup>
+	
+	<vbox flex="1">
+		<browser type="chrome" context="lilyContextMenu" flex="1" id="browserElement" src="chrome://lily/content/patch.xhtml"/>
+		<statusbar>
+			<statusbarpanel tooltiptext="Patch is unlocked for editing. Click to lock." onclick="opener.Lily.toggleEdit()" class="statusbarpanel-iconic" src="chrome://lily/content/images/lock_open.png" id="lilyIconPanel" width="20"/>
+			<statusbarpanel style="height:24px;font-size:18px;font-family:verdana,DejaVu Sans,sans-serif;" id="lilyStatusPanel" flex="1"/>
+		</statusbar>
+	</vbox>
+	
+</window>

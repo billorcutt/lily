@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window [
+<!ENTITY % lilyDTD SYSTEM "chrome://lily/locale/lily.dtd">
+%lilyDTD;
+]>
+
+<overlay id="LilyOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://global/content/nsDragAndDrop.js"/>
+	<script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
+
+    <script type="application/x-javascript" src="chrome://lily/content/lib.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/utils.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/debug.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/inspector.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/model.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/patch.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/connection.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/object.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/services.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/lily.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/menus.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/exporter.js"/>
+
+	<script>
+		window.addEventListener("load",function(){document.getElementById("contentAreaContextMenu").addEventListener("popupshowing", LilyMenuBar.hideContextItem, false)},false)
+	</script>
+
+    <stringbundleset id="stringbundleset"> 
+        <stringbundle id="strings_lily" src="chrome://lily/locale/lily.properties"/>
+    </stringbundleset>
+
+  <broadcasterset id="mainBroadcasterSet"> 
+    <broadcaster id="lilyPatchWindowSidebar" 
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://lily/content/patch.xhtml"
+                 oncommand="toggleSidebar('lilyPatchWindowSidebar');" />
+  </broadcasterset>
+
+	<!-- Sidebar -->
+	<vbox id="appcontent">
+		<iframe id="lilyHiddenIframe" collapsed="true"></iframe>
+	    <splitter id="lilyContentSplitter" collapsed="true"/>
+	    <vbox id="lilyContentBox" collapsed="true" persist="height">
+	        <toolbox id="lilyToolbox">
+	            <toolbar id="lilyToolbar">
+	                <toolbarbutton id="lilyCloseButton" label="close" oncommand="Lily.closeSideBarPatch();"/>
+	            </toolbar>
+	        </toolbox>
+	        <hbox id="lilyPanelBox" flex="1">
+				<browser src="chrome://lily/content/patch.xhtml" id="lilyHorizontalSideBar" flex="1"/>
+			</hbox>
+	    </vbox>
+	</vbox>
+
+	<!-- Context Menu -->
+	<menupopup id="contentAreaContextMenu">		
+		<menuseparator id="contextObjectSeparator"/>		
+		<menuitem id="contextOpenInLily" label="Open Link in Lily" oncommand="Lily.openPatchFromNet(gContextMenu.link.href);"/>
+		<menuseparator id="lilyExternContextMenuSeparator"/>
+	</menupopup>
+		
+	<!-- Tools Menu -->
+	<menupopup id="menu_ToolsPopup">
+	    <menu id="menu_lily" label="&lily.Lily;" insertbefore="javascriptConsole">
+	        <menupopup id="menu_LilyPopup">
+	
+            	<menuitem id="newPatchToolsItem" label="&lily.New;" oncommand="Lily.newPatchFromMenu()"/>
+            	<menuitem id="openPatchToolsItem" label="&lily.Open;" oncommand="Lily.openPatchFromMenu()"/>
+				<!--<menuitem id="openHiddenPatchToolsItem" label="&lily.OpenHidden;" oncommand="Lily.openPatch(null,null,true,true);if(!LilyDebugWindow.isOpen()) { LilyDebugWindow.open(); }"/>
+				<menuitem id="closeHiddenPatchToolsItem" label="&lily.CloseHidden;" oncommand="Lily.close();LilyDebugWindow.close();"/>-->				
+				<!-- <menuitem id="openPatchSideBarToolsItem" label="&lily.OpenSideBar;" oncommand="Lily.openPatchInSidebar()"/> -->
+				
+				<!-- Prefs Menu -->					
+<!--	        <menuitem id="openLilyPrefsToolsItem" label="&lily.Options;" oncommand="Lily.openPrefs()"/> -->					
+	        </menupopup>
+	    </menu>
+	</menupopup>
+	
+</overlay>

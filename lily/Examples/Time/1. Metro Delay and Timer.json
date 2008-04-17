@@ -1,0 +1,147 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'1. Metro Delay and Timer','width':428,'height':724,'color':'#FFFFFF','mode':'performance','objArray':{
+	'flasher!uid=1191035569821':{'name':'flasher','top':384,'left':161,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':25,'width':25,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"interval", value:100, label:"Interval", type:"number", input:"text"}, {name:"indicatorBg", value:"#FF0000", label:"On Color", type:"string", input:"text"}, {name:"indicatorOffBg", value:"#EEEEEE", label:"Off Color", type:"string", input:"text"}],'objID':'flasher!uid=1191035569821','type':'object'},
+	'flasher!uid=2382071154742':{'name':'flasher','top':384,'left':47,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':25,'width':25,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"interval", value:100, label:"Interval", type:"number", input:"text"}, {name:"indicatorBg", value:"#FF0000", label:"On Color", type:"string", input:"text"}, {name:"indicatorOffBg", value:"#EEEEEE", label:"Off Color", type:"string", input:"text"}],'objID':'flasher!uid=2382071154742','type':'object'},
+	'flasher!uid=2382071156931':{'name':'flasher','top':384,'left':84,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':25,'width':25,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"interval", value:100, label:"Interval", type:"number", input:"text"}, {name:"indicatorBg", value:"#FF0000", label:"On Color", type:"string", input:"text"}, {name:"indicatorOffBg", value:"#EEEEEE", label:"Off Color", type:"string", input:"text"}],'objID':'flasher!uid=2382071156931','type':'object'},
+	'flasher!uid=2382071161077':{'name':'flasher','top':384,'left':122,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':25,'width':25,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"interval", value:100, label:"Interval", type:"number", input:"text"}, {name:"indicatorBg", value:"#FF0000", label:"On Color", type:"string", input:"text"}, {name:"indicatorOffBg", value:"#EEEEEE", label:"Off Color", type:"string", input:"text"}],'objID':'flasher!uid=2382071161077','type':'object'},
+	'metro!uid=1191035631112':{'name':'metro','top':194,'left':47,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':70,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'500','objID':'metro!uid=1191035631112','type':'object'},
+	'check!uid=1191035665250':{'name':'check','top':192,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':10,'width':10,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'check!uid=1191035665250','type':'object'},
+	'flasher!uid=2382071289513':{'name':'flasher','top':103,'left':163,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':25,'width':25,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"interval", value:100, label:"Interval", type:"number", input:"text"}, {name:"indicatorBg", value:"#FF0000", label:"On Color", type:"string", input:"text"}, {name:"indicatorOffBg", value:"#EEEEEE", label:"Off Color", type:"string", input:"text"}],'objID':'flasher!uid=2382071289513','type':'object'},
+	'flasher!uid=3573106874434':{'name':'flasher','top':103,'left':49,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':25,'width':25,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"interval", value:100, label:"Interval", type:"number", input:"text"}, {name:"indicatorBg", value:"#FF0000", label:"On Color", type:"string", input:"text"}, {name:"indicatorOffBg", value:"#EEEEEE", label:"Off Color", type:"string", input:"text"}],'objID':'flasher!uid=3573106874434','type':'object'},
+	'flasher!uid=3573106876623':{'name':'flasher','top':103,'left':86,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':25,'width':25,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"interval", value:100, label:"Interval", type:"number", input:"text"}, {name:"indicatorBg", value:"#FF0000", label:"On Color", type:"string", input:"text"}, {name:"indicatorOffBg", value:"#EEEEEE", label:"Off Color", type:"string", input:"text"}],'objID':'flasher!uid=3573106876623','type':'object'},
+	'flasher!uid=3573106880769':{'name':'flasher','top':103,'left':124,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':25,'width':25,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"interval", value:100, label:"Interval", type:"number", input:"text"}, {name:"indicatorBg", value:"#FF0000", label:"On Color", type:"string", input:"text"}, {name:"indicatorOffBg", value:"#EEEEEE", label:"Off Color", type:"string", input:"text"}],'objID':'flasher!uid=3573106880769','type':'object'},
+	'metro!uid=2382071350804':{'name':'metro','top':39,'left':49,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':70,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'500','objID':'metro!uid=2382071350804','type':'object'},
+	'check!uid=2382071384942':{'name':'check','top':37,'left':21,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':10,'width':10,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'check!uid=2382071384942','type':'object'},
+	'delay!uid=1191035756735':{'name':'delay','top':342,'left':161,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':19,'width':65,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'delay!uid=1191035756735','type':'object'},
+	'delay!uid=2382071519548':{'name':'delay','top':268,'left':84,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':19,'width':65,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'delay!uid=2382071519548','type':'object'},
+	'delay!uid=2382071524066':{'name':'delay','top':306,'left':122,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':19,'width':65,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'delay!uid=2382071524066','type':'object'},
+	'delay!uid=2382071517241':{'name':'delay','top':233,'left':47,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':19,'width':65,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'100','objID':'delay!uid=2382071517241','type':'object'},
+	'metro!uid=3573107752400':{'name':'metro','top':475,'left':47,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':70,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'500','objID':'metro!uid=3573107752400','type':'object'},
+	'check!uid=3573107786538':{'name':'check','top':474,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':10,'width':10,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'check!uid=3573107786538','type':'object'},
+	'bang!uid=1191036430388':{'name':'bang','top':510,'left':47,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':19,'width':47,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'2','objID':'bang!uid=1191036430388','type':'object'},
+	'timer!uid=1191036531489':{'name':'timer','top':559,'left':47,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':23,'height':19,'width':38,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'timer!uid=1191036531489','type':'object'},
+	'number!uid=1191036703473':{'name':'number','top':600,'left':47,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':24,'height':19,'width':23,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=1191036703473','type':'object'},
+	'random!uid=1191036448581':{'name':'random','top':475,'left':126,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':22,'height':19,'width':80,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'500','objID':'random!uid=1191036448581','type':'object'},
+	'comment!uid=1191268571483':{'name':'comment','top':499,'left':203,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':23,'height':141,'width':187,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'the timer external outputs the time between messages in milliseconds. in this example, a random external is used to cause metro to send out \"bang\"s at random intervals. the timer receives the bangs and reports the time between messages.','inspectorConfig':[{name:"commentText", value:"the timer external outputs the time between messages in milliseconds. in this example, a random external is used to cause metro to send out \"bang\"s at random intervals. the timer receives the bangs and reports the time between messages.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1191268571483','type':'object'},
+	'comment!uid=2382537238838':{'name':'comment','top':21,'left':203,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':23,'height':111,'width':195,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'the metro external outputs a metronomic \"bang\" using the interval set in the object arguments or sent to the right inlet. click the checkbox  to see metro output a \"bang\" every 500 milliseconds.','inspectorConfig':[{name:"commentText", value:"the metro external outputs a metronomic \"bang\" using the interval set in the object arguments or sent to the right inlet. click the checkbox  to see metro output a \"bang\" every 500 milliseconds.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2382537238838','type':'object'},
+	'comment!uid=2382537242934':{'name':'comment','top':186,'left':204,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':23,'height':141,'width':193,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'the delay external delays whatever is sent to its input for the length of time specified in the object arguments. click the checkbox to the left to see \"bangs\" from the metro external work their way through a cascading series of delays.','inspectorConfig':[{name:"commentText", value:"the delay external delays whatever is sent to its input for the length of time specified in the object arguments. click the checkbox to the left to see \"bangs\" from the metro external work their way through a cascading series of delays.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2382537242934','type':'object'},
+	'check!uid=1191035665250.outlet1_metro!uid=1191035631112.inlet1':{'inlet':'metro!uid=1191035631112.inlet1','outlet':'check!uid=1191035665250.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:222,endLeft:18,endTop:189.5},
+{'orientation':'horizontal',startLeft:18,startTop:189.5,endLeft:47,endTop:189.5},
+{'orientation':'vertical',startLeft:47,startTop:189.5,endLeft:47,endTop:199}
+]
+},
+	'metro!uid=2382071350804.outlet1_flasher!uid=3573106874434.inlet1':{'inlet':'flasher!uid=3573106874434.inlet1','outlet':'metro!uid=2382071350804.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:49,startTop:66,endLeft:49,endTop:91},
+{'orientation':'horizontal',startLeft:49,startTop:91,endLeft:49,endTop:91},
+{'orientation':'vertical',startLeft:49,startTop:91,endLeft:49,endTop:108}
+]
+},
+	'metro!uid=2382071350804.outlet1_flasher!uid=3573106876623.inlet1':{'inlet':'flasher!uid=3573106876623.inlet1','outlet':'metro!uid=2382071350804.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:49,startTop:66,endLeft:49,endTop:83.5},
+{'orientation':'horizontal',startLeft:49,startTop:83.5,endLeft:86,endTop:83.5},
+{'orientation':'vertical',startLeft:86,startTop:83.5,endLeft:86,endTop:108}
+]
+},
+	'metro!uid=2382071350804.outlet1_flasher!uid=3573106880769.inlet1':{'inlet':'flasher!uid=3573106880769.inlet1','outlet':'metro!uid=2382071350804.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:49,startTop:66,endLeft:49,endTop:84},
+{'orientation':'horizontal',startLeft:49,startTop:84,endLeft:124,endTop:84},
+{'orientation':'vertical',startLeft:124,startTop:84,endLeft:124,endTop:108}
+]
+},
+	'metro!uid=2382071350804.outlet1_flasher!uid=2382071289513.inlet1':{'inlet':'flasher!uid=2382071289513.inlet1','outlet':'metro!uid=2382071350804.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:49,startTop:66,endLeft:49,endTop:84},
+{'orientation':'horizontal',startLeft:49,startTop:84,endLeft:163,endTop:84},
+{'orientation':'vertical',startLeft:163,startTop:84,endLeft:163,endTop:108}
+]
+},
+	'check!uid=2382071384942.outlet1_metro!uid=2382071350804.inlet1':{'inlet':'metro!uid=2382071350804.inlet1','outlet':'check!uid=2382071384942.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:21,startTop:67,endLeft:21,endTop:34.5},
+{'orientation':'horizontal',startLeft:21,startTop:34.5,endLeft:49,endTop:34.5},
+{'orientation':'vertical',startLeft:49,startTop:34.5,endLeft:49,endTop:44}
+]
+},
+	'delay!uid=2382071519548.outlet1_flasher!uid=2382071156931.inlet1':{'inlet':'flasher!uid=2382071156931.inlet1','outlet':'delay!uid=2382071519548.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:84,startTop:295,endLeft:84,endTop:347.5},
+{'orientation':'horizontal',startLeft:84,startTop:347.5,endLeft:84,endTop:347.5},
+{'orientation':'vertical',startLeft:84,startTop:347.5,endLeft:84,endTop:389}
+]
+},
+	'delay!uid=2382071524066.outlet1_flasher!uid=2382071161077.inlet1':{'inlet':'flasher!uid=2382071161077.inlet1','outlet':'delay!uid=2382071524066.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:122,startTop:333,endLeft:122,endTop:368.5},
+{'orientation':'horizontal',startLeft:122,startTop:368.5,endLeft:122,endTop:368.5},
+{'orientation':'vertical',startLeft:122,startTop:368.5,endLeft:122,endTop:389}
+]
+},
+	'delay!uid=2382071519548.outlet1_delay!uid=2382071524066.inlet1':{'inlet':'delay!uid=2382071524066.inlet1','outlet':'delay!uid=2382071519548.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:84,startTop:295,endLeft:84,endTop:302},
+{'orientation':'horizontal',startLeft:84,startTop:302,endLeft:122,endTop:302},
+{'orientation':'vertical',startLeft:122,startTop:302,endLeft:122,endTop:311}
+]
+},
+	'delay!uid=2382071524066.outlet1_delay!uid=1191035756735.inlet1':{'inlet':'delay!uid=1191035756735.inlet1','outlet':'delay!uid=2382071524066.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:122,startTop:333,endLeft:122,endTop:338.5},
+{'orientation':'horizontal',startLeft:122,startTop:338.5,endLeft:161,endTop:338.5},
+{'orientation':'vertical',startLeft:161,startTop:338.5,endLeft:161,endTop:347}
+]
+},
+	'delay!uid=1191035756735.outlet1_flasher!uid=1191035569821.inlet1':{'inlet':'flasher!uid=1191035569821.inlet1','outlet':'delay!uid=1191035756735.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:161,startTop:369,endLeft:161,endTop:384},
+{'orientation':'horizontal',startLeft:161,startTop:384,endLeft:161,endTop:384},
+{'orientation':'vertical',startLeft:161,startTop:384,endLeft:161,endTop:389}
+]
+},
+	'metro!uid=1191035631112.outlet1_delay!uid=2382071517241.inlet1':{'inlet':'delay!uid=2382071517241.inlet1','outlet':'metro!uid=1191035631112.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:47,startTop:221,endLeft:47,endTop:232.5},
+{'orientation':'horizontal',startLeft:47,startTop:232.5,endLeft:47,endTop:232.5},
+{'orientation':'vertical',startLeft:47,startTop:232.5,endLeft:47,endTop:238}
+]
+},
+	'delay!uid=2382071517241.outlet1_flasher!uid=2382071154742.inlet1':{'inlet':'flasher!uid=2382071154742.inlet1','outlet':'delay!uid=2382071517241.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:47,startTop:260,endLeft:47,endTop:327},
+{'orientation':'horizontal',startLeft:47,startTop:327,endLeft:47,endTop:327},
+{'orientation':'vertical',startLeft:47,startTop:327,endLeft:47,endTop:389}
+]
+},
+	'delay!uid=2382071517241.outlet1_delay!uid=2382071519548.inlet1':{'inlet':'delay!uid=2382071519548.inlet1','outlet':'delay!uid=2382071517241.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:47,startTop:260,endLeft:47,endTop:265},
+{'orientation':'horizontal',startLeft:47,startTop:265,endLeft:84,endTop:265},
+{'orientation':'vertical',startLeft:84,startTop:265,endLeft:84,endTop:273}
+]
+},
+	'check!uid=3573107786538.outlet1_metro!uid=3573107752400.inlet1':{'inlet':'metro!uid=3573107752400.inlet1','outlet':'check!uid=3573107786538.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:504,endLeft:18,endTop:470.5},
+{'orientation':'horizontal',startLeft:18,startTop:470.5,endLeft:47,endTop:470.5},
+{'orientation':'vertical',startLeft:47,startTop:470.5,endLeft:47,endTop:480}
+]
+},
+	'metro!uid=3573107752400.outlet1_bang!uid=1191036430388.inlet1':{'inlet':'bang!uid=1191036430388.inlet1','outlet':'metro!uid=3573107752400.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:47,startTop:502,endLeft:47,endTop:511.5},
+{'orientation':'horizontal',startLeft:47,startTop:511.5,endLeft:47,endTop:511.5},
+{'orientation':'vertical',startLeft:47,startTop:511.5,endLeft:47,endTop:515}
+]
+},
+	'timer!uid=1191036531489.outlet1_number!uid=1191036703473.inlet1':{'inlet':'number!uid=1191036703473.inlet1','outlet':'timer!uid=1191036531489.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:47,startTop:586,endLeft:47,endTop:594.5},
+{'orientation':'horizontal',startLeft:47,startTop:594.5,endLeft:47,endTop:594.5},
+{'orientation':'vertical',startLeft:47,startTop:594.5,endLeft:47,endTop:605}
+]
+},
+	'bang!uid=1191036430388.outlet1_timer!uid=1191036531489.inlet1':{'inlet':'timer!uid=1191036531489.inlet1','outlet':'bang!uid=1191036430388.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:47,startTop:537,endLeft:47,endTop:553},
+{'orientation':'horizontal',startLeft:47,startTop:553,endLeft:47,endTop:553},
+{'orientation':'vertical',startLeft:47,startTop:553,endLeft:47,endTop:564}
+]
+},
+	'bang!uid=1191036430388.outlet2_random!uid=1191036448581.inlet1':{'inlet':'random!uid=1191036448581.inlet1','outlet':'bang!uid=1191036430388.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:85,startTop:537,endLeft:85,endTop:544.5},
+{'orientation':'horizontal',startLeft:85,startTop:544.5,endLeft:126,endTop:544.5},
+{'orientation':'vertical',startLeft:126,startTop:544.5,endLeft:126,endTop:480}
+]
+},
+	'random!uid=1191036448581.outlet1_metro!uid=3573107752400.inlet2':{'inlet':'metro!uid=3573107752400.inlet2','outlet':'random!uid=1191036448581.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:126,startTop:502,endLeft:126,endTop:459},
+{'orientation':'horizontal',startLeft:126,startTop:459,endLeft:107,endTop:459},
+{'orientation':'vertical',startLeft:107,startTop:459,endLeft:107,endTop:480}
+]
+}}
+}

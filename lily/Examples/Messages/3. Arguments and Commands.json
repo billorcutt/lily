@@ -1,0 +1,57 @@
+var patch={'version':'0.1-beta-3a','platform':'apple','title':'3. Arguments and Commands','width':745,'height':314,'color':'#FFFFFF','mode':'performance','objArray':{
+	'message!uid=1188836585773':{'name':'message','top':22,'left':575,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':15,'height':19,'width':100,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'notacommand','objID':'message!uid=1188836585773','type':'object'},
+	'comment!uid=1188836678364':{'name':'comment','top':86,'left':393,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':81,'width':128,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'one more way: using the message external to format a command and its arguments.','inspectorConfig':[{name:"commentText", value:"one more way: using the message external to format a command and its arguments.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1188836678364','type':'object'},
+	'dialog!uid=1192291220341':{'name':'dialog','top':207,'left':33,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':3,'height':19,'width':40,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'dialog!uid=1192291220341','type':'object'},
+	'message!uid=1192291239030':{'name':'message','top':19,'left':33,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':4,'height':19,'width':124,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'alert Hello World','objID':'message!uid=1192291239030','type':'object'},
+	'print!uid=1192291287414':{'name':'print','top':245,'left':33,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'print!uid=1192291287414','type':'object'},
+	'message!uid=1192291315774':{'name':'message','top':17,'left':197,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':10,'width':105,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Are You Sure?','objID':'message!uid=1192291315774','type':'object'},
+	'prepend!uid=1192292661646':{'name':'prepend','top':52,'left':197,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':19,'width':103,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'confirm','objID':'prepend!uid=1192292661646','type':'object'},
+	'message!uid=1192292872318':{'name':'message','top':60,'left':384,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':12,'width':80,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'prompt $1','objID':'message!uid=1192292872318','type':'object'},
+	'message!uid=1192292902126':{'name':'message','top':21,'left':384,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':11,'width':154,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'\"Say something here.\"','objID':'message!uid=1192292902126','type':'object'},
+	'message!uid=1192291239030.outlet1_dialog!uid=1192291220341.inlet1':{'inlet':'dialog!uid=1192291220341.inlet1','outlet':'message!uid=1192291239030.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:33,startTop:45,endLeft:33,endTop:179},
+{'orientation':'horizontal',startLeft:33,startTop:179,endLeft:33,endTop:179},
+{'orientation':'vertical',startLeft:33,startTop:179,endLeft:33,endTop:212}
+]
+},
+	'dialog!uid=1192291220341.outlet1_print!uid=1192291287414.inlet1':{'inlet':'print!uid=1192291287414.inlet1','outlet':'dialog!uid=1192291220341.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:33,startTop:233,endLeft:33,endTop:236},
+{'orientation':'horizontal',startLeft:33,startTop:236,endLeft:33,endTop:236},
+{'orientation':'vertical',startLeft:33,startTop:236,endLeft:33,endTop:250}
+]
+},
+	'message!uid=1192291315774.outlet1_prepend!uid=1192292661646.inlet1':{'inlet':'prepend!uid=1192292661646.inlet1','outlet':'message!uid=1192291315774.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:197,startTop:43,endLeft:197,endTop:52},
+{'orientation':'horizontal',startLeft:197,startTop:52,endLeft:197,endTop:52},
+{'orientation':'vertical',startLeft:197,startTop:52,endLeft:197,endTop:57}
+]
+},
+	'prepend!uid=1192292661646.outlet1_dialog!uid=1192291220341.inlet1':{'inlet':'dialog!uid=1192291220341.inlet1','outlet':'prepend!uid=1192292661646.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:197,startTop:78,endLeft:197,endTop:194.5},
+{'orientation':'horizontal',startLeft:197,startTop:194.5,endLeft:33,endTop:194.5},
+{'orientation':'vertical',startLeft:33,startTop:194.5,endLeft:33,endTop:212}
+]
+},
+	'message!uid=1188836585773.outlet1_dialog!uid=1192291220341.inlet1':{'inlet':'dialog!uid=1192291220341.inlet1','outlet':'message!uid=1188836585773.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:575,startTop:48,endLeft:575,endTop:195},
+{'orientation':'horizontal',startLeft:575,startTop:195,endLeft:33,endTop:195},
+{'orientation':'vertical',startLeft:33,startTop:195,endLeft:33,endTop:212}
+]
+},
+	'message!uid=1192292872318.outlet1_dialog!uid=1192291220341.inlet1':{'inlet':'dialog!uid=1192291220341.inlet1','outlet':'message!uid=1192292872318.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:384,startTop:86,endLeft:384,endTop:195},
+{'orientation':'horizontal',startLeft:384,startTop:195,endLeft:33,endTop:195},
+{'orientation':'vertical',startLeft:33,startTop:195,endLeft:33,endTop:212}
+]
+},
+	'message!uid=1192292902126.outlet1_message!uid=1192292872318.inlet1':{'inlet':'message!uid=1192292872318.inlet1','outlet':'message!uid=1192292902126.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:384,startTop:47,endLeft:384,endTop:60},
+{'orientation':'horizontal',startLeft:384,startTop:60,endLeft:384,endTop:60},
+{'orientation':'vertical',startLeft:384,startTop:60,endLeft:384,endTop:65}
+]
+},
+	'comment!uid=1192340329602':{'name':'comment','top':206,'left':83,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':21,'width':488,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'the dialog external has three methods: <alert>, <confirm> and <prompt>.','inspectorConfig':[{name:"commentText", value:"the dialog external has three methods: <alert>, <confirm> and <prompt>.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1192340329602','type':'object'},
+	'comment!uid=2381177073568':{'name':'comment','top':53,'left':587,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':10,'width':128,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'sending a message that dialog doesn\'t understand: \"notacommand\" throws an \"input not handled\" error.','inspectorConfig':[{name:"commentText", value:"sending a message that dialog doesn't understand: \"notacommand\" throws an \"input not handled\" error.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2381177073568','type':'object'},
+	'comment!uid=2381177076844':{'name':'comment','top':51,'left':43,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':60,'width':144,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'calling dialog\'s <alert> method with the argument \"Hello World\". Click the message box to see it in action.','inspectorConfig':[{name:"commentText", value:"calling dialog's <alert> method with the argument \"Hello World\". Click the message box to see it in action.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2381177076844','type':'object'},
+	'comment!uid=2381177079473':{'name':'comment','top':81,'left':204,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':16,'height':81,'width':171,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'another way to combine a command and arguments: prepending the <confirm> method call to the argument \"Are You Sure?\"','inspectorConfig':[{name:"commentText", value:"another way to combine a command and arguments: prepending the <confirm> method call to the argument \"Are You Sure?\"", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2381177079473','type':'object'}}
+}

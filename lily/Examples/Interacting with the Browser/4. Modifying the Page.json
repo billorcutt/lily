@@ -1,0 +1,151 @@
+var patch={'version':'0.1-beta-3a','platform':'apple','title':'4. Elements By Tag Name','width':430,'height':761,'color':'#FFFFFF','mode':'performance','objArray':{
+	'host!uid=3571390236859':{'name':'host','top':101,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':34,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'host!uid=3571390236859','type':'object'},
+	'message!uid=3571390520050':{'name':'message','top':40,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':11,'width':212,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'setLoc http://www.craigslist.org','objID':'message!uid=3571390520050','type':'object'},
+	'dom!uid=3571390733788':{'name':'dom','top':247,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':13,'width':101,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'dom!uid=3571390733788','type':'object'},
+	'message!uid=3571390953108':{'name':'message','top':105,'left':74,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':54,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'getDoc','objID':'message!uid=3571390953108','type':'object'},
+	'message!uid=1190609328765':{'name':'message','top':206,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':14,'width':81,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'getTags A','objID':'message!uid=1190609328765','type':'object'},
+	'comment!uid=1191527551345':{'name':'comment','top':4,'left':18,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':18,'width':297,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'randomly scramble the links on craigslist.org','inspectorConfig':[{name:"commentText", value:"randomly scramble the links on craigslist.org", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1191527551345','type':'object'},
+	'comment!uid=2383055292410':{'name':'comment','top':251,'left':154,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':171,'width':248,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'the DOM is loaded in the dom external\'s right inlet and a <getTags> command is sent to dom. All link <A> elements are output from dom one at a time, their innerHTML values are stripped out (using element) and sent to the thresh external to be packed in an array. When all of the <A> nodes are processed, the completed array is output to the array external to be randomly shuffled and stored in a buffer external. ','inspectorConfig':[{name:"commentText", value:"the DOM is loaded in the dom external's right inlet and a <getTags> command is sent to dom. All link <A> elements are output from dom one at a time, their innerHTML values are stripped out (using element) and sent to the thresh external to be packed in an array. When all of the <A> nodes are processed, the completed array is output to the array external to be randomly shuffled and stored in a buffer external. ", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2383055292410','type':'object'},
+	'comment!uid=3574583115979':{'name':'comment','top':78,'left':153,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':51,'width':252,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'navigate the browser to craigslist.org using the <setLoc> command of the host external.','inspectorConfig':[{name:"commentText", value:"navigate the browser to craigslist.org using the <setLoc> command of the host external.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3574583115979','type':'object'},
+	'comment!uid=3574583233232':{'name':'comment','top':162,'left':154,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':66,'width':252,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'when the page loads, a \"bang\" from the right outlet triggers a <getDoc> command to be sent to host and the page\'s HTML DOM is output.','inspectorConfig':[{name:"commentText", value:"when the page loads, a \"bang\" from the right outlet triggers a <getDoc> command to be sent to host and the page's HTML DOM is output.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3574583233232','type':'object'},
+	'thresh!uid=1191860244013':{'name':'thresh','top':325,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':13,'height':19,'width':45,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'thresh!uid=1191860244013','type':'object'},
+	'array!uid=1191860270526':{'name':'array','top':364,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':19,'width':81,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'shuffle','objID':'array!uid=1191860270526','type':'object'},
+	'buffer!uid=1191860337705':{'name':'buffer','top':572,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':14,'height':17,'width':98,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'buffer!uid=1191860337705','type':'object'},
+	'trigger!uid=1191860378612':{'name':'trigger','top':405,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':15,'height':19,'width':63,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'b l','objID':'trigger!uid=1191860378612','type':'object'},
+	'dom!uid=4763251137939':{'name':'dom','top':490,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':16,'width':125,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'dom!uid=4763251137939','type':'object'},
+	'message!uid=2382469732916':{'name':'message','top':450,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':16,'width':84,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'getTags A','objID':'message!uid=2382469732916','type':'object'},
+	'trigger!uid=3571390658588':{'name':'trigger','top':165,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':17,'height':10,'width':125,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'b o o','objID':'trigger!uid=3571390658588','type':'object'},
+	'trigger!uid=1191860551267':{'name':'trigger','top':529,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':19,'height':19,'width':67,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'b o','objID':'trigger!uid=1191860551267','type':'object'},
+	'message!uid=1191860619549':{'name':'message','top':647,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':20,'height':10,'width':105,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'innerHTML $1','objID':'message!uid=1191860619549','type':'object'},
+	'element!uid=1191860918722':{'name':'element','top':284,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':22,'height':19,'width':123,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'innerHTML','objID':'element!uid=1191860918722','type':'object'},
+	'element!uid=1191860301919':{'name':'element','top':684,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':22,'height':16,'width':121,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'element!uid=1191860301919','type':'object'},
+	'pack!uid=1192313091674':{'name':'pack','top':610,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':22,'height':19,'width':43,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'s','objID':'pack!uid=1192313091674','type':'object'},
+	'message!uid=3571390520050.outlet1_host!uid=3571390236859.inlet1':{'inlet':'host!uid=3571390236859.inlet1','outlet':'message!uid=3571390520050.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:66,endLeft:18,endTop:80},
+{'orientation':'horizontal',startLeft:18,startTop:80,endLeft:18,endTop:80},
+{'orientation':'vertical',startLeft:18,startTop:80,endLeft:18,endTop:106}
+]
+},
+	'message!uid=3571390953108.outlet1_host!uid=3571390236859.inlet1':{'inlet':'host!uid=3571390236859.inlet1','outlet':'message!uid=3571390953108.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:74,startTop:131,endLeft:74,endTop:89},
+{'orientation':'horizontal',startLeft:74,startTop:89,endLeft:18,endTop:89},
+{'orientation':'vertical',startLeft:18,startTop:89,endLeft:18,endTop:106}
+]
+},
+	'message!uid=1190609328765.outlet1_dom!uid=3571390733788.inlet1':{'inlet':'dom!uid=3571390733788.inlet1','outlet':'message!uid=1190609328765.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:232,endLeft:18,endTop:237},
+{'orientation':'horizontal',startLeft:18,startTop:237,endLeft:18,endTop:237},
+{'orientation':'vertical',startLeft:18,startTop:237,endLeft:18,endTop:252}
+]
+},
+	'host!uid=3571390236859.outlet2_message!uid=3571390953108.inlet1':{'inlet':'message!uid=3571390953108.inlet1','outlet':'host!uid=3571390236859.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:42,startTop:127,endLeft:42,endTop:152},
+{'orientation':'horizontal',startLeft:42,startTop:152,endLeft:74,endTop:152},
+{'orientation':'vertical',startLeft:74,startTop:152,endLeft:74,endTop:110}
+]
+},
+	'array!uid=1191860270526.outlet1_trigger!uid=1191860378612.inlet1':{'inlet':'trigger!uid=1191860378612.inlet1','outlet':'array!uid=1191860270526.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:390,endLeft:18,endTop:404},
+{'orientation':'horizontal',startLeft:18,startTop:404,endLeft:18,endTop:404},
+{'orientation':'vertical',startLeft:18,startTop:404,endLeft:18,endTop:410}
+]
+},
+	'message!uid=2382469732916.outlet1_dom!uid=4763251137939.inlet1':{'inlet':'dom!uid=4763251137939.inlet1','outlet':'message!uid=2382469732916.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:476,endLeft:18,endTop:486},
+{'orientation':'horizontal',startLeft:18,startTop:486,endLeft:18,endTop:486},
+{'orientation':'vertical',startLeft:18,startTop:486,endLeft:18,endTop:495}
+]
+},
+	'host!uid=3571390236859.outlet1_trigger!uid=3571390658588.inlet1':{'inlet':'trigger!uid=3571390658588.inlet1','outlet':'host!uid=3571390236859.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:127,endLeft:18,endTop:152},
+{'orientation':'horizontal',startLeft:18,startTop:152,endLeft:18,endTop:152},
+{'orientation':'vertical',startLeft:18,startTop:152,endLeft:18,endTop:170}
+]
+},
+	'trigger!uid=3571390658588.outlet1_message!uid=1190609328765.inlet1':{'inlet':'message!uid=1190609328765.inlet1','outlet':'trigger!uid=3571390658588.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:191,endLeft:18,endTop:198.5},
+{'orientation':'horizontal',startLeft:18,startTop:198.5,endLeft:18,endTop:198.5},
+{'orientation':'vertical',startLeft:18,startTop:198.5,endLeft:18,endTop:211}
+]
+},
+	'trigger!uid=3571390658588.outlet2_dom!uid=3571390733788.inlet2':{'inlet':'dom!uid=3571390733788.inlet2','outlet':'trigger!uid=3571390658588.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:76,startTop:191,endLeft:76,endTop:201},
+{'orientation':'horizontal',startLeft:76,startTop:201,endLeft:109,endTop:201},
+{'orientation':'vertical',startLeft:109,startTop:201,endLeft:109,endTop:252}
+]
+},
+	'trigger!uid=3571390658588.outlet3_dom!uid=4763251137939.inlet2':{'inlet':'dom!uid=4763251137939.inlet2','outlet':'trigger!uid=3571390658588.outlet3','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:133,startTop:191,endLeft:133,endTop:360},
+{'orientation':'horizontal',startLeft:133,startTop:360,endLeft:133,endTop:360},
+{'orientation':'vertical',startLeft:133,startTop:360,endLeft:133,endTop:495}
+]
+},
+	'trigger!uid=1191860378612.outlet2_buffer!uid=1191860337705.inlet2':{'inlet':'buffer!uid=1191860337705.inlet2','outlet':'trigger!uid=1191860378612.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:71,startTop:431,endLeft:71,endTop:443},
+{'orientation':'horizontal',startLeft:71,startTop:443,endLeft:106,endTop:443},
+{'orientation':'vertical',startLeft:106,startTop:443,endLeft:106,endTop:577}
+]
+},
+	'dom!uid=3571390733788.outlet1_element!uid=1191860918722.inlet1':{'inlet':'element!uid=1191860918722.inlet1','outlet':'dom!uid=3571390733788.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:273,endLeft:18,endTop:279.5},
+{'orientation':'horizontal',startLeft:18,startTop:279.5,endLeft:18,endTop:279.5},
+{'orientation':'vertical',startLeft:18,startTop:279.5,endLeft:18,endTop:289}
+]
+},
+	'element!uid=1191860918722.outlet1_thresh!uid=1191860244013.inlet1':{'inlet':'thresh!uid=1191860244013.inlet1','outlet':'element!uid=1191860918722.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:310,endLeft:18,endTop:324},
+{'orientation':'horizontal',startLeft:18,startTop:324,endLeft:18,endTop:324},
+{'orientation':'vertical',startLeft:18,startTop:324,endLeft:18,endTop:330}
+]
+},
+	'thresh!uid=1191860244013.outlet1_array!uid=1191860270526.inlet1':{'inlet':'array!uid=1191860270526.inlet1','outlet':'thresh!uid=1191860244013.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:351,endLeft:18,endTop:364},
+{'orientation':'horizontal',startLeft:18,startTop:364,endLeft:18,endTop:364},
+{'orientation':'vertical',startLeft:18,startTop:364,endLeft:18,endTop:369}
+]
+},
+	'dom!uid=4763251137939.outlet1_trigger!uid=1191860551267.inlet1':{'inlet':'trigger!uid=1191860551267.inlet1','outlet':'dom!uid=4763251137939.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:516,endLeft:18,endTop:528.5},
+{'orientation':'horizontal',startLeft:18,startTop:528.5,endLeft:18,endTop:528.5},
+{'orientation':'vertical',startLeft:18,startTop:528.5,endLeft:18,endTop:534}
+]
+},
+	'message!uid=1191860619549.outlet1_element!uid=1191860301919.inlet1':{'inlet':'element!uid=1191860301919.inlet1','outlet':'message!uid=1191860619549.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:673,endLeft:18,endTop:681},
+{'orientation':'horizontal',startLeft:18,startTop:681,endLeft:18,endTop:681},
+{'orientation':'vertical',startLeft:18,startTop:681,endLeft:18,endTop:689}
+]
+},
+	'trigger!uid=1191860551267.outlet2_element!uid=1191860301919.inlet2':{'inlet':'element!uid=1191860301919.inlet2','outlet':'trigger!uid=1191860551267.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:75,startTop:555,endLeft:75,endTop:565},
+{'orientation':'horizontal',startLeft:75,startTop:565,endLeft:129,endTop:565},
+{'orientation':'vertical',startLeft:129,startTop:565,endLeft:129,endTop:689}
+]
+},
+	'trigger!uid=1191860551267.outlet1_buffer!uid=1191860337705.inlet1':{'inlet':'buffer!uid=1191860337705.inlet1','outlet':'trigger!uid=1191860551267.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:555,endLeft:18,endTop:569},
+{'orientation':'horizontal',startLeft:18,startTop:569,endLeft:18,endTop:569},
+{'orientation':'vertical',startLeft:18,startTop:569,endLeft:18,endTop:577}
+]
+},
+	'trigger!uid=1191860378612.outlet1_message!uid=2382469732916.inlet1':{'inlet':'message!uid=2382469732916.inlet1','outlet':'trigger!uid=1191860378612.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:431,endLeft:18,endTop:446.5},
+{'orientation':'horizontal',startLeft:18,startTop:446.5,endLeft:18,endTop:446.5},
+{'orientation':'vertical',startLeft:18,startTop:446.5,endLeft:18,endTop:455}
+]
+},
+	'buffer!uid=1191860337705.outlet1_pack!uid=1192313091674.inlet1':{'inlet':'pack!uid=1192313091674.inlet1','outlet':'buffer!uid=1191860337705.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:598,endLeft:18,endTop:604},
+{'orientation':'horizontal',startLeft:18,startTop:604,endLeft:18,endTop:604},
+{'orientation':'vertical',startLeft:18,startTop:604,endLeft:18,endTop:615}
+]
+},
+	'pack!uid=1192313091674.outlet1_message!uid=1191860619549.inlet1':{'inlet':'message!uid=1191860619549.inlet1','outlet':'pack!uid=1192313091674.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:636,endLeft:18,endTop:645.5},
+{'orientation':'horizontal',startLeft:18,startTop:645.5,endLeft:18,endTop:645.5},
+{'orientation':'vertical',startLeft:18,startTop:645.5,endLeft:18,endTop:652}
+]
+},
+	'comment!uid=1192326191747':{'name':'comment','top':450,'left':154,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':22,'height':111,'width':248,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'a second <getTags> call to dom outputs all <A> nodes again. this time each output node is used get the next element from the randomized array stored in the buffer and the random value is set as the innerHTML of the new node.','inspectorConfig':[{name:"commentText", value:"a second <getTags> call to dom outputs all <A> nodes again. this time each output node is used get the next element from the randomized array stored in the buffer and the random value is set as the innerHTML of the new node.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1192326191747','type':'object'},
+	'comment!uid=1192326874062':{'name':'comment','top':638,'left':157,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':23,'height':36,'width':245,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'click the <setLoc> message at top to see this example in action.','inspectorConfig':[{name:"commentText", value:"click the <setLoc> message at top to see this example in action.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1192326874062','type':'object'}}
+}

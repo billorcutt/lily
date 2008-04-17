@@ -1,0 +1,12 @@
+HOWTO
+
+* Start the dom explorer by opening the file cli-dom-explorer.json.
+
+* Open a terminal window and telnet to port 8888 on localhost ("telnet localhost 8888"). After connecting to the patch you'll be at the root level of whatever HTML document is loaded.
+
+* Supported commands are "ls", "pwd", "cd" and "rm" with some limitations:
+
+** ls only lists the current directory. any arguments are ignored.
+** cd & rm only work one level deep. (i.e. only only on objects in the current directory) cd also supports the arguments "/" & ".."
+
+* Doesn't work on windows.

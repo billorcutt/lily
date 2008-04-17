@@ -1,0 +1,239 @@
+var NODE_SIZE = 20;
+var INDICATOR_SIZE = 3;
+var EDGE_LENGTH = 20;
+var EDGE_STRENGTH = 0.2;
+var SPACER_STRENGTH = 100;
+var SELECTED_STROKE = 2;
+var selected_node = null;
+var current_node = 0;
+
+var physics = null;
+var centroid = null;
+
+var notes = [60,62,64,65,67,69,71, 72,74,76,77,79,81,83, 84,86,88,89,91,93,95, 96,98,100,101,103,105];
+
+function exec() {
+	incCount();
+	var node = physics.getParticle(current_node);
+	var xPos = node.getPosition().getX();
+	var yPos = node.getPosition().getY();
+	
+	//int(map(abs(yPos-centroid.getY()),0,100,0,127)/physics.numberOfParticles())
+	
+	var note = notes[int(map(abs(xPos-centroid.getX()),0,100,0,28))]; //x dist to center is mapped to note 
+	var velocity = int(map(abs(yPos-centroid.getY()),0,50,0,127)); //y dist to center to mapped to velocity
+	var control = int(map(abs(xPos-centroid.getX()),0,100,0,127)); //x pos is mapped to control value
+		
+	if(node.getSelected()) {
+	
+		//noteon
+		sendMess("/circle/notes " + note +" "+ velocity +" " +control);
+
+		//noteoff
+		//setTimeout(function(){
+		//	sendMess("/circle/notes " + note + " " + 0 + " " + int(1));
+		//},200);
+		
+	}		
+}
+
+function incCount() {
+	if((current_node+1) < physics.numberOfParticles())
+		current_node++;
+	else
+		current_node = 0;
+}
+
+Particle.prototype.selectedState = false;
+
+Particle.prototype.getSelected = function() {
+	return this.selectedState;
+};
+
+Particle.prototype.setSelected = function(state) {
+	this.selectedState = state;
+};
+
+function setup()
+{
+  size( 400, 400 );
+  smooth();
+  frameRate( 24 );
+  strokeWeight( .5 );
+  ellipseMode( "CENTER" );       
+  
+  physics = new ParticleSystem( 0, 0.25 );
+  centroid = new Smoother3D( 0.8 );
+    
+  initialize();
+}
+
+function draw()
+{
+  physics.advanceTime( 0.5 );
+  if ( physics.numberOfParticles() > 1 )
+    updateCentroid();
+  centroid.tick();
+  background( 0 );
+  translate( width/2 , height/2 );
+  scale( centroid.getZ()); //scale( min(centroid.getZ(),1.0));
+  translate( -centroid.getX(), -centroid.getY() );
+ 
+  drawNetwork();  
+}
+
+function drawNetwork()
+{      
+  // draw vertices
+  fill( 160, .5 );
+  noStroke();
+  var nop = physics.numberOfParticles();
+  for ( var i = 0; i < nop; ++i )
+  {
+    var v = physics.getParticle( i );
+	var xPos = v.getPosition().getX();
+	var yPos = v.getPosition().getY();
+	
+	if(v.getSelected()) {
+		stroke(255);
+		strokeWeight(SELECTED_STROKE);
+	} else {
+		noStroke();
+		strokeWeight(.5);
+	}
+	
+    var el = ellipse( xPos, yPos, NODE_SIZE, NODE_SIZE ); //draw node
+
+	//set event handler for mousedown
+	el.addEventListener("mousedown",function(node){
+		return function(){
+			if(isKeyPressed) {
+				if(node.getSelected()) {
+					node.setSelected(false);
+				} else {
+					node.setSelected(true);
+				}
+			} else {
+				selected_node = node;			
+			}			
+		};
+	}(v),false);
+	
+	if(i==current_node && nop != 1) {
+		fill(255,0,0,1.0);
+		noStroke();
+		ellipse( xPos, yPos, INDICATOR_SIZE, INDICATOR_SIZE ); //draw position indicator
+		fill( 160, .5 );
+	}
+  }
+
+  // draw edges 
+  stroke( 255 );
+  strokeWeight(.5);
+  noFill();
+  for ( var i = 0; i < physics.numberOfSprings(); ++i )
+  {
+    var e = physics.getSpring( i );
+    var a = e.getOneEnd();
+    var b = e.getTheOtherEnd();
+    beginShape( "LINES" );
+    vertex( a. getPosition(). getX(), a. getPosition(). getY() );
+    vertex( b. getPosition(). getX(), b. getPosition(). getY() );
+    endShape();
+  }
+}
+
+function keyPressed()
+{
+  if ( key == 'c' )
+  {
+    initialize();
+    return;
+  }
+  
+  if ( key == ' ' )
+  {
+    addNode();
+    return;
+  }
+}
+
+function mx() {
+  return int(((mouseX-width/2)/(centroid.getZ()) + centroid.getX()));
+}
+
+function my() {
+  return int(((mouseY-height/2)/(centroid.getZ()) + centroid.getY()));
+}
+
+function mouseDragged() {
+  if (selected_node != null) {
+    selected_node.moveTo(mx(), my(), 0.0);
+  } 
+}
+
+function mouseReleased() {
+	selected_node=null;
+}
+
+function updateCentroid()
+{
+    var xMax = Number.NEGATIVE_INFINITY; 
+    var xMin = Number.POSITIVE_INFINITY;
+    var yMin = Number.POSITIVE_INFINITY; 
+    var yMax = Number.NEGATIVE_INFINITY;
+
+  for ( var i = 0; i < physics.numberOfParticles(); ++i )
+  {
+    var p = physics.getParticle( i );
+    xMax = max( xMax, p. getPosition(). getX() );
+    xMin = min( xMin, p. getPosition(). getX() );
+    yMin = min( yMin, p. getPosition(). getY() );
+    yMax = max( yMax, p. getPosition(). getY() );
+  }
+  var deltaX = xMax-xMin;
+  var deltaY = yMax-yMin;
+
+  if ( deltaY > deltaX )
+    centroid.setTarget( xMin + 0.5*deltaX, yMin +0.5*deltaY, height/(deltaY+50) );
+  else
+    centroid.setTarget( xMin + 0.5*deltaX, yMin +0.5*deltaY, width/(deltaX+50) );
+
+}
+
+function addSpacersToNode( p, r )
+{
+  for ( var i = 0; i < physics.numberOfParticles(); ++i )
+  {
+    var q = physics.getParticle( i );
+    if ( p != q && p != r )
+      physics.makeAttraction( p, q, -SPACER_STRENGTH, 20 );
+  }
+}
+
+function makeEdgeBetween( a, b )
+{
+  physics.makeSpring( a, b, EDGE_STRENGTH, EDGE_STRENGTH, EDGE_LENGTH );
+}
+
+function initialize()
+{
+  sendMess("/circle/notes " + int(0)+" "+int(notes[0])+" "+float(0.1)); //turn all notes off
+  physics.clear();
+  physics.makeParticle();
+  centroid.setValue( 0, 0, 1.0 );
+}
+
+function addNode()
+{ 
+  var p = physics.makeParticle();
+  var q = physics.getParticle( int(random( 0, physics.numberOfParticles()-1) ));
+
+  while ( q == p )
+    q = physics.getParticle( int(random( 0, physics.numberOfParticles()-1) ));
+  addSpacersToNode( p, q );
+  makeEdgeBetween( p, q );
+  p.moveTo( q. getPosition(). getX() + random( -1, 1 ), q. getPosition(). getY() + random( -1, 1 ), 0 );
+}
+
+

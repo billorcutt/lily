@@ -1,0 +1,41 @@
+//http://www.processing.org/learning/examples/reach1.html
+
+var x = 100;
+var y = 100;
+var x2 = 100;
+var y2 = 100;
+var segLength = 30;
+
+function setup() {
+  size(200, 200);
+  smooth(); 
+  strokeWeight(20.0);
+  stroke(0, 100);
+}
+
+function draw() {
+  background(226);
+  
+  var dx = mouseX - x;
+  var dy = mouseY - y;
+  var angle1 = atan2(dy, dx);  
+  
+  var tx = mouseX - cos(angle1) * segLength;
+  var ty = mouseY - sin(angle1) * segLength;
+  dx = tx - x2;
+  dy = ty - y2;
+  var angle2 = atan2(dy, dx);  
+  x = x2 + cos(angle2) * segLength;
+  y = y2 + sin(angle2) * segLength;
+  
+  segment(x, y, angle1); 
+  segment(x2, y2, angle2); 
+}
+
+function segment(x, y, a) {
+  pushMatrix();
+  translate(x, y);
+  rotate(a);
+  line(0, 0, segLength, 0);
+  popMatrix();
+}

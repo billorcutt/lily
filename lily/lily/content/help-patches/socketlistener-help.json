@@ -1,0 +1,37 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'socketlistener-help','width':566,'height':333,'color':'#FFFFFF','mode':'performance','objArray':{
+	'message!uid=3553083456317':{'name':'message','top':65,'left':16,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':10,'width':217,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'this is a message for the listener','objID':'message!uid=3553083456317','type':'object'},
+	'socket!uid=3553083445957':{'name':'socket','top':165,'left':16,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':19,'width':142,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'127.0.0.1 9001','objID':'socket!uid=3553083445957','type':'object'},
+	'comment!uid=3553084002579':{'name':'comment','top':9,'left':439,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':12,'height':13,'width':104,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'Server Socket.','inspectorConfig':[{name:"commentText", value:"Server Socket.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3553084002579','type':'object'},
+	'launchurl!uid=28410451238061':{'name':'launchurl','top':1,'left':15,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':54,'width':186,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Socketlistener SOCKETLISTENER','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Socketlistener", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"SOCKETLISTENER", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=28410451238061','type':'object'},
+	'comment!uid=4747670656461':{'name':'comment','top':242,'left':17,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':8,'height':21,'width':302,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Object argument: port [9001]','inspectorConfig':[{name:"commentText", value:"Object argument: port [9001]", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=4747670656461','type':'object'},
+	'socketlistener!uid=1197662796916':{'name':'socketlistener','top':169,'left':305,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':7,'height':19,'width':124,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'9001','objID':'socketlistener!uid=1197662796916','type':'object'},
+	'message!uid=1197662883316':{'name':'message','top':68,'left':305,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':10,'width':210,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'this is a response for the client','objID':'message!uid=1197662883316','type':'object'},
+	'print!uid=1197662812820':{'name':'print','top':207,'left':305,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':19,'width':82,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'listener','objID':'print!uid=1197662812820','type':'object'},
+	'print!uid=2375373090788':{'name':'print','top':207,'left':16,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':19,'width':70,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'client','objID':'print!uid=2375373090788','type':'object'},
+	'comment!uid=1197663121555':{'name':'comment','top':100,'left':315,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':10,'width':246,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'this is the listener socket. once the client has connected, click the message above to send the response.','inspectorConfig':[{name:"commentText", value:"this is the listener socket. once the client has connected, click the message above to send the response.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1197663121555','type':'object'},
+	'comment!uid=2395326254558':{'name':'comment','top':98,'left':28,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':10,'width':178,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'this is the client socket. click the message box above to send the message','inspectorConfig':[{name:"commentText", value:"this is the client socket. click the message box above to send the message", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2395326254558','type':'object'},
+	'message!uid=3553083456317.outlet1_socket!uid=3553083445957.inlet1':{'inlet':'socket!uid=3553083445957.inlet1','outlet':'message!uid=3553083456317.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:16,startTop:92,endLeft:16,endTop:111.5},
+{'orientation':'horizontal',startLeft:16,startTop:111.5,endLeft:16,endTop:111.5},
+{'orientation':'vertical',startLeft:16,startTop:111.5,endLeft:16,endTop:170}
+]
+},
+	'message!uid=1197662883316.outlet1_socketlistener!uid=1197662796916.inlet1':{'inlet':'socketlistener!uid=1197662796916.inlet1','outlet':'message!uid=1197662883316.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:305,startTop:95,endLeft:305,endTop:122},
+{'orientation':'horizontal',startLeft:305,startTop:122,endLeft:305,endTop:122},
+{'orientation':'vertical',startLeft:305,startTop:122,endLeft:305,endTop:174}
+]
+},
+	'socketlistener!uid=1197662796916.outlet1_print!uid=1197662812820.inlet1':{'inlet':'print!uid=1197662812820.inlet1','outlet':'socketlistener!uid=1197662796916.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:305,startTop:196,endLeft:305,endTop:202},
+{'orientation':'horizontal',startLeft:305,startTop:202,endLeft:305,endTop:202},
+{'orientation':'vertical',startLeft:305,startTop:202,endLeft:305,endTop:212}
+]
+},
+	'socket!uid=3553083445957.outlet1_print!uid=2375373090788.inlet1':{'inlet':'print!uid=2375373090788.inlet1','outlet':'socket!uid=3553083445957.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:16,startTop:192,endLeft:16,endTop:199.5},
+{'orientation':'horizontal',startLeft:16,startTop:199.5,endLeft:16,endTop:199.5},
+{'orientation':'vertical',startLeft:16,startTop:199.5,endLeft:16,endTop:212}
+]
+}}
+}

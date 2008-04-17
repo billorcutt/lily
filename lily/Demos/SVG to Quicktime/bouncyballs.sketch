@@ -1,0 +1,100 @@
+//import traer.physics.*;
+
+var mouse = null;
+var b = null;
+var c = null;
+var d = null;
+var physics = null;
+
+var smoothie = new Smoother();
+smoothie.setSmoothness(0.95);
+
+function setup()
+{
+  size( 480, 400 );
+  frameRate( 24 );
+  smooth();
+  ellipseMode( "CENTER" );
+  stroke(0);
+  strokeWeight(10);
+  //noCursor(); noop in js
+  
+  physics = new ParticleSystem( 0, 0.1 );
+  mouse = physics.makeParticle();
+  mouse.makeFixed();
+  b = physics.makeParticle( 1.0, random( 0, width ), random( 0, height ), 0 );
+  c = physics.makeParticle( 1.0, random( 0, width ), random( 0, height ), 0 );
+  d = physics.makeParticle( 1.0, random( 0, width ), random( 0, height ), 0 );
+  
+  physics.makeAttraction( mouse, b, 5000, 10 );
+  physics.makeAttraction( mouse, c, 4000, 10 );
+  physics.makeAttraction( mouse, d, 3000, 10 );
+  physics.makeAttraction( b, c, -2000, 5 );
+  physics.makeAttraction( b, d, -1000, 5 );
+  physics.makeAttraction( c, d, -3000, 5 );
+}
+
+function draw()
+{
+  mouse.moveTo( mouseX, mouseY, 0 );
+  handleBoundaryCollisions( b );
+  handleBoundaryCollisions( c );
+  handleBoundaryCollisions( d );
+  physics.tick();
+
+  background( 200 );
+  
+  fill( 0,.25 );
+  ellipse( mouse.getPosition().getX(), mouse.getPosition().getY(), 75, 75 );
+
+  fill( 0,.5 );
+  strokeWeight(
+	map(
+	2 - constrain(
+		abs(
+			smoothIt(
+				b.getForce().x
+			)
+		),0,2
+	),0,2,10,250)
+  );
+  strokeOpacity(
+	map(
+	constrain(
+		abs(
+			smoothIt(
+				b.getForce().x
+			)
+		),0,2
+	),0,2,.25,1)
+  );
+
+  ellipse( b.getPosition().getX(), b.getPosition().getY(), 35, 35 );
+  sendMess("/nodes/b/force/x "+(.90+constrain(abs(smoothIt(b.getForce().x)),0,1)));
+   
+  ellipse( c.getPosition().getX(), c.getPosition().getY(), 35, 35 );
+  sendMess("/nodes/c/force/x "+(.90+constrain(abs(smoothIt(c.getForce().x)),0,1)));
+
+  ellipse( d.getPosition().getX(), d.getPosition().getY(), 35, 35 );
+  sendMess("/nodes/d/force/x "+(.90+constrain(abs(smoothIt(d.getForce().x)),0,1)));
+
+}
+
+function smoothIt(val) {
+	smoothie.setTarget(val);
+	smoothie.tick();
+	return smoothie.getValue();
+}
+
+// really basic collision strategy:
+// sides of the window are walls
+// if it hits a wall pull it outside the wall and flip the direction of the velocity
+// the collisions aren't perfect so we take them down a notch too
+function handleBoundaryCollisions( p )
+{
+  if ( p.getPosition().getX() < 0 || p.getPosition().getX() > width )
+    p.setVelocity( -0.9*p.getVelocity().getX(), p.getVelocity().getY(), 0 );
+  if ( p.getPosition().getY() < 0 || p.getPosition().getY() > height )
+    p.setVelocity( p.getVelocity().getX(), -0.9*p.getVelocity().getY(), 0 );
+  p.moveTo( constrain( p.getPosition().getX(), 0, width ), constrain( p.getPosition().getY(), 0, height ), 0 ); 
+}

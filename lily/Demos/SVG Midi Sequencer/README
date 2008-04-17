@@ -1,0 +1,14 @@
+HOWTO
+
+* Start the demo by opening the file svg-midi-sequencer.json.
+
+* Start the sequencer by clicking the checkbox at the top of the patch.
+
+* Press the spacebar to add a node to the sequencer. 
+
+* Press 'c' to reset all nodes.
+
+* Click a node while holding down the 'x' key to toggle its selected state.
+
+* Open a terminal window and start the Chuck patch in this directory- "chuck osc2midi.ck"
+

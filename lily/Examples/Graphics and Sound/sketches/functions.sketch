@@ -1,0 +1,27 @@
+//http://www.processing.org/learning/examples/functions.html
+
+function setup() 
+{
+  size(200, 200);
+  background(51);
+  noStroke();
+  smooth();
+  noLoop();
+}
+
+function draw() 
+{
+  draw_target(68, 34, 200, 10);
+  draw_target(152, 16, 100, 3);
+  draw_target(100, 144, 80, 5);
+}
+
+function draw_target(xloc, yloc, size, num) 
+{
+  var grayvalues = 255/num;
+  var steps = size/num;
+  for(var i=0; i<num; i++) {
+    fill(i*grayvalues);
+    ellipse(xloc, yloc, size-i*steps, size-i*steps);
+  }
+}

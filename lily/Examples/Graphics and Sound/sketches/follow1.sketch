@@ -1,0 +1,34 @@
+//http://www.processing.org/learning/examples/follow1.html
+
+var x = 100;
+var y = 100;
+var angle1 = 0.0;
+var segLength = 50;
+
+function setup() {
+  size(200, 200);
+  smooth(); 
+  strokeWeight(20.0);
+  stroke(0, 100);
+}
+
+function draw() {
+  background(226);
+  
+  var dx = mouseX - x;
+  var dy = mouseY - y;
+  angle1 = atan2(dy, dx);  
+  x = mouseX - (cos(angle1) * segLength);
+  y = mouseY - (sin(angle1) * segLength);
+ 
+  segment(x, y, angle1); 
+  ellipse(x, y, 20, 20);
+}
+
+function segment(x, y, a) {
+  pushMatrix();
+  translate(x, y);
+  rotate(a);
+  line(0, 0, segLength, 0);
+  popMatrix();
+}

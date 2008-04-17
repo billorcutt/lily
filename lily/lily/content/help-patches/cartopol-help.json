@@ -1,0 +1,49 @@
+var patch={'version':'0.1-public_beta-1','platform':'apple','title':'cartopol-help','width':437,'height':354,'color':'#FFFFFF','mode':'performance','objArray':{
+	'cartopol!uid=1189576221789':{'name':'cartopol','top':198,'left':63,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':53,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'cartopol!uid=1189576221789','type':'object'},
+	'number!uid=1189576276060':{'name':'number','top':78,'left':20,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':23,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=1189576276060','type':'object'},
+	'print!uid=1189576316941':{'name':'print','top':264,'left':154,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':4,'height':19,'width':70,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'theta','objID':'print!uid=1189576316941','type':'object'},
+	'bang!uid=1189576516299':{'name':'bang','top':141,'left':86,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':35,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','objID':'bang!uid=1189576516299','type':'object'},
+	'number!uid=1189576529259':{'name':'number','top':75,'left':158,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':6,'height':19,'width':23,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','inspectorConfig':[{name:"minValue", value:"", label:"Minimum Value", type:"string", input:"text"}, {name:"maxValue", value:"", label:"Maximum Value", type:"string", input:"text"}],'objID':'number!uid=1189576529259','type':'object'},
+	'launchurl!uid=22488667153905':{'name':'launchurl','top':3,'left':15,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'blue','opacity':1,'zIndex':11,'height':52,'width':163,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Cartopol CARTOPOL','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Cartopol", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"CARTOPOL", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=22488667153905','type':'object'},
+	'comment!uid=3558832230755':{'name':'comment','top':12,'left':273,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':36,'width':150,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Convert cartesian coordinates to polar ','inspectorConfig':[{name:"commentText", value:"Convert cartesian coordinates to polar ", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3558832230755','type':'object'},
+	'comment!uid=1192426433865':{'name':'comment','top':74,'left':186,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':15,'width':90,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'y coordinate','inspectorConfig':[{name:"commentText", value:"y coordinate", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1192426433865','type':'object'},
+	'comment!uid=2384852875199':{'name':'comment','top':77,'left':47,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':9,'height':16,'width':90,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'x coordinate','inspectorConfig':[{name:"commentText", value:"x coordinate", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=2384852875199','type':'object'},
+	'print!uid=1189576300821':{'name':'print','top':263,'left':21,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':10,'height':19,'width':74,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'radius','objID':'print!uid=1189576300821','type':'object'},
+	'comment!uid=1192426682682':{'name':'comment','top':190,'left':126,'color':'transparent','fontSize':'12','fontFamily':'Verdana,DejaVu Sans,sans-serif','fontColor':'#000000','opacity':1,'zIndex':11,'height':36,'width':200,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'number or <bang> input in left inlet triggers output','inspectorConfig':[{name:"commentText", value:"number or <bang> input in left inlet triggers output", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=1192426682682','type':'object'},
+	'number!uid=1189576276060.outlet1_cartopol!uid=1189576221789.inlet1':{'inlet':'cartopol!uid=1189576221789.inlet1','outlet':'number!uid=1189576276060.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:20,startTop:105,endLeft:20,endTop:183},
+{'orientation':'horizontal',startLeft:20,startTop:183,endLeft:63,endTop:183},
+{'orientation':'vertical',startLeft:63,startTop:183,endLeft:63,endTop:203}
+]
+},
+	'cartopol!uid=1189576221789.outlet2_print!uid=1189576316941.inlet1':{'inlet':'print!uid=1189576316941.inlet1','outlet':'cartopol!uid=1189576221789.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:107,startTop:225,endLeft:107,endTop:244},
+{'orientation':'horizontal',startLeft:107,startTop:244,endLeft:154,endTop:244},
+{'orientation':'vertical',startLeft:154,startTop:244,endLeft:154,endTop:269}
+]
+},
+	'bang!uid=1189576516299.outlet1_cartopol!uid=1189576221789.inlet1':{'inlet':'cartopol!uid=1189576221789.inlet1','outlet':'bang!uid=1189576516299.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:86,startTop:168,endLeft:86,endTop:188.5},
+{'orientation':'horizontal',startLeft:86,startTop:188.5,endLeft:63,endTop:188.5},
+{'orientation':'vertical',startLeft:63,startTop:188.5,endLeft:63,endTop:203}
+]
+},
+	'number!uid=1189576529259.outlet1_bang!uid=1189576516299.inlet1':{'inlet':'bang!uid=1189576516299.inlet1','outlet':'number!uid=1189576529259.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:158,startTop:102,endLeft:158,endTop:129},
+{'orientation':'horizontal',startLeft:158,startTop:129,endLeft:86,endTop:129},
+{'orientation':'vertical',startLeft:86,startTop:129,endLeft:86,endTop:146}
+]
+},
+	'number!uid=1189576529259.outlet1_cartopol!uid=1189576221789.inlet2':{'inlet':'cartopol!uid=1189576221789.inlet2','outlet':'number!uid=1189576529259.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:158,startTop:102,endLeft:158,endTop:183},
+{'orientation':'horizontal',startLeft:158,startTop:183,endLeft:107,endTop:183},
+{'orientation':'vertical',startLeft:107,startTop:183,endLeft:107,endTop:203}
+]
+},
+	'cartopol!uid=1189576221789.outlet1_print!uid=1189576300821.inlet1':{'inlet':'print!uid=1189576300821.inlet1','outlet':'cartopol!uid=1189576221789.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:63,startTop:225,endLeft:63,endTop:246},
+{'orientation':'horizontal',startLeft:63,startTop:246,endLeft:21,endTop:246},
+{'orientation':'vertical',startLeft:21,startTop:246,endLeft:21,endTop:268}
+]
+}}
+}

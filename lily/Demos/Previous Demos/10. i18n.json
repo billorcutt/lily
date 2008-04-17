@@ -1,0 +1,5 @@
+var patch={'version':'0.1-beta-2','title':'i18n.json','width':772,'height':694,'color':'#FFFFFF','mode':'performance','objArray':{
+	'comment!uid=1179545724220':{'name':'comment','top':54,'left':54,'color':'#FFFFFF','fontSize':'100','fontFamily':'굴림','opacity':1,'zIndex':1,'height':121,'width':676,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'한국어; 韓國語','objID':'comment!uid=1179545724220','type':'object'},
+	'comment!uid=1179546365635':{'name':'comment','top':266,'left':55,'color':'#FFFFFF','fontSize':'100','fontFamily':'Osaka−等幅','opacity':1,'zIndex':3,'height':111,'width':310,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'日本語','objID':'comment!uid=1179546365635','type':'object'},
+	'comment!uid=1179546439749':{'name':'comment','top':479,'left':57,'color':'#FFFFFF','fontSize':'100','fontFamily':'华文仿宋','opacity':1,'zIndex':4,'height':108,'width':460,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'汉语/漢語','objID':'comment!uid=1179546439749','type':'object'}}
+}
