@@ -12,6 +12,7 @@
 
     <script type="application/x-javascript" src="chrome://lily/content/lib.js"/>
     <script type="application/x-javascript" src="chrome://lily/content/utils.js"/>
+    <script type="application/x-javascript" src="chrome://lily/content/externals.js"/>
     <script type="application/x-javascript" src="chrome://lily/content/debug.js"/>
     <script type="application/x-javascript" src="chrome://lily/content/inspector.js"/>
     <script type="application/x-javascript" src="chrome://lily/content/model.js"/>
