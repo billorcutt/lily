@@ -75,9 +75,13 @@ function selectDirectory(id) {
 		
 //		dump("extensions.lily."+field.id.substring(0,field.id.length-5)+"Path "+field.value)
 		
-		prefs.setCharPref("extensions.lily."+field.id.substring(0,field.id.length-5)+"Path",field.value);
+		setSearchDirPref(field);
 	
 	}
+}
+
+function setSearchDirPref(field) {
+	prefs.setCharPref("extensions.lily."+field.id.substring(0,field.id.length-5)+"Path",field.value);
 }
 
 //font face menu ui
@@ -238,6 +242,7 @@ function LilyInitPrefsWindow() {
 	
 	document.getElementById("lilyPrefButtonOK").addEventListener("click",function() {
 		getKeyValues();
+		setSearchDirPref(document.getElementById("searchField"));
 		window.close();
 	},false);						
 
