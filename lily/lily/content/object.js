@@ -217,12 +217,12 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 			}		
 
 			if(ui && typeof font!="undefined")	
-				ui.style.fontFamily=font;
+				ui.style.fontFamily=LilyUtils.getCompatibleFont(font);
 
 			this.fontFamily=font;
 
 			if(this.displayElement) //update custom ui
-				this.displayElement.style.fontFamily=font;
+				this.displayElement.style.fontFamily=LilyUtils.getCompatibleFont(font);
 
 			if(this.resetSize) {
 				this.controller.objResizeControl.resetSize();

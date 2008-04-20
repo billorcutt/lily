@@ -1961,7 +1961,7 @@ function LilyPatchView(pID,parent,extWin)
 	
 	//set the font face
 	this.setPatchFontFamily=function(family) {
-		this.body.style.fontFamily=family;
+		this.body.style.fontFamily=LilyUtils.getCompatibleFont(font);
 	}
 	
 	//set the font size

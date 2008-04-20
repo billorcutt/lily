@@ -53,7 +53,7 @@ var LilyDebugWindow = {
 			this.bWin=this.dWin.document.getElementById("browserDebugElement").contentWindow;
 			this.dWinBody=this.bWin.document.getElementById("bodyElement");
 			this.dWin.addEventListener("unload",function(){LilyDebugWindow.reset()},false);
-			this.dWinBody.style.fontFamily=font[0];
+			this.dWinBody.style.fontFamily=LilyUtils.getCompatibleFont(font[0]);
 			this.dWinBody.style.fontSize=font[1];
 			setTimeout(function(){LilyDebugWindow.dWin.blur();},100);					
 		}		
@@ -208,7 +208,7 @@ var LilyDebugWindow = {
 		if(this.dWin&&this.dWinBody&&this.bWin) {			
 			var wrapper=this.bWin.document.createElement("div");
 			if(font_weight) wrapper.style.fontWeight = font_weight;
-			if(font_family) wrapper.style.fontFamily = font_family;
+			if(font_family) wrapper.style.fontFamily = LilyUtils.getCompatibleFont(font_family);
 			if(font_size) wrapper.style.fontSize = font_size;
 			if(font_style) wrapper.style.fontStyle = font_style;
 			if(font_color) wrapper.style.color = font_color;						

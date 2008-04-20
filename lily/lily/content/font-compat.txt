@@ -1,0 +1,20 @@
+{
+	"arial":"arial, dejavu sans, san-serif",
+	"arial black":"arial black, san-serif",	
+	"courier new":"courier new, monospace",
+	"georgia":"georgia, dejavu serif, serif",
+	"impact":"impact, san-serif",
+	"lucida console":"lucida console, monaco, monospace",
+	"lucida san unicode":"lucida san unicode, lucida grande, dejavu serif, san-serif",
+	"palatino linotype":"palatino linotype, book antiqua, serif",
+	"tahoma":"tahoma, geneva, san-serif",
+	"times new roman":"times new roman, times, dejavu serif, san-serif",
+	"trebuchet ms":"trebuchet ms, helvetica, dejavu sans, san-serif",
+	"verdana":"verdana, dejavu sans, san-serif",
+	"monaco":"lucida console, monaco, monospace",
+	"lucida grande":"lucida san unicode, lucida grande, dejavu serif, san-serif",
+	"book antiqua":"palatino linotype, book antiqua, serif",
+	"geneva":"tahoma, geneva, san-serif",
+	"times":"times new roman, times, dejavu serif, san-serif",
+	"helvetica":"trebuchet ms, helvetica, dejavu sans, san-serif"
+}

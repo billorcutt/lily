@@ -80,6 +80,30 @@ var LilyUtils = {
 	},
 	
 	/*
+		Method: getCompatibleFont
+			get the all compatible fonts.
+	
+		Returns: 
+			string - compatible font list.
+	*/
+	getCompatibleFont: function(font) {
+		
+		if(!Lily["font-compat-table"]) {	
+			LilyUtils.readSyncFromURL("chrome://lily/content/font-compat.txt",function(txt){
+				Lily["font-compat-table"]=eval("("+txt+")");
+			});
+		}
+				
+		var tmp = Lily["font-compat-table"][font.toLowerCase()];
+		if(tmp) {
+			return tmp;
+		} else {
+			return font;
+		}
+		
+	},
+	
+	/*
 		Method: setDefaultFont
 			set the default font preference.
 	
@@ -1538,7 +1562,7 @@ var LilyUtils = {
 	
 	/*
 		Method: getConfigProperty
-			get a property from the config file.
+			get a property from a config file.
 			
 		Arguments:
 			prop - the property to get.
@@ -1546,10 +1570,10 @@ var LilyUtils = {
 		Returns: 
 			returns the property if it exists otherwise undefined.
 	*/
-	getConfigProperty: function(prop) {
-		
+	getConfigProperty: function(prop,url) {
+		var config_url = url||"chrome://lily/content/config.txt";
 		var tmp = null;		
-		LilyUtils.readSyncFromURL("chrome://lily/content/config.txt",function(txt){
+		LilyUtils.readSyncFromURL(config_url,function(txt){
 			tmp=txt;
 		});
 		var config = eval("("+tmp+")");	
