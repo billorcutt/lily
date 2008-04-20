@@ -1,6 +1,6 @@
 var patch={'title':'helloworld.json','width':749,'height':481,'color':'#FFFFFF','mode':'performance','objArray':{
-	'print!uid=1170009252478':{'name':'print','top':401,'left':614,'color':'#FFFFFF','fontSize':'10','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':1,'height':11,'width':29,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','objID':'print!uid=1170009252478','type':'object'},
-	'message!uid=1170009258279':{'name':'message','top':43,'left':74,'color':'#FFFFFF','fontSize':'105','fontFamily':'Verdana,DejaVu Sans,sans-serif','opacity':1,'zIndex':2,'height':null,'width':null,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','args':'hello world','objID':'message!uid=1170009258279','type':'object'},
+	'print!uid=1170009252478':{'name':'print','top':401,'left':614,'color':'#FFFFFF','fontSize':'10','fontFamily':'Verdana','opacity':1,'zIndex':1,'height':11,'width':29,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','objID':'print!uid=1170009252478','type':'object'},
+	'message!uid=1170009258279':{'name':'message','top':43,'left':74,'color':'#FFFFFF','fontSize':'105','fontFamily':'Verdana','opacity':1,'zIndex':2,'height':null,'width':null,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','args':'hello world','objID':'message!uid=1170009258279','type':'object'},
 	'message!uid=1170009258279.outlet1_print!uid=1170009252478.inlet1':{'inlet':'print!uid=1170009252478.inlet1','outlet':'message!uid=1170009258279.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
 {'orientation':'vertical',startLeft:74,startTop:182,endLeft:74,endTop:289},
 {'orientation':'horizontal',startLeft:74,startTop:289,endLeft:614,endTop:290},
