@@ -5,7 +5,7 @@
 	"georgia":"georgia, dejavu serif, serif",
 	"impact":"impact, san-serif",
 	"lucida console":"lucida console, monaco, dejavu sans mono, monospace",
-	"lucida san unicode":"lucida san unicode, lucida grande, dejavu san, san-serif",
+	"lucida san unicode":"lucida san unicode, lucida grande, dejavu sans, san-serif",
 	"palatino linotype":"palatino linotype, book antiqua, serif",
 	"tahoma":"tahoma, geneva, san-serif",
 	"times new roman":"times new roman, times, dejavu serif, san-serif",
