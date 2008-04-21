@@ -81,10 +81,13 @@ var LilyUtils = {
 	
 	/*
 		Method: getCompatibleFont
-			get the all compatible fonts.
+			get compatible fonts.
+			
+			Arguments: 
+				sring - font family name.			
 	
 		Returns: 
-			string - compatible font list.
+			string - list of cross platform font equivalents.
 	*/
 	getCompatibleFont: function(font) {
 		
