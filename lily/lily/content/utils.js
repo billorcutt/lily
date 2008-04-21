@@ -80,6 +80,25 @@ var LilyUtils = {
 	},
 	
 	/*
+		Method: sizeFontForPlatform
+			size the font for the platform.
+			
+			Arguments: 
+				number - size.			
+	
+		Returns: 
+			number - sized font.
+	*/
+	sizeFontForPlatform: function(font_size) {
+		if(LilyUtils.navigatorPlatform()!='apple') { //if not apple opened elsewhere
+			var tmp = parseInt(font_size)-1;
+			return (tmp); //reduce the font size by 1.
+		} else {
+			return font_size; //just return the font
+		}
+	},	
+	
+	/*
 		Method: getCompatibleFont
 			get compatible fonts.
 			

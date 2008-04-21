@@ -165,17 +165,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 		}
 				
 	}
-	
-	//private
-	function sizeFontForPlatform(font_size) {
-		if(LilyUtils.navigatorPlatform()!='apple') { //if not apple opened elsewhere
-			var tmp = parseInt(font_size)-1;
-			return (tmp); //reduce the font size by 1.
-		} else {
-			return font_size; //just return the font
-		}
-	}		
-	
+			
 	//font size
 	this.setFontSize=function(size) {
 		
@@ -187,12 +177,12 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 			}		
 
 			if(ui && typeof size!="undefined")	
-				ui.style.fontSize=sizeFontForPlatform(size)+"px";
+				ui.style.fontSize=LilyUtils.sizeFontForPlatform(size)+"px";
 
 			this.fontSize=size;
 
 			if(this.displayElement) //update custom ui
-				this.displayElement.style.fontSize=sizeFontForPlatform(size)+"px";
+				this.displayElement.style.fontSize=LilyUtils.sizeFontForPlatform(size)+"px";
 				
 			if(this.resetSize) {
 				this.controller.objResizeControl.resetSize();	
@@ -1953,7 +1943,7 @@ function LilyObjectView (obj,HTML,cmdStr) {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	this.editObjectHTML="<input style=\"padding-right:5px;padding-left:5px;background:white;font-size:"+LilyUtils.getDefaultFont()[1]+"px;font-family:"+LilyUtils.getDefaultFont()[0]+"\" autocomplete=\"off\" type=\"text\" id=\"" + this.parent.createElID("input") + "\" class=\"defaultEntry\"/><br/><div id=\""+ this.parent.createElID("autoCompleteList") +"\"></div>";
+	this.editObjectHTML="<input style=\"padding-right:5px;padding-left:5px;background:white;font-size:"+LilyUtils.sizeFontForPlatform(LilyUtils.getDefaultFont()[1])+"px;font-family:"+LilyUtils.getDefaultFont()[0]+"\" autocomplete=\"off\" type=\"text\" id=\"" + this.parent.createElID("input") + "\" class=\"defaultEntry\"/><br/><div id=\""+ this.parent.createElID("autoCompleteList") +"\"></div>";
 	this.wrapperObjectHTML="<div style=\"min-width:28px;min-height:12px;padding:2px;\" id=\""+ this.parent.createElID("inputWrapper") +"\" ></div>";
 	
 	//build obj inner html

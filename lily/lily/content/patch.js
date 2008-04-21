@@ -1966,7 +1966,7 @@ function LilyPatchView(pID,parent,extWin)
 	
 	//set the font size
 	this.setPatchFontSize=function(size) {
-		this.body.style.fontSize=size;
+		this.body.style.fontSize=LilyUtils.sizeFontForPlatform(size);
 	}
 	
 	this.setWindowStatusIcon=function(state) {		
