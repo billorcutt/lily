@@ -2,6 +2,280 @@ CHANGE LOG
 
 -----------------
 
+LILY-0.1-PUBLIC-BETA-2 (April 22, 2008)
+
+-----------------
+
+* fix bug where autocomplete list was a pixel smaller on linux & windows 
+
+* fix font misspell 
+
+* fix font commpat comments and add some more fonts to the font table 
+
+* fix the hardcoded font family string in help/demo/example patches 
+
+* add support for rudimentary cross platform font compatibility 
+
+* split off LilyObjectList into to a separate file- external.js 
+
+* fix a bug where search directory pref was not being saved unless it was set with the filepicker.
+
+* fix bug in osccomponent
+
+* remove old oscservice directory
+
+* adding some cross platform font stuff
+
+* add support for different pref defaults for different platforms
+
+* remove old prefs location
+
+* add linux font option to help-patches
+
+* fix a bug with the debug & trace menus
+
+* remove errorDispath from debug.
+
+* Alter the output of the objects toString method
+
+* add trace function to debug menu
+
+* fix various event listening bugs
+
+* change names of methods called "parent" in dom & thispatch
+
+* refactor some model code
+
+* add a toString method to object
+
+* update examples, demos & help
+
+* add platform aware carrige return
+
+* add code to redraw patch with toggle into perf mode
+
+* more qt fixes
+
+* update qt to use quicktime dom events & embed tag
+
+* fix bug in slideshow
+
+* many fixes, help-patches updates
+
+* update osc stuff
+
+* update docs
+
+* fix the web page sonifier demo
+
+* fix a bug affect methods applied to the element
+
+* add a try block to file remove in textfile
+
+* add some safety checks to qt & dom
+
+* fix a bug affecting chrome urls in host
+
+* fix with loading scripts in eval
+
+* more osc fixes
+
+* fixes for osc and shutdown
+
+* fix some more bugs in osc component
+
+* fix up osc help
+
+* removing the second argument from oscreceive
+
+* fixes for various demos
+
+* platform stuff for osc
+
+* replace osc with flosc based implementation
+
+* add code to detect quit and prompt user to quit
+
+* changing reload method in iframe.
+
+* complete testing of secure update
+
+* add zoom methods- commented out for now
+
+* fix bug in eval
+
+* add menu item to dis/enable show all js errors
+
+* add scrolling methods to table & update help
+
+* fix filepath/url handling to support quoted path strings
+
+* remove google objects
+
+* fix bug in inspector
+
+* add a menu item to help to file a bug.
+
+* add html rendering support for various objects- launchurl, marquee, comment
+
+* remove html support in message
+
+* fix bug where [string quote] would not work with [string thumbs]
+
+* add a "save as" option
+
+* implement those methods in message, table, link & comment.
+
+* update link help.
+
+* fix bug where setting display="none" on the inlet/outlets was causing findpos methods to return incorrect values, resulting in some screwy connections.
+
+* fix bug where filepicker would crash due to window blur after show()
+
+* add methods "parseXML" & "makeSafe" to utils
+
+* add try/catch blocks to extern loading for better error reporting
+
+* fix bug affecting connections on objects with more than one inlet/outlet
+
+* add makesafe calls to table
+
+* add parseXML call to dom
+
+* fix bug where pressing cancel after closing the main window didn't halt shutdown.
+
+* fix bug where backslashes where stripped from message
+
+* add stripquotes & stripbackslashes to string object
+
+* fix bug where overwriting existing patch would fail silently
+
+* fix activity help
+
+* update activity to use new apng functionality
+
+* removing some broken or ill-advised externs
+
+* remove debug code from pic.
+
+* update pic help file
+
+* add rounded corners to pic
+
+* fix bug with filepicker in inspector
+
+* update docs.
+
+* fix bug where accel-w to close patch crashes FF
+
+* fix bug where unmodified new patches would prompt to save.
+
+* close all lily windows, prompting to save as required, when closing main (host) window.
+
+* fix various bugs where a scrolled patch window would cause mischief
+
+* uncomment the iframe focus/blur hack
+
+* make change so that hidden objects have a display value of "none"- fixes the scrollbar bug
+
+* do some cleanup
+
+* fix bug involving iframe stealing clicks
+
+* fix bug involving resize when mouse moved off patch
+
+* add update hash to update.rdf
+
+* update docs.
+
+* fix relative path handling
+
+* add an updateHash to install.rdf
+
+* add an update rdf- needs work
+
+* change the name of a couple of menus
+
+* add a key to install.rdf
+
+* change the timing of the updatePatchData call
+
+* update some help files
+
+* fix incorrect prompt to save when nothing has changed.
+
+* fix to enable save as app in linux
+
+* fixes for save as app/addon. needs to be tested.
+
+* fix regexps in clear size (part of setHeight & setWidth)
+
+* implement previous file path bug fix for pic & qt
+
+* fix intermittent bug in inspector where cloneInspectorConfig
+
+* fix bug where filepaths with spaces in object args would cause problems- add specific fixes to subpatch, wow & patcher and supporting code in utils & lily.
+
+* add utility methods to quote and strip quotes from strings
+
+* various help patch cleanup
+
+* open the debug window before beginning init and report any error to the window.
+
+* fix more iframe bugs
+
+* filter out warnings from js error reporting
+
+* add additional safety check to getFilePath in utils
+
+* make sure patches are focused when we open them
+
+* Focus the debug window when an error is reported.
+
+* Report all JS errors to the debug window.
+
+* fix bug 45 "Can't install an addon made Lily on the same profile where Lily is installed"
+
+* fix min/max versions
+
+* fix some event bugs in introduced with my iframe fixes
+
+* add a chromeurltofile method in utils
+
+* add a log method
+
+* addon id now generated from project name not from id
+
+* add a method getPIDFromPackage to utils
+
+* fix bug where closing inspector window would crash FF
+
+* fix for subpatch inspector & drag copy issues- more spurious events a poppin'
+
+* fixing iframe drag issue. restore debug menu.
+
+* add loadTab method to host
+
+* fix bug where subpatches could not be loaded via subpatch inspector
+
+* fix bug where patches with the same name could not be focused from the window menu
+
+* fix bug where patches focused from the window menu were not being made the current patch
+
+* more exporter changes to use zipwriter. removing zip files.
+
+* replacing old zip code with zipwriter
+
+* buncha changes- updating for FF3
+
+* update docs
+
+* removing eval.apply() everywhere else
+
+* replacing eval.apply in the extern loader with the jssubscriptloader
+
+-----------------
+
 LILY-0.1-PUBLIC-BETA-1 (January 15, 2008)
 
 -----------------

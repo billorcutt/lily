@@ -1,12 +1,12 @@
 Quick Start
 
-	* After installation, you should see a Lily menu item in your "Tools". A great to begin learning about Lily is looking at the 
-	  samples in the "Examples" folders. Select "Open" to browse the examples files and demo applications (Lily application files 
-	  end with a ".json" extension). General instructions for creating a new patch are below.
+	* After installation, you should see a Lily menu item in your Firefox "Tools" menu. A great way to begin learning about Lily is by 
+	  looking at the samples in the "Examples" folders. Select "Open" to browse the examples files and demo applications (Lily application 
+	  files end with a ".json" extension). General instructions for creating a new patch are below.
 
 	* From the Lily menu, select "New". (Tools->Lily->New) A debug window and patch window will open. Patches are Lily program 
 	  documents. They can be saved by choosing "Save" from the File menu. Patches are saved as .json files. When a new patch window 
-	  opens, it's "unlocked", meaning it's possible to add and connect external. When you're ready to test your patch, you'll want 
+	  opens, it's "unlocked", meaning it's possible to edit the document. When you're ready to test your patch, you'll want 
 	  to switch to "locked" mode by unchecking "edit" under the Lily "Patch" menu or clicking the lock icon in the patch window status bar.
 	
 	* Double-click anywhere in the patch window to create your first external. Externals are the modules that add functionality to your 
@@ -14,7 +14,7 @@ Quick Start
 	  delete key while the external is empty will bring up a list of all available externals.
 	
 	* Begin typing the name of the external you want to create. (If you're unsure what you external you want to create, 
-	  have a look at the external help menu under "Help" in the menubar.) As you type, the name of the external should appear 
+	  have a look at the external help menu under "Support" in the menubar.) As you type, the name of the external should appear 
 	  in the auto-complete list that appears below the external. You can select the name using either the mouse or the arrow 
 	  keys or just continue typing until it becomes selected. Once it's selected in the auto-complete list, just hit enter 
 	  or return to complete the external name. Once the name is complete, clicking away from the external (deselecting it) 
@@ -23,7 +23,7 @@ Quick Start
 	
 	* Some externals can take typed in arguments after the external name to specify parameter values. If you're unsure of what 
 	  arguments an external can take, you can check the external's help patch by option/alt clicking the external to open the help document. 
-	  It's also possible to browse all help patches via the "External Help" menu under "Help".
+	  It's also possible to browse all help patches via the "External Help" menu under "Support".
 	
 	* To connect two externals, click on an external's outlet (outlets are located at the bottom of the external) and then move your mouse 
 	  to the external you want to connect to. You should see the patch cord following your mouse. Click on the inlet (inlets are located at the
@@ -40,59 +40,63 @@ Each window has its own menu bar and most menus are on the Patch window. There a
 browser window under "Tools -> Lily". The menus are documented below:
 
 	File
-		New  			- Open new patch.
-		Open 			- Open an existing patch from disk.
-		Save 			- Save the active patch.
-		Close			- Close the active patch.
-		Save as app		- Save the current patch as a xulrunner application.
+		New  				- Open new patch.
+		Open 				- Open an existing patch from disk.
+		Save 				- Save the active patch.
+		Close				- Close the active patch.
+		Save as				- Save the current patch with a new name.
+		Save as app			- Save the current patch as a xulrunner application.
 		Save as addon		- Save the current patch as a Mozilla/Firefox add-on
 		
 	Edit
-		Copy			- Copy selected externals & connections.
-		Cut			- Cut selected externals & connections.
-		Paste			- Paste contents of the clipboard.
-		Clear			- Delete selected externals & connections.
-		Select All 		- Select all externals & connections.
+		Copy				- Copy selected externals & connections.
+		Cut					- Cut selected externals & connections.
+		Paste				- Paste contents of the clipboard.
+		Clear				- Delete selected externals & connections.
+		Select All			- Select all externals & connections.
 
 	Patch
-		Edit			- Toggle patch edit/performance mode.
-		Color			- Change color of the patch.
+		Edit				- Toggle patch edit/performance mode.
+		Color				- Change color of the patch.
 		
 	External Object
-		Get Info		- Open the inspector for the selected external.
-		Font			- Change font size/family of selected external.
-		New			- Create a new external.
-		Color			- Change color of selected externals.
-		Hide in Performance 	- Hide selected externals when in performance mode.
-		Show in Performance 	- Show selected externals when in performance mode.		
+		Get Info			- Open the inspector for the selected external.
+		Font				- Change font size/family of selected external.
+		New					- Create a new external.
+		Color				- Change color of selected externals.
+		Hide on Lock 		- Hide selected externals when in performance mode.
+		Show on Lock 		- Show selected externals when in performance mode.		
 		Bring Forward		- Increment the z-index of the selected externals.
-		Send Back		- Decrement the z-index of the selected externals.
+		Send Back			- Decrement the z-index of the selected externals.
 		
 	Window
-		Lily Window		- Open/Close the debug window.
-		Inspector		- Open/Close the inspector window.
+		Debug Window		- Open/Close the debug window.
+		Inspector			- Open/Close the inspector window.
 		
-	Help
-		External Help		- Browse the object help files sorted  by category.
+	Support
+		Help Screen			- Keyboard shortcuts reference.
+		Options				- Open preferences dialog.
+		Report a Bug		- Open a window to file a bug on bugzilla.
+		External Help		- Browse the object help files sorted  by category.		
 		
 	Debug
+		Show all Errors 	- Report all Javascript errors in the debug window.
+		Show all Messages 	- Report all Javascript errors in the debug window.		
 		Dump Listeners		- Dump external object & patch listeners.
 		
-	Options				- Open the preferences dialog
-								
 
 Short Cuts 
 Press Ctrl/Cmd Shift H to see a help screen with application shortcuts.
 
 
 Preferences
-Add a folder to the search path.
+Add a folder to the search path. The search path is location on your computer where Lily will look to load externals or patches.
 Change the default application font.
 Add/Edit API Keys.
 
 
 API Keys
-Most web services (Yahoo, Amazon, Google, etc) require an API key to operate. The keys offer somewhat limited access, usually 
+Most web services (Yahoo, Amazon, etc) require an API key to operate. The keys offer somewhat limited access, usually 
 on the order of 1000-5000 calls/day. To simplify things for beta testing, I've set up API keys that are installed with the app that
 are shared by all testers. Please keep this mind, when you're testing- if you need greater access to a particular API, please
 sign up for your own API key. The keys can be edited in the prefs window.
