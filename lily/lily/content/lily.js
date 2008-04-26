@@ -340,25 +340,30 @@ var Lily =
 			this.installPath=this.installDir.path;
 
 			var contentDir = this.installDir.clone();
+			contentDir.append("chrome");	
 			contentDir.append("content");
 			this.contentPath=contentDir.path;
 
 			var externalsDir = this.installDir.clone();
+			externalsDir.append("chrome");			
 			externalsDir.append("content");
 			externalsDir.append("externals");
 			this.externalsPath=externalsDir.path;
 
 			var libDir=this.installDir.clone();
+			libDir.append("chrome");			
 			libDir.append("content");
 			libDir.append("lib");
 			this.libPath=libDir.path;
 
 			this.helpDir=this.installDir.clone();
+			this.helpDir.append("chrome");			
 			this.helpDir.append("content");
 			this.helpDir.append("help-patches");
 			this.helpPath=this.helpDir.path;
 
 			this.resourceDir=this.installDir.clone();
+			this.resourceDir.append("chrome");			
 			this.resourceDir.append("content");
 			this.resourceDir.append("resources");
 
@@ -369,6 +374,7 @@ var Lily =
 
 				//create a new directory
 				this.resourceDir=this.installDir.clone();
+				this.resourceDir.append("chrome");					
 				this.resourceDir.append("content");
 				this.resourceDir.append("resources");
 
@@ -530,6 +536,7 @@ var Lily =
 			this.init();
 
 		var patchFile = this.installDir.clone();
+		patchFile.append("chrome");		
 		patchFile.append("content");
 		patchFile.append(name+".json");
 		this.openPatchFromFile(patchFile,true,hidden);

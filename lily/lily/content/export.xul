@@ -12,6 +12,7 @@
 
     <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/lib.js"/>
     <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/utils.js"/>
+    <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/externals.js"/>
     <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/debug.js"/>
     <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/inspector.js"/>
     <script type="application/x-javascript" src="chrome://<PROJECT-NAME>/content/model.js"/>

@@ -246,8 +246,12 @@ var LilyPatchExporter = {
 
 		//locale
 		var tmp = Lily.installDir.clone();
+		tmp.append("chrome");		
 		tmp.append("locale");
-		tmp.copyTo(rootDir,null);
+		
+		var tmpOut = rootDir.clone();
+		tmpOut.append("chrome");
+		tmp.copyTo(tmpOut,null);
 
 		//components if we need 'em
 		if(objArr.toSource().indexOf("oscreceive")!=-1||objArr.toSource().indexOf("oscsend")!=-1) {
@@ -290,8 +294,10 @@ var LilyPatchExporter = {
 		/* START CONTENT COPYING */
 		//we'll use these variables throughout below...
 		var contentIn = Lily.installDir.clone();
+		contentIn.append("chrome");		
 		contentIn.append("content");
 		var contentOut = rootDir.clone();
+		contentOut.append("chrome");		
 		contentOut.append("content");
 
 		if( !contentOut.exists() || !contentOut.isDirectory() ) {   // if it doesn't exist, create
@@ -377,6 +383,11 @@ var LilyPatchExporter = {
 		var tmp = contentIn.clone();
 		tmp.append("keys.txt");
 		tmp.copyTo(contentOut,null);
+		
+		//font-compat.txt
+		var tmp = contentIn.clone();
+		tmp.append("font-compat.txt");
+		tmp.copyTo(contentOut,null);		
 
 		//lib
 		var tmp = contentIn.clone();
@@ -423,6 +434,11 @@ var LilyPatchExporter = {
 		var tmp = contentIn.clone();
 		tmp.append("object.js");
 		tmp.copyTo(contentOut,null);
+		
+		//external.js
+		var tmp = contentIn.clone();
+		tmp.append("externals.js");
+		tmp.copyTo(contentOut,null);		
 
 		//patch.js
 		var tmpIn = contentIn.clone();
@@ -530,8 +546,10 @@ var LilyPatchExporter = {
 		var fileIn = Lily.installDir.clone();
 		fileIn.append("chrome.manifest");
 		var fileOut = rootDir.clone();
+		fileOut.append("chrome");
 		fileOut.append("chrome.manifest");
 		var data = LilyUtils.readFile(fileIn).replace(/lily/g,projectName);
+		data = data.replace(/file\:chrome\//gm,"file:");
 		data = data.replace(/skin.*/,""); //strip out the skin line
 		data = data.replace(/overlay.*/,""); //strip out the overlay line
 		LilyUtils.writeFile(fileOut,data);
@@ -588,8 +606,12 @@ var LilyPatchExporter = {
 							
 				//locale
 				var tmp = Lily.installDir.clone();
+				tmp.append("chrome");				
 				tmp.append("locale");
-				tmp.copyTo(rootDir,null);
+
+				var tmpOut = rootDir.clone();
+				tmpOut.append("chrome");
+				tmp.copyTo(tmpOut,null);
 				
 				if(objArr.toSource().indexOf("oscreceive")!=-1||objArr.toSource().indexOf("oscsend")!=-1) {
 					//components
@@ -606,8 +628,10 @@ var LilyPatchExporter = {
 				//content
 				/* START CONTENT COPYING */
 				var contentIn = Lily.installDir.clone();
+				contentIn.append("chrome");				
 				contentIn.append("content");
 				var contentOut = rootDir.clone();
+				contentOut.append("chrome");				
 				contentOut.append("content");
 				
 				if( !contentOut.exists() || !contentOut.isDirectory() ) {   // if it doesn't exist, create
@@ -698,6 +722,11 @@ var LilyPatchExporter = {
 				var tmp = contentIn.clone();
 				tmp.append("keys.txt");
 				tmp.copyTo(contentOut,null);
+				
+				//font-compat.txt
+				var tmp = contentIn.clone();
+				tmp.append("font-compat.txt");
+				tmp.copyTo(contentOut,null);				
 				
 				//lib
 				var tmp = contentIn.clone();

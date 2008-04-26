@@ -500,7 +500,7 @@ OSCComponent.prototype._getExtensionPath = function(extensionName) {
         path = path.spec;
     }
     
-    path = path.substring(0, path.indexOf("/content/") + 1);
+    path = path.substring(0, path.indexOf("/chrome/content/") + 1);
     this._trace(uri.spec+" path="+path);
     
     return path;

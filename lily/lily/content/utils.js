@@ -2314,6 +2314,7 @@ var LilyAPIKeyManager= {
 	*/
 	initKeys:function() {
 		var pathToKeys = Lily.installDir.clone();
+		pathToKeys.append("chrome");		
 		pathToKeys.append("content");
 		pathToKeys.append("keys.txt");
 		this.keyPath=pathToKeys.path;
