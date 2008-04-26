@@ -255,30 +255,36 @@ var LilyPatchExporter = {
 			tmp.append("components");
 			tmp.copyTo(rootDir,null);
 		}
-
+		
 		//prefs
 		var tmp = Lily.installDir.clone();
-		tmp.append("defaults");
+		tmp.append("platform");
 		tmp.copyTo(rootDir,null);
+		
+		var osArr = ["Darwin","Linux","linux-gnu","WINNT"];
+		
+		for(var i=0;i<osArr.length;i++) {
+			//prefs.js
+			var tmpOut = rootDir.clone();
+			tmpOut.append("platform");
+			tmpOut.append(osArr[i]);
+			tmpOut.append("defaults");
+			tmpOut.append("preferences");
+			tmpOut.append("lily.js");
 
-		//prefs.js
-		var tmpOut = rootDir.clone();
-		tmpOut.append("defaults");
-		tmpOut.append("preferences");
-		tmpOut.append("lily.js");
+			var newPrefs = '\n' +
+			'pref("toolkit.defaultChromeURI", "chrome://'+projectName+'/content/'+projectName+'.xul");\n' +
+			'pref("browser. hiddenWindowChromeURL", "chrome://'+projectName+'/content/'+projectName+'.xul");\n' +					
+			'pref("browser.dom.window.dump.enabled", true);\n' +
+			'pref("javascript.options.showInConsole", true);\n' +
+			'pref("javascript.options.strict", true);\n' +
+			'pref("nglayout.debug.disable_xul_cache", true);\n' +
+			'pref("nglayout.debug.disable_xul_fastload", true);\n';
 
-		var newPrefs = '\n' +
-		'pref("toolkit.defaultChromeURI", "chrome://'+projectName+'/content/'+projectName+'.xul");\n' +
-		'pref("browser. hiddenWindowChromeURL", "chrome://'+projectName+'/content/'+projectName+'.xul");\n' +					
-		'pref("browser.dom.window.dump.enabled", true);\n' +
-		'pref("javascript.options.showInConsole", true);\n' +
-		'pref("javascript.options.strict", true);\n' +
-		'pref("nglayout.debug.disable_xul_cache", true);\n' +
-		'pref("nglayout.debug.disable_xul_fastload", true);\n';
-
-		var data = LilyUtils.readFile(tmpOut);
-		data += newPrefs;
-		LilyUtils.writeFile(tmpOut,data);					
+			var data = LilyUtils.readFile(tmpOut);
+			data += newPrefs;
+			LilyUtils.writeFile(tmpOut,data);	
+		}
 
 		//content
 		/* START CONTENT COPYING */
@@ -594,7 +600,7 @@ var LilyPatchExporter = {
 				
 				//prefs
 				var tmp = Lily.installDir.clone();
-				tmp.append("defaults");
+				tmp.append("platform");
 				tmp.copyTo(rootDir,null);
 				
 				//content
