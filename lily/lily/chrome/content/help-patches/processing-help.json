@@ -1,0 +1,93 @@
+var patch={'version':'0.1-public_beta-2','platform':'apple','title':'processing-help','width':499,'height':684,'color':'#FFFFFF','mode':'performance','objArray':{
+	'comment!uid=5951342334959':{'name':'comment','top':7,'left':332,'color':'transparent','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':10,'height':10,'width':151,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Display graphics or animation in a patch','inspectorConfig':[{name:"commentText", value:"Display graphics or animation in a patch", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=5951342334959','type':'object'},
+	'prepend!uid=4771479956756':{'name':'prepend','top':286,'left':57,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':2,'height':19,'width':80,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'load','objID':'prepend!uid=4771479956756','type':'object'},
+	'message!uid=4771480038004':{'name':'message','top':286,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':5,'height':19,'width':35,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'run','objID':'message!uid=4771480038004','type':'object'},
+	'message!uid=4771848363741':{'name':'message','top':285,'left':147,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':7,'height':19,'width':56,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'refresh','objID':'message!uid=4771848363741','type':'object'},
+	'trigger!uid=4771848325517':{'name':'trigger','top':234,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':7,'height':19,'width':87,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'b s b','objID':'trigger!uid=4771848325517','type':'object'},
+	'message!uid=3584936491558':{'name':'message','top':72,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':8,'height':20,'width':70,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'scale.pde','objID':'message!uid=3584936491558','type':'object'},
+	'message!uid=2397638021186':{'name':'message','top':122,'left':44,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':9,'height':20,'width':122,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'arctangent.pde','objID':'message!uid=2397638021186','type':'object'},
+	'message!uid=2397638065626':{'name':'message','top':173,'left':75,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':10,'height':20,'width':100,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'bounce.pde','objID':'message!uid=2397638065626','type':'object'},
+	'message!uid=2397638086240':{'name':'message','top':71,'left':187,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':11,'height':20,'width':137,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'triangleflower.pde','objID':'message!uid=2397638086240','type':'object'},
+	'message!uid=2397638124284':{'name':'message','top':124,'left':234,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':12,'height':20,'width':135,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'additivewave.pde','objID':'message!uid=2397638124284','type':'object'},
+	'message!uid=2397638175490':{'name':'message','top':174,'left':310,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':13,'height':20,'width':64,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'sine.pde','objID':'message!uid=2397638175490','type':'object'},
+	'panel!uid=2398531888095':{'name':'panel','top':344,'left':9,'color':'#e6e6e6','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':15,'height':223,'width':215,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'true','inspectorConfig':[{name:"cornerRoundness", value:0, label:"% Corner Roundness", type:"number", input:"text"}, {name:"borderWidth", value:0, label:"Border Width", type:"number", input:"text"}, {name:"borderColor", value:"#000000", label:"Border Color", type:"text", input:"text"}, {name:"borderStyle", value:"solid", label:"Border Style", type:"string", options:[{label:"None", value:"none"}, {label:"Dashed", value:"dashed"}, {label:"Dotted", value:"dotted"}, {label:"Double", value:"double"}, {label:"Groove", value:"groove"}, {label:"Inset", value:"inset"}, {label:"Outset", value:"outset"}, {label:"Ridge", value:"ridge"}, {label:"Solid", value:"solid"}], input:"select"}],'objID':'panel!uid=2398531888095','type':'object'},
+	'launchurl!uid=5947967647796':{'name':'launchurl','top':3,'left':15,'color':'#FFFFFF','fontSize':'45','fontFamily':'Verdana','fontColor':'blue','opacity':1,'zIndex':11,'height':25,'width':76,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://wiki.lilyapp.org/Processing PROCESSING','inspectorConfig':[{name:"linkURL", value:"http://wiki.lilyapp.org/Processing", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"PROCESSING", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=5947967647796','type':'object'},
+	'comment!uid=3594860065504':{'name':'comment','top':232,'left':236,'color':'transparent','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':21,'height':262,'width':250,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'Processing is an external for displaying Canvas based graphics using a Processing compatible API. It uses John Resig\'s processingjs library. Documentation is forthcoming- for now interested users are encouraged view the .pde files in the examples directory and read the documentation at http://processing.org or http://ejohn.org/blog/processingjs/ Click the messages above to load and run some sample sketches. Note that all of the pde files here are adapted from those on processing.org and are licensed under the terms of the Creative Commons license.','inspectorConfig':[{name:"commentText", value:"Processing is an external for displaying Canvas based graphics using a Processing compatible API. It uses John Resig's processingjs library. Documentation is forthcoming- for now interested users are encouraged view the .pde files in the examples directory and read the documentation at http://processing.org or http://ejohn.org/blog/processingjs/ Click the messages above to load and run some sample sketches. Note that all of the pde files here are adapted from those on processing.org and are licensed under the terms of the Creative Commons license.", label:"Comment Text", type:"string", input:"textarea"}],'objID':'comment!uid=3594860065504','type':'object'},
+	'launchurl!uid=3594861172451':{'name':'launchurl','top':573,'left':236,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'blue','opacity':1,'zIndex':22,'height':10,'width':100,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://ejohn.org/blog/processingjs/ John Resig\'s Docs','inspectorConfig':[{name:"linkURL", value:"http://ejohn.org/blog/processingjs/", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"John Resig's Docs", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=3594861172451','type':'object'},
+	'launchurl!uid=3594861297889':{'name':'launchurl','top':577,'left':11,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'blue','opacity':1,'zIndex':23,'height':16,'width':157,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://processing.org/learning/basics/ processing basic examples','inspectorConfig':[{name:"linkURL", value:"http://processing.org/learning/basics/", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"processing basic examples", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=3594861297889','type':'object'},
+	'launchurl!uid=3596852638374':{'name':'launchurl','top':596,'left':10,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'blue','opacity':1,'zIndex':18,'height':16,'width':163,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://creativecommons.org/licenses/by-nc-sa/2.0/ Creative Commons License','inspectorConfig':[{name:"linkURL", value:"http://creativecommons.org/licenses/by-nc-sa/2.0/", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"Creative Commons License", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=3596852638374','type':'object'},
+	'trigger!uid=4771848325517.outlet3_message!uid=4771848363741.inlet1':{'inlet':'message!uid=4771848363741.inlet1','outlet':'trigger!uid=4771848325517.outlet3','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:95,startTop:261,endLeft:95,endTop:277.5},
+{'orientation':'horizontal',startLeft:95,startTop:277.5,endLeft:147,endTop:277.5},
+{'orientation':'vertical',startLeft:147,startTop:277.5,endLeft:147,endTop:290}
+]
+},
+	'trigger!uid=4771848325517.outlet1_message!uid=4771480038004.inlet1':{'inlet':'message!uid=4771480038004.inlet1','outlet':'trigger!uid=4771848325517.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:261,endLeft:18,endTop:279},
+{'orientation':'horizontal',startLeft:18,startTop:279,endLeft:18,endTop:279},
+{'orientation':'vertical',startLeft:18,startTop:279,endLeft:18,endTop:291}
+]
+},
+	'trigger!uid=4771848325517.outlet2_prepend!uid=4771479956756.inlet1':{'inlet':'prepend!uid=4771479956756.inlet1','outlet':'trigger!uid=4771848325517.outlet2','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:57,startTop:261,endLeft:57,endTop:278.5},
+{'orientation':'horizontal',startLeft:57,startTop:278.5,endLeft:57,endTop:278.5},
+{'orientation':'vertical',startLeft:57,startTop:278.5,endLeft:57,endTop:291}
+]
+},
+	'message!uid=3584936491558.outlet1_trigger!uid=4771848325517.inlet1':{'inlet':'trigger!uid=4771848325517.inlet1','outlet':'message!uid=3584936491558.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:99,endLeft:18,endTop:136},
+{'orientation':'horizontal',startLeft:18,startTop:136,endLeft:18,endTop:136},
+{'orientation':'vertical',startLeft:18,startTop:136,endLeft:18,endTop:239}
+]
+},
+	'message!uid=2397638021186.outlet1_trigger!uid=4771848325517.inlet1':{'inlet':'trigger!uid=4771848325517.inlet1','outlet':'message!uid=2397638021186.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:44,startTop:149,endLeft:44,endTop:226},
+{'orientation':'horizontal',startLeft:44,startTop:226,endLeft:18,endTop:226},
+{'orientation':'vertical',startLeft:18,startTop:226,endLeft:18,endTop:239}
+]
+},
+	'message!uid=2397638065626.outlet1_trigger!uid=4771848325517.inlet1':{'inlet':'trigger!uid=4771848325517.inlet1','outlet':'message!uid=2397638065626.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:75,startTop:200,endLeft:75,endTop:226},
+{'orientation':'horizontal',startLeft:75,startTop:226,endLeft:18,endTop:226},
+{'orientation':'vertical',startLeft:18,startTop:226,endLeft:18,endTop:239}
+]
+},
+	'message!uid=2397638175490.outlet1_trigger!uid=4771848325517.inlet1':{'inlet':'trigger!uid=4771848325517.inlet1','outlet':'message!uid=2397638175490.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:310,startTop:201,endLeft:310,endTop:226},
+{'orientation':'horizontal',startLeft:310,startTop:226,endLeft:18,endTop:226},
+{'orientation':'vertical',startLeft:18,startTop:226,endLeft:18,endTop:239}
+]
+},
+	'message!uid=2397638124284.outlet1_trigger!uid=4771848325517.inlet1':{'inlet':'trigger!uid=4771848325517.inlet1','outlet':'message!uid=2397638124284.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:234,startTop:151,endLeft:234,endTop:226},
+{'orientation':'horizontal',startLeft:234,startTop:226,endLeft:18,endTop:226},
+{'orientation':'vertical',startLeft:18,startTop:226,endLeft:18,endTop:239}
+]
+},
+	'message!uid=2397638086240.outlet1_trigger!uid=4771848325517.inlet1':{'inlet':'trigger!uid=4771848325517.inlet1','outlet':'message!uid=2397638086240.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:187,startTop:98,endLeft:187,endTop:225.5},
+{'orientation':'horizontal',startLeft:187,startTop:225.5,endLeft:18,endTop:225.5},
+{'orientation':'vertical',startLeft:18,startTop:225.5,endLeft:18,endTop:239}
+]
+},
+	'processing!uid=1210339353131':{'name':'processing','top':357,'left':18,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':18,'height':200,'width':200,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'200 200','objID':'processing!uid=1210339353131','type':'object'},
+	'message!uid=4771480038004.outlet1_processing!uid=1210339353131.inlet1':{'inlet':'processing!uid=1210339353131.inlet1','outlet':'message!uid=4771480038004.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:18,startTop:313,endLeft:18,endTop:340.5},
+{'orientation':'horizontal',startLeft:18,startTop:340.5,endLeft:18,endTop:340.5},
+{'orientation':'vertical',startLeft:18,startTop:340.5,endLeft:18,endTop:362}
+]
+},
+	'prepend!uid=4771479956756.outlet1_processing!uid=1210339353131.inlet1':{'inlet':'processing!uid=1210339353131.inlet1','outlet':'prepend!uid=4771479956756.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:57,startTop:313,endLeft:57,endTop:341.5},
+{'orientation':'horizontal',startLeft:57,startTop:341.5,endLeft:18,endTop:341.5},
+{'orientation':'vertical',startLeft:18,startTop:341.5,endLeft:18,endTop:362}
+]
+},
+	'message!uid=4771848363741.outlet1_processing!uid=1210339353131.inlet1':{'inlet':'processing!uid=1210339353131.inlet1','outlet':'message!uid=4771848363741.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
+{'orientation':'vertical',startLeft:147,startTop:312,endLeft:147,endTop:341.5},
+{'orientation':'horizontal',startLeft:147,startTop:341.5,endLeft:18,endTop:341.5},
+{'orientation':'vertical',startLeft:18,startTop:341.5,endLeft:18,endTop:362}
+]
+},
+	'launchurl!uid=4805213272340':{'name':'launchurl','top':594,'left':236,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'blue','opacity':1,'zIndex':22,'height':16,'width':124,'visibility':'visible','hiddenInPerf':false,'groupName':'','cssName':'','customColor':'false','args':'http://processing.org/reference/ processing api reference','inspectorConfig':[{name:"linkURL", value:"http://processing.org/reference/", label:"Link URL", type:"string", input:"textarea"}, {name:"linkText", value:"processing api reference", label:"Link Text", type:"string", input:"textarea"}],'objID':'launchurl!uid=4805213272340','type':'object'}}
+}
