@@ -115,8 +115,8 @@ function $svg(args) //args width/height
 	var strokeLineCap 	= "round"; //stroke cap
 	var strokeLineJoin  = "miter"; //stroke line join	
 		
-	this.outlet1 = new this.outletClass("outlet1",this,"help text describing this outlet");
-	this.inlet1=new this.inletClass("inlet1",this,"help text describing this inlet");
+	this.outlet1 = new this.outletClass("outlet1",this,"messages sent from the sketch.");
+	this.inlet1=new this.inletClass("inlet1",this,"load, run, setup, draw, exec, refresh and many other many methods.");
 		
 	this.sendMess=function(msg) {
 		thisPtr.outlet1.doOutlet(msg);
@@ -1524,5 +1524,5 @@ var $svgMetaData = {
 	htmlName:"svg",
 	objectCategory:"Graphics",
 	objectSummary:"Display graphics or animation in a patch.",
-	objectArguments:""	
+	objectArguments:"width [150], height[150]"	
 }

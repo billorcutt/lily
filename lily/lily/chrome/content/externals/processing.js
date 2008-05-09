@@ -1,6 +1,6 @@
 /** 
 
-Copyright (c) 2007 Bill Orcutt (http://lilyapp.org, http://publicbeta.cx)
+Copyright (c) 2008 Bill Orcutt (http://lilyapp.org, http://publicbeta.cx)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -46,7 +46,7 @@ function $processing(args) //args width/height
 	//the current script
 	var currScriptPath 	= "";	
 		
-	//svg viewport
+	//canvas viewport
 	//this overwrites
 	this.width 			= 0;
 	this.height 		= 0;
@@ -59,8 +59,8 @@ function $processing(args) //args width/height
 		thisPtr.setHeight(h);
 	}	
 		
-	this.outlet1 = new this.outletClass("outlet1",this,"help text describing this outlet");
-	this.inlet1=new this.inletClass("inlet1",this,"help text describing this inlet");
+	this.outlet1 = new this.outletClass("outlet1",this,"messages sent from the sketch.");
+	this.inlet1=new this.inletClass("inlet1",this,"load, run, refresh and exec.");
 		
 	this.sendMess=function(msg) {
 		thisPtr.outlet1.doOutlet(msg);
@@ -91,16 +91,21 @@ function $processing(args) //args width/height
 		thisPtr.parent.replaceObject(thisPtr,"processing",(thisPtr.width+" "+thisPtr.height));
 	}
 	
+	//call the exec method- custom method for interacting with a sketch
+	this.inlet1["exec"]=function(params) {
+		//call exec if it exists
+		if(typeof thisPtr.exec == "function") thisPtr.exec(params);
+	}	
+	
 	function kill() {
 		if(proc) proc.kill_loop(); //added this method to the processing library so we can reload
 	}
 	
-	this.destroy=function destroy() {
+	this.destructor=function destructor() {
 		kill();
 	}	
 			
-	//wrap the svg element in a div in order to be able to set the background color
-	var canvas = "<div id=\""+ this.createElID("processingCanvasBG") +"\"><canvas id=\""+ this.createElID("processingCanvas") +"\" width=\"150px\" height=\"150px\"></canvas></div>";
+	var canvas = "<canvas id=\""+ this.createElID("processingCanvas") +"\" width=\"150px\" height=\"150px\"></canvas>";
 
 	this.controller.setNoBorders(true);	
 
@@ -126,7 +131,7 @@ function $processing(args) //args width/height
 	}
 
 	this.init=function() {
-		//on initial object creation this sets the height & width to the default values defined in the svg element.
+		//on initial object creation this sets the height & width to the default values defined in the canvas element.
 		thisPtr.height = parseInt(thisPtr.displayElement.getAttribute("height"));
 		thisPtr.width = parseInt(thisPtr.displayElement.getAttribute("width"));
 		//when opening a patch this sets the size...
@@ -148,5 +153,5 @@ var $processingMetaData = {
 	htmlName:"processing",
 	objectCategory:"Graphics",
 	objectSummary:"Display graphics or animation in a patch.",
-	objectArguments:""	
+	objectArguments:"width [150], height[150]"	
 }
