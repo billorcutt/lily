@@ -1000,17 +1000,17 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 
 	this.getModule=function(className) {
 				
-		if(typeof Lily["$"+/*LilyUtils.substitute(className)*/LilyObjectList.objDisplay[className]] != "undefined") {
-			return Lily["$"+/*LilyUtils.substitute(className)*/LilyObjectList.objDisplay[className]];
+		if(typeof Lily["$"+LilyObjectList.objDisplay[className]] != "undefined") {
+			return Lily["$"+LilyObjectList.objDisplay[className]];
 		} else {
 			//if the object isn't found- look in the patch directory/subdirectories.
 			var dir = this.getPatchDir();
 			if(!LilyObjectList.isLoaded(className) && dir) { //this loads the object if found
 				if(!LilyObjectList.searchDirectory(dir,className+".js")) {
-					LilyDebugWindow.error("Couldn't find object "+oArray[x].name+".");
+					LilyDebugWindow.error("Couldn't find external "+oArray[x].name+".");
 					return null;
 				} else {
-					return Lily["$"+/*LilyUtils.substitute(className)*/LilyObjectList.objDisplay[className]];
+					return Lily["$"+LilyObjectList.objDisplay[className]];
 				}	
 			}
 		}

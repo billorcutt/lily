@@ -1,8 +1,8 @@
 Release notes for lily-0.1-public-beta-2. 
 
 System/Browser Requirements
-Firefox 3.x
-Any OS capable of running FF 3.x (Mac OSX, Windows, Linux). 
+Firefox 3.0.x
+Any OS capable of running FF 3 (Mac OSX, Windows, Linux). 
 Java 1.5+ //required for oscsend & oscreceive externals
 QuickTime 7.2+ and the QT browser plugin //required for the qt external
 

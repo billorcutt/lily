@@ -647,7 +647,7 @@ function LilyConnectionController(parent)
 	//update the connection position after the object is modified
 	this.updateInletConnection=function() {
 		//do getPos of the inlet here- then move the connection to it
-//		var posArr=thisPtr.patchView.findPos(thisPtr.patchView.getElByID(thisPtr.connection.inlet));
+		if(thisPtr.patchView.getElByID(thisPtr.connection.inlet).style.display=="none") return; //bail if the inlets hidden		
 		var posArr=thisPtr.getEndCoords(thisPtr.connection.inlet);
 		thisPtr.moveEndTo(posArr[0],posArr[1]);		
 //		LilyDebugWindow.print("update inlet-"+posArr.toSource());
@@ -656,7 +656,7 @@ function LilyConnectionController(parent)
 	//update the connection position after object is modified
 	this.updateOutletConnection=function() {
 		//do getPos of the inlet here- then move the connection to it
-//		var posArr=thisPtr.patchView.findPos(thisPtr.patchView.getElByID(thisPtr.connection.outlet));
+		if(thisPtr.patchView.getElByID(thisPtr.connection.inlet).style.display=="none") return;	 //bail if the outlets hidden		
 		var posArr=thisPtr.getStartCoords(thisPtr.connection.outlet);
 		thisPtr.moveStartTo(posArr[0],posArr[1]);				
 //		LilyDebugWindow.print("update outlet-"+posArr.toSource());	

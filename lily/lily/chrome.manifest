@@ -1,4 +1,4 @@
-content lily file:chrome/content/ xpcnativewrappers=no
+content lily file:chrome/content/ xpcnativewrappers=no contentaccessible=yes
 locale lily en-US file:chrome/locale/en-US/
 skin lily classic/1.0 skin/
 overlay chrome://browser/content/browser.xul chrome://lily/content/lily.xul

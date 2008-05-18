@@ -1319,7 +1319,8 @@ var LilyUtils = {
 			returns array of left & top
 	*/
 	getObjectPos: function(obj)	{
-		var curleft = curtop = 0;
+		var curleft = 0;
+		var curtop = 0;
 		var flag = false;
 		if(obj && obj.style.display=="none") {
 			obj.style.display="block"; //this is for inlets/outlets in a locked patch
