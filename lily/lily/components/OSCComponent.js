@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------
- * This file implements the Foo component that exposes the nsILilyService
+ * This file implements the OSCModule component that exposes the nsILilyService
  * interface. The implementation consists of 2 parts: the component
  * module (acting like an instance factory) and a function that creates
  * instances actually implementing the nsILilyService interface.
