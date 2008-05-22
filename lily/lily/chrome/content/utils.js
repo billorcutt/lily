@@ -430,7 +430,7 @@ var LilyUtils = {
 			returns stripped string.
 	*/
 	stripLTQuotes: function(str) {
-		return str.replace(/^['"]|['"]$/ig, '');
+		if(str && str.length) return str.replace(/^['"]|['"]$/ig, '');
 	},
 	
 	/*

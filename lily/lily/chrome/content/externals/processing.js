@@ -105,7 +105,7 @@ function $processing(args) //args width/height
 		kill();
 	}	
 			
-	var canvas = "<canvas id=\""+ this.createElID("processingCanvas") +"\" width=\"150px\" height=\"150px\"></canvas>";
+	var canvas = "<div><canvas id=\""+ this.createElID("processingCanvas") +"\" width=\"200\" height=\"200\"></canvas></div>";
 
 	this.controller.setNoBorders(true);	
 
@@ -114,10 +114,7 @@ function $processing(args) //args width/height
 	this.ui.draw();	
 	
 	this.displayElement=thisPtr.ui.getElByID(thisPtr.createElID("processingCanvas"));
-	this.resizeElement=thisPtr.ui.getElByID(thisPtr.createElID("processingCanvas"));
-	var canvas = this.displayElement;	
-	var canvasBackground=thisPtr.ui.getElByID(thisPtr.createElID("processingCanvasBG"));
-	var canvasID = thisPtr.createElID("processingCanvas");
+	//this.resizeElement=thisPtr.ui.getElByID(thisPtr.createElID("processingCanvas"));
 	
 	//set the width/height variables on resize.
 	this.controller.objResizeControl.cb=function(h,w) {

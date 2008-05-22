@@ -550,7 +550,12 @@ function buildProcessing( curElement ){
   function getImage( img ) {
     if ( typeof img == "string" )
     {
-      return Processing.lily.document.getElementById(img); //FIX ME ****
+	  if(Processing.lily.document.getElementById(img)) {
+	    return Processing.lily.document.getElementById(img); //FIX ME ****
+	  } else {
+		p.loadImage(img);
+		return Processing.lily.document.getElementById(img); //FIX ME ****
+	  }
     }
 
     if ( img.img || img.canvas )
@@ -624,8 +629,39 @@ function buildProcessing( curElement ){
   }
 
   p.loadImage = function loadImage( file )
-  {
-    var img = Processing.lily.document.getElementById(file); //FIX ME ****
+  {	
+	//FIX ME ****
+	
+	var orgName = file; //save file name
+	
+	file = LilyUtils.getFilePath(file);
+	if(!LilyUtils.containsProtocol(file)) {
+		file = "file://"+file;
+	}
+	
+	var img = null;
+	function processData(data){
+		
+		//remove any dupes
+		if(Processing.lily.document.getElementById(file)) {
+			Processing.lily.document.getElementById(file).
+				parentNode.removeChild(Processing.lily.document.getElementById(file));
+		}
+		
+		var div = Processing.lily.document.createElement("div");
+		div.style.display="none";
+		Processing.lily.document.body.appendChild(div);
+		img = Processing.lily.document.createElement("img");
+		img.src = "data:image/jpeg;base64,"+btoa(data);
+		img.id = orgName;
+		img = div.appendChild(img);
+	}
+	
+	//synchronous
+	var xhr = new LilyUtils._xhr(processData,"bin",this,"GET",false);
+	xhr.loadXMLDoc(file);
+	xhr.loadXMLDoc(file); //2nd verse, same as the first...	
+
     if ( !img )
       return;
 
@@ -1281,6 +1317,7 @@ function buildProcessing( curElement ){
   
   p.size = function size( aWidth, aHeight )
   {
+	
     var fillStyle = curContext.fillStyle;
     var strokeStyle = curContext.strokeStyle;
 
@@ -1291,6 +1328,8 @@ function buildProcessing( curElement ){
     curContext.strokeStyle = strokeStyle;
 
 	Processing.lily.set_obj_size(aWidth,aHeight); //**** FIX ME ****
+
+	p.background(); //**** FIX ME **** had to add this for some reason...
 
   }
   
