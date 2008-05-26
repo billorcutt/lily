@@ -40,6 +40,7 @@
 <!ENTITY  lily.BringForward         "Bring Forward">
 <!ENTITY  lily.SendBack          	"Send Back">
 <!ENTITY  lily.ExtFolder          	"Open Externals Directory">
+<!ENTITY  lily.Reload	          	"Reload">
 
 <!ENTITY  lily.HelpMenu            	"Support">
 <!ENTITY  lily.OpenHelp           	"Help Screen">

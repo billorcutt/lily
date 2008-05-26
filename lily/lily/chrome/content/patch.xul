@@ -41,8 +41,11 @@
 	  <key id="lilyShowInPerfKey" modifiers="accel" key="K" oncommand="opener.Lily.showInPerf()"/>	
 	  <key id="lilyBringForwardKey" modifiers="accel" key="0" oncommand="opener.Lily.bringForward()"/>
 	  <key id="lilySendBackKey" modifiers="accel" key="9" oncommand="opener.Lily.sendBack()"/>
+	  <key id="lilyReloadKey" modifiers="accel" key="R" oncommand="opener.Lily.reload()"/>
+	
 	
 	  <key id="lilyHelpMessageKey" modifiers="shift accel" key="H" oncommand="opener.Lily.openHelpMessage()"/>	
+		
 
 	</keyset>
 	
@@ -100,6 +103,7 @@
 				<menuitem id="menu_ObjectColor" label="&lily.Color;" oncommand="opener.Lily.openColorPicker('object')"/>														
 				<menuitem id="bringForwardItem" key="lilyBringForwardKey" label="&lily.BringForward;" oncommand="opener.Lily.bringForward()"/>
 				<menuitem id="sendBackItem" key="lilySendBackKey" label="&lily.SendBack;" oncommand="opener.Lily.sendBack()"/>
+				<menuitem id="reloadItem" key="lilyReloadKey" label="&lily.Reload;" oncommand="opener.Lily.reload()"/>				
 			</menupopup>
 		</menu>	
 
@@ -144,7 +148,7 @@
 	<!-- Context Menu -->
 	<menupopup id="lilyContextMenu">
 
-	    <menuitem style="display:none" id="contextHelpItem" label="&lily.HelpMenu;" oncommand="opener.Lily.openSelectedHelp()"/>
+	    <menuitem style="display:none" id="contextHelpItem" label="&lily.ObjectHelp;" oncommand="opener.Lily.openSelectedHelp()"/>
 
 		<menuseparator style="display:none" id="contextHelpSeparator"/>	
 
@@ -172,6 +176,7 @@
 		</menu>
 		<menuitem style="display:none" id="contextBringForwardItem" label="&lily.BringForward;" oncommand="opener.Lily.bringForward()"/>
 		<menuitem style="display:none" id="contextSendBackItem" label="&lily.SendBack;" oncommand="opener.Lily.sendBack()"/>
+		<menuitem style="display:none" id="contextReloadItem" label="&lily.Reload;" oncommand="opener.Lily.reload()"/>
 
 		<menuseparator style="display:none" id="contextObjectSeparator"/>		
 

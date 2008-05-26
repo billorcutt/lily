@@ -1466,7 +1466,28 @@ var Lily =
 	*/
 	toggleTrace: function(item) {
 		Lily.trace=(item.getAttribute("checked")=="true")?true:false;
-	},	
+	},
+	
+	/*
+		Method: reload
+		reload selected externals															
+	*/
+	reload: function() {
+		
+		//get the classnames of all selected objects
+		var names = this.patchObj[this.currPatch].obj.patchController.getSelectedObjectsPropertyArray("className");
+		for(var i=0;i<names.length;i++) {
+			LilyObjectList.load(LilyObjectList.getPath(names[i])); //reload the extern js
+			log(LilyObjectList.getPath(names[i]))
+		} 
+		
+		//replace all instances
+		var ids = this.patchObj[this.currPatch].obj.patchController.getSelectedObjectsPropertyArray("id");
+		for(var i=0;i<ids.length;i++) {
+			var obj = this.patchObj[this.currPatch].obj.getObj(ids[i]);
+			this.patchObj[this.currPatch].obj.replaceObject(obj,LilyUtils.getObjectMetaData(obj.name).textName,obj.args); //reload the extern js
+		}
+	},		
 
 	/*
 		Method: openFirstTimeMessage

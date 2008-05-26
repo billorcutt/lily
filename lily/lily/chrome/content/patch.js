@@ -1147,7 +1147,7 @@ function LilyPatchController(pID,parent)
 			if(typeof this.selectedObjects[x][prop]!="undefined") {
 				//FIXME *** normalize the font names ***
 				var value = (prop=="fontFace" && typeof this.selectedObjects[x][prop]=="string")?this.selectedObjects[x][prop].toLowerCase():this.selectedObjects[x][prop];			
-				if(prev!=null&&prev!=value) {
+				if(prev!=null&&prev!=value) { //return null if the value isn't the same for all objects
 					return null;
 				} else {
 					prev=value;
@@ -1155,7 +1155,20 @@ function LilyPatchController(pID,parent)
 			}
 		}
 		return prev;	
-	}	
+	}
+	
+	//return array of values for property in selectedObjects 
+	this.getSelectedObjectsPropertyArray=function(prop) {
+		var arr = [];
+		for(var x in this.selectedObjects) {
+			if(typeof this.selectedObjects[x][prop]!="undefined") {
+				//FIXME *** normalize the font names ***
+				var value = (prop=="fontFace" && typeof this.selectedObjects[x][prop]=="string")?this.selectedObjects[x][prop].toLowerCase():this.selectedObjects[x][prop];			
+				arr.push(value);
+			}
+		}
+		return arr;	
+	}		
 	
 	//getter for selectedObjects
 	this.getSelectedObjects=function(id) {

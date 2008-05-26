@@ -172,7 +172,8 @@ var LilyMenuBar = {
 						menuNodes[i].getAttribute("id")=="showInPerfItem"||
 						menuNodes[i].getAttribute("id")=="nameItem"||
 						menuNodes[i].getAttribute("id")=="bringForwardItem"||
-						menuNodes[i].getAttribute("id")=="sendBackItem"
+						menuNodes[i].getAttribute("id")=="sendBackItem" ||
+						menuNodes[i].getAttribute("id")=="reloadItem"						
 					) 
 					&& 
 					(
@@ -360,7 +361,8 @@ var LilyMenuBar = {
 					children[i].id=="contextShowInPerfItem"||					
 					children[i].id=="contextBringForwardItem"||					
 					children[i].id=="contextSendBackItem"||										
-					children[i].id=="contextGetInfoItem"
+					children[i].id=="contextGetInfoItem" ||
+					children[i].id=="contextReloadItem"					
 				) {
 
 					//help
@@ -398,7 +400,8 @@ var LilyMenuBar = {
 						children[i].id=="contextShowInPerfItem"||
 						children[i].id=="contextBringForwardItem"||
 						children[i].id=="contextSendBackItem"||
-						children[i].id=="contextGetInfoItem"
+						children[i].id=="contextGetInfoItem" ||
+						children[i].id=="contextReloadItem"							
 					) {
 						win.document.getElementById("contextObjectSeparator").style.display="inherit";
 						children[i].setAttribute("disabled",false); 
