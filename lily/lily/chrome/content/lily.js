@@ -1478,7 +1478,6 @@ var Lily =
 		var names = this.patchObj[this.currPatch].obj.patchController.getSelectedObjectsPropertyArray("className");
 		for(var i=0;i<names.length;i++) {
 			LilyObjectList.load(LilyObjectList.getPath(names[i])); //reload the extern js
-			log(LilyObjectList.getPath(names[i]))
 		} 
 		
 		//replace all instances
