@@ -1460,7 +1460,80 @@ var LilyUtils = {
 			s = s.replace(/\\n/g,'\n');			
 			return s.replace(/\\"/g,'\"');
 		}
-	},	
+	},
+	
+	/*
+		Method: escapeSpecial
+			backslash escape special characters.
+
+		Arguments: 
+			str - string to escape
+
+		Returns: 
+			returns escaped string.
+	*/	
+	escapeSpecial:function(str) {
+
+//		LilyDebugWindow.print(LilyUtils.typeOf(str))
+
+		if(LilyUtils.typeOf(str)=="string") {
+			return sub(str);
+		} else if(LilyUtils.typeOf(str)=="array") {
+			var tmp=[];			
+			for(var i=0;i<str.length;i++)
+				if(LilyUtils.typeOf(str[i])=="string")
+					tmp.push(sub(str[i]));
+				else
+					tmp.push(str[i]);
+			return tmp;
+		} else {
+			return str;
+		}
+
+		function sub(ss) {
+			var s = ss.replace(/\n/g,'\\n');			
+			s = s.replace(/\t/g,"\\t");
+			s = s.replace(/\r/g,"\\r");
+			s = s.replace(/\b/g,"\\b");										
+			return s.replace(/\f/g,'\\f');
+		}
+
+	},
+
+	/*
+		Method: unescapeSpecial
+			backslash unescape special characters.
+
+		Arguments: 
+			str - string to unescape
+
+		Returns: 
+			returns unescaped string.
+	*/	
+	unescapeSpecial:function(str) {
+
+		if(LilyUtils.typeOf(str)=="string") {
+			return sub(str);
+		} else if(LilyUtils.typeOf(str)=="array") {
+			var tmp=[];			
+			for(var i=0;i<str.length;i++)
+				if(LilyUtils.typeOf(str[i])=="string")
+					tmp.push(sub(str[i]));
+				else
+					tmp.push(str[i]);
+			return tmp;
+		} else {
+			return str;
+		}
+
+		function sub(ss) {
+			var s = ss.replace(/\\n/g,'\n');			
+			s = s.replace(/\\t/g,"\t");
+			s = s.replace(/\\r/g,"\r");
+			s = s.replace(/\\b/g,"\b");										
+			return s.replace(/\\f/g,'\f');
+		}
+	},		
 
 	/*
 		Method: html2String

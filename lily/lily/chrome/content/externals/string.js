@@ -193,8 +193,16 @@ function $string(param)
 	
 	this.inlet1["unescapequotes"]=function(msg) {		
 		thisPtr.outlet1.doOutlet(LilyUtils.unescape(msg));
-	}	
+	}
 	
+	this.inlet1["escapespecial"]=function(msg) {		
+		thisPtr.outlet1.doOutlet(LilyUtils.escapeSpecial(msg));
+	}										
+	
+	this.inlet1["unescapespecial"]=function(msg) {		
+		thisPtr.outlet1.doOutlet(LilyUtils.unescapeSpecial(msg));
+	}	
+		
 	this.inlet1["convertToEntity"]=function(msg) {		
 		thisPtr.outlet1.doOutlet(LilyUtils.string2HTML(msg));
 	}
