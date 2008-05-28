@@ -1,4 +1,4 @@
-var patch={'version':'0.1-public_beta-1','platform':'apple','title':'routeall-help','width':433,'height':476,'color':'#FFFFFF','mode':'performance','objArray':{
+var patch={'version':'0.1-public_beta-2','platform':'apple','title':'routeall-help','width':435,'height':463,'color':'#FFFFFF','mode':'performance','objArray':{
 	'print!uid=2345092632421':{'name':'print','top':245,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':62,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'555','objID':'print!uid=2345092632421','type':'object'},
 	'print!uid=2345092642362':{'name':'print','top':200,'left':24,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':58,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'abc','objID':'print!uid=2345092642362','type':'object'},
 	'message!uid=2345092657364':{'name':'message','top':86,'left':67,'color':'#FFFFFF','fontSize':'12','fontFamily':'Verdana','fontColor':'#000000','opacity':1,'zIndex':1,'height':19,'width':33,'visibility':'visible','hiddenInPerf':false,'groupName':'null','cssName':'','customColor':'false','args':'abc','objID':'message!uid=2345092657364','type':'object'},
@@ -22,8 +22,8 @@ var patch={'version':'0.1-public_beta-1','platform':'apple','title':'routeall-he
 },
 	'message!uid=2345092657364.outlet1_routeall!uid=1182578800453.inlet1':{'inlet':'routeall!uid=1182578800453.inlet1','outlet':'message!uid=2345092657364.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
 {'orientation':'vertical',startLeft:67,startTop:113,endLeft:67,endTop:132.5},
-{'orientation':'horizontal',startLeft:67,startTop:132.5,endLeft:90,endTop:133.5},
-{'orientation':'vertical',startLeft:90,startTop:133.5,endLeft:90,endTop:155}
+{'orientation':'horizontal',startLeft:67,startTop:132.5,endLeft:90,endTop:132.5},
+{'orientation':'vertical',startLeft:90,startTop:132.5,endLeft:90,endTop:155}
 ]
 },
 	'message!uid=2345092804480.outlet1_routeall!uid=1182578800453.inlet1':{'inlet':'routeall!uid=1182578800453.inlet1','outlet':'message!uid=2345092804480.outlet1','type':'connection','hiddenInPerf':false,'segmentArray':[
