@@ -771,9 +771,9 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		//adjust window to content size	if we're not hidden or iframe
 		if(!thisPtr.hidden && !extWindow) {
 			setTimeout(function() {
-				thisPtr.patchView.xulWin.innerHeight+=(thisPtr.patchView.oWin.scrollMaxY>0)?(thisPtr.patchView.oWin.scrollMaxY+5):0;
-				thisPtr.patchView.xulWin.innerWidth+=(thisPtr.patchView.oWin.scrollMaxX>0)?(thisPtr.patchView.oWin.scrollMaxX+5):0;
-				setTimeout(function(){thisPtr.updatePatchData();},1000); //update the patchdata
+				thisPtr.patchView.xulWin.innerHeight+=(thisPtr.patchView.oWin.scrollMaxY>0)?(thisPtr.patchView.oWin.scrollMaxY+0):0;
+				thisPtr.patchView.xulWin.innerWidth+=(thisPtr.patchView.oWin.scrollMaxX>0)?(thisPtr.patchView.oWin.scrollMaxX+0):0;
+				setTimeout(function(){ if(typeof thisPtr.updatePatchData == "function") thisPtr.updatePatchData(); },1000); //update the patchdata
 			},100);					
 		}
 		
