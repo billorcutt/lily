@@ -57,7 +57,7 @@ function $patcher(param)
 		var patch_str = data;
 		var tmp = LilyUtils.splitArgs(arg_str);
 		for(var i=0;i<tmp.length;i++) {
-			var re = new RegExp("\\$"+(i+1),"g");
+			var re = new RegExp("\\#"+(i+1),"g");
 			patch_str=patch_str.replace(re,tmp[i]);
 		}			
 		return patch_str;	
