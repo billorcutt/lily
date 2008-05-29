@@ -36,6 +36,9 @@ function $number(args)
 	var outValue=0;
 	var isFloat=0;
 	var y=0;
+	var isSelected=false;
+	var typein_buffer="";
+	
 	this.outlet1 = new this.outletClass("outlet1",this,"number");
 	this.inlet1=new this.inletClass("inlet1",this,"\"bang\" outputs value, number sets and outputs, \"set\" sets value without output");	
 	
@@ -109,29 +112,70 @@ function $number(args)
 		y=parseFloat(e.clientY);
 		thisPtr.controller.patchController.attachPatchObserver(thisPtr.objID,"mousemove",mouseMoveFunc,"performance");
 		thisPtr.controller.patchController.attachPatchObserver(thisPtr.objID,"mouseup",mouseUpFunc,"performance");
+		thisPtr.controller.patchController.attachPatchObserver("canvas","click",numberDeselected,"performance");		
+		numberSelected();
+	}
+	
+	function numberSelected() {
+		isSelected=true;		
+		thisPtr.ui.contentContainer.style.borderLeft="4px solid black";				
+		thisPtr.controller.patchController.attachPatchObserver(thisPtr.objID,"keypress",keyPressFunc,"performance");
 	}	
 	
-	function draw() {
+	function numberDeselected(e) {
+		if(e.target.id=="canvas" && isSelected) {		
+			thisPtr.ui.contentContainer.style.borderLeft="4px double black";								
+			thisPtr.controller.patchController.removePatchObserver("canvas","mouseup",numberDeselected,"performance");
+			thisPtr.controller.patchController.removePatchObserver(thisPtr.objID,"keypress",keyPressFunc,"performance");
+			if(typein_buffer) updateValue(+typein_buffer);			
+			typein_buffer="";
+			isSelected=false;										
+		}
+	}
+	
+	function keyPressFunc(e) {
+		if(isSelected) {
+			typein_buffer+=(/[0-9]|\.|-/.test(String.fromCharCode(e.charCode)))?String.fromCharCode(e.charCode):"";
+			draw(+typein_buffer);
+			updateValue(+typein_buffer);
+		} else {
+			thisPtr.controller.patchController.removePatchObserver(thisPtr.objID,"keypress",keyPressFunc,"performance");
+			updateValue(+typein_buffer);
+			typein_buffer="";
+		}
+	}	
+	
+	function draw(val) {
 		
-		var zip = 0;
+		var display_value = val||value;
+		
+		var zip = (floatDisplay.innerHTML!="") ? 0 : +floatDisplay.innerHTML;
 		if(thisPtr.precVal > 0) {
-			var tmp = value.toFixed(thisPtr.precVal).toString().match(/(-*\d+)(\.\d+)/);		
+			var tmp = display_value.toFixed(thisPtr.precVal).toString().match(/(-*\d+)(\.\d+)/);		
 			var intVal = tmp[1];
 			var floVal = tmp[2];	
 		} else {
-			var intVal = parseInt(value);
+			var intVal = parseInt(display_value);
 			var floVal = "";
 		}
 				
 		intDisplay.innerHTML=intVal;
 		
-		if(isFloat || thisPtr.precVal==0) {
+		if(isFloat || thisPtr.precVal==0 || floatDisplay.innerHTML!="") {
 			floatDisplay.innerHTML=floVal;
 		} else {
 			floatDisplay.innerHTML= zip.toFixed(thisPtr.precVal).toString().match(/(-*\d+)(\.\d+)/)[2];
 		}
 		
 		outValue = (intDisplay.innerHTML+floatDisplay.innerHTML);
+	}
+	
+	function toggleEditabilityFunc() {
+		if(isSelected) {
+			numberDeselected({target:{id:"canvas"}});
+		} else {
+			updateValue(+(intDisplay.innerHTML+floatDisplay.innerHTML));
+		}
 	}
 	
 	//custom html
@@ -153,6 +197,9 @@ function $number(args)
 	
 	thisPtr.ui.contentContainer.style.borderLeftWidth="4px";
 	thisPtr.ui.contentContainer.style.borderLeftStyle="double";
+	
+	//add listeners to handle changes in patch editability
+	this.controller.patchController.attachPatchObserver(thisPtr.objID,"editabilityChange",toggleEditabilityFunc,"all");	
 		
 	updateValue(+(value));	
 	draw();
