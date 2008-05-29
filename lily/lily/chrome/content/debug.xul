@@ -14,7 +14,7 @@
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<keyset id="lilyDebugKeySet">
-	  <key id="lilyDebugClearKey" modifiers="control" key="X" oncommand="opener.LilyDebugWindow.clear()"/>
+	  <key id="lilyDebugClearKey" modifiers="accel" key="X" oncommand="opener.LilyDebugWindow.clear()"/>
 	  <key id="lilyDebugCloseKey" modifiers="accel" key="W" oncommand="opener.LilyDebugWindow.toggle()"/>
 	</keyset>
 	
