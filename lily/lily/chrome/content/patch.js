@@ -1555,9 +1555,9 @@ function LilyPatchController(pID,parent)
 					
 //					LilyDebugWindow.print("toggleObjectListeners mode:"+ mode + " i:" + i + " length:" + this.objectListeners[i].length + " " + this.objectListeners[i][j].mode);					
 					
-					if(this.objectListeners[i][j].mode==mode)
+					if(this.objectListeners[i][j].mode==mode && this.document.getElementById(this.objectListeners[i][j].id))
 						this.document.getElementById(this.objectListeners[i][j].id).addEventListener(this.objectListeners[i][j].evt,this.objectListeners[i][j].func,false);//
-					else if(this.objectListeners[i][j].mode!="all")
+					else if(this.objectListeners[i][j].mode!="all" && this.document.getElementById(this.objectListeners[i][j].id))
 						this.document.getElementById(this.objectListeners[i][j].id).removeEventListener(this.objectListeners[i][j].evt,this.objectListeners[i][j].func,false);//
 				
 				} 
