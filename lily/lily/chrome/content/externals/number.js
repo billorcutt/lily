@@ -33,17 +33,21 @@ function $number(args)
 {
 	var thisPtr=this;
 	var value=0;
+	var outValue=0;
+	var isFloat=0;
 	var y=0;
 	this.outlet1 = new this.outletClass("outlet1",this,"number");
 	this.inlet1=new this.inletClass("inlet1",this,"\"bang\" outputs value, number sets and outputs, \"set\" sets value without output");	
 	
 	this.args=args;	
-	this.minValue=(!isNaN(parseInt(args.split(" ")[0])))?parseInt(args.split(" ")[0]):""; //min value
-	this.maxValue=(!isNaN(parseInt(args.split(" ")[1])))?parseInt(args.split(" ")[1]):""; //max value
+	this.minValue=(!isNaN(parseFloat(args.split(" ")[0])))?parseFloat(args.split(" ")[0]):""; //min value
+	this.maxValue=(!isNaN(parseFloat(args.split(" ")[1])))?parseFloat(args.split(" ")[1]):""; //max value
+	this.precVal=(!isNaN(parseInt(args.split(" ")[2])))?parseInt(args.split(" ")[2]):0; //precision value
 	
 	this.setInspectorConfig([
 		{name:"minValue",value:thisPtr.minValue,label:"Minimum Value",type:"string",input:"text"},
-		{name:"maxValue",value:thisPtr.maxValue,label:"Maximum Value",type:"string",input:"text"}
+		{name:"maxValue",value:thisPtr.maxValue,label:"Maximum Value",type:"string",input:"text"},
+		{name:"precVal",value:thisPtr.precVal,label:"Precision",type:"string",input:"text"}
 	]);	
 	
 	//save the values returned by the inspector- returned in form {valueName:value...}
@@ -54,42 +58,46 @@ function $number(args)
 		for(var x in vals)
 			thisPtr[x]=vals[x];
 			
+		draw(); //reflect new precision.	
+			
 		//update the arg str
-		this.args=""+vals["minValue"]+" "+vals["maxValue"];
+		this.args=""+vals["minValue"]+" "+vals["maxValue"]+" "+vals["precVal"];
 
 	}
 	
 	this.inlet1["num"]=function(val) {
-		updateValue(parseInt(val));
+		isFloat = (Math.abs(val-parseInt(val))>0);
+		updateValue(parseFloat(val));
 		draw();
-		thisPtr.outlet1.doOutlet(value);		
+		thisPtr.outlet1.doOutlet(outValue);		
 	}
 	
 	this.inlet1["set"]=function(val) {
-		updateValue(parseInt(val));
+		isFloat = (Math.abs(val-parseInt(val))>0);		
+		updateValue(parseFloat(val));
 		draw();		
 	}
 	
-	this.inlet1["bang"]=function(val) {
-		thisPtr.outlet1.doOutlet(value);		
+	this.inlet1["bang"]=function() {
+		thisPtr.outlet1.doOutlet(outValue);		
 	}
 	
 	function updateValue(num) {
 				
-		if(thisPtr.maxValue!="" && num > parseInt(thisPtr.maxValue))
-			value = parseInt(thisPtr.maxValue);
-		else if(thisPtr.minValue!="" && num < parseInt(thisPtr.minValue))
-			value = parseInt(thisPtr.minValue);
+		if(thisPtr.maxValue!="" && num > parseFloat(thisPtr.maxValue))
+			value = parseFloat(thisPtr.maxValue);
+		else if(thisPtr.minValue!="" && num < parseFloat(thisPtr.minValue))
+			value = parseFloat(thisPtr.minValue);
 		else
 			value = num;
 			
 	}			
 	
 	function mouseMoveFunc(e) {		
-		updateValue(value+(y-parseInt(e.clientY))); //delta
-		y=parseInt(e.clientY);		
+		updateValue(value+(y-parseFloat(e.clientY))/(isFloat?Math.pow(10,thisPtr.precVal):1)); //delta
+		y=parseFloat(e.clientY);		
 		draw();
-		thisPtr.outlet1.doOutlet(value);
+		thisPtr.outlet1.doOutlet(value.toFixed(thisPtr.precVal));
 	}	
 		
 	function mouseUpFunc(e) {	
@@ -98,27 +106,55 @@ function $number(args)
 	}
 	
 	function mouseDownFunc(e) {
-		y=parseInt(e.clientY);
+		y=parseFloat(e.clientY);
 		thisPtr.controller.patchController.attachPatchObserver(thisPtr.objID,"mousemove",mouseMoveFunc,"performance");
 		thisPtr.controller.patchController.attachPatchObserver(thisPtr.objID,"mouseup",mouseUpFunc,"performance");
 	}	
 	
 	function draw() {
-		thisPtr.numberDisplay.innerHTML=value;
+		
+		var zip = 0;
+		if(thisPtr.precVal > 0) {
+			var tmp = value.toFixed(thisPtr.precVal).toString().match(/(-*\d+)(\.\d+)/);		
+			var intVal = tmp[1];
+			var floVal = tmp[2];	
+		} else {
+			var intVal = parseInt(value);
+			var floVal = "";
+		}
+				
+		intDisplay.innerHTML=intVal;
+		
+		if(isFloat || thisPtr.precVal==0) {
+			floatDisplay.innerHTML=floVal;
+		} else {
+			floatDisplay.innerHTML= zip.toFixed(thisPtr.precVal).toString().match(/(-*\d+)(\.\d+)/)[2];
+		}
+		
+		outValue = (intDisplay.innerHTML+floatDisplay.innerHTML);
 	}
 	
 	//custom html
-	this.ui=new LilyObjectView(this,"<div style=\"padding-left:5px;padding-right:5px;padding-top:2px;padding-bottom:2px;\" id=\""+ this.createElID("number") +"\"></div>");
+	var html = "<div id=\""+ this.createElID("number") +"\" style=\"padding-left:5px;padding-right:5px;padding-top:2px;padding-bottom:2px;white-space:nowrap\"><span id=\""+ this.createElID("int_num") +"\"></span><span id=\""+ this.createElID("flo_num") +"\"></span></div>"
+	this.ui=new LilyObjectView(this,html);
 	this.ui.draw();
-	this.numberDisplay=this.ui.getElByID(thisPtr.createElID("number"));	
+	
+	var numberDisplay=this.ui.getElByID(thisPtr.createElID("number"));
+	var intDisplay = this.ui.getElByID(thisPtr.createElID("int_num"));
+	var floatDisplay = this.ui.getElByID(thisPtr.createElID("flo_num"));	
+		
 	this.controller.attachObserver(this.createElID("number"),"mousedown",mouseDownFunc,"performance");
 	this.controller.attachObserver(this.createElID("number"),"mousedown",LilyUtils.preventDefault,"performance");
-	this.displayElement=this.numberDisplay;
+	
+	this.controller.attachObserver(this.createElID("int_num"),"mousedown",function(){isFloat=false;},"performance");
+	this.controller.attachObserver(this.createElID("flo_num"),"mousedown",function(){isFloat=true;},"performance");		
+	
+	this.displayElement=numberDisplay;
 	
 	thisPtr.ui.contentContainer.style.borderLeftWidth="4px";
 	thisPtr.ui.contentContainer.style.borderLeftStyle="double";
 		
-	updateValue(parseInt(value));	
+	updateValue(+(value));	
 	draw();
 	
 	return this;
