@@ -1636,18 +1636,12 @@ var LilyUtils = {
 			for(var j=0;j<fonttype.length;j++) {
 				
 				var fontArray = fontListObj.EnumerateFonts(langgroup[i],fonttype[j],{});
-				for(var i=0;i<fontArray.length;i++)
-				{
-					/*
-					var fontName = fontEnumerator.getNext();
-					fontName = fontName.QueryInterface(Components.interfaces.nsISupportsString);
-					var fontStr = fontName.toString();
-					*/
-					
+				for(var k=0;k<fontArray.length;k++)
+				{					
 					//hack to avoid dupes
-					if(typeof tmpObj[fontArray[i]]=="undefined") {
-						tmpArr.push(fontArray[i]);
-						tmpObj[fontArray[i]]=fontArray[i];
+					if(typeof tmpObj[fontArray[k]]=="undefined") {
+						tmpArr.push(fontArray[k]);
+						tmpObj[fontArray[k]]=fontArray[k];
 					}	
 				}
 			}
