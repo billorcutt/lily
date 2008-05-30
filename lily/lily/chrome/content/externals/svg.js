@@ -415,7 +415,7 @@ function $svg(args) //args width/height
 	
 	//pop current matrix off the stack, restore previous
 	this.inlet1["popMatrix"]=function() {
-		popMatrix();
+		thisPtr.popMatrix();
 	}
 	
 	this.popMatrix=function() {
@@ -424,7 +424,7 @@ function $svg(args) //args width/height
 	
 	//replace the current matrix with the identity matrix
 	this.inlet1["resetMatrix"]=function() {
-		resetMatrix();
+		thisPtr.resetMatrix();
 	}
 	
 	this.resetMatrix=function() {
@@ -656,12 +656,12 @@ function $svg(args) //args width/height
 	}
 	
 	this.noFill=function() {
-		fillColor = "none";	
+		thisPtr.fillColor = "none";	
 	}
 	
 	//set stroke
 	this.inlet1["stroke"]=function(color) {
-		stroke(color);
+		thisPtr.stroke(color);
 	}
 	
 	this.stroke=function() {
@@ -750,7 +750,7 @@ function $svg(args) //args width/height
 		var w = params.split(" ")[2]; //height
 		var h = params.split(" ")[3]; //length
 		
-		rect(x,y,w,h);
+		thisPtr.rect(x,y,w,h);
 		
 	}
 	
@@ -801,7 +801,7 @@ function $svg(args) //args width/height
 		var rx = params.split(" ")[2]; //height
 		var ry = params.split(" ")[3]; //length
 		
-		ellipse(cx,cy,rx,ry);
+		thisPtr.ellipse(cx,cy,rx,ry);
 		
 	}
 	
@@ -846,7 +846,7 @@ function $svg(args) //args width/height
 		var x2 = params.split(" ")[2]; //top		
 		var y2 = params.split(" ")[3]; //length
 		
-		line(x1,y1,x2,y2);
+		thisPtr.line(x1,y1,x2,y2);
 		
 	}
 	
@@ -890,7 +890,7 @@ function $svg(args) //args width/height
 		var x 	= params.split(" ")[1]; //left
 		var y 	= params.split(" ")[2]; //top		
 		
-		text(str,x,y);
+		thisPtr.text(str,x,y);
 		
 	}	
 	
