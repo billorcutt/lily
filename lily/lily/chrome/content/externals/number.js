@@ -112,7 +112,7 @@ function $number(args)
 		y=parseFloat(e.clientY);
 		thisPtr.controller.patchController.attachPatchObserver(thisPtr.objID,"mousemove",mouseMoveFunc,"performance");
 		thisPtr.controller.patchController.attachPatchObserver(thisPtr.objID,"mouseup",mouseUpFunc,"performance");
-		thisPtr.controller.patchController.attachPatchObserver("canvas","click",numberDeselected,"performance");		
+		thisPtr.controller.patchController.attachPatchObserver(thisPtr.objID,"mousedown",numberDeselected,"performance");		
 		numberSelected();
 	}
 	
@@ -123,9 +123,9 @@ function $number(args)
 	}	
 	
 	function numberDeselected(e) {
-		if(e.target.id=="canvas" && isSelected) {		
+		if(e.target.id.indexOf(thisPtr.objID)==-1 && isSelected) {		
 			thisPtr.ui.contentContainer.style.borderLeft="4px double black";								
-			thisPtr.controller.patchController.removePatchObserver("canvas","mouseup",numberDeselected,"performance");
+			thisPtr.controller.patchController.removePatchObserver(thisPtr.objID,"mousedown",numberDeselected,"performance");
 			thisPtr.controller.patchController.removePatchObserver(thisPtr.objID,"keypress",keyPressFunc,"performance");
 			if(typein_buffer) updateValue(+typein_buffer);			
 			typein_buffer="";
@@ -172,7 +172,7 @@ function $number(args)
 	
 	function toggleEditabilityFunc() {
 		if(isSelected) {
-			numberDeselected({target:{id:"canvas"}});
+			numberDeselected({target:{id:"edit_state_change"}});
 		} else {
 			updateValue(+(intDisplay.innerHTML+floatDisplay.innerHTML));
 		}
