@@ -445,6 +445,52 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		//create new object
 		var o=this.createObject(name,null,y,x,newID,args);
 		
+		//if we're recreating the same extern
+		if(newID) {
+			//set some object properties
+			if(typeof oldObj.fontSize!="undefined")
+				o.setFontSize(oldObj.fontSize);
+			if(typeof oldObj.fontFamily!="undefined")
+				o.setFontFamily(oldObj.fontFamily);
+			if(typeof oldObj.fontColor!="undefined")
+				o.setFontColor(oldObj.fontColor);					
+			if(typeof oldObj.opacity!="undefined")
+				o.setTransparency(oldObj.opacity);
+			if(typeof oldObj.zIndex!="undefined")
+				o.setzIndex(oldObj.zIndex);
+			if(oldObj.visibility && typeof oldObj.visibility!="undefined")
+				o.setVisibility(oldObj.visibility);
+			if(typeof oldObj.width!="undefined")
+				o.setWidth(oldObj.width);
+			if(typeof oldObj.height!="undefined")
+				o.setHeight(oldObj.height);
+			if(typeof oldObj.hiddenInPerf!="undefined")
+				o.controller.setHiddenInPerf(oldObj.hiddenInPerf);
+			if(typeof oldObj.groupName!="undefined")
+				o.setGroupName(oldObj.groupName);
+			if(typeof oldObj.cssName!="undefined" && oldObj.cssName)
+				o.setCSSName(oldObj.cssName);
+			if(typeof oldObj.customColor!="undefined")
+				o.setCustomColor(oldObj.customColor);
+			if(typeof oldObj.color!="undefined" && o.customColor)
+				o.setColor(oldObj.color);																								
+
+			//set name/values from the inspector array
+			if(typeof oldObj.inspectorConfig!="undefined") {
+				for(var i=0;i<oldObj.inspectorConfig.length;i++) {
+					if(oldObj.inspectorConfig[i].type=="number")
+						o[oldObj.inspectorConfig[i].name]=(+oldObj.inspectorConfig[i].value);
+					else
+						o[oldObj.inspectorConfig[i].name]=oldObj.inspectorConfig[i].value;	
+				}
+			}
+
+			//set copy data from the coll
+			if(typeof oldObj.collData!="undefined") {
+				o.gColl=LilyUtils.cloneObject(oldObj.collData);
+			}
+		}
+		
 		//then recreate the connnections for the new object here
 		if(saveConnections)
 			this.restoreConnections(savedConnections);			
