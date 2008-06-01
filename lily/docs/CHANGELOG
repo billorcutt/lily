@@ -2,9 +2,49 @@ CHANGE LOG
 
 -----------------
 
-LILY-0.1-PUBLIC-BETA-2 (April 22, 2008)
+LILY-0.1-PUBLIC-BETA-2 (May 31, 2008)
 
 -----------------
+
+* Fix a bug where externals would lose user applied properties when they were replaced (i.e. when args were edited)
+
+* Fix bugs affecting using the svg api via messages sent to the inlet
+
+* Apply patch from adailey to fix a bug on Windows where Lily would hang on startup after installation.
+
+* Enhance Number object so that it handles typed in numbers.
+
+* Add support for floats to the number object. Precision can be set using the inspector.
+
+* Fix a bug where an error would occasionally be thrown when opening and closing a patch very quickly.
+
+* Fix shortcut to clear debug window- now uses ctrl/cmd x to clear.
+
+* Fix a bug where patches would grow in size by 5px after being opened.
+
+* Fix a token conflict in subpatch- subpatch now uses # instead of $ to refer to arguments
+
+* Update the link for "report a bug" menu item.
+
+* Add methods to the string extern to unescape/escape special characters
+
+* Added a way to reload user defined externals without restarting FF
+
+* Fixes for processingjs and examples
+
+* Add abort connection shortcut to help screen
+
+* Update version for FF3 RC1
+
+* Fix a bug where connections connected to hidden externs would fly off screen on patch lock.
+
+* Adding a canvas-based processing extern using John Resig's processing js
+
+* Moving content under a chrome directory because of changes in xulrunner & because its the right thing to do...
+
+* Fix exporter- broken when i added the platform stuff to the prefs
+
+* Change the help menu name to "support"
 
 * fix bug where autocomplete list was a pixel smaller on linux & windows 
 
