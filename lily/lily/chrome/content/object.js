@@ -384,7 +384,9 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 	
 	//notify listeners
 	this.objectMoved=function() {
-		this.parent.patchController.notifyPatchListeners(this.objID+"_moved");			
+		if(this.parent.patchController) {
+			this.parent.patchController.notifyPatchListeners(this.objID+"_moved");				
+		}		
 	}	
 	
 	//store collection of ins/outs

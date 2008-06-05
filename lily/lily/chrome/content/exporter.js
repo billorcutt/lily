@@ -519,6 +519,13 @@ var LilyPatchExporter = {
 		var data = LilyUtils.readFile(tmpIn);
 		data = data.replace(/chrome:\/\/lily/g,("chrome://"+projectName));		
 		LilyUtils.writeFile(tmpOut,data);
+		
+		//bootstrap.js
+		var tmpIn = contentIn.clone();
+		tmpIn.append("bootstrap.js");
+		var tmpOut = contentOut.clone();
+		tmpOut.append("bootstrap.js");				
+		LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
 
 		//patch
 		var tmp = contentOut.clone();
@@ -831,6 +838,13 @@ var LilyPatchExporter = {
 				var tmpOut = contentOut.clone();
 				tmpOut.append("utils.js");				
 				LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
+				
+				//bootstrap.js
+				var tmpIn = contentIn.clone();
+				tmpIn.append("bootstrap.js");
+				var tmpOut = contentOut.clone();
+				tmpOut.append("bootstrap.js");				
+				LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));				
 				
 				//patch
 				var tmp = contentOut.clone();

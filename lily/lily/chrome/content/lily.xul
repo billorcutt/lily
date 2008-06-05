@@ -7,22 +7,7 @@
 
 <overlay id="LilyOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-	<script type="application/x-javascript" src="chrome://global/content/nsDragAndDrop.js"/>
-	<script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
-
-    <script type="application/x-javascript" src="chrome://lily/content/lib.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/utils.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/externals.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/debug.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/inspector.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/model.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/patch.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/connection.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/object.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/services.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/lily.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/menus.js"/>
-    <script type="application/x-javascript" src="chrome://lily/content/exporter.js"/>
+	<script type="application/x-javascript" src="chrome://lily/content/bootstrap.js"/>
 
 	<script>
 		window.addEventListener("load",function(){document.getElementById("contentAreaContextMenu").addEventListener("popupshowing", LilyMenuBar.hideContextItem, false)},false)
