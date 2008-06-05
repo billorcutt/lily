@@ -126,7 +126,7 @@ var LilyDebugWindow = {
 	*/
 	error:function(msg) {		
 		if(this.dWin) {
-			setTimeout(function(){LilyDebugWindow.dispatch(("• "+msg),"bold",null,null,null,"red")},1);	
+			setTimeout(function(){LilyDebugWindow.dispatch((msg),"bold",null,null,null,"red")},1);	
 		}
 	},
 	

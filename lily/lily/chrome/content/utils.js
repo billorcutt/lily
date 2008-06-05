@@ -65,7 +65,17 @@ var LilyUtils = {
 			returns object meta data.
 	*/
 	getObjectMetaData: function(objName) {
-		return Lily["$"+objName+"MetaData"];		
+		if(typeof Lily["$"+objName+"MetaData"] != "undefined") {
+			return Lily["$"+objName+"MetaData"];			
+		} else { //if its not defined then return some barebones value
+			return {
+				textName:objName,
+				htmlName:objName,
+				objectCategory:"",
+				objectSummary:"",
+				objectArguments:""
+			}
+		}	
 	},
 	
 	/*

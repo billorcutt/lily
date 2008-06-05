@@ -40,13 +40,18 @@ function $patcher(param)
 	var openPatchWin = null; //this is the patch object for the open edit window.
 
 	//flag to determine if we've got a patch string or file path
-	var isPatchString=(/var patch={/.test(param)||!param.length);	
-	
+	var isPatchString=(/var patch={/.test(param)||!param.length);
+			
 	var pArr = (!isPatchString)?LilyUtils.splitArgs(param):[];
 	this.fPath = (!isPatchString)?pArr.shift():""; //pull off the path
 	this.pStr = (isPatchString)?param:"";
 	this.displayArgs=(isPatchString)?false:true; //don't display argument if it isn't a patch path
 	this.patchArgs=(!isPatchString)?pArr.join(" "):""; //rest of args as a string
+	
+	if(!isPatchString && /##\w+##/.test(param)) {
+		this.displayName = param.match(/##(\w+)##/)[1];
+		this.displayArgs = false;
+	}
 	
 	//inlet/outlet arrays
 	var tmpIn=[];

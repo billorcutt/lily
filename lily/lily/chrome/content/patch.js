@@ -375,8 +375,8 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		var cmdStr=(className=="tmp" && name!="tmp")?name:space + argStr; //if we have a bad object name, make that the arg. Others use the unmodified name for the cmdSTr 								
 		var obj=(this.getModule(name))?this.getModule(name):this.getModule("tmp");
 		var count=this.patchModel.getObjectCount()+1; //get the patch object count
-				
-		if(obj) {
+						
+		if(obj && typeof obj == "function") {
 			//prototype the base to the class we're creating & then create it.
 			obj.prototype=new LilyObjectBase(className,this,subPatchID,top,left,objID,argStr);
 			var o=new obj(objArgs);
@@ -414,6 +414,8 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			this.patchController.notifyPatchListeners("patchModified");
 			
 			o.init(); //generic- user defined
+		} else if(obj && typeof obj == "string") {
+			this.createObject("patcher",pID,t,l,id,(obj+" ##"+className+"##"));
 		}
 		
 		if(!isValid)
@@ -1047,14 +1049,20 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	this.getModule=function(className) {
 				
 		if(typeof Lily["$"+LilyObjectList.objDisplay[className]] != "undefined") {
-			return Lily["$"+LilyObjectList.objDisplay[className]];
+			return Lily["$"+LilyObjectList.objDisplay[className]]; //external
+		} else if(LilyObjectList.search(className)) {
+			return LilyObjectList.search(className).path; //if its a patch, just return the path
 		} else {
 			//if the object isn't found- look in the patch directory/subdirectories.
 			var dir = this.getPatchDir();
-			if(!LilyObjectList.isLoaded(className) && dir) { //this loads the object if found
+			if(!LilyObjectList.isLoaded(className) && dir) { //this loads the extern if found
 				if(!LilyObjectList.searchDirectory(dir,className+".js")) {
-					LilyDebugWindow.error("Couldn't find external "+oArray[x].name+".");
-					return null;
+					if(!LilyObjectList.searchDirectory(dir,className+".json")) { //this loads the patch if found
+						LilyDebugWindow.error("Couldn't find external "+oArray[x].name+".");
+						return null;
+					} else {
+						return LilyObjectList.search(className).path; //if its a patch, just return the path
+					}
 				} else {
 					return Lily["$"+LilyObjectList.objDisplay[className]];
 				}	

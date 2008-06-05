@@ -138,7 +138,7 @@ var LilyObjectList = {
 					this.objArray[i].objArguments=LilyUtils.getObjectMetaData(objName).objectArguments;								
 					this.objDisplay[((this.objArray[i].menuName)?this.objArray[i].menuName:"tmp")]=objName;
 					this.objDisplay[objName]=objName;
-					this.objLeaf[this.objArray[i].name]=this.objArray[i].name;	
+					this.objLeaf[this.objArray[i].name]=this.objArray[i].name;
 				} catch(e) {
 					LilyDebugWindow.error("External object "+extName.toUpperCase()+" couldn't be loaded: "+e.name + ": " + e.message+" "+e.fileName+",  line: "+e.lineNumber)
 				}				
@@ -255,7 +255,7 @@ var LilyObjectList = {
 		//}
 		
 		source = LilyUtils.readFileFromPath(path,false).data;		
-		LilyUtils.loadScript("file://"+path,Lily);
+		if(!LilyUtils.isPatchString()) LilyUtils.loadScript("file://"+path,Lily); //only load externs, not patches
 		
 		return source; //return the source	
 	},
@@ -292,7 +292,7 @@ var LilyObjectList = {
 			returns bool- true if loadable
 	*/
 	isLoadable: function(str) {							
-		return str.match(/\.js$|\.zip$|\.rsrc$/);
+		return str.match(/\.js$|\.zip$|\.rsrc$|.json$/);
 	},	
 
 	/*
@@ -316,8 +316,7 @@ var LilyObjectList = {
 	getNames:function() {
 		var tmp=[];
 		for(var i=0;i<this.objArray.length;i++) {			
-			if(this.objArray[i].name.indexOf(".json")==-1)
-				tmp.push(this.objArray[i]);
+			tmp.push(this.objArray[i]);
 		}
 		tmp.sort(function(a,b) {
 						
