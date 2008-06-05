@@ -11,6 +11,7 @@ if(typeof Lily == "undefined") {
 		"chrome://lily/content/inspector.js",
 		"chrome://lily/content/model.js",
 		"chrome://lily/content/patch.js",
+		"chrome://lily/content/connection.js",
 		"chrome://lily/content/object.js",
 		"chrome://lily/content/services.js",
 		"chrome://lily/content/lily.js",
