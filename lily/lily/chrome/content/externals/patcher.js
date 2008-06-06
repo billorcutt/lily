@@ -50,7 +50,7 @@ function $patcher(param)
 	
 	if(!isPatchString && /##\w+##/.test(param)) {
 		this.displayName = param.match(/##(\w+)##/)[1];
-		this.displayArgs = false;
+		this.displayArgs = (this.patchArgs)?this.patchArgs.replace(/##\w+##/,""):false;
 	}
 	
 	//inlet/outlet arrays
@@ -72,8 +72,8 @@ function $patcher(param)
 	function reloadPatch() {
 				
 		setTimeout(function(){
-			Lily.patcherReloadFlag=true; //start reload				
-			var o = thisPtr.parent.replaceObject(thisPtr,"patcher",thisPtr.args);
+			Lily.patcherReloadFlag=true; //start reload			
+			var o = thisPtr.parent.replaceObject(thisPtr,thisPtr.displayName,((isPatchString)?thisPtr.args:thisPtr.patchArgs.replace(/##\w+##/,"")));
 			o.controller.cleanupOutletConnections();	
 			Lily.patcherReloadFlag=false; //reload over
 		},100);	
@@ -273,11 +273,14 @@ function $patcher(param)
 			openPatchWin.obj.patchView.xulWin.moveBy(20,20); //move it a bit so its clear whats going on
 		},100);
 		
-		//watch the json property in the patch object- refresh the patcher when it updates.
-		openPatchWin.watch("json",function(id,oldval,newval){
-			thisPtr.args=(isPatchString)?newval:thisPtr.fPath; //udpate the args with the json if its an embedded, otherwise use the filepath
-			reloadPatch(); //recreate the patch with the new data.
-		})
+		setTimeout(function(){
+			//watch the json property in the patch object- refresh the patcher when it updates.
+			openPatchWin.watch("json",function(id,oldval,newval){
+				thisPtr.args=(isPatchString)?newval:thisPtr.fPath; //udpate the args with the json if its an embedded, otherwise use the filepath
+				reloadPatch(); //recreate the patch with the new data.
+			});	
+		},3000);
+
 	}
 	
 	this.init=function() {

@@ -1754,10 +1754,12 @@ function LilyObjectView (obj,HTML,cmdStr) {
 		if(!this.usesCustomUI) {
 			this.inputWrapper=this.getElByID(this.parent.createElID("inputWrapper"));
 			
-			if(this.parent.displayArgs) //display args ok...
+			if(typeof this.parent.displayArgs == "boolean" && this.parent.displayArgs) //display args ok...
 				this.inputWrapper.innerHTML=LilyUtils.string2HTML(this.cmdStr); //escape any args
-			else
-				this.inputWrapper.innerHTML=this.display; //just the name since we're not displaying args		
+			else if(typeof this.parent.displayArgs == "boolean" && !this.parent.displayArgs)
+				this.inputWrapper.innerHTML=this.display; //just the name since we're not displaying args
+			else if(typeof this.parent.displayArgs == "string" && this.parent.displayArgs)
+				this.inputWrapper.innerHTML=this.display+" "+this.parent.displayArgs; //display this specific args
 			
 		}
 		

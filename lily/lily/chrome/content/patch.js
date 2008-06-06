@@ -415,7 +415,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			
 			o.init(); //generic- user defined
 		} else if(obj && typeof obj == "string") {
-			this.createObject("patcher",pID,t,l,id,(obj+" ##"+className+"##"));
+			return this.createObject("patcher",pID,t,l,id,(obj+" "+argStr+" ##"+className+"##"));
 		}
 		
 		if(!isValid)
@@ -431,11 +431,9 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		var y=oldObj.top;
 		var id=oldObj.objID;
 		oldObj.controller.replacing=true;		
-		var args=newArgs;
-		var name=newObjName;
-		var displayName = LilyUtils.getObjectMetaData(oldObj.name).textName;		
-		var saveConnections=(displayName==name)?true:false;
-		var newID=(displayName==newObjName)?id:null;
+		var args=newArgs;	
+		var saveConnections=(oldObj.displayName==newObjName)?true:false;
+		var newID=(oldObj.displayName==newObjName)?id:null;
 		
 		//if we're just modifying the args, grab the old connections
 		if(saveConnections)
@@ -445,8 +443,8 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		this.deleteObject(id);
 		
 		//create new object
-		var o=this.createObject(name,null,y,x,newID,args);
-		
+		var o=this.createObject(newObjName,null,y,x,newID,args);
+				
 		//if we're recreating the same extern
 		if(newID) {
 			//set some object properties
@@ -503,6 +501,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	
 	//restore previously saved connections
 	this.restoreConnections=function(connections) {
+		log(connections)
 		for(var i=0;i<connections.length;i++) {
 			this.createConnection(connections[i].inlet,connections[i].outlet,connections[i].segmentArray,null)
 		}
@@ -1677,10 +1676,10 @@ function LilyPatchController(pID,parent)
 	this.notifyAllPatchListeners=function(e) {
 		var patchArr = thisPtr.patch.patchModel.subPatchArray;
 		for(var x  in patchArr) {
-			var p = patchArr[x].obj.patchView;
-			var evt = p.document.createEvent("Event");			
-			evt.initEvent(e, true, false);
+			var p = patchArr[x].obj.patchView;			
 			try {
+				var evt = p.document.createEvent("Event");			
+				evt.initEvent(e, true, false);				
 				p.document.dispatchEvent(evt);		
 			} catch(e) {}					
 		}
