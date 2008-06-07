@@ -234,7 +234,10 @@ function $patcher(param)
 			}
 			
 			var parent_patch = thisPatch.obj.getTopPatch(); //get the top level patch
-			parent_patch.patchController.patchLoaded(thisPtr.objID,thisPatch.obj); //tell the patch we're loaded.
+			setTimeout(function(){
+				parent_patch.patchController.patchLoaded(thisPtr.objID,thisPatch.obj); //tell the patch we're loaded.
+			},100);
+			
 																			
 		}		
 		
