@@ -49,8 +49,10 @@ function $patcher(param)
 	this.patchArgs=(!isPatchString)?pArr.join(" "):""; //rest of args as a string
 	
 	if(!isPatchString && /##\w+##/.test(param)) {
+		//pull out the patch name and use that as the display
 		this.displayName = param.match(/##(\w+)##/)[1];
-		this.displayArgs = (this.patchArgs)?this.patchArgs.replace(/##\w+##/,""):false;
+		//if there any additional args, strip out the classname and assign them to display args. otherwise displayargs = false.
+		this.displayArgs = (!/^##\w+##/.test(this.patchArgs))?this.patchArgs.replace(/##\w+##/,""):false;
 	}
 	
 	//inlet/outlet arrays
@@ -84,7 +86,7 @@ function $patcher(param)
 	function loadPatch() {
 		
 		if(thisPtr.fPath) {
-			
+					
 			var filepath = LilyUtils.getFilePath(thisPtr.fPath);
 
 			if(!filepath) { //bail if the path isn't correct
@@ -109,25 +111,26 @@ function $patcher(param)
 				
 		//eval the patch string to get the inlet/outlet count
 		try {
-			eval(data);
+			var tmpObj = {}
+			LilyUtils.loadScript("file://"+thisPatch.file.path,tmpObj);
 		} catch(e) {
 			LilyDebugWindow.error(e.name + ": " + e.message);
 			return;
 		}
 		
-		if(typeof patch != "undefined") {
-
+		if(typeof tmpObj.patch != "undefined") {
+			
 			//push all the inlets into an array
-			for(var x in patch.objArray) {
-				if(patch.objArray[x].name=="inlet") {
-					tmpIn.push(patch.objArray[x]);				
+			for(var x in tmpObj.patch.objArray) {
+				if(tmpObj.patch.objArray[x].name=="inlet") {
+					tmpIn.push(tmpObj.patch.objArray[x]);				
 				}
 			}
 
 			//push all the outlets into an array
-			for(var y in patch.objArray) {
-				if(patch.objArray[y].name=="outlet") {
-					tmpOut.push(patch.objArray[y]);				
+			for(var y in tmpObj.patch.objArray) {
+				if(tmpObj.patch.objArray[y].name=="outlet") {
+					tmpOut.push(tmpObj.patch.objArray[y]);				
 				}
 			}
 
@@ -250,9 +253,9 @@ function $patcher(param)
 	//when the iframe loads and is ready, create the new patch using the iframe.
 	function frameLoad() {
 		iframe.removeEventListener("load",frameLoad,true); //remove this so we don't loop
-		if(thisPatch.json&&thisPatch.file) {
+		if(thisPatch.json&&thisPatch.file) {			
 			openPatch(thisPatch.json,thisPatch.file);//open the patch if we've got the data- this loads the patch in the iframe
-		} else {
+		} else {		
 			openPatchWindow(); //no data so open the edit window- this opens the patch window we'll create the patch in.
 		}
 	}
@@ -271,7 +274,7 @@ function $patcher(param)
 		setTimeout(function(){
 			openPatchWin.obj.patchView.setPatchTitle("[subpatch]"); //mark it as a subpatch
 			openPatchWin.obj.patchView.xulWin.moveBy(20,20); //move it a bit so its clear whats going on
-		},100);
+		},500);
 		
 		setTimeout(function(){
 			//watch the json property in the patch object- refresh the patcher when it updates.

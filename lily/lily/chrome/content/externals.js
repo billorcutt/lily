@@ -243,19 +243,9 @@ var LilyObjectList = {
 			//on shutdown we might need a cleanup...
 			//now the question is how does a _patch_ include an external resource?
 		}
-			
-		//******* removing this due to changes in FF3 ********			
-		//faster to use nsiFile methods or xmlhttp		
-		//var xhr=new LilyUtils._xhr(handleResponse,'text',this,"GET",false); //,"GET",false
-		//xhr.loadXMLDoc("file://"+path);
-		
-		//function handleResponse(_thisObjectSourceCode) { //_thisObjectSourceCode is available in the object context and contains the source code for the object.
-		//	source=_thisObjectSourceCode;
-		//	eval.apply(Lily,[_thisObjectSourceCode]); //eval in the context of the window 
-		//}
-		
+				
 		source = LilyUtils.readFileFromPath(path,false).data;		
-		if(!LilyUtils.isPatchString()) LilyUtils.loadScript("file://"+path,Lily); //only load externs, not patches
+		if(!/\.json/.test(path)) LilyUtils.loadScript("file://"+path,Lily); //only load externs, not patches
 		
 		return source; //return the source	
 	},

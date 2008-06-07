@@ -431,9 +431,10 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		var y=oldObj.top;
 		var id=oldObj.objID;
 		oldObj.controller.replacing=true;		
-		var args=newArgs;	
-		var saveConnections=(oldObj.displayName==newObjName)?true:false;
-		var newID=(oldObj.displayName==newObjName)?id:null;
+		var args=newArgs;
+			
+		var saveConnections=(oldObj.controller.objView.display==newObjName)?true:false;
+		var newID=(oldObj.controller.objView.display==newObjName)?id:null;
 		
 		//if we're just modifying the args, grab the old connections
 		if(saveConnections)
@@ -493,7 +494,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		
 		//then recreate the connnections for the new object here
 		if(saveConnections)
-			this.restoreConnections(savedConnections);			
+			this.restoreConnections(savedConnections);
 			
 		return o;
 		
@@ -501,7 +502,6 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	
 	//restore previously saved connections
 	this.restoreConnections=function(connections) {
-		log(connections)
 		for(var i=0;i<connections.length;i++) {
 			this.createConnection(connections[i].inlet,connections[i].outlet,connections[i].segmentArray,null)
 		}

@@ -1687,7 +1687,8 @@ function LilyObjectView (obj,HTML,cmdStr) {
 		this.inputWrapper=null; //set ref to null
 		
 		if(this.objInput) {
-			this.objInput.value=Lily["$"+this.name+"MetaData"].textName + ((obj.args)?" ":"") + obj.args;
+			var args = (typeof obj.displayArgs == "string") ? obj.displayArgs : obj.args;
+			this.objInput.value=this.display + ((args)?" ":"") + args;
 			this.objInput.focus();
 			this.objInput.select();
 			this.controller.objInputControl.registerDefaultListeners(this.objInput);
@@ -1722,31 +1723,7 @@ function LilyObjectView (obj,HTML,cmdStr) {
 		this.updateObjSize();						
 		return val;	
 	}
-	
-	//FIXME **** remove this ****
-	//can't find any calls to this
-	/*
-	//update the inlets
-	this.redrawInlets=function() {
-		this.controller.removeInletListeners();
-		var el = this.document.getElementById(this.parent.createElID("inletContainer"));
-		el.innerHTML="";
-		el.innerHTML = this.buildInletHTML();
-		this.controller.addInletListeners();
-		setTimeout(function(){changeInletOutletVisibility((thisPtr.patch.patchController.getEditable()=="edit")?"visible":"hidden");},100);		
-	}	
-	
-	//update the outlets
-	this.redrawOutlets=function() {
-		this.controller.removeOutletListeners();
-		var el = this.document.getElementById(this.parent.createElID("outletContainer"));
-		el.innerHTML="";		
-		el.innerHTML = this.buildOutletHTML();		
-		this.controller.addOutletListeners();
-		setTimeout(function(){changeInletOutletVisibility((thisPtr.patch.patchController.getEditable()=="edit")?"visible":"hidden");},100);	
-	}
-	*/
-	
+		
 	this.draw=function() {
 	
 		this.objViewNode = this.win.displayHTML(this.ui,this.id,this.top,this.left,true,this.parent.subPatcherID);
@@ -1754,12 +1731,13 @@ function LilyObjectView (obj,HTML,cmdStr) {
 		if(!this.usesCustomUI) {
 			this.inputWrapper=this.getElByID(this.parent.createElID("inputWrapper"));
 			
-			if(typeof this.parent.displayArgs == "boolean" && this.parent.displayArgs) //display args ok...
+			if(typeof this.parent.displayArgs == "boolean" && this.parent.displayArgs) {//display args ok...
 				this.inputWrapper.innerHTML=LilyUtils.string2HTML(this.cmdStr); //escape any args
-			else if(typeof this.parent.displayArgs == "boolean" && !this.parent.displayArgs)
+			} else if(typeof this.parent.displayArgs == "boolean" && !this.parent.displayArgs) {
 				this.inputWrapper.innerHTML=this.display; //just the name since we're not displaying args
-			else if(typeof this.parent.displayArgs == "string" && this.parent.displayArgs)
+			} else if(typeof this.parent.displayArgs == "string" && this.parent.displayArgs) {
 				this.inputWrapper.innerHTML=this.display+" "+this.parent.displayArgs; //display this specific args
+			}	
 			
 		}
 		
