@@ -88,7 +88,9 @@ function $processing(args) //args width/height
 	
 	//stop the loop & refresh the object
 	this.inlet1["refresh"]=function() {
+		Lily.toggleEdit();
 		thisPtr.parent.replaceObject(thisPtr,"processing",(thisPtr.width+" "+thisPtr.height));
+		Lily.toggleEdit();	
 	}
 	
 	//call the exec method- custom method for interacting with a sketch

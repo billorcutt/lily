@@ -243,8 +243,10 @@ function $svg(args) //args width/height
 	
 	function _refresh() {
 		_kill();
-		releaseObservers();		
+		releaseObservers();
+		Lily.toggleEdit();				
 		thisPtr.parent.replaceObject(thisPtr,"svg",(thisPtr.width+" "+thisPtr.height));
+		Lily.toggleEdit();
 	}
 	
 	this.destructor=function() {

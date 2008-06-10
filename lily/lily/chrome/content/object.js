@@ -34,6 +34,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 {			
 	this.parent=parent; //pointer to patch
 	this.name=name; //classname
+	this.displayName=LilyUtils.getObjectMetaData(name).textName;
 	this.subPatcherID=pID||null //patch id if created as part of a sub-patch
 	this.objID=id; //object id
 	this.top=top; //position in patch

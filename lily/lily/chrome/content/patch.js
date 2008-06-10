@@ -382,7 +382,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			var o=new obj(objArgs);
 			
 			if(o.displayName==undefined)
-				o.displayName=LilyUtils.getObjectMetaData(className).htmlName;
+				o.displayName=LilyUtils.getObjectMetaData(className).textName;
 						
 			if(!o.ui) { //if no custom html defined
 				o.ui=new LilyObjectView(o,null,cmdStr); //create the ui
@@ -432,7 +432,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		var id=oldObj.objID;
 		oldObj.controller.replacing=true;		
 		var args=newArgs;
-			
+						
 		var saveConnections=(oldObj.controller.objView.display==newObjName)?true:false;
 		var newID=(oldObj.controller.objView.display==newObjName)?id:null;
 		
@@ -491,7 +491,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 				o.gColl=LilyUtils.cloneObject(oldObj.collData);
 			}
 		}
-		
+				
 		//then recreate the connnections for the new object here
 		if(saveConnections)
 			this.restoreConnections(savedConnections);
@@ -503,7 +503,9 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	//restore previously saved connections
 	this.restoreConnections=function(connections) {
 		for(var i=0;i<connections.length;i++) {
-			this.createConnection(connections[i].inlet,connections[i].outlet,connections[i].segmentArray,null)
+			var c = this.createConnection(connections[i].inlet,connections[i].outlet,connections[i].segmentArray,null);
+			if(c && typeof connections[i].hiddenInPerf!="undefined")
+				c.controller.setHiddenInPerf(connections[i].hiddenInPerf);
 		}
 	}
 	
