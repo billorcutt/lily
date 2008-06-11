@@ -1653,8 +1653,8 @@ function buildProcessing( curElement ){
       p.pmouseX = p.mouseX;
       p.pmouseY = p.mouseY;
 	  //**** FIX ME *****
-      p.mouseX = e.clientX - Processing.lily.left;
-      p.mouseY = e.clientY - Processing.lily.top;
+      p.mouseX = (e.clientX+Processing.lily.parent.patchView.oWin.scrollX) - Processing.lily.left;
+      p.mouseY = (e.clientY+Processing.lily.parent.patchView.oWin.scrollY) - Processing.lily.top;
 
       if ( p.mouseMoved )
       {

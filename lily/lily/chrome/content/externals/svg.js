@@ -314,8 +314,8 @@ function $svg(args) //args width/height
 		var offsetX = parseInt(thisPtr.left);
 		var offsetY = parseInt(thisPtr.top);		
 		
-		_mouseX = parseInt(evt.clientX) - offsetX;
-		_mouseY = parseInt(evt.clientY) - offsetY;
+		_mouseX = (parseInt(evt.clientX)+parseInt(thisPtr.parent.patchView.oWin.scrollX)) - offsetX;
+		_mouseY = (parseInt(evt.clientY)+parseInt(thisPtr.parent.patchView.oWin.scrollY)) - offsetY;
 		
 		if(thisPtr.isMousePressed && typeof thisPtr.mouseDragged=="function") {
 			thisPtr.mouseDragged();
