@@ -83,7 +83,7 @@ function $processing(args) //args width/height
 	//run a script
 	this.inlet1["run"]=function() {
 		var obj = LilyUtils.readFileFromPath(currScriptPath);
-		proc = Processing(thisPtr.displayElement,obj.data);	
+		proc = Processing(thisPtr.displayElement,obj.data,thisPtr);	
 	}
 	
 	//stop the loop & refresh the object
@@ -136,8 +136,7 @@ function $processing(args) //args width/height
 		//when opening a patch this sets the size...
 		thisPtr.controller.patchController.attachPatchObserver(thisPtr.objID,"patchLoaded",loadFunc,"all");
 		
-		LilyUtils.loadScript("chrome://lily/content/lib/processing.js", this);
-		Processing.lily = thisPtr;		
+		LilyUtils.loadScript("chrome://lily/content/lib/processing.js", this);	
 	}
 
 	//object args width & height

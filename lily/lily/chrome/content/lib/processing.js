@@ -6,9 +6,10 @@
 
 (function(){
 
-this.Processing = function Processing( aElement, aCode )
+this.Processing = function Processing( aElement, aCode, context)
 {
   var p = buildProcessing( aElement );
+  p.lily = context;
   p.init( aCode );
   return p;
 };
@@ -525,7 +526,7 @@ function buildProcessing( curElement ){
 
   p.createGraphics = function createGraphics( w, h )
   {
-    var canvas = Processing.lily.document.createElement("canvas"); //FIX ME *****
+    var canvas = p.lily.document.createElement("canvas"); //FIX ME *****
     var ret = buildProcessing( canvas );
     ret.size( w, h );
     ret.canvas = canvas;
@@ -550,11 +551,11 @@ function buildProcessing( curElement ){
   function getImage( img ) {
     if ( typeof img == "string" )
     {
-	  if(Processing.lily.document.getElementById(img)) {
-	    return Processing.lily.document.getElementById(img); //FIX ME ****
+	  if(p.lily.document.getElementById(img)) {
+	    return p.lily.document.getElementById(img); //FIX ME ****
 	  } else {
 		p.loadImage(img);
-		return Processing.lily.document.getElementById(img); //FIX ME ****
+		return p.lily.document.getElementById(img); //FIX ME ****
 	  }
     }
 
@@ -571,7 +572,7 @@ function buildProcessing( curElement ){
       img.data.push( parseInt(c[0]), parseInt(c[1]), parseInt(c[2]), parseFloat(c[3]) * 100 );
     }
 
-    var canvas = Processing.lily.document.createElement("canvas"); //FIX ME  ***
+    var canvas = p.lily.document.createElement("canvas"); //FIX ME  ***
     canvas.width = img.width;
     canvas.height = img.height;
     var context = canvas.getContext("2d");
@@ -642,16 +643,16 @@ function buildProcessing( curElement ){
 	var img = null;
 	function processData(data){
 		
-		//remove any dupes
-		if(Processing.lily.document.getElementById(file)) {
-			Processing.lily.document.getElementById(file).
-				parentNode.removeChild(Processing.lily.document.getElementById(file));
+		//remove any dupes FIXME ****
+		if(p.lily.document.getElementById(file)) {
+			p.lily.document.getElementById(file).
+				parentNode.removeChild(p.lily.document.getElementById(file));
 		}
 		
-		var div = Processing.lily.document.createElement("div");
+		var div = p.lily.document.createElement("div");
 		div.style.display="none";
-		Processing.lily.document.body.appendChild(div);
-		img = Processing.lily.document.createElement("img");
+		p.lily.document.body.appendChild(div);
+		img = p.lily.document.createElement("img");
 		img.src = "data:image/jpeg;base64,"+btoa(data);
 		img.id = orgName;
 		img = div.appendChild(img);
@@ -667,7 +668,7 @@ function buildProcessing( curElement ){
 
     var h = img.height, w = img.width;
 
-    var canvas = Processing.lily.document.createElement("canvas"); //FIX ME ****
+    var canvas = p.lily.document.createElement("canvas"); //FIX ME ****
     canvas.width = w;
     canvas.height = h;
     var context = canvas.getContext("2d");
@@ -1327,7 +1328,7 @@ function buildProcessing( curElement ){
     curContext.fillStyle = fillStyle;
     curContext.strokeStyle = strokeStyle;
 
-	Processing.lily.set_obj_size(aWidth,aHeight); //**** FIX ME ****
+	p.lily.set_obj_size(aWidth,aHeight); //**** FIX ME ****
 
 	p.background(); //**** FIX ME **** had to add this for some reason...
 
@@ -1653,8 +1654,8 @@ function buildProcessing( curElement ){
       p.pmouseX = p.mouseX;
       p.pmouseY = p.mouseY;
 	  //**** FIX ME *****
-      p.mouseX = (e.clientX+Processing.lily.parent.patchView.oWin.scrollX) - Processing.lily.left;
-      p.mouseY = (e.clientY+Processing.lily.parent.patchView.oWin.scrollY) - Processing.lily.top;
+      p.mouseX = (e.clientX+p.lily.parent.patchView.oWin.scrollX) - p.lily.left;
+      p.mouseY = (e.clientY+p.lily.parent.patchView.oWin.scrollY) - p.lily.top;
 
       if ( p.mouseMoved )
       {
@@ -1696,7 +1697,7 @@ function buildProcessing( curElement ){
       }
     });
 
-    attach( Processing.lily.document, "keydown", function(e) //FIX ME ****
+    attach( p.lily.document, "keydown", function(e) //FIX ME ****
     {
       keyPressed = true;
 
@@ -1717,7 +1718,7 @@ function buildProcessing( curElement ){
       }
     });
 
-    attach( Processing.lily.document, "keyup", function(e) //FIX ME *****
+    attach( p.lily.document, "keyup", function(e) //FIX ME *****
     {
       keyPressed = false;
 
