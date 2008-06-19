@@ -58,7 +58,7 @@ function $receive(args)
 		if(typeof Lily.receiveObjects[thisPtr.receiveName] != "undefined") {
 			var tmp = Lily.receiveObjects[thisPtr.receiveName];
 			for(var i=0;i<tmp.length;i++) {
-				if(tmp[i].objID==thisPtr.objID) {
+				if(tmp[i] === thisPtr) {
 					tmp.splice(i,1);
 					if(!tmp.length) {
 						delete Lily.receiveObjects[thisPtr.receiveName];

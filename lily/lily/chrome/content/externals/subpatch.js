@@ -242,6 +242,7 @@ function $subpatch(args)
 	
 	//clean up the subpatch
 	this.destructor=function() {
+		thisPtr.parent.patchView.oWin.focus(); //restore focus so the iframe doesn't steal it.
 		if(thisPatch.obj) { thisPatch.obj.close(); }
 		thisPatch = {obj:null,id:pid,file:null,json:null}; //reset the thispatch object
 	}

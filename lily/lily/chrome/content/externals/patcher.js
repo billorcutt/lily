@@ -53,6 +53,7 @@ function $patcher(param)
 		this.displayName = param.match(/##(\w+)##/)[1];
 		//if there any additional args, strip out the classname and assign them to display args. otherwise displayargs = false.
 		this.displayArgs = (!/^##\w+##/.test(this.patchArgs))?this.patchArgs.replace(/##\w+##/,""):false;
+		this.loadsSubPatchByName = true;
 	}
 	
 	//inlet/outlet arrays
@@ -62,7 +63,7 @@ function $patcher(param)
 	//replace placeholders with args
 	function replacePatchArgs(arg_str,data) {
 		var patch_str = data;
-		var tmp = LilyUtils.splitArgs(arg_str);
+		var tmp = LilyUtils.splitArgs(arg_str.replace(/##\w+##/,""));
 		for(var i=0;i<tmp.length;i++) {
 			var re = new RegExp("\\#"+(i+1),"g");
 			patch_str=patch_str.replace(re,tmp[i]);

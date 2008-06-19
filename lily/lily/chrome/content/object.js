@@ -31,7 +31,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 *	@constructor
 */
 function LilyObjectBase(name,parent,pID,top,left,id,args)
-{			
+{
+	this.type="object"; //			
 	this.parent=parent; //pointer to patch
 	this.name=name; //classname
 	this.displayName=LilyUtils.getObjectMetaData(name).textName;
@@ -58,7 +59,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 	this.allowColor=true; //allow color changes			
 	this.resize=true; //should the object be resizable
 	this.displayArgs=true; //should we see objects arguments (for non-UI objects only)
-	this.type="object";
+	this.loadsSubPatchByName = false; //true when a subpatch is invoked by name
 	
 	this.ui=null; //to filled in when view instantiates
 	this.document=null; //ditto
@@ -414,7 +415,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 //		LilyDebugWindow.print("was the alt key depressed? "+e.altKey);		
 		if((e.altKey && !LilyUtils.controlOrCommand(e)) && !thisPtr.controller.objDrag.pasted) {
 			if(thisPtr.name!="tmp") {
-				Lily.openHelpPatch(thisPtr.name);
+				Lily.openHelpPatch((thisPtr.controller.objView.parent.loadsSubPatchByName)?thisPtr.controller.objView.parent.displayName:thisPtr.name);
 			} else if(thisPtr.controller.objInputControl.objInput && thisPtr.controller.objInputControl.objInput.value) {
 				var name = thisPtr.controller.objInputControl.objInput.value.split(" ")[0];
 				if(name.length) {
