@@ -50,14 +50,34 @@ function $check()
 	
 	this.inlet1["bang"]=function() {
 		if(checkEl.checked) {
-			checkEl.setAttribute("checked",false);
+			checkEl.removeAttribute("checked");
 			thisPtr.outlet1.doOutlet(false);
 		} else {
-			checkEl.setAttribute("checked",true);
+			checkEl.setAttribute("checked","checked");
 			thisPtr.outlet1.doOutlet(true);
 		}	
 	}
 	
+	this.inlet1["bool"]=function(msg) {
+		if(msg) {
+			checkEl.setAttribute("checked","checked");
+			thisPtr.outlet1.doOutlet(true);
+		} else {
+			checkEl.removeAttribute("checked");
+			thisPtr.outlet1.doOutlet(false);
+		}
+	}
+	
+	this.inlet1["num"]=function(val) {
+		if(val) {
+			checkEl.setAttribute("checked","checked");
+			thisPtr.outlet1.doOutlet(true);
+		} else {
+			checkEl.removeAttribute("checked");
+			thisPtr.outlet1.doOutlet(false);
+		}
+	}
+		
 	//custom html
 	this.ui=new LilyObjectView(this,"<input style=\"width:10px;height:10px\" id=\""+ this.createElID("checkbox") +"\" type=\"checkbox\"/>");
 	this.ui.draw();

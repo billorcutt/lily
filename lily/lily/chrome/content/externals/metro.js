@@ -49,14 +49,14 @@ function $metro(tempo)
 	}		
 	
 	this.inlet1["bool"]=function(msg) {
-		if(msg && !running)
+		if(msg)
 			start();
 		else
 			stop();
 	}
 	
 	this.inlet1["num"]=function(val) {
-		if(val && !running)
+		if(val)
 			start();
 		else
 			stop();
