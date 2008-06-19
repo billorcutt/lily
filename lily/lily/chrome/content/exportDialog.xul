@@ -127,7 +127,14 @@
 					<row id="descRow">
 						<label control="description" value="Description"/>
 						<textbox multiline="true" id="description" value="Made with Lily."/>						
-					</row>													
+					</row>
+					<row id="includeParDirRow">
+						<hbox></hbox>
+						<hbox>
+							<label control="includeParentDir" value="Include the contents of the patch's parent directory?"/>
+							<checkbox checked="false" id="includeParentDirCbx"/>
+						</hbox>						
+					</row>																		
 				</rows>
 			</grid>
 			<hbox style="padding-top:10px;padding-bottom:0px;">

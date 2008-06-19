@@ -533,9 +533,10 @@ var LilyPatchExporter = {
 		var data=Lily.patchObj[id].obj.patchModel.serializeDom();
 		data=data.replace(/chrome:\/\/lily/g,("chrome://"+projectName));
 		Lily.patchObj[id].json=data; //update the patch string.			
-		tmp=LilyUtils.writeFile(tmp,data);					
-
+		tmp=LilyUtils.writeFile(tmp,data);	
+	
 		//copy subpatches
+		//******* FIXME ******** won't work with absolute paths, won't work with subfolders.
 		var subPatchArr = dependencies["subPatches"];										
 		for(var i=0;i<subPatchArr.length;i++) {
 			if(!LilyUtils.containsProtocol(subPatchArr[i])) {
@@ -545,7 +546,32 @@ var LilyPatchExporter = {
 //				LilyDebugWindow.print(tmpIn.leafName+" "+LilyUtils.readFile(tmpIn));
 				LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn));	
 			}
-		}																																
+		}
+		
+		//copy the patch's parent directory if we need to and if the patch has been saved.
+		//******* FIXME ********  won't work with absolute paths, won't work with subfolders.																																
+		if(obj.includeParentDirCbx && Lily.patchObj[id].file) {
+			
+			//copy the patch's parent dir
+			var parentDir = Lily.patchObj[id].file.parent.clone();
+
+			//recurse thru the resources dir converting text files as needed.
+			LilyUtils.directorySearch(parentDir,function(file) {
+
+				var tmpOut = contentOut.clone();
+				var testExist = contentOut.clone();						
+				testExist.append(file.leafName);
+				
+				if(!testExist.exists()) {
+					if(LilyUtils.isText(file.leafName)) {
+						tmpOut.append(file.leafName);							
+						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(file).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));							
+					} else {
+						file.copyTo(tmpOut,null);
+					}	
+				}							
+			})
+		}
 
 		/* END CONTENT COPYING */
 		
@@ -599,7 +625,7 @@ var LilyPatchExporter = {
 			//var parentDir = fp.file.parent.clone();									
 			
 			var rootDir = fp.file.parent.clone();	//Lily.installDir.clone();
-			rootDir.append(projectName+"_tmp");
+			rootDir.append("."+projectName+"_tmp");
 			
 			if( !rootDir.exists() || !rootDir.isDirectory() ) {   // if it doesn't exist, create
 				rootDir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
@@ -865,7 +891,33 @@ var LilyPatchExporter = {
 	//					LilyDebugWindow.print(tmpIn.leafName+" "+LilyUtils.readFile(tmpIn));
 						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn));
 					}
-				}																																
+				}
+				
+				//copy the patch's parent directory if we need to and if the patch has been saved.
+				//******* FIXME ********  won't work with absolute paths, won't work with subfolders.																																
+				if(obj.includeParentDirCbx && Lily.patchObj[id].file) {
+
+					//copy the patch's parent dir
+					var parentDir = Lily.patchObj[id].file.parent.clone();
+
+					//recurse thru the resources dir converting text files as needed.
+					LilyUtils.directorySearch(parentDir,function(file) {
+
+						var tmpOut = contentOut.clone();
+						var testExist = contentOut.clone();						
+						testExist.append(file.leafName);
+						
+						if(!testExist.exists()) {
+							if(LilyUtils.isText(file.leafName)) {
+								tmpOut.append(file.leafName);							
+								LilyUtils.writeFile(tmpOut,LilyUtils.readFile(file).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));							
+							} else {
+								file.copyTo(tmpOut,null);
+							}	
+						}
+							
+					})
+				}																																				
 				
 				/* END CONTENT COPYING */																	
 			
