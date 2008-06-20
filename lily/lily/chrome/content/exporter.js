@@ -807,6 +807,11 @@ var LilyPatchExporter = {
 				tmp.append("object.js");
 				tmp.copyTo(contentOut,null);
 				
+				//external.js
+				var tmp = contentIn.clone();
+				tmp.append("externals.js");
+				tmp.copyTo(contentOut,null);				
+				
 				//patch.js
 				var tmpIn = contentIn.clone();
 				tmpIn.append("patch.js");
