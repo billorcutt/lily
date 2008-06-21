@@ -527,6 +527,7 @@ function buildProcessing( curElement ){
   p.createGraphics = function createGraphics( w, h )
   {
     var canvas = p.lily.document.createElement("canvas"); //FIX ME *****
+	canvas = (canvas.wrappedJSObject) ? canvas.wrappedJSObject : canvas;
     var ret = buildProcessing( canvas );
     ret.size( w, h );
     ret.canvas = canvas;
@@ -573,6 +574,7 @@ function buildProcessing( curElement ){
     }
 
     var canvas = p.lily.document.createElement("canvas"); //FIX ME  ***
+	canvas = (canvas.wrappedJSObject) ? canvas.wrappedJSObject : canvas;
     canvas.width = img.width;
     canvas.height = img.height;
     var context = canvas.getContext("2d");
@@ -642,7 +644,7 @@ function buildProcessing( curElement ){
 	
 	var img = null;
 	function processData(data){
-		
+				
 		//remove any dupes FIXME ****
 		if(p.lily.document.getElementById(file)) {
 			p.lily.document.getElementById(file).
@@ -656,8 +658,10 @@ function buildProcessing( curElement ){
 		img.src = "data:image/jpeg;base64,"+btoa(data);
 		img.id = orgName;
 		img = div.appendChild(img);
+		img = (img.wrappedJSObject) ? img.wrappedJSObject : img;
+		
 	}
-	
+		
 	//synchronous
 	var xhr = new LilyUtils._xhr(processData,"bin",this,"GET",false);
 	xhr.loadXMLDoc(file);
@@ -669,12 +673,15 @@ function buildProcessing( curElement ){
     var h = img.height, w = img.width;
 
     var canvas = p.lily.document.createElement("canvas"); //FIX ME ****
+	canvas = (canvas.wrappedJSObject) ? canvas.wrappedJSObject : canvas;
     canvas.width = w;
     canvas.height = h;
-    var context = canvas.getContext("2d");
 
+    var context = canvas.getContext("2d");
+	context = (context.wrappedJSObject) ? context.wrappedJSObject : context;
     context.drawImage( img, 0, 0 );
     var data = buildImageObject( context.getImageData( 0, 0, w, h ) );
+
     data.img = img;
     return data;
   }
