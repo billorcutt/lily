@@ -1816,7 +1816,9 @@ function LilyObjectView (obj,HTML,cmdStr) {
 				
 			changeInletOutletVisibility("none","hidden");
 			
-			this.parent.objectMoved();			
+			setTimeout(function(){
+				thisPtr.parent.objectMoved();
+			},10);		
 				
 		} else {
 			if(this.inputWrapper && this.parent.color=="#FFFFFF") {
@@ -1827,7 +1829,9 @@ function LilyObjectView (obj,HTML,cmdStr) {
 			this.objViewNode.style.display="inherit";
 			changeInletOutletVisibility("block","visible");
 			
-			this.parent.objectMoved();									
+			setTimeout(function(){
+				thisPtr.parent.objectMoved();
+			},10);								
 		}
 
 	}
