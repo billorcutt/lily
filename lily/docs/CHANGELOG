@@ -2,9 +2,31 @@ CHANGE LOG
 
 -----------------
 
-LILY-0.1-PUBLIC-BETA-2 (May 31, 2008)
+LILY-0.1-PUBLIC-BETA-2 (June 28, 2008)
 
 -----------------
+
+* Fix bug where connections went astray when toggling editability
+
+* Fix bug where images in procesingjs were not loading when part of an addon
+
+* Add option to save as dialog to copy the contents of the patch's parent directory to app/addon.
+
+* Fix inconsistencies in the input accepted & the behavior of metro & checkbox
+
+* Fix bug affecting multiple receives with the same name in multiple subpatch instances
+
+* Fix bug affecting multiple instances of Processing.
+
+* Fix bug affecting mouse position in SVG & Processing
+
+* Patchers in the search patch now appear in the auto-complete menu and can be loaded by typing their name.
+
+* Option-clicking a patcher "loaded by name" will open a help-patch for the patcher, if it exists.
+
+* Add a file- bootstrap.js- that loads lily app js dynamically.
+
+* Fix bug where lily created addons where double loading the js
 
 * Fix a bug where externals would lose user applied properties when they were replaced (i.e. when args were edited)
 

@@ -76,7 +76,7 @@ browser window under "Tools -> Lily". The menus are documented below:
 	Support
 		Help Screen			- Keyboard shortcuts reference.
 		Options				- Open preferences dialog.
-		Report a Bug		- Open a window to file a bug on bugzilla.
+		Report a Bug		- Open a window to file a bug on trac.
 		External Help		- Browse the object help files sorted  by category.		
 		
 	Debug
