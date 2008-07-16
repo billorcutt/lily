@@ -1,0 +1,35 @@
+<html>
+
+	<body>
+		<table border="0" cellpadding="5px" style="font-size:14px;font-family:verdana,DejaVu Sans,sans-serif;background:#E5E5E5">
+			<tr><td style="height:30px;background:lightgrey"></td></tr>
+			<tr>
+				<td align="right" style="background:lightgrey" width="145">Title:</td>
+				<td><input onchange="parentWin.saveDialog();" size="30" style="font-size:14px;font-family:verdana,DejaVu Sans,sans-serif;" id="title" type="text"></td>
+			</tr>
+			<tr>
+				<td align="right" style="background:lightgrey">Color:</td>
+				<td><input onchange="parentWin.saveDialog();" size="30" style="font-size: 14px; font-family:verdana,DejaVu Sans,sans-serif;" id="color" type="text"></td>
+			</tr>
+			<tr>
+				<td align="right" style="background:lightgrey">Height in Subpatch:</td>
+				<td><input onchange="parentWin.saveDialog();" size="30" style="font-size: 14px; font-family:verdana,DejaVu Sans,sans-serif;" id="height" type="text"></td>
+			</tr>
+			<tr>
+				<td align="right" style="background:lightgrey">Width in Subpatch:</td>
+				<td><input onchange="parentWin.saveDialog();" size="30" style="font-size: 14px; font-family:verdana,DejaVu Sans,sans-serif;" id="width" type="text"></td>
+			</tr>
+			<tr>
+				<td align="right" style="background:lightgrey">Description:</td>
+				<td><textarea onchange="parentWin.saveDialog();" style="font-size: 14px; font-family:verdana,DejaVu Sans,sans-serif;" cols="29" rows="4" id="desc"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" style="background:lightgrey">
+					<input style="margin-bottom:10px;margin-top:10px;margin-right:30px;font-size:18px;font-family:verdana,DejaVu Sans,sans-serif" type="button" value="Revert" onclick="parentWin.revert()"/>
+					<input style="margin-bottom:10px;margin-top:10px;margin-left:30px;font-size:18px;font-family:verdana,DejaVu Sans,sans-serif" type="button" value="Done" onclick="parentWin.saveDialog();parentWin.close();"/>
+				</td>
+			</tr>			
+		</table>
+	</body>
+
+</html>

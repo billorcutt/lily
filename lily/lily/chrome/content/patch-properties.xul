@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+<!ENTITY % lilyDTD SYSTEM "chrome://lily/locale/lily.dtd">
+%lilyDTD;
+]>
+
+<window
+	title="&lily.PatchProperties;"
+    id="lilyPatchProperties"
+	onload="initWin(window.arguments[1])"
+    orient="vertical"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script>
+		
+		function cloneObject(obj) {
+		    var objDeepCopy = eval("(" + (obj.toSource()) + ")");
+			return objDeepCopy;
+		}		
+
+		var initVals = cloneObject(window.arguments[1]);
+	
+		function revert() {
+			initWin(initVals);
+		}
+		
+		function initWin(val) {	
+		
+			var doc = document.getElementById("browserInspectorElement").contentWindow.document;
+			
+			document.getElementById("browserInspectorElement").contentWindow.parentWin = this;
+				
+			for(var x in val) {
+				if(doc.getElementById(x)) {
+					doc.getElementById(x).value = val[x];
+				}
+			}
+		}
+		
+		function saveDialog() {
+		
+			var tmp = window.arguments[1];
+			
+			var doc = document.getElementById("browserInspectorElement").contentWindow.document;			
+			
+			for(var x in tmp) {
+				if(doc.getElementById(x)) {
+					tmp[x] = doc.getElementById(x).value;
+				}
+			}
+		
+			window.arguments[0](tmp);
+		}
+		
+		function cancelDialog() {
+			window.close();
+		}
+			
+	</script>
+
+	<keyset id="lilyPatchPropertiesKeySet">
+	  <key id="lilyPatchPropertiesCloseKey" modifiers="accel" key="W" oncommand="window.close();"/>
+	</keyset>
+	
+	<!-- Menubar  -->
+	<menubar id="lilyPatchPropertiesMenuBar">
+
+		<!-- File Menu -->
+		<menu id="menu_LilyPatchPropertiesPopup" label="&lily.PatchProperties;">
+	        <menupopup id="menu_PatchPropertiesPopupMenu">
+	            <menuitem id="closePatchPropertiesItem" label="&lily.Close;" oncommand="window.close();"/>	
+			</menupopup>
+		</menu>
+		
+	</menubar>	
+	
+	<vbox flex="1">
+		<browser flex="1" id="browserInspectorElement" src="chrome://lily/content/patch-properties.html"/>
+		<statusbar id="status_LilyStatusBar">
+			<statusbarpanel flex="1"/>
+		</statusbar>
+	</vbox>
+	
+</window>
