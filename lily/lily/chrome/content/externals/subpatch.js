@@ -94,7 +94,7 @@ function $subpatch(args)
 		if(thisPtr.fPath) { 
 			setTimeout(function(){
 				//thisPatch = {obj:null,id:pid,file:null,json:null}; //reset the thispatch object
-				var o = thisPtr.parent.replaceObject(thisPtr,"subpatch",thisPtr.patchArgs.replace(/##\w+##/,""));
+				var o = thisPtr.parent.replaceObject(thisPtr,"subpatch",thisPtr.args.replace(/##\w+##/,""));
 				o.setHeight(thisPtr.height);
 				o.setWidth(thisPtr.width);
 			},100);	

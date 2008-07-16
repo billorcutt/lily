@@ -1190,11 +1190,11 @@ var Lily =
 		var win = p.patchView.xulWin;
 		
 		var initVals = { 
-			title:  p.title,
-			color:  p.color,			
-			height: p.heightInSubPatch, 
-			width:  p.widthInSubPatch,
-			desc:   LilyUtils.unescape(p.description)	
+			title:  p.title||"Untitled",
+			color:  p.color||"#FFFFFF",			
+			height: p.heightInSubPatch||"0", 
+			width:  p.widthInSubPatch||"0",
+			desc:   LilyUtils.unescape(p.description)||""	
 		};
 		
 		win.openDialog("chrome://lily/content/patch-properties.xul", "cWin","width=450,height=405,left=50,top=550,close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function(val){
