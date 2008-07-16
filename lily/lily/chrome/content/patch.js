@@ -32,7 +32,11 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	this.title="Untitled"; //patch title
 	this.width=(width&&!hide)?width:(hide)?0:800; //width	
 	this.height=(height&&!hide)?height:(hide)?0:600; //height
+	this.heightInSubPatch=0; //height when loaded in a subpatch
+	this.widthInSubPatch=0;	 //width when loaded in a subpatch
+	this.description="";	//patch description.
 	this.color="#FFFFFF" //background color
+	this.desc="";		//patch description
 	this.fontSize=LilyUtils.getDefaultFont()[1]; //font size in px
 	this.fontFamily=LilyUtils.getDefaultFont()[0]; //font face
 	this.readonly = locked||false; //boolean- readonly?
@@ -415,7 +419,13 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			
 			o.init(); //generic- user defined
 		} else if(obj && typeof obj == "string") {
-			return this.createObject("patcher",pID,t,l,id,(obj+" "+argStr+" ##"+className+"##"));
+			var sizeArr = LilyUtils.extractSizeInSubPatch(LilyUtils.readFileFromPath(obj).data);		
+			if(sizeArr[0]||sizeArr[1]) {
+				return this.createObject("subpatch",pID,t,l,id,(obj+" "+argStr+" ##"+className+"##"));					
+			} else {
+				return this.createObject("patcher",pID,t,l,id,(obj+" "+argStr+" ##"+className+"##"));	
+			}
+			
 		}
 		
 		if(!isValid)
@@ -728,6 +738,15 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		
 			if(typeof patch.color!="undefined" && !subPatchID && !opID)
 				this.patchView.setPatchColor(patch.color); //update color
+				
+			if(typeof patch.description!="undefined" && !subPatchID && !opID)
+				this.description=patch.description; //update color
+				
+			if(typeof patch.heightInSubPatch!="undefined" && !subPatchID && !opID)
+				this.heightInSubPatch=parseInt(patch.heightInSubPatch); //update color	
+				
+			if(typeof patch.widthInSubPatch!="undefined" && !subPatchID && !opID)
+				this.widthInSubPatch=parseInt(patch.widthInSubPatch); //update color							
 			
 			var oArray=patch.objArray; //top level 'patch' object defined in the patch json
 		
@@ -1678,12 +1697,14 @@ function LilyPatchController(pID,parent)
 	this.notifyAllPatchListeners=function(e) {
 		var patchArr = thisPtr.patch.patchModel.subPatchArray;
 		for(var x  in patchArr) {
-			var p = patchArr[x].obj.patchView;			
-			try {
-				var evt = p.document.createEvent("Event");			
-				evt.initEvent(e, true, false);				
-				p.document.dispatchEvent(evt);		
-			} catch(e) {}					
+			if(patchArr[x].obj && patchArr[x].obj.patchView) {
+				var p = patchArr[x].obj.patchView;			
+				try {
+					var evt = p.document.createEvent("Event");			
+					evt.initEvent(e, true, false);				
+					p.document.dispatchEvent(evt);		
+				} catch(e) {}	
+			}					
 		}
 	}
 	

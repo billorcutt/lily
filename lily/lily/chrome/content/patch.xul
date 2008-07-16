@@ -82,6 +82,7 @@
 	        <menupopup id="menu_PatchPopupMenu" onpopupshowing="opener.LilyMenuBar.setPatchMenu(this)">
 	            <menuitem id="patchEditOption" key="lilyToggleEditKey" label="&lily.Edit;" type="checkbox" autocheck="true" checked="false" option="patchEdit" oncommand="opener.Lily.toggleEdit()"/>
 				<menuitem id="menu_PatchColor" label="&lily.Color;" oncommand="opener.Lily.openColorPicker('patch')"/>
+				<menuitem id="menu_PatchProperties" label="&lily.PatchProperties;..." oncommand="opener.Lily.openPatchProperties()"/>
 				<!--<menuitem id="menu_PatchZoomIn" label="&lily.ZoomIn;" oncommand="opener.Lily.zoomIn()"/>
 				<menuitem id="menu_PatchZoomOut" label="&lily.ZoomOut;" oncommand="opener.Lily.zoomOut()"/>
 				<menuitem id="menu_PatchZoomReset" label="&lily.ZoomReset;" oncommand="opener.Lily.zoomReset()"/>-->																	

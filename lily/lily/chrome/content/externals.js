@@ -124,9 +124,9 @@ var LilyObjectList = {
 			load all external objects in the array into memory & add their metadata
 	*/
 	includeAll:function() {
+		
 		for(var i=0;i<this.objArray.length;i++) { //don't load patches
 			if(this.isLoadable(this.objArray[i].name) && this.objArray[i].path && typeof this.objLeaf[this.objArray[i].name]=="undefined") {
-				//log(this.objArray[i].name)
 				var extName = LilyUtils.stripExtension(this.objArray[i].name);
 				try {
 					this.objArray[i].sourceCode=this.load(this.objArray[i].path); //save the source for later...
@@ -134,7 +134,7 @@ var LilyObjectList = {
 					this.objArray[i].displayName=LilyUtils.getObjectMetaData(objName).htmlName;
 					this.objArray[i].menuName=LilyUtils.getObjectMetaData(objName).textName;
 					this.objArray[i].catName=LilyUtils.getObjectMetaData(objName).objectCategory;
-					this.objArray[i].objSummary=LilyUtils.getObjectMetaData(objName).objectSummary;
+					this.objArray[i].objSummary=(LilyUtils.getObjectMetaData(objName).objectSummary?LilyUtils.getObjectMetaData(objName).objectSummary:LilyUtils.extractPatchDesc(this.objArray[i].sourceCode));
 					this.objArray[i].objArguments=LilyUtils.getObjectMetaData(objName).objectArguments;								
 					this.objDisplay[((this.objArray[i].menuName)?this.objArray[i].menuName:"tmp")]=objName;
 					this.objDisplay[objName]=objName;

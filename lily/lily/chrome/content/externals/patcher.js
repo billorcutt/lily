@@ -178,7 +178,7 @@ function $patcher(param)
 	//use the patch string to load the file in the hidden iframe
 	function openPatch(data,file) {
 								
-		var sizeArr=Lily.extractPatchSize(data); //get the patch size w/o having to eval the json.
+		var sizeArr=LilyUtils.extractPatchSize(data); //get the patch size w/o having to eval the json.
 		var parentDir=(file.parent.isDirectory())?file.parent:null; //patch's parent dir.
 		thisPatch.obj = new LilyPatch(pid,Lily,sizeArr[0],sizeArr[1],false,{type:"iframe",win:iframe,parent:thisPtr.parent.patchView.xulWin}); //call the patch constructor
 

@@ -102,7 +102,10 @@ function LilyModel(parent)
 		j+="'width':"+this.patch.width+comma;
 		j+="'height':"+this.patch.height+comma;
 		j+="'color':"+quote+this.patch.color+quote+comma;
-		j+="'mode':"+quote+this.patch.patchController.editable+quote+comma;		
+		j+="'mode':"+quote+this.patch.patchController.editable+quote+comma;	
+		j+="'description':"+quote+this.patch.description+quote+comma;	
+		j+="'heightInSubPatch':"+quote+this.patch.heightInSubPatch+quote+comma;	
+		j+="'widthInSubPatch':"+quote+this.patch.widthInSubPatch+quote+comma;								
 		
 		j+="'objArray':"+oBrace;
 		

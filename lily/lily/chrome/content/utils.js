@@ -440,7 +440,11 @@ var LilyUtils = {
 			returns stripped string.
 	*/
 	stripLTQuotes: function(str) {
-		if(str && str.length) return str.replace(/^['"]|['"]$/ig, '');
+		if(str && str.length) {
+			return str.replace(/^['"]|['"]$/ig, '');
+		} else {
+			return "";
+		}	
 	},
 	
 	/*
@@ -1400,6 +1404,72 @@ var LilyUtils = {
 	*/
 	isPatchString: function(str) {
 		return (/var patch={/.test(str));
+	},
+	
+	/*
+		Method: extractPatchDesc
+			get the patch size without having to eval the patch JSON.
+			
+		Arguments: 
+			data - JSON patch string.
+			
+		Returns: 
+			Patch description.									
+	*/	
+	extractPatchDesc: function(data) {
+		var desc=data.match(/'description':'([\S|\s]+)','heightInSubPatch'/);		
+		
+		if(desc && desc.length>1)
+			return desc[1];
+		else
+			return "";
+	},
+	
+	/*
+		Method: extractPatchSize
+			get the patch size without having to eval the patch JSON.
+			
+		Arguments: 
+			data - JSON patch string.
+			
+		Returns: 
+			An array of patch width & height.									
+	*/	
+	extractPatchSize: function(data) {
+		var wArr=data.match(/'width':(\d+)/);
+		var hArr=data.match(/'height':(\d+)/);		
+		
+		if(wArr && hArr)
+			return [wArr[1],hArr[1]];
+		else
+			return [0,0];
+	},
+	
+	/*
+		Method: extractSizeInSubPatch
+			get the size in subpatch without having to eval the patch JSON.
+			
+		Arguments: 
+			data - JSON patch string.
+			
+		Returns: 
+			An array of patch width & height when opened in subpatch.									
+	*/	
+	extractSizeInSubPatch: function(data) {
+				
+		if(typeof data == "string") {
+			var wArr=data.match(/'widthInSubPatch':'(\d+)'/);
+			var hArr=data.match(/'heightInSubPatch':'(\d+)'/);	
+			
+			if(wArr && hArr){
+				return [parseInt(wArr[1]),parseInt(hArr[1])];
+			}else{
+				return [0,0];
+			}
+				
+		} else {
+				return [0,0];
+		}
 	},	
 	
 	/*
@@ -2330,6 +2400,13 @@ LilyUtils._iframe=function(context,source,height,width,scrolling,callback)
 		thisPtr.objFrame.src=src;		
 	}
 	
+	this.resize=function(w,h) {
+		parent.setHeight(h);
+		parent.setWidth(w);
+		frameCover.style.height=(h+5)+"px";
+		frameCover.style.width=(w+5)+"px";		
+	}
+	
 	//set the object size
 	if(h)
 		parent.setHeight(h);
@@ -2340,7 +2417,7 @@ LilyUtils._iframe=function(context,source,height,width,scrolling,callback)
 	//init the div over the iframe
 	frameCover=parent.parent.patchView.displayHTML("");
 	frameCover.id=parent.createElID("frameCover");
-//	frameCover.style.backgroundColor='red';	
+//	frameCover.style.backgroundColor='red';	 //debug
 	frameCover.style.position='absolute';
 	frameCover.style.left=(parent.left)+"px";
 	frameCover.style.top=(parent.top+5)+"px";

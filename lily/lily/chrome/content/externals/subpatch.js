@@ -39,8 +39,17 @@ function $subpatch(args)
 	
 	//inspector values
 	var argsArr = LilyUtils.splitArgs(args); //split the args
-	this.fPath = argsArr.shift()||""; //path to patch or null
+	
+	this.fPath = (argsArr.length>0)?argsArr.shift():""; //path to patch or null
 	this.patchArgs = argsArr.join(" ")||""; //the remainder of the args as string
+	
+	if(/##\w+##/.test(this.patchArgs)) {
+		//pull out the patch name and use that as the display
+		this.displayName = this.patchArgs.match(/##(\w+)##/)[1];
+		//if there any additional args, strip out the classname and assign them to display args. otherwise displayargs = false.
+		this.displayArgs = (!/^##\w+##/.test(this.patchArgs))?this.patchArgs.replace(/##\w+##/,""):false;
+		this.loadsSubPatchByName = true;
+	}	
 	
 	//inlet/outlet arrays
 	var tmpIn=[];
@@ -48,7 +57,7 @@ function $subpatch(args)
 	
 	this.setInspectorConfig([
 		{name:"fPath",value:thisPtr.fPath,label:"Patch Path",type:"string",input:"file"},
-		{name:"patchArgs",value:this.patchArgs,label:"Patch Arguments",type:"string",input:"text"}		
+		{name:"patchArgs",value:thisPtr.patchArgs,label:"Patch Arguments",type:"string",input:"text"}		
 	]);
 	
 	//save the values returned by the inspector- returned in form {valueName:value...}
@@ -72,7 +81,7 @@ function $subpatch(args)
 	
 	function replacePatchArgs(arg_str,data) {
 		var patch_str = data;
-		var tmp = LilyUtils.splitArgs(arg_str);
+		var tmp = LilyUtils.splitArgs(arg_str.replace(/##\w+##/,""));		
 		for(var i=0;i<tmp.length;i++) {
 			var re = new RegExp("\\#"+(i+1),"g");
 			patch_str=patch_str.replace(re,tmp[i]);
@@ -85,7 +94,7 @@ function $subpatch(args)
 		if(thisPtr.fPath) { 
 			setTimeout(function(){
 				//thisPatch = {obj:null,id:pid,file:null,json:null}; //reset the thispatch object
-				var o = thisPtr.parent.replaceObject(thisPtr,"subpatch",thisPtr.args);
+				var o = thisPtr.parent.replaceObject(thisPtr,"subpatch",thisPtr.patchArgs.replace(/##\w+##/,""));
 				o.setHeight(thisPtr.height);
 				o.setWidth(thisPtr.width);
 			},100);	
@@ -176,7 +185,7 @@ function $subpatch(args)
 	
 	function openPatch(data,file) {
 						
-		var sizeArr=Lily.extractPatchSize(data); //get the patch size w/o having to eval the json.
+		var sizeArr=LilyUtils.extractPatchSize(data); //get the patch size w/o having to eval the json.
 		var parentDir=(file.parent.isDirectory())?file.parent:null; //patch's parent dir.
 		thisPatch.obj = new LilyPatch(pid,Lily,sizeArr[0],sizeArr[1],false,{type:"iframe",win:thisPtr.displayElement,parent:thisPtr.parent.patchView.xulWin}); //call the patch constructor
 
@@ -233,9 +242,13 @@ function $subpatch(args)
 			}
 			
 			var parent_patch = thisPatch.obj.getTopPatch(); //get the top level patch
-			parent_patch.patchController.patchLoaded(thisPtr.objID,thisPatch.obj); //tell the patch we're loaded.			
-																			
-		}		
+			parent_patch.patchController.patchLoaded(thisPtr.objID,thisPatch.obj); //tell the patch we're loaded.
+																									
+			//size the subpatch to the size set in patch we're loading...
+			if(parseInt(thisPatch.obj.heightInSubPatch) != 0 && parseInt(thisPatch.obj.widthInSubPatch) != 0) 
+				iframe.resize(parseInt(thisPatch.obj.widthInSubPatch), parseInt(thisPatch.obj.heightInSubPatch));
+
+		}
 		
 	}
 	
@@ -250,7 +263,9 @@ function $subpatch(args)
 	//create the new patch using the iframe
 	function frameLoad() {
 		thisPtr.displayElement.removeEventListener("load",frameLoad,true); //remove this so we don't loop
-		if(thisPtr.fPath&&thisPatch.json&&thisPatch.file) { openPatch(thisPatch.json,thisPatch.file); }//open the patch if we've got the data
+		if(thisPtr.fPath&&thisPatch.json&&thisPatch.file) { 
+			openPatch(thisPatch.json,thisPatch.file);			
+		}//open the patch if we've got the data
 	}
 		
 	//blocking- gets the patch data & creates the outlets

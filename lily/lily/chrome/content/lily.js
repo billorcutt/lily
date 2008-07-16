@@ -590,7 +590,7 @@ var Lily =
 		var readonly=protect||false;
 		var hidden=hide||false;
 		
-		var sizeArr=this.extractPatchSize(data); //get the patch size w/o having to eval the json.
+		var sizeArr=LilyUtils.extractPatchSize(data); //get the patch size w/o having to eval the json.
 		var patchID=this.newPatch(sizeArr[0],sizeArr[1],readonly,hidden); //patch constructor- opens blank window.
 		var parentDir=(file.parent.isDirectory())?file.parent:null; //patch's parent dir.
 
@@ -642,7 +642,7 @@ var Lily =
 			}
 		} else {
 			
-			var sizeArr=this.extractPatchSize(data);
+			var sizeArr=LilyUtils.extractPatchSize(data);
 			var patchID=this.newPatch(sizeArr[0],sizeArr[1],readonly,false);
 						
 			this.patchObj[patchID].obj.callback=function(){
@@ -713,7 +713,7 @@ var Lily =
 		var file=fileObj.file;
 		var data=fileObj.data;
 		
-		var sizeArr=this.extractPatchSize(data); //get the patch size w/o having to eval the json.
+		var sizeArr=LilyUtils.extractPatchSize(data); //get the patch size w/o having to eval the json.
 		
 		document.getElementById("lilyContentSplitter").setAttribute("collapsed",false);
 		document.getElementById("lilyContentBox").setAttribute("collapsed",false);		
@@ -747,26 +747,6 @@ var Lily =
 		document.getElementById("lilyContentBox").setAttribute("collapsed",true);
 			
 	},	
-		
-	/*
-		Method: extractPatchSize
-			get the patch size without having to eval the patch JSON.
-			
-		Arguments: 
-			data - JSON patch string.
-			
-		Returns: 
-			An array of patch width & height.									
-	*/	
-	extractPatchSize: function(data) {
-		var wArr=data.match(/'width':(\d+)/);
-		var hArr=data.match(/'height':(\d+)/);		
-		
-		if(wArr && hArr)
-			return [wArr[1],hArr[1]];
-		else
-			return [0,0];
-	},
 	
 	/*
 		Method: openSelectedHelp
@@ -833,7 +813,7 @@ var Lily =
 				
 		var data=LilyUtils.readFile(file);
 		
-		var sizeArr=this.extractPatchSize(data);
+		var sizeArr=LilyUtils.extractPatchSize(data);
 		var patchID=this.newPatch(sizeArr[0],sizeArr[1],false,false);
 		
 //		LilyDebugWindow.print(data);
@@ -973,9 +953,11 @@ var Lily =
 
 			//update the patch name before we serialize
 			//yes, this is a mess
-			this.patchObj[pID].obj.title=LilyUtils.stripExtension(file.leafName);
-			this.patchObj[pID].obj.patchView.setPatchTitle(LilyUtils.stripExtension(file.leafName));
-
+			if(this.patchObj[pID].obj.title == "Untitled") {
+				this.patchObj[pID].obj.title=LilyUtils.stripExtension(file.leafName);
+				this.patchObj[pID].obj.patchView.setPatchTitle(LilyUtils.stripExtension(file.leafName));				
+			}
+			
 			//now we've updated the patch title, so serialize
 			var data=this.patchObj[pID].obj.patchModel.serializeDom();
 
@@ -1197,6 +1179,41 @@ var Lily =
 		var id=pID||this.currPatch;
 		if(this.patchObj[id]&&this.patchObj[id].obj.patchController.getEditable()=="edit")		
 			this.patchObj[id].obj.patchController.selectAll();
+	},
+
+	/*
+		Method: openPatchProperties
+			dispatch menu command.
+	*/
+	openPatchProperties: function() {
+		var p = this.patchObj[this.currPatch].obj;
+		var win = p.patchView.xulWin;
+		
+		var initVals = { 
+			title:  p.title,
+			color:  p.color,			
+			height: p.heightInSubPatch, 
+			width:  p.widthInSubPatch,
+			desc:   LilyUtils.unescape(p.description)	
+		};
+		
+		win.openDialog("chrome://lily/content/patch-properties.xul", "cWin","width=450,height=405,left=50,top=550,close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function(val){
+			for(var x in val) {
+				switch(x) {
+					case "title":
+						p.patchView.setPatchTitle(val[x]);
+					case "color":
+						p.patchView.setPatchColor(val[x]);
+					case "height":
+						p.heightInSubPatch=val[x];
+					case "width":
+						p.widthInSubPatch=val[x];
+					case "desc":
+						p.description=LilyUtils.escape(val[x]);
+				}				
+			}
+		},initVals);
+			
 	},
 
 	/*

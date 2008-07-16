@@ -31,6 +31,7 @@
 <!ENTITY  lily.Hide		            "Hide on Lock">
 <!ENTITY  lily.Show		            "Show on Lock">
 <!ENTITY  lily.PatchFolder          "Open Patch Directory">
+<!ENTITY  lily.PatchProperties      "Patch Properties">
 
 <!ENTITY  lily.ObjectMenu           "Externals">
 <!ENTITY  lily.GetInfo              "Get Info...">
