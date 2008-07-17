@@ -245,7 +245,7 @@ function $subpatch(args)
 			parent_patch.patchController.patchLoaded(thisPtr.objID,thisPatch.obj); //tell the patch we're loaded.
 																									
 			//size the subpatch to the size set in patch we're loading...
-			if(parseInt(thisPatch.obj.heightInSubPatch) != 0 && parseInt(thisPatch.obj.widthInSubPatch) != 0) 
+			if(parseInt(thisPatch.obj.heightInSubPatch) != 0 && parseInt(thisPatch.obj.widthInSubPatch) != 0 && !thisPtr.hasBeenResized) 
 				iframe.resize(parseInt(thisPatch.obj.widthInSubPatch), parseInt(thisPatch.obj.heightInSubPatch));
 
 		}

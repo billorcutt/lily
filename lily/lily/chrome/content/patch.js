@@ -361,7 +361,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			returns the created object instance.
 	*/			
 	//create object- args: className, top, left, objID, variable_length_arguments_to_obj //only the first arg is required.
-	this.createObject=function(name,pID,t,l,id,args) {
+	this.createObject=function(name,pID,t,l,id,args,resizeFlag) {
 		
 		if(this.getObj(id))
 			return null;
@@ -379,6 +379,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		var cmdStr=(className=="tmp" && name!="tmp")?name:space + argStr; //if we have a bad object name, make that the arg. Others use the unmodified name for the cmdSTr 								
 		var obj=(this.getModule(name))?this.getModule(name):this.getModule("tmp");
 		var count=this.patchModel.getObjectCount()+1; //get the patch object count
+		var resize_flag = resizeFlag||false; //has been resized
 						
 		if(obj && typeof obj == "function") {
 			//prototype the base to the class we're creating & then create it.
@@ -387,6 +388,8 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			
 			if(o.displayName==undefined)
 				o.displayName=LilyUtils.getObjectMetaData(className).textName;
+				
+			o.hasBeenResized = resize_flag;	//need to set this here before we draw the UI
 						
 			if(!o.ui) { //if no custom html defined
 				o.ui=new LilyObjectView(o,null,cmdStr); //create the ui
@@ -763,7 +766,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 					}	
 				
 					//create the object
-					var o=this.createObject(oArray[x].name,subPatchID,oArray[x].top,oArray[x].left,this.updateObjID(oArray[x].objID,opID),oArray[x].args);
+					var o=this.createObject(oArray[x].name,subPatchID,oArray[x].top,oArray[x].left,this.updateObjID(oArray[x].objID,opID),oArray[x].args,oArray[x].hasBeenResized);
 
 					//set some object properties
 					if(typeof oArray[x].fontSize!="undefined")
@@ -791,8 +794,8 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 					if(typeof oArray[x].customColor!="undefined")
 						o.setCustomColor(oArray[x].customColor);
 					if(typeof oArray[x].color!="undefined"&&o.customColor)
-						o.setColor(oArray[x].color);																								
-					
+						o.setColor(oArray[x].color);
+											
 					//set name/values from the inspector array
 					if(typeof oArray[x].inspectorConfig!="undefined") {
 						for(var i=0;i<oArray[x].inspectorConfig.length;i++) {

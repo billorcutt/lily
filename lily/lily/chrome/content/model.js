@@ -135,8 +135,9 @@ function LilyModel(parent)
 				j+="'hiddenInPerf':"+this.objArray[x].hiddenInPerf+comma;
 				j+="'groupName':"+quote+this.objArray[x].groupName+quote+comma;
 				j+="'cssName':"+quote+this.objArray[x].cssName+quote+comma;
-				j+="'customColor':"+quote+this.objArray[x].customColor+quote+comma;																																								
-				
+				j+="'customColor':"+quote+this.objArray[x].customColor+quote+comma;	
+				j+="'hasBeenResized':"+quote+this.objArray[x].hasBeenResized+quote+comma;					
+																																											
 				if(this.objArray[x].args)
 					j+="'args':"+quote+LilyUtils.escape(this.objArray[x].args)+quote+comma; //copy in additional creation args
 				

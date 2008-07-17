@@ -60,6 +60,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 	this.resize=true; //should the object be resizable
 	this.displayArgs=true; //should we see objects arguments (for non-UI objects only)
 	this.loadsSubPatchByName = false; //true when a subpatch is invoked by name
+	this.hasBeenResized=false; //true when an extern has resized by hand.
 	
 	this.ui=null; //to filled in when view instantiates
 	this.document=null; //ditto
@@ -1186,7 +1187,8 @@ function LilyObjectController (obj) {
 			thisPtr.width=thisPtr.obj.width;				
 			thisPtr.patchController.attachPatchObserver(thisPtr.patchController.pID,"mousemove",resize,"select");
 			thisPtr.objController.patchView.setWindowStatusText("width:"+(thisPtr.width)+"px height:"+(thisPtr.height)+"px");
-			thisPtr.resizeFlag=true;			
+			thisPtr.resizeFlag=true;
+			parent.obj.hasBeenResized=true;			
 		}
 		
 		this.mouseup=function(e) {
