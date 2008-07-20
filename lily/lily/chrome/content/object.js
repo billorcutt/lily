@@ -823,16 +823,9 @@ function LilyObjectController (obj) {
 		thisPtr.patchController.attachPatchObserver(thisPtr.id,"hiddenInPerf",function(){thisPtr.setHiddenInPerf(true);},"select");
 		thisPtr.patchController.attachPatchObserver(thisPtr.id,"visibleInPerf",function(){thisPtr.setHiddenInPerf(false);},"select");
 		
-		if(e.shiftKey && LilyUtils.controlOrCommand(e)) {
-			//resize
-			thisPtr.patchController.attachPatchObserver(thisPtr.obj.createElID("contentWrapper"),"mousedown",thisPtr.objResizeControl.mousedown,"select");
-			thisPtr.patchController.attachPatchObserver(thisPtr.obj.createElID("contentWrapper"),"mouseup",thisPtr.objResizeControl.mouseup,"select");			
-	
-		} else {
-			//drag
-			thisPtr.patchController.attachPatchObserver(thisPtr.id,"mousedown",thisPtr.objDrag.mousedown,"select");
-			thisPtr.patchController.attachPatchObserver(thisPtr.id,"mouseup",thisPtr.objDrag.mouseup,"select");
-		}
+		//drag & resize
+		thisPtr.patchController.attachPatchObserver(thisPtr.id,"mousedown",thisPtr.selectDelegate,"select");
+		thisPtr.patchController.attachPatchObserver(thisPtr.id,"mouseup",thisPtr.selectDelegate,"select");
 			
 		//set flag
 		thisPtr.isSelected=true;
@@ -842,6 +835,26 @@ function LilyObjectController (obj) {
 		
 		thisPtr.obj.objectMoved(); 
 		//this.editing=false;
+	}
+	
+	//funnel events to drag & resize
+	this.selectDelegate=function(e) {
+		if(e.shiftKey && LilyUtils.controlOrCommand(e)) {
+			
+			if(e.type=="mousedown") {
+				thisPtr.objResizeControl.mousedown(e);
+			} else if(e.type=="mouseup") {
+				thisPtr.objResizeControl.mouseup(e);	
+			}			
+				
+		} else {
+			
+			if(e.type=="mousedown") {
+				thisPtr.objDrag.mousedown(e);
+			} else if(e.type=="mouseup") {
+				thisPtr.objDrag.mouseup(e);	
+			}
+		}		
 	}
 	
 	this.deselect=function(e) {
@@ -890,17 +903,10 @@ function LilyObjectController (obj) {
 		//visibility in perf
 		thisPtr.patchController.removePatchObserver(thisPtr.id,"hiddenInPerf",function(){thisPtr.setHiddenInPerf(true);},"select");
 		thisPtr.patchController.removePatchObserver(thisPtr.id,"visibleInPerf",function(){thisPtr.setHiddenInPerf(false);},"select");
-		
-		//drag
-		thisPtr.patchController.removePatchObserver(thisPtr.id,"mousedown",thisPtr.objDrag.mousedown,"select");		
-		thisPtr.patchController.removePatchObserver(thisPtr.id,"mouseup",thisPtr.objDrag.mouseup,"select");	
-		
-		//a little extra security
-		if(0) thisPtr.patchController.removePatchObserver(thisPtr.id,"mousemove",thisPtr.objDrag.mousemove,"select");
-		
-		//resize
-		thisPtr.patchController.removePatchObserver(thisPtr.obj.createElID("contentWrapper"),"mousedown",thisPtr.objResizeControl.mousedown,"select");
-		thisPtr.patchController.removePatchObserver(thisPtr.obj.createElID("contentWrapper"),"mouseup",thisPtr.objResizeControl.mouseup,"select");				
+
+		//drag & resize
+		thisPtr.patchController.removePatchObserver(thisPtr.id,"mousedown",thisPtr.selectDelegate,"select");
+		thisPtr.patchController.removePatchObserver(thisPtr.id,"mouseup",thisPtr.selectDelegate,"select");			
 			
 		//deselect view			
 		thisPtr.objView.deSelectObjView();

@@ -72,7 +72,7 @@ function $number(args)
 		isFloat = (Math.abs(val-parseInt(val))>0);
 		updateValue(parseFloat(val));
 		draw();
-		thisPtr.outlet1.doOutlet(outValue);		
+		thisPtr.outlet1.doOutlet(+outValue);		
 	}
 	
 	this.inlet1["set"]=function(val) {
@@ -82,7 +82,7 @@ function $number(args)
 	}
 	
 	this.inlet1["bang"]=function() {
-		thisPtr.outlet1.doOutlet(outValue);		
+		thisPtr.outlet1.doOutlet(+outValue);		
 	}
 	
 	function updateValue(num) {
@@ -100,7 +100,7 @@ function $number(args)
 		updateValue(value+(y-parseFloat(e.clientY))/(isFloat?Math.pow(10,thisPtr.precVal):1)); //delta
 		y=parseFloat(e.clientY);		
 		draw();
-		thisPtr.outlet1.doOutlet(value.toFixed(thisPtr.precVal));
+		thisPtr.outlet1.doOutlet(+value.toFixed(thisPtr.precVal));
 	}	
 		
 	function mouseUpFunc(e) {	

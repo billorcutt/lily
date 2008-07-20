@@ -1589,7 +1589,7 @@ function LilyPatchController(pID,parent)
 		//need to add code to remove event listeners
 		for(var i=0;i<arr.length;i++) {
 				//LilyDebugWindow.print("try to remove patch listener " + id + " " + evt);
-			if(arr[i].evt==evt) {
+			if(arr[i].evt==evt && arr[i].func.toSource()==func.toSource()) {
 //				LilyDebugWindow.print("remove patch listener " + id + " " + evt);			
 				this.document.removeEventListener(arr[i].evt,arr[i].func,false);			
 				arr.splice(i,1);

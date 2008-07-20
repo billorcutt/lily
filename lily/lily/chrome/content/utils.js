@@ -306,7 +306,7 @@ var LilyUtils = {
 		var accel=this.controlOrCommand(e);
 		var shift=e.shiftKey;
 		
-		if(accel || shift)
+		if((accel||shift) && !(accel&&shift))
 			return true;
 		else
 			return false;
