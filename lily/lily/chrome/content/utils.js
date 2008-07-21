@@ -1292,6 +1292,20 @@ var LilyUtils = {
 		} else {
 			return false;
 		}
+	},
+	
+	/*
+		Method: isLegalID
+			determine if a string is a valid identifier.
+	
+		Arguments: 
+			str - string to test
+		
+		Returns: 
+			bool- true if name contains no illegal characters.
+	*/
+	isLegalID: function(str) {
+		return !(/[\-\*\+\)\(\&\#\!\@\$\^\%\–\<\?\"\'\;\:\[\]\}\{\=]/.test(str));
 	},	
 	
 	/*
@@ -1305,7 +1319,7 @@ var LilyUtils = {
 			bool- true if extension is found.
 	*/
 	hasExtension: function(str) {
-		return str.match(/\.\S{2,4}$/, '');
+		return str.match(/\.\S{2,4}$/);
 	},	
 	
 	/*

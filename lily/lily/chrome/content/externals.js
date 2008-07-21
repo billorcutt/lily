@@ -68,8 +68,16 @@ var LilyObjectList = {
 			filePath - file path
 	*/
 	add:function(leafName,filePath) {
-		if(typeof this.objLeaf[leafName]=="undefined") { //no dupes
-			this.objArray.push({name:leafName,path:filePath});	
+		var stripped = LilyUtils.stripExtension(leafName);
+		if(typeof this.objLeaf["_"+stripped]=="undefined") { //no dupes
+			if(LilyUtils.isLegalID(stripped)) {
+				this.objArray.push({name:leafName,path:filePath});
+				this.objLeaf["_"+stripped]=leafName;	
+			} else {
+				LilyDebugWindow.error("Couldn't load the patch or external "+stripped+" because the name contains illegal characters.");
+			}		
+		} else {
+			LilyDebugWindow.error("Couldn't load the patch or external "+stripped+". An object with that name is already exists.");
 		}	
 	},
 
@@ -126,7 +134,7 @@ var LilyObjectList = {
 	includeAll:function() {
 		
 		for(var i=0;i<this.objArray.length;i++) { //don't load patches
-			if(this.isLoadable(this.objArray[i].name) && this.objArray[i].path && typeof this.objLeaf[this.objArray[i].name]=="undefined") {
+			if(this.isLoadable(this.objArray[i].name) && this.objArray[i].path) {
 				var extName = LilyUtils.stripExtension(this.objArray[i].name);
 				try {
 					this.objArray[i].sourceCode=this.load(this.objArray[i].path); //save the source for later...
@@ -138,10 +146,9 @@ var LilyObjectList = {
 					this.objArray[i].objArguments=LilyUtils.getObjectMetaData(objName).objectArguments;								
 					this.objDisplay[((this.objArray[i].menuName)?this.objArray[i].menuName:"tmp")]=objName;
 					this.objDisplay[objName]=objName;
-					this.objLeaf[this.objArray[i].name]=this.objArray[i].name;
 				} catch(e) {
 					LilyDebugWindow.error("External object "+extName.toUpperCase()+" couldn't be loaded: "+e.name + ": " + e.message+" "+e.fileName+",  line: "+e.lineNumber)
-				}				
+				}
 			}	
 		}	
 	},
@@ -155,7 +162,7 @@ var LilyObjectList = {
 	*/
 	include:function(name) {
 		var o=this.search(name);
-		if(o && this.isLoadable(o.name) && o.path && typeof this.objLeaf[o.name]=="undefined") {
+		if(o && this.isLoadable(o.name) && o.path) {
 			o.sourceCode=this.load(o.path);			
 			var objName = LilyUtils.stripExtension(o.name);	
 			o.displayName=LilyUtils.getObjectMetaData(objName).htmlName;
@@ -164,8 +171,7 @@ var LilyObjectList = {
 			o.objSummary=LilyUtils.getObjectMetaData(objName).objectSummary;
 			o.objArguments=LilyUtils.getObjectMetaData(objName).objectArguments;								
 			this.objDisplay[((o.menuName)?o.menuName:"tmp")]=objName;
-			this.objDisplay[objName]=objName;
-			this.objLeaf[o.name]=o.name;			
+			this.objDisplay[objName]=objName;			
 			return o;
 		}
 		return null;
