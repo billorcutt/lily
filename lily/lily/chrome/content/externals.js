@@ -78,7 +78,7 @@ var LilyObjectList = {
 			}		
 		} else {
 			LilyDebugWindow.error("Couldn't load the patch or external "+stripped+". An object with that name is already exists.");
-		}	
+		}
 	},
 
 	/*
@@ -141,7 +141,7 @@ var LilyObjectList = {
 					var objName = LilyUtils.stripExtension(this.objArray[i].name);	
 					this.objArray[i].displayName=LilyUtils.getObjectMetaData(objName).htmlName;
 					this.objArray[i].menuName=LilyUtils.getObjectMetaData(objName).textName;
-					this.objArray[i].catName=LilyUtils.getObjectMetaData(objName).objectCategory;
+					this.objArray[i].catName=(LilyUtils.getObjectMetaData(objName).objectCategory?LilyUtils.getObjectMetaData(objName).objectCategory:LilyUtils.extractPatchCat(this.objArray[i].sourceCode))
 					this.objArray[i].objSummary=(LilyUtils.getObjectMetaData(objName).objectSummary?LilyUtils.getObjectMetaData(objName).objectSummary:LilyUtils.extractPatchDesc(this.objArray[i].sourceCode));
 					this.objArray[i].objArguments=LilyUtils.getObjectMetaData(objName).objectArguments;								
 					this.objDisplay[((this.objArray[i].menuName)?this.objArray[i].menuName:"tmp")]=objName;
@@ -337,7 +337,7 @@ var LilyObjectList = {
 	getNamesByCategory:function() {
 		var tmp=[];
 		for(var i=0;i<this.objArray.length;i++) {			
-			if((this.objArray[i].name.indexOf(".json")==-1)&&(this.objArray[i].catName!=undefined))
+			if((this.objArray[i].catName))
 				tmp.push(this.objArray[i]);
 		}
 		tmp.sort(function(a,b) {

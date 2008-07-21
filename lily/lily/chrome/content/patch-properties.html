@@ -1,4 +1,12 @@
 <html>
+	<head>
+		<script>
+			function toggleInputs(checked) {
+				document.getElementById("height").disabled=!checked;
+				document.getElementById("width").disabled=!checked;				
+			}
+		</script>
+	</head>
 
 	<body>
 		<table border="0" cellpadding="5px" style="font-size:14px;font-family:verdana,DejaVu Sans,sans-serif;background:#E5E5E5">
@@ -6,23 +14,27 @@
 			<tr>
 				<td align="right" style="background:lightgrey" width="145">Title:</td>
 				<td><input onchange="parentWin.saveDialog();" size="30" style="font-size:14px;font-family:verdana,DejaVu Sans,sans-serif;" id="title" type="text"></td>
-			</tr>
+			</tr>			
 			<tr>
-				<td align="right" style="background:lightgrey">Color:</td>
-				<td><input onchange="parentWin.saveDialog();" size="30" style="font-size: 14px; font-family:verdana,DejaVu Sans,sans-serif;" id="color" type="text"></td>
+				<td align="right" style="background:lightgrey">Open in SubPatch:</td>
+				<td><input onclick="toggleInputs(this.checked);" type="checkbox" id="open_in_subpatch"></td>
 			</tr>
 			<tr>
 				<td align="right" style="background:lightgrey">Height in Subpatch:</td>
-				<td><input onchange="parentWin.saveDialog();" size="30" style="font-size: 14px; font-family:verdana,DejaVu Sans,sans-serif;" id="height" type="text"></td>
+				<td><input disabled="disabled" onchange="parentWin.saveDialog();" size="30" style="font-size: 14px; font-family:verdana,DejaVu Sans,sans-serif;" id="height" type="text"></td>
 			</tr>
 			<tr>
 				<td align="right" style="background:lightgrey">Width in Subpatch:</td>
-				<td><input onchange="parentWin.saveDialog();" size="30" style="font-size: 14px; font-family:verdana,DejaVu Sans,sans-serif;" id="width" type="text"></td>
+				<td><input disabled="disabled" onchange="parentWin.saveDialog();" size="30" style="font-size: 14px; font-family:verdana,DejaVu Sans,sans-serif;" id="width" type="text"></td>
 			</tr>
+			<tr>
+				<td align="right" style="background:lightgrey">Category:</td>
+				<td><input onchange="parentWin.saveDialog();" size="30" style="font-size: 14px; font-family:verdana,DejaVu Sans,sans-serif;" id="category" type="text"></td>
+			</tr>			
 			<tr>
 				<td align="right" style="background:lightgrey">Description:</td>
 				<td><textarea onchange="parentWin.saveDialog();" style="font-size: 14px; font-family:verdana,DejaVu Sans,sans-serif;" cols="29" rows="4" id="desc"></textarea></td>
-			</tr>
+			</tr>			
 			<tr>
 				<td colspan="2" align="center" style="background:lightgrey">
 					<input style="margin-bottom:10px;margin-top:10px;margin-right:30px;font-size:18px;font-family:verdana,DejaVu Sans,sans-serif" type="button" value="Revert" onclick="parentWin.revert()"/>

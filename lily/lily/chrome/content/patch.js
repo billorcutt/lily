@@ -35,8 +35,8 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	this.heightInSubPatch=0; //height when loaded in a subpatch
 	this.widthInSubPatch=0;	 //width when loaded in a subpatch
 	this.description="";	//patch description.
+	this.category="";	//patch category.	
 	this.color="#FFFFFF" //background color
-	this.desc="";		//patch description
 	this.fontSize=LilyUtils.getDefaultFont()[1]; //font size in px
 	this.fontFamily=LilyUtils.getDefaultFont()[0]; //font face
 	this.readonly = locked||false; //boolean- readonly?
@@ -737,13 +737,16 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			var pPlatform = patch.platform||"apple"; //default it to mac
 		
 			if(typeof patch.title!="undefined" && !subPatchID && !opID && this.patchWindowType=="popup")
-				this.patchView.setPatchTitle(patchName); //update the patch title - patch.title				
+				this.patchView.setPatchTitle(patch.title||patchName); //update the patch title - patch.title				
 		
 			if(typeof patch.color!="undefined" && !subPatchID && !opID)
 				this.patchView.setPatchColor(patch.color); //update color
 				
 			if(typeof patch.description!="undefined" && !subPatchID && !opID)
 				this.description=patch.description; //update color
+				
+			if(typeof patch.category!="undefined" && !subPatchID && !opID)
+				this.category=patch.category; //update color				
 				
 			if(typeof patch.heightInSubPatch!="undefined" && !subPatchID && !opID)
 				this.heightInSubPatch=parseInt(patch.heightInSubPatch); //update color	

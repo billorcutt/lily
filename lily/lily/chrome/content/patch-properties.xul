@@ -46,7 +46,7 @@
 			var doc = document.getElementById("browserInspectorElement").contentWindow.document;			
 			
 			for(var x in tmp) {
-				if(doc.getElementById(x)) {
+				if(doc.getElementById(x) &amp;&amp; !doc.getElementById(x).disabled) {
 					tmp[x] = doc.getElementById(x).value;
 				}
 			}

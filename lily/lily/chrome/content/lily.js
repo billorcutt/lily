@@ -1191,19 +1191,19 @@ var Lily =
 		
 		var initVals = { 
 			title:  p.title||"Untitled",
-			color:  p.color||"#FFFFFF",			
+			category:  p.category||"",			
 			height: p.heightInSubPatch||"0", 
 			width:  p.widthInSubPatch||"0",
 			desc:   LilyUtils.unescape(p.description)||""	
 		};
 		
-		win.openDialog("chrome://lily/content/patch-properties.xul", "cWin","width=450,height=405,left=50,top=550,close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function(val){
+		win.openDialog("chrome://lily/content/patch-properties.xul", "cWin","width=450,height=450,left=50,top=250,close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function(val){
 			for(var x in val) {
 				switch(x) {
 					case "title":
 						p.patchView.setPatchTitle(val[x]);
-					case "color":
-						p.patchView.setPatchColor(val[x]);
+					case "category":
+						p.category=LilyUtils.escape(val[x]);
 					case "height":
 						p.heightInSubPatch=val[x];
 					case "width":

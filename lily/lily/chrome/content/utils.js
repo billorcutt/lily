@@ -1431,10 +1431,32 @@ var LilyUtils = {
 			Patch description.									
 	*/	
 	extractPatchDesc: function(data) {
-		var desc=data.match(/'description':'([\S|\s]+)','heightInSubPatch'/);		
+		var desc=data.match(/'description':'([\S|\s]+)','category'/);		
 		
 		if(desc && desc.length>1)
 			return desc[1];
+		else
+			return "";
+	},
+	
+	/*
+		Method: extractPatchCat
+			get the patch size without having to eval the patch JSON.
+			
+		Arguments: 
+			data - JSON patch string.
+			
+		Returns: 
+			Patch description.									
+	*/	
+	
+	//'description':'','category':'','heightInSubPatch':
+	
+	extractPatchCat: function(data) {
+		var cat=data.match(/'category':'([\S|\s]+)','heightInSubPatch'/);		
+		
+		if(cat && cat.length>1)
+			return cat[1];
 		else
 			return "";
 	},
