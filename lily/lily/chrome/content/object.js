@@ -1065,7 +1065,7 @@ function LilyObjectController (obj) {
 		this.attachObserver(this.id,"click",thisPtr.obj.openHelpWindow,"edit");
 		
 		//methods for editing default object
-		if(!this.objView.usesCustomUI&&thisPtr.objView.parent.displayArgs) { //not if there's a custom or if we're hiding the args (ie patcher)
+		if(!this.objView.usesCustomUI/*&&thisPtr.objView.parent.displayArgs*/) { //not if there's a custom or if we're hiding the args (ie patcher)
 			this.attachObserver(this.id,"dblclick",function(){thisPtr.startEditObj();},"edit");
 			this.attachObserver(this.id,"blur",function(){thisPtr.doneEditObj();},"edit");
 		} 
@@ -1698,7 +1698,7 @@ function LilyObjectView (obj,HTML,cmdStr) {
 		
 		if(this.objInput) {
 			var args = (typeof obj.displayArgs == "string") ? obj.displayArgs : obj.args;
-			this.objInput.value=this.display + ((args)?" ":"") + args;
+			this.objInput.value=this.display + ((args)?" ":"") + (obj.displayArgs==true?args:"");
 			this.objInput.focus();
 			this.objInput.select();
 			this.controller.objInputControl.registerDefaultListeners(this.objInput);

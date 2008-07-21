@@ -249,7 +249,7 @@ function $patcher(param)
 		
 		if(!Lily.patcherReloadFlag) { //only when we're not reloading the object.
 			if(isPatchString) { thisPatch.file.remove(false); } //remove the temp file if we have one.
-			thisPatch.obj.close(); //clean up the patch
+			if(thisPatch.obj) thisPatch.obj.close(); //clean up the patch
 			thisPatch = {obj:null,id:pid,file:null,json:null}; //reset the thispatch object	
 		}	
 	}
