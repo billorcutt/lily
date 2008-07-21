@@ -68,16 +68,18 @@ var LilyObjectList = {
 			filePath - file path
 	*/
 	add:function(leafName,filePath) {
-		var stripped = LilyUtils.stripExtension(leafName);
-		if(typeof this.objLeaf["_"+stripped]=="undefined") { //no dupes
-			if(LilyUtils.isLegalID(stripped)) {
-				this.objArray.push({name:leafName,path:filePath});
-				this.objLeaf["_"+stripped]=leafName;	
+		if(!LilyUtils.isHelpPatch(leafName)) { //don't load help patches
+			var stripped = LilyUtils.stripExtension(leafName);
+			if(typeof this.objLeaf["_"+stripped]=="undefined") { //no dupes
+				if(LilyUtils.isLegalID(stripped)) { //check for illegal filenames
+					this.objArray.push({name:leafName,path:filePath});
+					this.objLeaf["_"+stripped]=leafName;	
+				} else {
+					LilyDebugWindow.error("Couldn't load the patch or external "+stripped+" because the name contains illegal characters.");
+				}		
 			} else {
-				LilyDebugWindow.error("Couldn't load the patch or external "+stripped+" because the name contains illegal characters.");
-			}		
-		} else {
-			LilyDebugWindow.error("Couldn't load the patch or external "+stripped+". An object with that name is already exists.");
+				LilyDebugWindow.error("Couldn't load the patch or external "+stripped+". An object with that name is already exists.");
+			}	
 		}
 	},
 

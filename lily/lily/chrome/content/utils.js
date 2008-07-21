@@ -1421,6 +1421,20 @@ var LilyUtils = {
 	},
 	
 	/*
+		Method: isHelpPatch
+			evaluates if a filenmae is a lily help patch.
+	
+		Arguments: 
+			str - string to evaluate
+		
+		Returns: 
+			returns boolean- true if help patch.
+	*/
+	isHelpPatch: function(str) {
+		return (/\-help\.json$/.test(str));
+	},	
+	
+	/*
 		Method: extractPatchDesc
 			get the patch size without having to eval the patch JSON.
 			
