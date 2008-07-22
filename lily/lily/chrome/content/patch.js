@@ -1407,7 +1407,7 @@ function LilyPatchController(pID,parent)
 		        return;         
 
 		//create tmp object
-		var o=thisPtr.patch.createObject("tmp",false,parseInt(e.clientY),parseInt(e.clientX),null,null);
+		var o=thisPtr.patch.createObject("tmp",false,parseInt(e.clientY+thisPtr.patch.patchView.oWin.scrollY),parseInt(e.clientX+thisPtr.patch.patchView.oWin.scrollX),null,null);
 		o.controller.select(e);
 		o.controller.startEditObj();
 
