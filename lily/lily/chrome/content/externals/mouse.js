@@ -45,15 +45,21 @@ function $mouse(param)
 	}
 	
 	function mouseDownFunc(e) {
-		thisPtr.outlet3.doOutlet(1);
+		if(!e.button) {
+			thisPtr.outlet3.doOutlet(1);	
+		}		
 	}
 	
 	function mouseUpFunc(e) {
-		thisPtr.outlet3.doOutlet(0);
+		if(!e.button) {
+			thisPtr.outlet3.doOutlet(0);
+		}		
 	}
 	
 	function mouseClickFunc(e) {
-		thisPtr.outlet4.doOutlet("bang");
+		if(!e.button) {
+			thisPtr.outlet4.doOutlet("bang");	
+		}
 	}
 	
 	function setContentListeners() {
