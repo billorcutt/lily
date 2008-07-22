@@ -480,10 +480,9 @@ function $qt(args)
 	this.controller.attachObserver(this.createElID("qtcontainer"),"dragenter",onenter,"edit");
 	this.controller.attachObserver(this.createElID("qtcontainer"),"dragexit",onexit,"edit");
 	
-	
 	this.document.addEventListener("qt_load",function(e){
 		if(e.target.id==thisPtr.createElID("qt")) {
-			setTimeout(function(){isLoaded(true);},100);	
+			setTimeout(function(){isLoaded(true);},250);	
 		}
 	},false);
 
