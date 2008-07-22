@@ -60,6 +60,28 @@ function $patcher(param)
 	var tmpIn=[];
 	var tmpOut=[];
 	
+ 	this.setInspectorConfig([
+		{name:"fPath",value:thisPtr.fPath,label:"Patch Path",type:"string",input:"file"}
+	]);
+	
+	//save the values returned by the inspector- returned in form {valueName:value...}
+	//called after the inspector window is saved
+	this.saveInspectorValues=function(vals) {
+		
+		var oldpath = thisPtr.fPath; //save the path first
+		
+		//update the local properties
+		for(var x in vals)
+			thisPtr[x]=vals[x];
+			
+		//update the arg str
+		this.args=LilyUtils.quoteString(vals["fPath"]);
+		
+		if((thisPtr.fPath&&oldpath!=thisPtr.fPath))
+			reloadPatch(); //reload the patch if the path or args has changed.
+			
+	}	
+	
 	//replace placeholders with args
 	function replacePatchArgs(arg_str,data) {
 		var patch_str = data;
@@ -88,7 +110,7 @@ function $patcher(param)
 		
 		if(thisPtr.fPath) {
 					
-			var filepath = LilyUtils.getFilePath(thisPtr.fPath);
+			var filepath = LilyUtils.getFilePath(thisPtr.fPath.replace(/file:\/\//,""));
 
 			if(!filepath) { //bail if the path isn't correct
 				LilyDebugWindow.error("patch not found");
