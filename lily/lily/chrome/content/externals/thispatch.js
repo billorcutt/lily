@@ -86,15 +86,19 @@ function $thispatch()
 
 	this.inlet1["path"]=function() {
 		var file = doCommand("getPatchFile()");
-		if(file.exists()) {
+		if(file && file.exists()) {
 			thisPtr.outlet1.doOutlet(file.path);	
+		} else {
+			thisPtr.outlet1.doOutlet("bang");
 		}
 	}
 
 	this.inlet1["parentPath"]=function() {
 		var file = doCommand("getPatchDir()");
-		if(file.exists()) {
+		if(file && file.exists()) {
 			thisPtr.outlet1.doOutlet(file.path);	
+		} else {
+			thisPtr.outlet1.doOutlet("bang");
 		}
 	}
 
