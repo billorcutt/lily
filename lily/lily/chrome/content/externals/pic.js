@@ -86,7 +86,11 @@ function $pic(args)
 	
 	this.setBgSrc=function(str) {
 		this.resizeElement.style.backgroundImage="url("+processURL(str)+")";
-	}	
+	}
+	
+	this.resetSize=function() {
+		setSize();
+	}
 	
 	//don't blow away the size if we're loading the 1 pixel gif.
 	function setSize() {
