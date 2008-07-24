@@ -64,6 +64,7 @@
 					if(returnObject.type=="addon") {
 						  document.getElementById("xulRunnerRow").setAttribute("hidden",true);
 					} else {
+						document.getElementById("startOnLoadRow").setAttribute("hidden",true);
 						document.getElementById("homepageRow").setAttribute("hidden",true); //hide homepage
 						document.getElementById("descRow").setAttribute("hidden",true); //hide description
 						if(platform=="apple") {
