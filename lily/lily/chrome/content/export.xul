@@ -52,4 +52,13 @@
 					oncommand="Lily.openAddOnPatch('<PROJECT-NAME>',this,<PROJECT-HIDE>)"/>
 	</menupopup>
 	
+	<script>
+		if(<START-ON-LOAD>) {
+			window.addEventListener("load",function(){
+				document.getElementById("open<PROJECT-NAME>PatchItem").setAttribute("checked","true");
+				Lily.openAddOnPatch('<PROJECT-NAME>',{getAttribute:function(){return "true";}
+			},<PROJECT-HIDE>)},false);
+		}
+	</script>
+	
 </overlay>

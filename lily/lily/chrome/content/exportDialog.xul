@@ -133,7 +133,14 @@
 						<hbox>
 							<label control="includeParentDir" value="Include the contents of the patch's parent directory?"/>
 							<checkbox checked="false" id="includeParentDirCbx"/>
-						</hbox>						
+						</hbox>											
+					</row>
+					<row id="startOnLoadRow">
+						<hbox></hbox>					
+						<hbox>
+							<label control="startOnLoad" value="Start the patch when the browser window opens?"/>
+							<checkbox checked="false" id="startOnLoadCbx"/>
+						</hbox>
 					</row>																		
 				</rows>
 			</grid>

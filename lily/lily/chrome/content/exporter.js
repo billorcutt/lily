@@ -785,7 +785,7 @@ var LilyPatchExporter = {
 				tmpIn.append("export.xul");
 				var tmpOut = contentOut.clone();
 				tmpOut.append(projectName+".xul");		
-				LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/<PROJECT-NAME>/g,(projectName)).replace(/<PROJECT-HIDE>/g,obj.hideMainCbx));
+				LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/<PROJECT-NAME>/g,(projectName)).replace(/<PROJECT-HIDE>/g,obj.hideMainCbx).replace(/<START-ON-LOAD>/g,obj.startOnLoadCbx));
 
 				//lily.css
 				var tmp = contentIn.clone();
