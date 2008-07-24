@@ -43,6 +43,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	this.patchWindowType="popup"; //window type- options: popup, iframe, sidebar- defaults to popup.
 	this.hidden=hide||false; //
 	this.zoomLevel=1;
+	this.usesTmpFile=false; //i.e. a temporary patch for editing a patcher.
 	
 	var thisPtr=this;
 	
@@ -134,6 +135,29 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 
 		return parent;
 	}
+	
+	/*
+		Method: getFirstParentPatch
+		starting from the current patch, walks up 
+		the patch tree and returns the first non 
+		temporary/editor patch it finds.
+		
+		Returns: 
+			returns a patch object.
+	*/		
+	this.getFirstParentPatch=function() {
+		
+		if(this.usesTmpFile) {
+			var parent=this.getContainerPatch();
+			while(parent.usesTmpFile) {
+				parent=parent.getContainerPatch();
+			}
+		} else {
+			var parent = this;
+		}
+
+		return parent;
+	}	
 	
 	/*
 		Method: isTopLevelPatch

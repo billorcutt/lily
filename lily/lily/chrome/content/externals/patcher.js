@@ -207,7 +207,7 @@ function $patcher(param)
 		thisPatch.obj.callback=function(){
 			
 			//open the patch
-			thisPatch.obj.patchWindowType="iframe";	
+			thisPatch.obj.patchWindowType="iframe";
 			
 			//override this function to point at this patch (not the subpatch)
 			thisPatch.obj.getContainerPatch=function() {
@@ -296,6 +296,13 @@ function $patcher(param)
 		//open the patch window
 		openPatchWin=Lily.openPatchFromFile(thisPatch.file,false,false);
 		
+		if(!thisPtr.fPath) openPatchWin.obj.usesTmpFile=true;	
+		
+		//override this function to point at this patch (not the subpatch)
+		openPatchWin.obj.getContainerPatch=function() {
+			return thisPtr.parent; //pointer to the container patch
+		}
+		 		
 		//timing isn't critical here so we'll use setimteout to avoid the hassle of setting a listener on the inner browser window
 		setTimeout(function(){
 			openPatchWin.obj.patchView.setPatchTitle("[subpatch]"); //mark it as a subpatch

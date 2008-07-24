@@ -937,8 +937,8 @@ var LilyUtils = {
 
 	/*
 		Method: getFilePath
-			returns the path to a file if the supplied path is correct or its in 
-			the parent patch directory or if it is in  the search patch.
+			returns the path to a file if the supplied path is correct or if the file is in 
+			the parent patch directory or the search patch.
 	
 		Arguments: 
 			name - patch file name.
@@ -966,8 +966,8 @@ var LilyUtils = {
 				file.initWithPath(filepath);		
 			} catch(e) {
 				//didn't work so try it as an relative path
-				if(Lily.getCurrentPatch()) {				
-					var parentDir=Lily.getCurrentPatch().getPatchDir(); //get the parent dir	
+				if(Lily.getCurrentPatch()) {			
+					var parentDir=Lily.getCurrentPatch().getFirstParentPatch().getPatchDir(); //get the parent dir
 					if(parentDir) { //got it
 						try {
 							file.initWithPath((parentDir.path+this.getDirSeparator()+filepath));	//try it			
