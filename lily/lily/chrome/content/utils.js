@@ -2134,8 +2134,6 @@ LilyUtils._editor=function(context,container,content,setFunc,getFunc,renderHTML)
 			var charsInLine = Math.ceil(containerWidth/charSize);
 			
 			parent.controller.patchController.removePatchObserver(parent.objID,"deleteKey",function(){parent.parent.deleteObject(parent.objID)},"select");		
-			parent.controller.patchController.removePatchObserver(parent.objID,"mousedown",parent.controller.objDrag.mousedown,"select");
-			parent.controller.patchController.removePatchObserver(parent.objID,"mouseup",parent.controller.objDrag.mouseup,"select");
 
 			parent.controller.objResizeControl.clearSize();						
 
@@ -2162,9 +2160,7 @@ LilyUtils._editor=function(context,container,content,setFunc,getFunc,renderHTML)
 			parent.controller.removeObserver(parent.objID,"click",resizeTextArea,"edit");						
 
 			parent.controller.patchController.attachPatchObserver(parent.objID,"deleteKey",function(){parent.parent.deleteObject(parent.objID)},"select");
-			parent.controller.patchController.attachPatchObserver(parent.objID,"mousedown",parent.controller.objDrag.mousedown,"select");
-			parent.controller.patchController.attachPatchObserver(parent.objID,"mouseup",parent.controller.objDrag.mouseup,"select");
-
+			
 			var txt=parent.ui.getElByID(parent.createElID("_editor")).value;
 
 			if(txt) //if there's text
