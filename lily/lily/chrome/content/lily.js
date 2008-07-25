@@ -1197,7 +1197,9 @@ var Lily =
 			desc:   LilyUtils.unescape(p.description)||""	
 		};
 		
-		win.openDialog("chrome://lily/content/patch-properties.xul", "cWin","width=450,height=450,left=50,top=250,close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function(val){
+		var tmp = LilyUtils.getOpenDialogCoords(450,450);		
+		
+		win.openDialog("chrome://lily/content/patch-properties.xul", "cWin","width=450,height=450,left="+tmp[0]+",top="+tmp[1]+",close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function(val){
 			for(var x in val) {
 				switch(x) {
 					case "title":
@@ -1238,9 +1240,11 @@ var Lily =
 			var color = this.patchObj[this.currPatch].obj.patchController.getSelectedObjectsProperty("color");
 		}
 		
+		var tmp = LilyUtils.getOpenDialogCoords(250,height);
+		
 		var initVals = { color: color, type: type };
 		
-		win.openDialog("chrome://lily/content/color.xul", "cWin","width=250,height="+height+",left=50,top=550,close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function (val) {
+		win.openDialog("chrome://lily/content/color.xul", "cWin","width=250,height="+height+",left="+tmp[0]+",top="+tmp[1]+",close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function (val) {
 			if(type=="patch")
 				Lily.setPatchColor(val);
 			else if(type=="font") {
@@ -1457,7 +1461,7 @@ var Lily =
 		Method: openPrefs
 			opens the preferences dialog.																	
 	*/
-	openPrefs: function() {			
+	openPrefs: function() {		
     	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/prefs.xul", "lilyPrefsDialog", "chrome,titlebar,toolbar,centerscreen,modal",LilyAPIKeyManager,LilyDebugWindow);
 	},
 

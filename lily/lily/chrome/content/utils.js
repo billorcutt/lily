@@ -1337,6 +1337,47 @@ var LilyUtils = {
 	},
 	
 	/*
+		Method: getOpenDialogCoords
+			get the coordiates for opening a dialog.
+		
+		Returns: 
+			an array of x,y coords
+	*/
+	getOpenDialogCoords: function(w,h) {
+		var sH = parseInt(window.screen.availHeight)/2;
+		var sW = parseInt(window.screen.availWidth)/2;
+		
+		var x = (sW-parseInt(w/2));
+		var y = (sH-parseInt(h/2));
+		
+		return [x,y];
+	},
+	
+	/*
+		Method: getOpenDialogOffset
+			get the coordiates of all open windows and calculate an offset for a new window if any.
+		
+		Returns: 
+			an array of x,y coords
+	*/
+	getOpenDialogOffset: function(w,h) {
+		var tmp = Lily.getCurrentPatch();
+			
+		if(	tmp &&
+			parseInt(tmp.patchView.xulWin.screenX) && 
+			parseInt(tmp.patchView.xulWin.screenY)
+		) {
+			return [
+				parseInt(tmp.patchView.xulWin.screenX)+15,
+				parseInt(tmp.patchView.xulWin.screenY)+15
+			]
+		} else {
+			var tmp_coords = this.getOpenDialogCoords(w,h);
+			return [tmp_coords[0],tmp_coords[1]];
+		}
+	},	
+	
+	/*
 		Method: getObjectPos
 			get the position of an object.
 	

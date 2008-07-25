@@ -306,7 +306,7 @@ function $patcher(param)
 		//timing isn't critical here so we'll use setimteout to avoid the hassle of setting a listener on the inner browser window
 		setTimeout(function(){
 			openPatchWin.obj.patchView.setPatchTitle("[subpatch]"); //mark it as a subpatch
-			openPatchWin.obj.patchView.xulWin.moveBy(20,20); //move it a bit so its clear whats going on
+			//openPatchWin.obj.patchView.xulWin.moveBy(20,20); //move it a bit so its clear whats going on
 		},500);
 		
 		setTimeout(function(){
