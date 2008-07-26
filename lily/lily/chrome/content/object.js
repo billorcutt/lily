@@ -61,6 +61,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 	this.displayArgs=true; //should we see objects arguments (for non-UI objects only)
 	this.loadsSubPatchByName = false; //true when a subpatch is invoked by name
 	this.hasBeenResized=false; //true when an extern has resized by hand.
+	this.isPaste=false; //true if we're creating this as a paste
 	
 	this.ui=null; //to filled in when view instantiates
 	this.document=null; //ditto
@@ -867,7 +868,7 @@ function LilyObjectController (obj) {
 		//else
 		//	log("deselect- no e "+thisPtr.id)
 				
-		if(!thisPtr.isSelected || thisPtr.objDrag.dragging)
+		if(!thisPtr.isSelected || thisPtr.objDrag.dragging || (e && e.type=="paste"))
 			return;	
 			
 		thisPtr.patchController.unsetSelectedObjects(thisPtr.id);
@@ -1009,8 +1010,8 @@ function LilyObjectController (obj) {
 		
 	//handler for edit state switch
 	this.toggleEditState=function() {
-		thisPtr.deselect();
-		thisPtr.objView.toggleEditView();
+		if(!thisPtr.objView.parent.isPaste)thisPtr.deselect();
+		thisPtr.objView.toggleEditView(); 
 	}
 	
 	//utility method for attaching a listener with an id
@@ -1752,7 +1753,7 @@ function LilyObjectView (obj,HTML,cmdStr) {
 		}
 		
 		if(!this.parent.subPatcherID) //no listeners for subpatch objects
-			this.controller.addDefaultListeners(); //setTimeout(function(){thisPtr.controller.addDefaultListeners();},100);
+			this.controller.addDefaultListeners();
 		
 		this.contentWrapper=this.getElByID(this.parent.createElID("contentWrapper"));
 		this.objectView=this.getElByID(this.parent.createElID("objectView"));
@@ -1760,12 +1761,20 @@ function LilyObjectView (obj,HTML,cmdStr) {
 
 		this.parent.displayElement=this.contentContainer;
 		this.parent.resizeElement=this.contentWrapper;	
-		this.parent.animationElement=this.objViewNode;		
-		
-		if(!this.controller.noBorders)
-			setTimeout(function(){if(thisPtr.name!="tmp"){thisPtr.controller.toggleEditState();}},100);
-		else if(thisPtr.name!="tmp" && this.controller.noBorders)
+		this.parent.animationElement=this.objViewNode;	
+				
+		//FIXME? hack to get the borders to draw correctly
+		if(!this.controller.noBorders) {
+			setTimeout(function(){
+				if(thisPtr.name!="tmp"){
+					thisPtr.controller.toggleEditState();
+					thisPtr.parent.isPaste=false;					
+				}
+			},100);
+		} else if(thisPtr.name!="tmp" && this.controller.noBorders) {
 			thisPtr.controller.toggleEditState();
+			thisPtr.parent.isPaste=false;
+		}	
 		
 		setTimeout(function(){thisPtr.updateObjSize();},100);
 	}

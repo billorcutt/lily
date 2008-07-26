@@ -642,6 +642,50 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		else
 			LilyDebugWindow.error("error- patch not found.");
 	}
+	
+	/*
+		Method: openHidden
+			open an existing patch as hidden.
+	
+		Arguments: 
+			path	- path to patch (required)
+			
+		Returns: 
+			returns the newly created patch object.		
+	*/
+	//open an existing patch window.
+	this.openHidden=function(path) {
+		
+		var fPath=LilyUtils.getFilePath(path);
+		var file=(fPath)?LilyUtils.getFileHandle(fPath):null;
+		
+		if(file)
+			return Lily.openPatchFromFile(file,true,true);
+		else
+			LilyDebugWindow.error("error- patch not found.");
+	}	
+	
+	/*
+		Method: openReadOnly
+			open an existing patch as readonly.
+	
+		Arguments: 
+			path	- path to patch (required)
+			
+		Returns: 
+			returns the newly created patch object.		
+	*/
+	//open an existing patch window.
+	this.openReadOnly=function(path) {
+		
+		var fPath=LilyUtils.getFilePath(path);
+		var file=(fPath)?LilyUtils.getFileHandle(fPath):null;
+		
+		if(file)
+			return Lily.openPatchFromFile(file,true,false);
+		else
+			LilyDebugWindow.error("error- patch not found.");
+	}	
 
 	/*
 		Method: open
@@ -795,6 +839,10 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 					//create the object
 					var o=this.createObject(oArray[x].name,subPatchID,oArray[x].top,oArray[x].left,this.updateObjID(oArray[x].objID,opID),oArray[x].args,oArray[x].hasBeenResized);
 
+					if(opID) {
+						o.isPaste=true; //set the flag so this doesn't get deselected.
+					}
+
 					//set some object properties
 					if(typeof oArray[x].fontSize!="undefined")
 						o.setFontSize(oArray[x].fontSize);
@@ -842,14 +890,25 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 					if(oArray[x].name=="subpatch"||oArray[x].name=="patcher"||oArray[x].name=="wow") {
 						parent_patch.patchModel.addSubPatch(x,false,null); //add this subpatch to the list
 					}
+					
+					if(opID) {
+						o.controller.select({type:"paste"}); //if we're pasting, select the object after we create it.
+					}
 				}
 			}
 		
 			for(var a in oArray) {//2nd pass- make connections		
 				if(oArray[a].type=="connection") {
 					var c=this.createConnection(this.updateObjID(oArray[a].inlet,opID),this.updateObjID(oArray[a].outlet,opID),oArray[a].segmentArray,subPatchID);
-					if(c && typeof oArray[a].hiddenInPerf!="undefined")
+
+					if(c && typeof oArray[a].hiddenInPerf!="undefined"){
 						c.controller.setHiddenInPerf(oArray[a].hiddenInPerf);
+					}
+					
+					if(opID) {
+						c.controller.select({type:"paste"});
+					}						
+					
 				}
 			}
 					
@@ -1409,7 +1468,17 @@ function LilyPatchController(pID,parent)
 	
 	this.deselectAll=function(e) {
 		
-		if((e && (LilyUtils.selectionModifyingKeyDown(e)||e.type=="selectAll"||e.type=="marqueeSelection")))
+		if(
+			(
+			e && 
+				(
+				LilyUtils.selectionModifyingKeyDown(e)||
+				e.type=="selectAll"||
+				e.type=="marqueeSelection"||
+				e.type=="paste"
+				)
+			)
+		)
 			return;
 			
 //		LilyDebugWindow.print("deselect all");	
