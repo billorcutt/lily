@@ -891,7 +891,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 						parent_patch.patchModel.addSubPatch(x,false,null); //add this subpatch to the list
 					}
 					
-					if(opID) {
+					if(opID && !this.patchController.isMouseDown) {
 						o.controller.select({type:"paste"}); //if we're pasting, select the object after we create it.
 					}
 				}
@@ -905,7 +905,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 						c.controller.setHiddenInPerf(oArray[a].hiddenInPerf);
 					}
 					
-					if(opID) {
+					if(opID && !this.patchController.isMouseDown) {
 						c.controller.select({type:"paste"});
 					}						
 					
@@ -1013,8 +1013,9 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	//need to modify this so that this is disabled during editing
 	this.paste=function() {
 		if(Lily.clipboard) {
+			if(!thisPtr.patchController.isMouseDown)thisPtr.patchController.deselectAll()
 			var id=this.generateUID(); //new id
-			this.openPatch(Lily.clipboard,id);
+			thisPtr.openPatch(Lily.clipboard,id);
 			thisPtr.patchController.notifyPatchListeners("patchModified");
 		}			
 	}
@@ -1218,6 +1219,7 @@ function LilyPatchController(pID,parent)
 	this.mouseX=0;
 	this.mouseY=0;
 	var mouseDownTime=new Date(); //init
+	this.isMouseDown=false; //flag to tell if mouse is down.	
 	
 	this.editable="edit";
 	this.currentConnection=null;
@@ -1833,7 +1835,8 @@ function LilyPatchController(pID,parent)
 	this.updateMousePosition=function(e) {
 		thisPtr.mouseX=e.clientX;
 		thisPtr.mouseY=e.clientY;
-		mouseDownTime=new Date();		
+		mouseDownTime=new Date();
+		thisPtr.isMouseDown=true;		
 	}
 	
 	/**
@@ -1848,6 +1851,7 @@ function LilyPatchController(pID,parent)
 	this.updateMouseAction=function(e) {
 		var mouseUpTime=new Date();
 		var diff=mouseUpTime.getTime()-mouseDownTime.getTime();
+		thisPtr.isMouseDown=false;		
 		if(diff>300) {
 			okToCreate=false;
 			setTimeout(function(){okToCreate=true;},1000);
