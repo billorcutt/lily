@@ -1319,7 +1319,11 @@ var LilyUtils = {
 			bool- true if extension is found.
 	*/
 	hasExtension: function(str) {
-		return str.match(/\.\S{2,4}$/);
+		if(str&&str.match) {
+			return str.match(/\.\S{2,4}$/);
+		} else {
+			return false;
+		}
 	},	
 	
 	/*

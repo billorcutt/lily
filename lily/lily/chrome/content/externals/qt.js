@@ -387,7 +387,7 @@ function $qt(args)
 	
 	function checkURL(url,init) {
 		var protocol = getProtocol(processURL(url));
-		return (protocol=="http"||protocol=="chrome"||protocol=="file");
+		return ((protocol=="http"||protocol=="chrome"||protocol=="file")&&LilyUtils.hasExtension(url));
 	}
 	
 	function controllerPadding() {
@@ -482,7 +482,7 @@ function $qt(args)
 	
 	this.document.addEventListener("qt_load",function(e){
 		if(e.target.id==thisPtr.createElID("qt")) {
-			setTimeout(function(){isLoaded(true);},250);	
+			setTimeout(function(){isLoaded(true);},500);	
 		}
 	},false);
 
