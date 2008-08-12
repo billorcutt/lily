@@ -386,7 +386,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	*/			
 	//create object- args: className, top, left, objID, variable_length_arguments_to_obj //only the first arg is required.
 	this.createObject=function(name,pID,t,l,id,args,resizeFlag) {
-		
+				
 		if(this.getObj(id))
 			return null;
 		
@@ -444,7 +444,9 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			this.patchModel.addNode(objID,o); //add to model
 			this.patchController.notifyPatchListeners("patchModified");
 			
-			o.init(); //generic- user defined
+			//call this only if we're not part of patch creation. if we'll opening a patch we'll call init there.
+			if(this.createObject.caller.name!="openPatch") o.init(); //generic- user defined
+			
 		} else if(obj && typeof obj == "string") {
 			var sizeArr = LilyUtils.extractSizeInSubPatch(LilyUtils.readFileFromPath(obj).data);		
 			if(sizeArr[0]||sizeArr[1]) {
@@ -780,7 +782,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	}
 		
 	//open a patch
-	this.openPatch=function(patchStr,id,pID,fileName,patchDir) {
+	this.openPatch=function openPatch(patchStr,id,pID,fileName,patchDir) {
 		
 		var opID=id||""; //operation id- has a value if we're pasting
 		var subPatchID=pID||null; //pid if we're opening a sub-patch
@@ -894,6 +896,9 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 					if(opID && !this.patchController.isMouseDown) {
 						o.controller.select({type:"paste"}); //if we're pasting, select the object after we create it.
 					}
+					
+					o.init(); //generic- user defined- call this again...
+					
 				}
 			}
 		
