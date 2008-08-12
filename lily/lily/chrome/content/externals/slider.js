@@ -32,63 +32,14 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 function $slider(args)
 {
 	
-	/*
-	
-	//args passed to the constructor to init the slider
-	//also editable using the inspector
-	var argsArr=LilyUtils.splitArgs(args);
-	this.args=args;
-		
-	//init from args
-	this.rangeStart=(argsArr.length>=2&&typeof argsArr[0]!="undefined")?parseInt(argsArr[0]):1; //slider range
-	this.rangeEnd=(argsArr.length>=2&&typeof argsArr[1]!="undefined")?parseInt(argsArr[1]):20; //slider range
-	this.orientation=(argsArr.length==3&&typeof argsArr[2]!="undefined")?argsArr[2]:"horizontal"; //slider orientation
-	
-	this.inlet1 = new this.inletClass("inlet1",this,"\"set\" sets & positions slider");	
-	this.outlet1 = new this.outletClass("outlet1",this,"float value on slide");
-	this.outlet2 = new this.outletClass("outlet2",this,"float value after slide");
-
-	//create a config with the params we want to be user editable in the inspector
-	//must follow the form- property name, property value, label (for inspector), data type (number,boolean,string)
-	this.setInspectorConfig([
-		{name:"rangeStart",value:thisPtr.rangeStart,label:"Range Start",type:"number",input:"text"},
-		{name:"rangeEnd",value:thisPtr.rangeEnd,label:"Range End",type:"number",input:"text"},
-		{name:"orientation",value:thisPtr.orientation,label:"Orientation",type:"string",options:[{label:"Vertical",value:"vertical"},{label:"Horizontal",value:"horizontal"}],input:"radio"}
-	]);
-	
-	//save the values returned by the inspector- returned in form {valueName:value...}
-	//called after the inspector window is saved
-	this.saveInspectorValues=function(vals) {
-		
-		//update the local properties
-		for(var x in vals)
-			if(x=="orientation")
-				thisPtr[x]=vals[x];
-			else
-				thisPtr[x]=parseInt(vals[x]);
-			
-		//update the arg str
-		this.args=""+vals["rangeStart"]+" "+vals["rangeEnd"]+" "+vals["orientation"];	
-			
-		//reload the frame & start over	with the new values
-		slider=null;
-		iframe.reload();
-		thisPtr.controller.cleanupOutletConnections();
-	}
-	
-	this.inlet1["set"]=function(num) {
-		slider.setValue(parseInt(num));
-	}
-	
-	
-	*/
-	
 	var thisPtr=this;
 	
 	//args passed to the constructor to init the slider
 	//also editable using the inspector
 	var argsArr=LilyUtils.splitArgs(args);
 	this.args=args;	
+	
+	var on_change_value = 0;
 			
 	var bgcolor=argsArr[0]||this.color;
 	var roundness=argsArr[1]||0;
@@ -118,8 +69,6 @@ function $slider(args)
 		
 	this.args=args;	
 	this.allowFont=false; //dont allow font changes
-	
-	var timeout = 0; //for set timeout ids
 	
 	this.inlet1 = new this.inletClass("inlet1",this,"\"set\" sets & positions slider");		
 	this.outlet1 = new this.outletClass("outlet1",this,"slider value during slide");
@@ -194,9 +143,7 @@ function $slider(args)
 	}
 	
 	function handleMouseMove(e) {
-		
-		clearTimeout(timeout);
-			
+					
 		if(thisPtr.orientation == "vertical") {
 			var val = (parseInt(e.clientY)-parseInt(thisPtr.top))-parseInt(handleOffset);
 			if(val-parseInt(handleOffset)<=0) {
@@ -219,14 +166,14 @@ function $slider(args)
 			doOutput(val); 
 		}
 		
-		timeout = setTimeout(function(){
-			doOutputOnComplete(val);
-		},250);
+		on_change_value = val;
+		
 	}
 	
 	function handleMouseUpFunc(e) {
 		thisPtr.controller.patchController.removePatchObserver(thisPtr.createElID("slider"),"mouseup",handleMouseUpFunc,"performance");		
 		thisPtr.controller.patchController.removePatchObserver(thisPtr.createElID("slider"),"mousemove",handleMouseMove,"performance");			
+		doOutputOnComplete(on_change_value);
 	}
 	
 	function handleMouseDownFunc(e) {
@@ -243,25 +190,25 @@ function $slider(args)
 			var tmp = parseInt(LilyUtils.map(thisPtr.rangeStart,thisPtr.rangeEnd,0,orgMax-handleOffset,val));				
 			if(tmp<=0) {
 				handle.style.top = (0)+"px";
-				thisPtr.outlet1.doOutlet(0);					
+				thisPtr.outlet2.doOutlet(0);					
 			} else if(tmp+handleOffset>=maxY) {
 				handle.style.top = (maxY-handleOffset)+"px";
-				thisPtr.outlet1.doOutlet(thisPtr.rangeEnd);				
+				thisPtr.outlet2.doOutlet(thisPtr.rangeEnd);				
 			} else {
 				handle.style.top = (tmp)+"px";
-				thisPtr.outlet1.doOutlet(parseInt(val));				
+				thisPtr.outlet2.doOutlet(parseInt(val));				
 			}			
 		} else {
 			var tmp = parseInt(LilyUtils.map(thisPtr.rangeStart,thisPtr.rangeEnd,0,orgMax-handleOffset,val));	
 			if(tmp<=0) {
 				handle.style.left = (0-horizOffset)+"px";
-				thisPtr.outlet1.doOutlet(0);					
+				thisPtr.outlet2.doOutlet(0);					
 			} else if(tmp+handleOffset>=maxX) {
 				handle.style.left = (maxX-handleOffset-horizOffset)+"px";
-				thisPtr.outlet1.doOutlet(thisPtr.rangeEnd);				
+				thisPtr.outlet2.doOutlet(thisPtr.rangeEnd);				
 			} else {
 				handle.style.left = (tmp-horizOffset)+"px";
-				thisPtr.outlet1.doOutlet(parseInt(val));				
+				thisPtr.outlet2.doOutlet(parseInt(val));				
 			}
 		}	
 	}
