@@ -38,43 +38,47 @@ function $slider(args)
 	//also editable using the inspector
 	var argsArr=LilyUtils.splitArgs(args);
 	this.args=args;	
-	
-	var on_change_value = 0;
+	this.allowFont=false; //dont allow font changes	
 			
-	var bgcolor=argsArr[0]||this.color;
+	var bgcolor=argsArr[0]||"#FF0000";
 	var roundness=argsArr[1]||0;
 	var bwidth=argsArr[2]||0;
 	var bcolor=argsArr[3]||"#000000";
 	var bstyle=argsArr[4]||"solid";
-	this.orientation=(argsArr.length==6&&typeof argsArr[5]!="undefined")?argsArr[5]:"horizontal"; //slider orientation	
+	this.orientation=(argsArr.length>=6&&typeof argsArr[5]!="undefined")?argsArr[5]:"horizontal"; //slider orientation	
 	this.rangeStart=(argsArr.length>=7&&typeof argsArr[6]!="undefined")?parseInt(argsArr[6]):1; //slider range
 	this.rangeEnd=(argsArr.length>=8&&typeof argsArr[7]!="undefined")?parseInt(argsArr[7]):20; //slider range
 	
-	
-	//handle dimensions
-	var handleHeight = (this.orientation == "vertical")?"10%":"80%";
-	var handleWidth = (this.orientation == "vertical")?"80%":"10%";			
-			
-	this.color=bgcolor;
+	this.handleColor=bgcolor;
 	this.cornerRoundness=roundness;
 	this.borderWidth=bwidth;
 	this.borderColor=bcolor;
 	this.borderStyle=bstyle;
 	
+	//default size
+	var default_height = 50;
+	var default_width = 300;
+	
+	//default handle dimensions
+	var handle = null; //dom node will go here...
+	var handleHeight = "80%";
+	var handleWidth = "10%";			
+			
 	//used for determining the slider boundries.
 	var minX = 0;
 	var maxX = 0;
 	var minY = 0;
 	var maxY = 0;
-		
-	this.args=args;	
-	this.allowFont=false; //dont allow font changes
+	
+	//initialize onchange
+	var on_change_value = 0;	
 	
 	this.inlet1 = new this.inletClass("inlet1",this,"\"set\" sets & positions slider");		
 	this.outlet1 = new this.outletClass("outlet1",this,"slider value during slide");
 	this.outlet2 = new this.outletClass("outlet2",this,"slider value after slide");	
 	
 	this.setInspectorConfig([
+		{name:"handleColor",value:thisPtr.handleColor,label:"Handle Color",type:"text",input:"text"},
 		{name:"cornerRoundness",value:thisPtr.cornerRoundness,label:"% Corner Roundness",type:"number",input:"text"},
 		{name:"borderWidth",value:thisPtr. borderWidth,label:"Border Width",type:"number",input:"text"},
 		{name:"borderColor",value:thisPtr. borderColor,label:"Border Color",type:"text",input:"text"},				
@@ -103,22 +107,23 @@ function $slider(args)
 			thisPtr[x]=vals[x];
 			
 		//update the arg str
-		this.args=this.color+" "+vals["cornerRoundness"]+" "+vals["borderWidth"]+" "+vals["borderColor"]+" "+vals["borderStyle"]+" "+vals["orientation"]+" "+vals["rangeStart"]+" "+vals["rangeEnd"];
+		this.args=vals["handleColor"]+" "+vals["cornerRoundness"]+" "+vals["borderWidth"]+" "+vals["borderColor"]+" "+vals["borderStyle"]+" "+vals["orientation"]+" "+vals["rangeStart"]+" "+vals["rangeEnd"];
 
-		this.displayElement.style.MozBorderRadius=vals["cornerRoundness"]+"%";
-		this.displayElement.style.borderWidth=vals["borderWidth"]+"px";
-		this.displayElement.style.borderColor=vals["borderColor"];
-		this.displayElement.style.borderStyle=vals["borderStyle"];
+		handle.style.background=vals["handleColor"];
+		handle.style.MozBorderRadius=vals["cornerRoundness"]+"%";
+		handle.style.borderWidth=vals["borderWidth"]+"px";
+		handle.style.borderColor=vals["borderColor"];
+		handle.style.borderStyle=vals["borderStyle"];
 		
 		thisPtr.init();
 			
 	}
 		
 	//custom html
-	var slider_html = "<div style=\"-moz-border-radius:"+roundness+"%;border:"+bwidth+"px "+bcolor+" "+bstyle+";width:100px;height:100px;background:" + bgcolor + "\" id=\""+ this.createElID("slider") +"\">"+
-	"<div id=\""+ this.createElID("sliderHandle") +"\" style=\"position:relative;height:"+handleHeight+";width:"+handleWidth+";background:red\"></div>" +
+	var slider_html = "<div style=\"width:"+default_width+"px;height:"+default_height+"px\" id=\""+ this.createElID("slider") +"\">"+
+	"<div id=\""+ this.createElID("sliderHandle") +"\" style=\"-moz-border-radius:"+roundness+"%;border:"+bwidth+"px "+bcolor+" "+bstyle+";position:relative;height:"+handleHeight+";width:"+handleWidth+";background:"+bgcolor+"\"></div>" +
 	"</div>";
-	
+		
 	this.ui=new LilyObjectView(this,slider_html);
 	this.ui.draw();
 	
@@ -126,7 +131,7 @@ function $slider(args)
 	this.displayElement=this.ui.getElByID(this.createElID("slider"));
 	
 	//set up some handle dimnensions 
-	var handle = this.ui.getElByID(this.createElID("sliderHandle"));
+	handle = this.ui.getElByID(this.createElID("sliderHandle"));
 	var handleOffset = (this.orientation == "vertical")?Math.ceil(this.height*.10):Math.ceil(this.width*.10);
 	var horizOffset = (this.orientation == "vertical")?0:(parseInt(thisPtr.width/2)-parseInt(handleOffset/2));			
 	
@@ -146,12 +151,12 @@ function $slider(args)
 					
 		if(thisPtr.orientation == "vertical") {
 			var val = (parseInt(e.clientY)-parseInt(thisPtr.top))-parseInt(handleOffset);
-			if(val-parseInt(handleOffset)<=0) {
+			if(val<=0) {
 				handle.style.top = (0)+"px";	
 			} else if(val+handleOffset>=maxY) {
 				handle.style.top = (maxY-handleOffset)+"px";
 			} else {
-				handle.style.top = (val-parseInt(handleOffset))+"px";
+				handle.style.top = val+"px";
 			}
 			doOutput(val);
 		} else {
@@ -224,16 +229,47 @@ function $slider(args)
 		var tmp = LilyUtils.map(0,orgMax-handleOffset,thisPtr.rangeStart,thisPtr.rangeEnd,val);
 		thisPtr.outlet2.doOutlet(parseInt(tmp));
 	}
-		
+	
+	function calculateHandleHeight() {
+		if(thisPtr.height) {
+			if(thisPtr.orientation == "vertical") {
+				var total_height = Math.ceil(thisPtr.height*.10);
+			} else {
+				var total_height = Math.ceil(thisPtr.height*.80);
+			}
+			var actual_height = total_height - (thisPtr.borderWidth*2);
+			var height_as_percent = parseInt(actual_height/thisPtr.height*100);	
+			return height_as_percent+"%";			
+		}
+		return "80%"; //default		
+	}
+	
+	function calculateHandleWidth() {
+		if(thisPtr.width) {
+			if(thisPtr.orientation == "vertical") {
+				var total_width = Math.ceil(thisPtr.width*.80);
+			} else {
+				var total_width = Math.ceil(thisPtr.width*.10);
+			}
+			var actual_width = total_width - (thisPtr.borderWidth*2);
+			var width_as_percent = parseInt(actual_width/thisPtr.width*100);			
+			return width_as_percent+"%";
+		}
+		return "10%"; //default				
+	}	
+			
 	//init
 	this.init=function() {
 		
 		//handle dimensions
-		handleHeight = (this.orientation == "vertical")?"10%":"80%";
-		handleWidth = (this.orientation == "vertical")?"80%":"10%";		
+		handleHeight = calculateHandleHeight();
+		handleWidth = calculateHandleWidth();
 		
-		handleOffset = (thisPtr.orientation == "vertical")?Math.ceil(thisPtr.height*.10):Math.ceil(thisPtr.width*.10);
-		horizOffset = (thisPtr.orientation == "vertical")?0:(parseInt(thisPtr.width/2)-parseInt(handleOffset/2));
+		var height = thisPtr.height||50;
+		var width = thisPtr.width||300;		
+		
+		handleOffset = (thisPtr.orientation == "vertical")?Math.ceil(height*.10):Math.ceil(width*.10);
+		horizOffset = (thisPtr.orientation == "vertical")?0:(parseInt(width/2)-parseInt(handleOffset/2));
 		setBounds();
 
 		if(thisPtr.orientation == "vertical") {
@@ -252,6 +288,10 @@ function $slider(args)
 	this.inlet1["set"]=function(num) {
 		setValue(parseInt(num));
 	}
+	
+	this.inlet1["num"]=function(num) {
+		setValue(parseInt(num));
+	}	
 	
 	this.controller.setNoBorders(true);	
 	this.controller.attachObserver(this.createElID("slider"),"mousedown",handleMouseDownFunc,"performance");
