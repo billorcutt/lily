@@ -57,9 +57,9 @@ function $twitter(login)
 	this.outlet2=new this.outletClass("outlet2",this,"bang on complete");
 		
 	//get
-	this.xhr1=new LilyUtils._xhr(outputResponse1,"text",this,"GET",true,[{name:"Authorization",value:"Basic "+ window.btoa(credentials)}]);
+	this.xhr1=new LilyComponents._xhr(outputResponse1,"text",this,"GET",true,[{name:"Authorization",value:"Basic "+ window.btoa(credentials)}]);
 	//post
-	this.xhr2=new LilyUtils._xhr(outputResponse2,"text",this,"POST",true,[{name:"Content-Type",value:"application/x-www-form-urlencoded"},{name:"Authorization",value:"Basic "+ window.btoa(credentials)}]);
+	this.xhr2=new LilyComponents._xhr(outputResponse2,"text",this,"POST",true,[{name:"Content-Type",value:"application/x-www-form-urlencoded"},{name:"Authorization",value:"Basic "+ window.btoa(credentials)}]);
 		
 	//public timeline	
 	this.inlet1["public-timeline"]=function(){ 

@@ -2204,7 +2204,7 @@ function LilyPatchView(pID,parent,extWin)
 	
 	this.displayPatchDialog=function(str,color) {
 		var width=Math.floor(this.patch.width/1.33);	
-		return LilyUtils.toggleMessageDialog(thisPtr.oWin,str,width,color);
+		return LilyComponents._dialog.toggleMessageDialog(thisPtr.oWin,str,width,color);
 	}
 		
 	this.displayHelpDialog=function() {

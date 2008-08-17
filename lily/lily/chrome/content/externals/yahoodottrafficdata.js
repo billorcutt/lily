@@ -40,7 +40,7 @@ function $yahoodottrafficdata()
 	this.inlet1=new this.inletClass("inlet1",this,"location as text, coordinates as hash \"{longitude,latitude}\"");
 	this.outlet1=new this.outletClass("outlet1",this,"each result as hash {title, description, latitude, longitude, direction, severity}");
 	this.outlet2=new this.outletClass("outlet2",this,"bang on complete or error");	
-	this.xhr=new LilyUtils._xhr(outputResponse,"xml",this);
+	this.xhr=new LilyComponents._xhr(outputResponse,"xml",this);
 	
 	
 	this.inlet1["anything"]=function(str){		

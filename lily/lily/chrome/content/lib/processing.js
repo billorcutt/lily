@@ -663,7 +663,7 @@ function buildProcessing( curElement ){
 	}
 		
 	//synchronous
-	var xhr = new LilyUtils._xhr(processData,"bin",this,"GET",false);
+	var xhr = new LilyComponents._xhr(processData,"bin",this,"GET",false);
 	xhr.loadXMLDoc(file);
 	xhr.loadXMLDoc(file); //2nd verse, same as the first...	
 

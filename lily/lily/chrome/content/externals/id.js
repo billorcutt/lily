@@ -12,7 +12,7 @@ function $id(filter)
 	this.inlet1=new this.inletClass("inlet1",this,"\"bang\" outputs most recent queries");
 	this.outlet1 = new this.outletClass("outlet1",this,"most recent queries");
 	this.outlet2 = new this.outletClass("outlet2",this,"bang on complete or error");		
-	this.xhr=new LilyUtils._xhr(outputResponse,"xml",this);
+	this.xhr=new LilyComponents._xhr(outputResponse,"xml",this);
 	
 	this.inlet1["bang"]=function(){ thisPtr.xhr.loadXMLDoc(url+ "&timestamp=" +new Date().getTime()); }
 	

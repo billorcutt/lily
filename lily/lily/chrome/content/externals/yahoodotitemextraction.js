@@ -45,7 +45,7 @@ function $yahoodotitemextraction()
 	this.outlet1 = new this.outletClass("outlet1",this,"results");
 	this.outlet2 = new this.outletClass("outlet2",this,"bang on complete or error");	
 		
-	this.xhr=new LilyUtils._xhr(outputResponse,"xml",this,"POST",null,[{name:"Content-Type",value:"application/x-www-form-urlencoded"}]);
+	this.xhr=new LilyComponents._xhr(outputResponse,"xml",this,"POST",null,[{name:"Content-Type",value:"application/x-www-form-urlencoded"}]);
 	
 	this.inlet1["anything"]=function(msg)	{
 		thisPtr.xhr.loadXMLDoc(url,"appid=" + appid + "&context=" + context + "&query=" + msg); 

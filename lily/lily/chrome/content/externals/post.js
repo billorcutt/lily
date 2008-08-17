@@ -45,7 +45,7 @@ function $post(argStr)
 	this.outlet1 = new this.outletClass("outlet1",this,"response from server");
 	this.outlet2 = new this.outletClass("outlet2",this,"bang on complete");		
 	this.inlet1=new this.inletClass("inlet1",this,"data to post");	
-	this.xhr=new LilyUtils._xhr(outputResponse,type,this,"POST",null,[{name:"Content-Type",value:"application/x-www-form-urlencoded"}]);
+	this.xhr=new LilyComponents._xhr(outputResponse,type,this,"POST",null,[{name:"Content-Type",value:"application/x-www-form-urlencoded"}]);
 	
 	this.inlet1["anything"]=function(msg){ thisPtr.xhr.loadXMLDoc(url,msg); }
 	

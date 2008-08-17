@@ -273,7 +273,7 @@ function $subpatch(args)
 	
 	//_iframe contains the iframe html, ui property is a necessary placeholder, must'nt be null.
 	this.ui={};	
-	var iframe=new LilyUtils._iframe(this,null,200,200,"no",frameLoad);	//no scrolling
+	var iframe=new LilyComponents._iframe(this,null,200,200,"no",frameLoad);	//no scrolling
 	
 	this.displayElement=this.resizeElement=iframe.objFrame; //
 //	this.displayElement.addEventListener("load",frameLoad,false); //we'll use this once for init only	

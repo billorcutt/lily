@@ -288,7 +288,7 @@ var Lily =
 	displayInitMessage: function() {
 		//win,str,width,color
 		if(!this.initialized)
-			LilyUtils.displayMessageDialog(content,"<img src='chrome://lily/content/images/activity-medium.png'/>",200);	
+			LilyComponents._dialog.toggleMessageDialog(content,"<img src='chrome://lily/content/images/activity-medium.png'/>",200);	
 	},
 				
 	/*
@@ -683,7 +683,7 @@ var Lily =
 		
 		//only open if the user confirms
 		if(hideWarning||prompts.confirmCheck(null, "", "It appears that you're opening a Lily program located at "+url+". Malicious Lily programs can damage your privacy and data. You should only open Lily programs from sources you trust.", "Don't warn again", check)) {
-			var xhr=new LilyUtils._xhr(outputResponse,"text",this);
+			var xhr=new LilyComponents._xhr(outputResponse,"text",this);
 			xhr.loadXMLDoc(url); 			
 		}
 		

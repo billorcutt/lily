@@ -38,7 +38,7 @@ function $get(rtype)
 	this.outlet2 = new this.outletClass("outlet2",this,"bang on complete");	
 	this.inlet1=new this.inletClass("inlet1",this,"url to get, \"bang\" uses url supplied in object argument");	
 	
-	this.xhr=new LilyUtils._xhr(outputResponse,type,this);
+	this.xhr=new LilyComponents._xhr(outputResponse,type,this);
 	
 	this.inlet1["anything"]=function(loc){ 
 		thisPtr.xhr.loadXMLDoc(loc); 

@@ -91,7 +91,7 @@ function $yuidotcalendar()
 		cal1.render(); //need to do a more optimized render
 	}		
 	
-	var iframe=new LilyUtils._iframe(this,"chrome://lily/content/lib/yui.html",185,202,"no",frameInit);
+	var iframe=new LilyComponents._iframe(this,"chrome://lily/content/lib/yui.html",185,202,"no",frameInit);
 	
 	function frameInit() {
 		iframe.objFrame.contentDocument.getElementById("bodyElement").innerHTML='<link type="text/css" rel="stylesheet" href="chrome://lily/content/lib/yui/build/calendar/assets/calendar.css">\n<div id="cal1Container"></div>';

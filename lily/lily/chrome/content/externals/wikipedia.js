@@ -39,7 +39,7 @@ function $wikipedia()
 	this.outlet1 = new this.outletClass("outlet1",this,"location as text, coordinates as hash \"{title, url, text, cats}\"");
 	this.outlet2 = new this.outletClass("outlet2",this,"bang on complete or error");	
 	
-	this.xhr=new LilyUtils._xhr(outputResponse,"text",this);
+	this.xhr=new LilyComponents._xhr(outputResponse,"text",this);
 		
 	this.inlet1["anything"]=function(str){
 		

@@ -39,7 +39,7 @@ function $rss(argStr)
 	this.outlet3 = new this.outletClass("outlet3",this,"bang on complete or error");	
 	this.inlet1=new this.inletClass("inlet1",this,"feed url, \"bang\" uses url supplied in object argument");	
 	
-	this.xhr=new LilyUtils._xhr(outputResponse,"xml",this); //gets xml
+	this.xhr=new LilyComponents._xhr(outputResponse,"xml",this); //gets xml
 	this.rssparser=new LilyServices._rssService(); //converts to js object
 	
 	this.inlet1["bang"]=function(){ 

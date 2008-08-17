@@ -46,7 +46,7 @@ function $yahoodotlocalsearch()
 		
 	this.outlet1=new this.outletClass("outlet1",this,"each result as hash {title, url, latitude, longitude, address, city, state, phone}");
 	this.outlet2=new this.outletClass("outlet2",this,"bang on complete or error");	
-	this.xhr=new LilyUtils._xhr(outputResponse,"xml",this);
+	this.xhr=new LilyComponents._xhr(outputResponse,"xml",this);
 	
 	this.inlet2["anything"]=function(str) {
 		location = str;

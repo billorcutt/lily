@@ -49,7 +49,7 @@ function $jquerydotcolorpicker()
 		initColorPicker();
 	}
 
-	var iframe=new LilyUtils._iframe(this,"chrome://lily/content/lib/jquery.html?farbtastic",200,200,"no",frameInit);
+	var iframe=new LilyComponents._iframe(this,"chrome://lily/content/lib/jquery.html?farbtastic",200,200,"no",frameInit);
 	//iframe.objFrame.addEventListener("load",frameInit,false);		
 	
 	return this;

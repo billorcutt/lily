@@ -151,7 +151,7 @@ function $googledotmap()
 		}
 	}
 	
-	var iframe=new LilyUtils._iframe(this,"file://"+Lily.libPath+"/googlemaps.html",300,500,"no",frameInit);
+	var iframe=new LilyComponents._iframe(this,"file://"+Lily.libPath+"/googlemaps.html",300,500,"no",frameInit);
 	
 	this.controller.attachObserver(this.objID,"deselect",function(){deselectFunc();},"edit");
 	this.controller.patchController.attachPatchObserver(thisPtr.createElID("map"),"patchLoaded",function(){deselectFunc();},"all");	

@@ -40,7 +40,7 @@ function $yahoodotwebsearch()
 	this.inlet1=new this.inletClass("inlet1",this,"list of 3 required parameters: \"[start page] [number of results] [query]\"");	
 	this.outlet1=new this.outletClass("outlet1",this,"each result as hash with keys {title, summary, url}");
 	this.outlet2=new this.outletClass("outlet2",this,"bang on complete or error");	
-	this.xhr=new LilyUtils._xhr(outputResponse,"xml",this);
+	this.xhr=new LilyComponents._xhr(outputResponse,"xml",this);
 	
 	//&street=701+First+Street&city=Sunnyvale&state=CA
 	

@@ -75,7 +75,7 @@ function $comment(args)
 	thisPtr.ui.contentWrapper.style.margin="0px"; 
 	this.displayElement=thisPtr.ui.contentWrapper
 
-	var editor=new LilyUtils._editor(this,this.ui.getElByID(thisPtr.createElID("comment")),spacer(),setArgs,getArgs,true); //widget that will handle editing...
+	var editor=new LilyComponents._editor(this,this.ui.getElByID(thisPtr.createElID("comment")),spacer(),setArgs,getArgs,true); //widget that will handle editing...
 
 	this.controller.attachObserver(this.createElID("comment"),"dblclick",editor.startEdit,"edit");	
 	this.controller.attachObserver(this.objID,"deselect",editor.endEdit,"edit");

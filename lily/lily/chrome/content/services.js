@@ -52,7 +52,7 @@ LilyServices._flickrService=function(parent,service,number)
 	this.outputData=null; //callback attach here
 	this.outputError=null; //error/complete cb attaches here
 	
-	this.xhr=new LilyUtils._xhr(handleResponse,'xml',this);
+	this.xhr=new LilyComponents._xhr(handleResponse,'xml',this);
 	
 	//loads the default url
 	this.loadDefaultURL=function() {
@@ -231,7 +231,7 @@ LilyServices._diggService=function(parent,service,number)
 	this.outputData=null; //callback attach here
 	this.outputError=null; //error/complete cb attaches here
 	
-	this.xhr=new LilyUtils._xhr(handleResponse,'text',this);
+	this.xhr=new LilyComponents._xhr(handleResponse,'text',this);
 	
 	function formatDate(unixTime) {
 		return Math.round((+unixTime)/1000.00);

@@ -316,7 +316,7 @@ function $xuldottree(args)
 		makeRow(arr);
 	}
 	
-	var iframe=new LilyUtils._iframe(this,"chrome://lily/content/lib/base.xul",200,200,"no",frameInit);
+	var iframe=new LilyComponents._iframe(this,"chrome://lily/content/lib/base.xul",200,200,"no",frameInit);
 	
 	function frameInit() {
 		initTable();

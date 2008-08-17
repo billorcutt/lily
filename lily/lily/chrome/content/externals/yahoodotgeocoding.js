@@ -42,7 +42,7 @@ function $yahoodotgeocoding()
 	this.outlet1=new this.outletClass("outlet1",this,"coordinates as hash {latitude, longitude}");
 	this.outlet2=new this.outletClass("outlet2",this,"bang on complete or error");
 		
-	this.xhr=new LilyUtils._xhr(outputResponse,"xml",this);
+	this.xhr=new LilyComponents._xhr(outputResponse,"xml",this);
 	
 	//bang method
 	this.inlet1["anything"]=function(str){ 

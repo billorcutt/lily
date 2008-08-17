@@ -15,7 +15,7 @@ function $oracle()
 	this.outlet1 = new this.outletClass("outlet1",this,"word of the day");
 	this.outlet2 = new this.outletClass("outlet2",this,"bang on complete or error");		
 	
-	var xhr=new LilyUtils._xhr(outputResponse,"text",this);
+	var xhr=new LilyComponents._xhr(outputResponse,"text",this);
 	
 	this.inlet1["bang"]=function(){ xhr.loadXMLDoc(url); }
 	

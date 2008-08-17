@@ -210,7 +210,7 @@ function $message(args)
 	
 	//
 	this.displayElement=this.ui.getElByID(thisPtr.createElID("message"));
-	var editor=new LilyUtils._editor(this,this.displayElement,spacer(),setArgs,getArgs,false); //widget that will handle editing...			
+	var editor=new LilyComponents._editor(this,this.displayElement,spacer(),setArgs,getArgs,false); //widget that will handle editing...			
 	
 	function setStyles() {
 		

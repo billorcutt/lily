@@ -40,7 +40,7 @@ function $yahoodotspellingsuggestion()
 	this.inlet1=new this.inletClass("inlet1",this,"message to spellcheck");	
 	this.outlet1=new this.outletClass("outlet1",this,"suggested spelling");
 	this.outlet2=new this.outletClass("outlet2",this,"bang on complete or error");	
-	this.xhr=new LilyUtils._xhr(outputResponse,"xml",this);
+	this.xhr=new LilyComponents._xhr(outputResponse,"xml",this);
 	
 	//&street=701+First+Street&city=Sunnyvale&state=CA
 	

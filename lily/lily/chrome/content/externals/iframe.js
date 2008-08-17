@@ -64,7 +64,7 @@ function $iframe(args)
 
 	//_iframe contains the iframe html, ui property is a necessary placeholder, must'nt be null.
 	this.ui={};	
-	var iframe=new LilyUtils._iframe(this,this.src,null,null,null,frameInit);
+	var iframe=new LilyComponents._iframe(this,this.src,null,null,null,frameInit);
 
 	
 	//set the src

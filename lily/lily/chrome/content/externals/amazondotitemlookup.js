@@ -41,7 +41,7 @@ function $amazondotitemlookup()
 	this.inlet1=new this.inletClass("inlet1",this,"list of up to 10 item ids to lookup");	
 	this.outlet1=new this.outletClass("outlet1",this,"each item as hash with keys {asin, group, title, url, img, author}");
 	this.outlet2=new this.outletClass("outlet2",this,"bang on complete");	
-	this.xhr=new LilyUtils._xhr(outputResponse,"xml",this);
+	this.xhr=new LilyComponents._xhr(outputResponse,"xml",this);
 	
 	this.inlet1["anything"]=function(str){
 		var ids = str.split(" ").join(",");	

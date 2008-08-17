@@ -41,7 +41,7 @@ function $yahoodotgettime()
 	this.outlet1=new this.outletClass("outlet1",this,"time in ms");
 	this.outlet2=new this.outletClass("outlet2",this,"time as a string");
 	this.outlet3=new this.outletClass("outlet3",this,"bang on complete or error");	
-	this.xhr=new LilyUtils._xhr(outputResponse,"xml",this);
+	this.xhr=new LilyComponents._xhr(outputResponse,"xml",this);
 	
 	//bang method
 	this.inlet1["bang"]=function(){ thisPtr.xhr.loadXMLDoc(url); }
