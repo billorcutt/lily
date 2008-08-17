@@ -12,7 +12,7 @@ if(typeof Lily == "undefined") {
 		"chrome://lily/content/utils/prefs.js",
 		"chrome://lily/content/utils/string.js",
 		"chrome://lily/content/utils/window.js",
-		"chrome://lily/content/apiKeyManager.js",		
+		"chrome://lily/content/keys.js",		
 		"chrome://lily/content/components/dialog.js",
 		"chrome://lily/content/components/editor.js",
 		"chrome://lily/content/components/iframe.js",
