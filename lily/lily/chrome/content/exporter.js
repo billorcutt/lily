@@ -511,14 +511,66 @@ var LilyPatchExporter = {
 		tmp.append("services.js");
 		tmp.copyTo(contentOut,null);
 
-		//utils.js
-		var tmpIn = contentIn.clone();
-		tmpIn.append("utils.js");
-		var tmpOut = contentOut.clone();
-		tmpOut.append("utils.js");
-		var data = LilyUtils.readFile(tmpIn);
-		data = data.replace(/chrome:\/\/lily/g,("chrome://"+projectName));		
-		LilyUtils.writeFile(tmpOut,data);
+		//utils
+		var utils_files = [
+			"core.js",
+			"file.js",
+			"font.js",
+			"patch.js",
+			"prefs.js",
+			"string.js",
+			"window.js"
+		]
+
+		var utilsOut = contentOut.clone();
+		utilsOut.append("utils");
+
+		if( !utilsOut.exists() || !utilsOut.isDirectory() ) {   // if it doesn't exist, create
+		   utilsOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+		}
+
+		for(var i=0;i<utils_files.length;i++) {
+			var tmpIn = contentIn.clone();
+			tmpIn.append("utils");
+			tmpIn.append(utils_files[i]);			
+
+			var tmpOut = contentOut.clone();
+			tmpOut.append("utils");
+			tmpOut.append(utils_files[i]);	
+
+			var data = LilyUtils.readFile(tmpIn);
+			data = data.replace(/chrome:\/\/lily/g,("chrome://"+projectName));		
+			LilyUtils.writeFile(tmpOut,data);
+		}
+		
+		//components
+		var utils_files = [
+			"dialog.js",
+			"editor.js",
+			"iframe.js",
+			"xhr.js"
+		]
+
+		var componentsOut = contentOut.clone();
+		componentsOut.append("components");
+
+		if( !componentsOut.exists() || !componentsOut.isDirectory() ) {   // if it doesn't exist, create
+		   componentsOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+		}
+
+		for(var i=0;i<utils_files.length;i++) {
+			var tmpIn = contentIn.clone();
+			tmpIn.append("components");
+			tmpIn.append(utils_files[i]);			
+
+			var tmpOut = contentOut.clone();
+			tmpOut.append("components");
+			tmpOut.append(utils_files[i]);	
+
+			var data = LilyUtils.readFile(tmpIn);
+			data = data.replace(/chrome:\/\/lily/g,("chrome://"+projectName));		
+			LilyUtils.writeFile(tmpOut,data);
+		}		
 		
 		//bootstrap.js
 		var tmpIn = contentIn.clone();
@@ -862,13 +914,67 @@ var LilyPatchExporter = {
 				var tmp = contentIn.clone();
 				tmp.append("services.js");
 				tmp.copyTo(contentOut,null);
-				
-				//utils.js
-				var tmpIn = contentIn.clone();
-				tmpIn.append("utils.js");
-				var tmpOut = contentOut.clone();
-				tmpOut.append("utils.js");				
-				LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
+								
+				//utils
+				var utils_files = [
+					"core.js",
+					"file.js",
+					"font.js",
+					"patch.js",
+					"prefs.js",
+					"string.js",
+					"window.js"
+				]
+
+				var utilsOut = contentOut.clone();
+				utilsOut.append("utils");
+
+				if( !utilsOut.exists() || !utilsOut.isDirectory() ) {   // if it doesn't exist, create
+				   utilsOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+				}
+
+				for(var i=0;i<utils_files.length;i++) {
+					var tmpIn = contentIn.clone();
+					tmpIn.append("utils");
+					tmpIn.append(utils_files[i]);			
+
+					var tmpOut = contentOut.clone();
+					tmpOut.append("utils");
+					tmpOut.append(utils_files[i]);	
+
+					var data = LilyUtils.readFile(tmpIn);
+					data = data.replace(/chrome:\/\/lily/g,("chrome://"+projectName));		
+					LilyUtils.writeFile(tmpOut,data);
+				}
+
+				//components
+				var utils_files = [
+					"dialog.js",
+					"editor.js",
+					"iframe.js",
+					"xhr.js"
+				]
+
+				var componentsOut = contentOut.clone();
+				componentsOut.append("components");
+
+				if( !componentsOut.exists() || !componentsOut.isDirectory() ) {   // if it doesn't exist, create
+				   componentsOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+				}
+
+				for(var i=0;i<utils_files.length;i++) {
+					var tmpIn = contentIn.clone();
+					tmpIn.append("components");
+					tmpIn.append(utils_files[i]);			
+
+					var tmpOut = contentOut.clone();
+					tmpOut.append("components");
+					tmpOut.append(utils_files[i]);	
+
+					var data = LilyUtils.readFile(tmpIn);
+					data = data.replace(/chrome:\/\/lily/g,("chrome://"+projectName));		
+					LilyUtils.writeFile(tmpOut,data);
+				}								
 				
 				//bootstrap.js
 				var tmpIn = contentIn.clone();
