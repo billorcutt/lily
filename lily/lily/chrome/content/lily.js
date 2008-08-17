@@ -877,7 +877,7 @@ var Lily =
 		var exportParams = {id:patchID,type:"addon",platform:LilyUtils.navigatorPlatform()};	
 
 		//show a dialog to get the export details
-    	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);		
+    	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/xul/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);		
 
 		Lily.getCurrentPatch().patchView.showWindowStatusActivity(true);
 		Lily.getCurrentPatch().patchView.setWindowStatusText("Saving as addon...")
@@ -904,7 +904,7 @@ var Lily =
 		var exportParams = {id:patchID,type:"app",platform:LilyUtils.navigatorPlatform()};			
 
 		//show a dialog to get the export details
-    	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);			
+    	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/xul/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);			
 		
 		Lily.getCurrentPatch().patchView.showWindowStatusActivity(true);
 		Lily.getCurrentPatch().patchView.setWindowStatusText("Saving as app...")
@@ -1215,7 +1215,7 @@ var Lily =
 		
 		var tmp = LilyUtils.getOpenDialogCoords(450,450);		
 		
-		win.openDialog("chrome://lily/content/patch-properties.xul", "cWin","width=450,height=450,left="+tmp[0]+",top="+tmp[1]+",close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function(val){
+		win.openDialog("chrome://lily/content/xul/patch-properties.xul", "cWin","width=450,height=450,left="+tmp[0]+",top="+tmp[1]+",close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function(val){
 			for(var x in val) {
 				switch(x) {
 					case "title":
@@ -1260,7 +1260,7 @@ var Lily =
 		
 		var initVals = { color: color, type: type };
 		
-		win.openDialog("chrome://lily/content/color.xul", "cWin","width=250,height="+height+",left="+tmp[0]+",top="+tmp[1]+",close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function (val) {
+		win.openDialog("chrome://lily/content/xul/color.xul", "cWin","width=250,height="+height+",left="+tmp[0]+",top="+tmp[1]+",close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function (val) {
 			if(type=="patch")
 				Lily.setPatchColor(val);
 			else if(type=="font") {

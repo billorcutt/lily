@@ -39,7 +39,7 @@ var LilyDebugWindow = {
 	*/
 	open:function () {
 		if(!this.dWin) {
-			this.dWin=window.openDialog("chrome://lily/content/debug.xul", "dWin","width=350,height=600,left=50,top=50,toolbar=no,menubar=no,location=no,resizable=yes,scrollbars=yes,status=no,chrome=yes",function(){LilyDebugWindow.init();});
+			this.dWin=window.openDialog("chrome://lily/content/xul/debug.xul", "dWin","width=350,height=600,left=50,top=50,toolbar=no,menubar=no,location=no,resizable=yes,scrollbars=yes,status=no,chrome=yes",function(){LilyDebugWindow.init();});
 		}		
 	},
 	

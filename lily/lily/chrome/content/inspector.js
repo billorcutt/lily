@@ -72,7 +72,7 @@ var LilyInspectorWindow = {
 //		LilyDebugWindow.print("open the window...")				
 		if(!this.iWin) {
 			var tmp_coords = LilyUtils.getOpenDialogCoords(300,300);	
-			this.iWin=window.openDialog("chrome://lily/content/inspector.xul", "iWin","width=300,height=300,left="+tmp_coords[0]+",top="+tmp_coords[1]+",toolbar=no,menubar=no,location=no,resizable=yes,scrollbars=yes,status=no,chrome=yes",function(){LilyInspectorWindow.init(id);});					
+			this.iWin=window.openDialog("chrome://lily/content/xul/inspector.xul", "iWin","width=300,height=300,left="+tmp_coords[0]+",top="+tmp_coords[1]+",toolbar=no,menubar=no,location=no,resizable=yes,scrollbars=yes,status=no,chrome=yes",function(){LilyInspectorWindow.init(id);});					
 		} else {
 			LilyInspectorWindow.init(id);
 		}		

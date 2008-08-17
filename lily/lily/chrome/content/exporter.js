@@ -465,15 +465,6 @@ var LilyPatchExporter = {
 		var tmpOut = contentOut.clone();
 		tmpOut.append("prefs.xul");				
 		LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
-
-		//readonlypatch.xul
-		/*
-		var tmpIn = contentIn.clone();
-		tmpIn.append("applicationpatch.xul");
-		var tmpOut = contentOut.clone();
-		tmpOut.append("readonlypatch.xul");				
-		LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
-		*/
 		
 		//readonlypatch.xul
 		if(!obj.hideMainCbx) {

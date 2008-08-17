@@ -2390,17 +2390,17 @@ function LilyPatchView(pID,parent,extWin)
 	//standard patch	
 	if(!this.patch.hidden && !this.patch.readonly && !extWin)	{
 		var tmp_coords = LilyUtils.getOpenDialogOffset(winWidth,winHeight);	
-		this.xulWin=window.openDialog("chrome://lily/content/patch.xul", pID,"width="+winWidth+",height="+winHeight+",left="+tmp_coords[0]+",top="+tmp_coords[1]+",menubar=yes,toolbar=no,location=no,resizable=yes,scrollbars=yes,status=yes,chrome=yes",initWindow,pID);	
+		this.xulWin=window.openDialog("chrome://lily/content/xul/patch.xul", pID,"width="+winWidth+",height="+winHeight+",left="+tmp_coords[0]+",top="+tmp_coords[1]+",menubar=yes,toolbar=no,location=no,resizable=yes,scrollbars=yes,status=yes,chrome=yes",initWindow,pID);	
 	//hidden patch
 	} else if(this.patch.hidden && !extWin) {
 		var iframe = document.getElementById("lilyHiddenIframe");
 		extWin = {type:"iframe",win:iframe,parent:iframe.contentWindow};
 		extWin.win.addEventListener("load",initIframe,true);
 		extWin.win.contentWindow.location.href="chrome://lily/content/patch.xhtml";
-		//this.xulWin=window.openDialog("chrome://lily/content/hiddenpatch.xul", pID,"",initReadOnlyWindow,pID);	//hidden patch	
+		//this.xulWin=window.openDialog("chrome://lily/content/xul/hiddenpatch.xul", pID,"",initReadOnlyWindow,pID);	//hidden patch	
 	} else if(this.patch.readonly && !extWin) {
 		var tmp_coords = LilyUtils.getOpenDialogOffset(winWidth,winHeight);		
-		this.xulWin=window.openDialog("chrome://lily/content/readonlypatch.xul", pID,"width="+winWidth+",height="+winHeight+",left="+tmp_coords[0]+",top="+tmp_coords[1]+",menubar=yes,toolbar=no,location=no,resizable=yes,scrollbars=yes,status=yes,chrome=yes",initReadOnlyWindow,pID);
+		this.xulWin=window.openDialog("chrome://lily/content/xul/readonlypatch.xul", pID,"width="+winWidth+",height="+winHeight+",left="+tmp_coords[0]+",top="+tmp_coords[1]+",menubar=yes,toolbar=no,location=no,resizable=yes,scrollbars=yes,status=yes,chrome=yes",initReadOnlyWindow,pID);
 	//patch in iframe
 	} else if(extWin && extWin.type=="iframe") {
 		extWin.win.addEventListener("load",initIframe,true);
