@@ -2075,6 +2075,76 @@ var LilyUtils = {
 
 	},
 	
+	/*
+		Method: runInBackGround
+			run a method in the background.
+	
+		Arguments: 
+			f - function to run in the background
+			cb - function to call with the result
+	*/
+	runInBackGround: function(f,cb) {
+		
+		var workingThread = function(threadID,func) {
+		  this.threadID = threadID;
+		  this.func = func;
+	      this.result;
+		};
+
+		workingThread.prototype = {
+		  run: function() {
+		    try {
+		      // This is where the working thread does its processing work.
+			  this.result = this.func();
+		      // When it's done, call back to the main thread to let it know
+		      // we're finished.
+		      main.dispatch(new mainThread(this.threadID, this.result),
+		        background.DISPATCH_NORMAL);
+		    } catch(err) {
+		      Components.utils.reportError(err);
+		    }
+		  },
+
+		  QueryInterface: function(iid) {
+		    if (iid.equals(Components.interfaces.nsIRunnable) ||
+		        iid.equals(Components.interfaces.nsISupports)) {
+		            return this;
+		    }
+		    throw Components.results.NS_ERROR_NO_INTERFACE;
+		  }
+		};
+		
+		
+		var mainThread = function(threadID,result) {
+		  this.threadID = threadID;
+		  this.result = result;
+		};
+
+		mainThread.prototype = {
+		  run: function() {
+		    try {
+		      // This is where we react to the completion of the working thread.
+				cb(this.threadID,this.result);
+		    } catch(err) {
+		      Components.utils.reportError(err);
+		    }
+		  },
+
+		  QueryInterface: function(iid) {
+		    if (iid.equals(Components.interfaces.nsIRunnable) ||
+		        iid.equals(Components.interfaces.nsISupports)) {
+		            return this;
+		    }
+		    throw Components.results.NS_ERROR_NO_INTERFACE;
+		  }
+		};	
+		
+		var background = Components.classes["@mozilla.org/thread-manager;1"].getService().newThread(0);
+		var main = Components.classes["@mozilla.org/thread-manager;1"].getService().mainThread;
+		background.dispatch(new workingThread(1,f), background.DISPATCH_NORMAL);
+		
+	},
+	
 	//drag code from https://addons.mozilla.org/en-US/seamonkey/addon/2190/ by Emanuele Ruffaldi- http://www.teslacore.it
 	dragDropHandler: function(cb) {
 

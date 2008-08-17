@@ -188,6 +188,7 @@
 		<statusbar>
 			<statusbarpanel tooltiptext="Patch is unlocked for editing. Click to lock." onclick="opener.Lily.toggleEdit()" class="statusbarpanel-iconic" src="chrome://lily/content/images/lock_open.png" id="lilyIconPanel" width="20"/>
 			<statusbarpanel style="height:24px;font-size:18px;font-family:verdana,DejaVu Sans,sans-serif;" id="lilyStatusPanel" flex="1"/>
+			<image style="visibility:hidden" id="lilyStatusActivity" src="chrome://lily/content/images/activity-medium.png"/>
 		</statusbar>
 	</vbox>
 	

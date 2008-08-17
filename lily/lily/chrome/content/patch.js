@@ -2028,7 +2028,8 @@ function LilyPatchView(pID,parent,extWin)
 	this.oWin=null; //browser content window
 	this.chromeWin=null; //browsers chrome window
 	this.statusBar=null; //status bar
-	this.statusBarIcon=null; //icon status bar	
+	this.statusBarIcon=null; //icon status bar
+	this.statusBarActivity=null; //activity status bar
 	this.document=null;
 	this.body=null;
 	this.head=null;	
@@ -2166,6 +2167,13 @@ function LilyPatchView(pID,parent,extWin)
 		this.body.style.fontSize=LilyUtils.sizeFontForPlatform(size);
 	}
 	
+	this.showWindowStatusActivity=function(state) {				
+		if(state)
+			this.statusBarActivity.style.visibility="visible";
+		else
+			this.statusBarActivity.style.visibility="hidden";
+	}	
+	
 	this.setWindowStatusIcon=function(state) {		
 		if(state=="locked")
 			this.statusBarIcon.setAttribute("src","chrome://lily/content/images/lock.png");
@@ -2234,7 +2242,7 @@ function LilyPatchView(pID,parent,extWin)
 		thisPtr.head=thisPtr.oWin.document.getElementById("headElement");
 
 		thisPtr.statusBar={setAttribute:function(){}};//
-		thisPtr.statusBarIcon={setAttribute:function(){}}; //window.status;//
+		thisPtr.statusBarIcon={setAttribute:function(){}}; //window.status//
 
 		//pass the window refs to the controller
 		thisPtr.controller.oWin=thisPtr.oWin;
@@ -2275,8 +2283,9 @@ function LilyPatchView(pID,parent,extWin)
 		thisPtr.body=thisPtr.oWin.document.getElementById("bodyElement");
 		thisPtr.head=thisPtr.oWin.document.getElementById("headElement");
 
-		thisPtr.statusBar=thisPtr.xulWin.document.getElementById("lilyStatusPanel")||{setAttribute:function(){}};;
-		thisPtr.statusBarIcon=thisPtr.xulWin.document.getElementById("lilyIconPanel")||{setAttribute:function(){}};;
+		thisPtr.statusBar=thisPtr.xulWin.document.getElementById("lilyStatusPanel")||{setAttribute:function(){}};
+		thisPtr.statusBarIcon=thisPtr.xulWin.document.getElementById("lilyIconPanel")||{setAttribute:function(){}};
+		thisPtr.statusBarActivity=thisPtr.xulWin.document.getElementById("lilyStatusActivity")||{setAttribute:function(){}};
 
 		//pass the window refs to the controller
 		thisPtr.controller.oWin=thisPtr.oWin;
@@ -2356,6 +2365,7 @@ function LilyPatchView(pID,parent,extWin)
 		
 		thisPtr.statusBar=thisPtr.xulWin.document.getElementById("lilyStatusPanel");
 		thisPtr.statusBarIcon=thisPtr.xulWin.document.getElementById("lilyIconPanel");
+		thisPtr.statusBarActivity=thisPtr.xulWin.document.getElementById("lilyStatusActivity");		
 								
 		//pass the window refs to the controller
 		thisPtr.controller.oWin=thisPtr.oWin;

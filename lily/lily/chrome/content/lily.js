@@ -288,7 +288,7 @@ var Lily =
 	displayInitMessage: function() {
 		//win,str,width,color
 		if(!this.initialized)
-			LilyUtils.displayMessageDialog(content,"<img src='chrome://lily/content/images/ajax-loader-black.gif'/>",200);	
+			LilyUtils.displayMessageDialog(content,"<img src='chrome://lily/content/images/activity-medium.png'/>",200);	
 	},
 				
 	/*
@@ -872,16 +872,23 @@ var Lily =
 			save a patch as an XPI.								
 	*/
 	savePatchAsAddOn: function(pID) {
-		
+
 		var patchID=pID||this.currPatch;
-		
 		var exportParams = {id:patchID,type:"addon",platform:LilyUtils.navigatorPlatform()};	
-		
+
 		//show a dialog to get the export details
     	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);		
-		
+
+		Lily.getCurrentPatch().patchView.showWindowStatusActivity(true);
+		Lily.getCurrentPatch().patchView.setWindowStatusText("Saving as addon...")
+
 		if(exportParams.saved) {
-			LilyPatchExporter.savePatchAsAddOn(exportParams);	
+			LilyUtils.runInBackGround(function(){
+				LilyPatchExporter.savePatchAsAddOn(exportParams);	
+			},function(){
+				Lily.getCurrentPatch().patchView.showWindowStatusActivity(false);
+				Lily.getCurrentPatch().patchView.clearWindowStatusText();				
+			})
 		}
 		
 	},
@@ -899,9 +906,18 @@ var Lily =
 		//show a dialog to get the export details
     	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);			
 		
+		Lily.getCurrentPatch().patchView.showWindowStatusActivity(true);
+		Lily.getCurrentPatch().patchView.setWindowStatusText("Saving as app...")
+
 		if(exportParams.saved) {
-			LilyPatchExporter.savePatchAsApp(exportParams);
+			LilyUtils.runInBackGround(function(){
+				LilyPatchExporter.savePatchAsApp(exportParams);	
+			},function(){
+				Lily.getCurrentPatch().patchView.showWindowStatusActivity(false);
+				Lily.getCurrentPatch().patchView.clearWindowStatusText();				
+			})
 		}		
+		
 	},	
 
 	/*
