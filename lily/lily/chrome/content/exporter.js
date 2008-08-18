@@ -315,7 +315,20 @@ var LilyPatchExporter = {
 	
 		if( !xulOut.exists() || !xulOut.isDirectory() ) {   // if it doesn't exist, create
 			xulOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
-		}				
+		}
+		
+		var configIn = contentIn.clone();
+		configIn.append("config");
+				
+		//create the config directory
+		var configOut = rootDir.clone();
+		configOut.append("chrome");		
+		configOut.append("content");
+		configOut.append("config");
+		
+		if(!configOut.exists()) {   // if it doesn't exist, create
+			configOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+		}					
 
 		//apikey
 		var tmp = xulIn.clone();		
@@ -331,8 +344,7 @@ var LilyPatchExporter = {
 		var config = {};
 		config["extID"] = (projectName+".id@"+projectName+".com");
 		config["openDebugWin"] = (!obj.hideDebugCbx);
-		var tmpOut = contentOut.clone();
-		tmpOut.append("config");		
+		var tmpOut = configOut.clone();		
 		tmpOut.append("config.txt");				
 		LilyUtils.writeFile(tmpOut,config.toSource());	
 
@@ -391,10 +403,9 @@ var LilyPatchExporter = {
 		LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
 
 		//keys.txt
-		var tmp = contentIn.clone();
-		tmp.append("config");
+		var tmp = configIn.clone();
 		tmp.append("keys.txt");
-		tmp.copyTo(contentOut,null);
+		tmp.copyTo(configOut,null);
 		
 		//keys.js
 		var tmp = contentIn.clone();
@@ -402,10 +413,9 @@ var LilyPatchExporter = {
 		tmp.copyTo(contentOut,null);		
 		
 		//font-compat.txt
-		var tmp = contentIn.clone();
-		tmp.append("config");		
+		var tmp = configIn.clone();	
 		tmp.append("font-compat.txt");
-		tmp.copyTo(contentOut,null);		
+		tmp.copyTo(configOut,null);		
 
 		//lib
 		var tmp = contentIn.clone();
@@ -442,29 +452,46 @@ var LilyPatchExporter = {
 		var tmp = contentIn.clone();
 		tmp.append("menus.js");
 		tmp.copyTo(contentOut,null);
-
-		//model.js
-		var tmp = contentIn.clone();
-		tmp.append("model.js");
-		tmp.copyTo(contentOut,null);
-
-		//object.js
-		var tmp = contentIn.clone();
-		tmp.append("object.js");
-		tmp.copyTo(contentOut,null);
 		
 		//external.js
 		var tmp = contentIn.clone();
 		tmp.append("externals.js");
+		tmp.copyTo(contentOut,null);
+		
+		//object
+		var tmp = contentIn.clone();
+		tmp.append("object");
 		tmp.copyTo(contentOut,null);		
+		
+		//patch
+		var patchArr = [
+			"model.js",
+			"base.js",
+			"controller.js",
+			"view.js"
+		];
+		
+		var patchOut = contentOut.clone();
+		patchOut.append("patch");
 
-		//patch.js
-		var tmpIn = contentIn.clone();
-		tmpIn.append("patch.js");
-		var tmpOut = contentOut.clone();
-		tmpOut.append("patch.js");				
-		LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
+		if( !patchOut.exists() || !patchOut.isDirectory() ) {   // if it doesn't exist, create
+		   patchOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+		}
 
+		for(var i=0;i<patchArr.length;i++) {
+			var tmpIn = contentIn.clone();
+			tmpIn.append("patch");
+			tmpIn.append(patchArr[i]);			
+
+			var tmpOut = contentOut.clone();
+			tmpOut.append("patch");
+			tmpOut.append(patchArr[i]);	
+
+			var data = LilyUtils.readFile(tmpIn);
+			data = data.replace(/chrome:\/\/lily/g,("chrome://"+projectName));		
+			LilyUtils.writeFile(tmpOut,data);
+		}		
+		
 		//patch.xhtml
 		var tmp = contentIn.clone();
 		tmp.append("patch.xhtml");
@@ -746,6 +773,19 @@ var LilyPatchExporter = {
 					xulOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
 				}
 				
+				var configIn = contentIn.clone();
+				configIn.append("config");				
+				
+				//create the config directory
+				var configOut = rootDir.clone();
+				configOut.append("chrome");		
+				configOut.append("content");
+				configOut.append("config");
+				
+				if(!configOut.exists()) {   // if it doesn't exist, create
+					configOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+				}				
+				
 				//apikey
 				var tmp = xulIn.clone();
 				tmp.append("apikey.xul");
@@ -763,8 +803,7 @@ var LilyPatchExporter = {
 				var config = {};
 				config["extID"] = emailValue;
 				config["openDebugWin"] = (!obj.hideDebugCbx);				
-				var tmpOut = contentOut.clone();
-				tmpOut.append("config");				
+				var tmpOut = configOut.clone();				
 				tmpOut.append("config.txt");				
 				LilyUtils.writeFile(tmpOut,config.toSource());											
 				
@@ -829,10 +868,9 @@ var LilyPatchExporter = {
 				LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
 				
 				//keys.txt
-				var tmp = contentIn.clone();
-				tmp.append("config");
+				var tmp = configIn.clone();
 				tmp.append("keys.txt");
-				tmp.copyTo(contentOut,null);
+				tmp.copyTo(configOut,null);
 						
 				//keys.js
 				var tmp = contentIn.clone();
@@ -840,9 +878,9 @@ var LilyPatchExporter = {
 				tmp.copyTo(contentOut,null);				
 				
 				//font-compat.txt
-				var tmp = contentIn.clone();
+				var tmp = configIn.clone();				
 				tmp.append("font-compat.txt");
-				tmp.copyTo(contentOut,null);				
+				tmp.copyTo(configOut,null);				
 				
 				//lib
 				var tmp = contentIn.clone();
@@ -880,27 +918,44 @@ var LilyPatchExporter = {
 				tmp.append("menus.js");
 				tmp.copyTo(contentOut,null);
 				
-				//model.js
-				var tmp = contentIn.clone();
-				tmp.append("model.js");
-				tmp.copyTo(contentOut,null);
-
-				//object.js
-				var tmp = contentIn.clone();
-				tmp.append("object.js");
-				tmp.copyTo(contentOut,null);
-				
 				//external.js
 				var tmp = contentIn.clone();
 				tmp.append("externals.js");
 				tmp.copyTo(contentOut,null);				
 				
-				//patch.js
-				var tmpIn = contentIn.clone();
-				tmpIn.append("patch.js");
-				var tmpOut = contentOut.clone();
-				tmpOut.append("patch.js");				
-				LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
+				//object
+				var tmp = contentIn.clone();
+				tmp.append("object");
+				tmp.copyTo(contentOut,null);		
+
+				//patch
+				var patchArr = [
+					"model.js",
+					"base.js",
+					"controller.js",
+					"view.js"
+				];
+
+				var patchOut = contentOut.clone();
+				patchOut.append("patch");
+
+				if( !patchOut.exists() || !patchOut.isDirectory() ) {   // if it doesn't exist, create
+				   patchOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+				}
+
+				for(var i=0;i<patchArr.length;i++) {
+					var tmpIn = contentIn.clone();
+					tmpIn.append("patch");
+					tmpIn.append(patchArr[i]);			
+
+					var tmpOut = contentOut.clone();
+					tmpOut.append("patch");
+					tmpOut.append(patchArr[i]);	
+
+					var data = LilyUtils.readFile(tmpIn);
+					data = data.replace(/chrome:\/\/lily/g,("chrome://"+projectName));		
+					LilyUtils.writeFile(tmpOut,data);
+				}		
 				
 				//patch.xhtml
 				var tmp = contentIn.clone();

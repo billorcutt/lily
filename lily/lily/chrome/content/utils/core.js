@@ -556,8 +556,9 @@ LilyUtils.runInBackGround = function(f,cb) {
 	      // we're finished.
 	      main.dispatch(new mainThread(this.threadID, this.result),
 	        background.DISPATCH_NORMAL);
-	    } catch(err) {
-	      Components.utils.reportError(err);
+	    } catch(e) {
+	      Components.utils.reportError(e);
+		  LilyDebugWindow.error(e.name+": "+e.message+" line: "+e.lineNumber+" in "+e.fileName);
 	    }
 	  },
 
@@ -581,8 +582,9 @@ LilyUtils.runInBackGround = function(f,cb) {
 	    try {
 	      // This is where we react to the completion of the working thread.
 			cb(this.threadID,this.result);
-	    } catch(err) {
-	      Components.utils.reportError(err);
+	    } catch(e) {
+	      Components.utils.reportError(e);
+		  LilyDebugWindow.error(e.name+": "+e.message+" line: "+e.lineNumber+" in "+e.fileName);			
 	    }
 	  },
 
