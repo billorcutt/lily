@@ -21,9 +21,17 @@ if(typeof Lily == "undefined") {
 		"chrome://lily/content/debug.js",
 		"chrome://lily/content/inspector.js",
 		"chrome://lily/content/model.js",
-		"chrome://lily/content/patch.js",
+
+		"chrome://lily/content/patch/core.js",
+		"chrome://lily/content/patch/controller.js",
+		"chrome://lily/content/patch/view.js",
+
 		"chrome://lily/content/connection.js",
-		"chrome://lily/content/object.js",
+		
+		"chrome://lily/content/object/base.js",
+		"chrome://lily/content/object/controller.js",
+		"chrome://lily/content/object/view.js",						
+		
 		"chrome://lily/content/services.js",
 		"chrome://lily/content/lily.js",
 		"chrome://lily/content/menus.js",
