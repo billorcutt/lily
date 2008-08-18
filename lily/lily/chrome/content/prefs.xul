@@ -50,7 +50,9 @@
 		<preference id="searchPath" name="extensions.lily.searchPath" type="string"/>
 	</preferences>	
 	
-	<script type="application/x-javascript" src="chrome://lily/content/utils.js"/>
+	<script type="application/x-javascript" src="chrome://lily/content/utils/core.js"/>
+	<script type="application/x-javascript" src="chrome://lily/content/utils/prefs.js"/>	
+	<script type="application/x-javascript" src="chrome://lily/content/utils/font.js"/>
 	<script type="application/x-javascript" src="chrome://lily/content/prefs.js"/>
 
 </prefwindow>

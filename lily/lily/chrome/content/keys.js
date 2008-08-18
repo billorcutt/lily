@@ -41,6 +41,7 @@ var LilyAPIKeyManager= {
 		var pathToKeys = Lily.installDir.clone();
 		pathToKeys.append("chrome");		
 		pathToKeys.append("content");
+		pathToKeys.append("config");		
 		pathToKeys.append("keys.txt");
 		this.keyPath=pathToKeys.path;
 		this.keys=LilyUtils.readFileFromPath(pathToKeys.path);

@@ -19,9 +19,9 @@ if(typeof Lily == "undefined") {
 		"chrome://lily/content/components/xhr.js",								
 		"chrome://lily/content/externals.js",
 		"chrome://lily/content/debug.js",
-		"chrome://lily/content/inspector.js",
-		"chrome://lily/content/model.js",
-
+		"chrome://lily/content/inspector.js",	
+		
+		"chrome://lily/content/patch/model.js",
 		"chrome://lily/content/patch/core.js",
 		"chrome://lily/content/patch/controller.js",
 		"chrome://lily/content/patch/view.js",

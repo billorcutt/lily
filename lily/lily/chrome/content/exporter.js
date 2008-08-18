@@ -332,6 +332,7 @@ var LilyPatchExporter = {
 		config["extID"] = (projectName+".id@"+projectName+".com");
 		config["openDebugWin"] = (!obj.hideDebugCbx);
 		var tmpOut = contentOut.clone();
+		tmpOut.append("config");		
 		tmpOut.append("config.txt");				
 		LilyUtils.writeFile(tmpOut,config.toSource());	
 
@@ -391,6 +392,7 @@ var LilyPatchExporter = {
 
 		//keys.txt
 		var tmp = contentIn.clone();
+		tmp.append("config");
 		tmp.append("keys.txt");
 		tmp.copyTo(contentOut,null);
 		
@@ -401,6 +403,7 @@ var LilyPatchExporter = {
 		
 		//font-compat.txt
 		var tmp = contentIn.clone();
+		tmp.append("config");		
 		tmp.append("font-compat.txt");
 		tmp.copyTo(contentOut,null);		
 
@@ -761,6 +764,7 @@ var LilyPatchExporter = {
 				config["extID"] = emailValue;
 				config["openDebugWin"] = (!obj.hideDebugCbx);				
 				var tmpOut = contentOut.clone();
+				tmpOut.append("config");				
 				tmpOut.append("config.txt");				
 				LilyUtils.writeFile(tmpOut,config.toSource());											
 				
@@ -826,6 +830,7 @@ var LilyPatchExporter = {
 				
 				//keys.txt
 				var tmp = contentIn.clone();
+				tmp.append("config");
 				tmp.append("keys.txt");
 				tmp.copyTo(contentOut,null);
 						

@@ -325,7 +325,6 @@ LilyUtils.getConfigProperty = function(prop,url) {
 	});
 	var config = eval("("+tmp+")");	
 	return config[prop];
-	
 }
 
 /*

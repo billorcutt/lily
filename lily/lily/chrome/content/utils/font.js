@@ -86,7 +86,7 @@ LilyUtils.sizeFontForPlatform = function(font_size) {
 LilyUtils.getCompatibleFont = function(font) {
 	
 	if(!Lily["font-compat-table"]) {	
-		LilyUtils.readSyncFromURL("chrome://lily/content/font-compat.txt",function(txt){
+		LilyUtils.readSyncFromURL("chrome://lily/content/config/font-compat.txt",function(txt){
 			Lily["font-compat-table"]=eval("("+txt+")");
 		});
 	}
