@@ -22,7 +22,7 @@ if(typeof Lily == "undefined") {
 		"chrome://lily/content/inspector.js",	
 		
 		"chrome://lily/content/patch/model.js",
-		"chrome://lily/content/patch/core.js",
+		"chrome://lily/content/patch/base.js",
 		"chrome://lily/content/patch/controller.js",
 		"chrome://lily/content/patch/view.js",
 
