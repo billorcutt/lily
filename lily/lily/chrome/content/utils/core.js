@@ -318,7 +318,7 @@ LilyUtils.getObjectPos = function(obj)	{
 		returns the property if it exists otherwise undefined.
 */
 LilyUtils.getConfigProperty = function(prop,url) {
-	var config_url = url||"chrome://lily/content/config.txt";
+	var config_url = url||"chrome://lily/content/config/config.txt";
 	var tmp = null;		
 	LilyUtils.readSyncFromURL(config_url,function(txt){
 		tmp=txt;
