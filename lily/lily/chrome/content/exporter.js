@@ -302,12 +302,25 @@ var LilyPatchExporter = {
 
 		if( !contentOut.exists() || !contentOut.isDirectory() ) {   // if it doesn't exist, create
 			contentOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+		}
+		
+		var xulIn = contentIn.clone();
+		xulIn.append("xul");
+		
+		//create the xul directory
+		var xulOut = rootDir.clone();
+		xulOut.append("chrome");		
+		xulOut.append("content");
+		xulOut.append("xul");
+	
+		if( !xulOut.exists() || !xulOut.isDirectory() ) {   // if it doesn't exist, create
+			xulOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
 		}				
 
 		//apikey
-		var tmp = contentIn.clone();
+		var tmp = xulIn.clone();		
 		tmp.append("apikey.xul");
-		tmp.copyTo(contentOut,null);
+		tmp.copyTo(xulOut,null);
 
 		//blank.html
 		var tmp = contentIn.clone();
@@ -340,9 +353,9 @@ var LilyPatchExporter = {
 		tmp.copyTo(contentOut,null);
 
 		//debug.xul
-		var tmpIn = contentIn.clone();
+		var tmpIn = xulIn.clone();
 		tmpIn.append("debug.xul");
-		var tmpOut = contentOut.clone();
+		var tmpOut = xulOut.clone();
 		tmpOut.append("debug.xul");			
 		LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
 
@@ -358,13 +371,10 @@ var LilyPatchExporter = {
 
 		//iterate and copy...
 		for(var i=0;i<objArr.length;i++) {
-
 			var data = objArr[i].source.replace(/chrome:\/\/lily/g,("chrome://"+projectName));
-
 			var tmpOut = externalOut.clone();
 			tmpOut.append(objArr[i].name+".js");
 			LilyUtils.writeFile(tmpOut,data);
-
 		}
 
 		//images
@@ -383,6 +393,11 @@ var LilyPatchExporter = {
 		var tmp = contentIn.clone();
 		tmp.append("keys.txt");
 		tmp.copyTo(contentOut,null);
+		
+		//keys.js
+		var tmp = contentIn.clone();
+		tmp.append("keys.js");
+		tmp.copyTo(contentOut,null);		
 		
 		//font-compat.txt
 		var tmp = contentIn.clone();
@@ -409,7 +424,7 @@ var LilyPatchExporter = {
 		LilyUtils.writeFile(tmpOut,data);				
 
 		//<projectname>.xul
-		var tmpIn = contentIn.clone();
+		var tmpIn = xulIn.clone();
 		tmpIn.append("export-window.xul");
 		var tmpOut = contentOut.clone();
 		tmpOut.append(projectName+".xul");		
@@ -468,15 +483,15 @@ var LilyPatchExporter = {
 		
 		//readonlypatch.xul
 		if(!obj.hideMainCbx) {
-			var tmpIn = contentIn.clone();
+			var tmpIn = xulIn.clone();
 			tmpIn.append("applicationpatch.xul");
-			var tmpOut = contentOut.clone();
+			var tmpOut = xulOut.clone();
 			tmpOut.append("readonlypatch.xul");				
 			LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
 		} else {
-			var tmpIn = contentIn.clone();
+			var tmpIn = xulIn.clone();
 			tmpIn.append("hiddenpatch.xul");
-			var tmpOut = contentOut.clone();
+			var tmpOut = xulOut.clone();
 			tmpOut.append("hiddenpatch.xul");				
 			LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));					
 		}		
@@ -706,18 +721,32 @@ var LilyPatchExporter = {
 				var contentIn = Lily.installDir.clone();
 				contentIn.append("chrome");				
 				contentIn.append("content");
+				
 				var contentOut = rootDir.clone();
 				contentOut.append("chrome");				
 				contentOut.append("content");
 				
 				if( !contentOut.exists() || !contentOut.isDirectory() ) {   // if it doesn't exist, create
 					contentOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
-				}				
+				}
+				
+				var xulIn = contentIn.clone();
+				xulIn.append("xul");
+		
+				//create the xul directory
+				var xulOut = rootDir.clone();
+				xulOut.append("chrome");		
+				xulOut.append("content");
+				xulOut.append("xul");
+				
+				if(!xulOut.exists()) {   // if it doesn't exist, create
+					xulOut.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+				}
 				
 				//apikey
-				var tmp = contentIn.clone();
+				var tmp = xulIn.clone();
 				tmp.append("apikey.xul");
-				tmp.copyTo(contentOut,null);
+				tmp.copyTo(xulOut,null);
 				
 				//blank.html
 				var tmp = contentIn.clone();
@@ -753,10 +782,11 @@ var LilyPatchExporter = {
 				tmp.copyTo(contentOut,null);
 				
 				//debug.xul
-				var tmpIn = contentIn.clone();
+				var tmpIn = xulIn.clone();
 				tmpIn.append("debug.xul");
-				var tmpOut = contentOut.clone();
-				tmpOut.append("debug.xul");			
+				var tmpOut = xulOut.clone();
+				tmpOut.append("debug.xul");	
+						
 				LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
 				
 				//externals
@@ -798,6 +828,11 @@ var LilyPatchExporter = {
 				var tmp = contentIn.clone();
 				tmp.append("keys.txt");
 				tmp.copyTo(contentOut,null);
+						
+				//keys.js
+				var tmp = contentIn.clone();
+				tmp.append("keys.js");
+				tmp.copyTo(contentOut,null);				
 				
 				//font-compat.txt
 				var tmp = contentIn.clone();
@@ -824,7 +859,7 @@ var LilyPatchExporter = {
 				LilyUtils.writeFile(tmpOut,data);								
 				
 				//<projectname>.xul
-				var tmpIn = contentIn.clone();
+				var tmpIn = xulIn.clone();
 				tmpIn.append("export.xul");
 				var tmpOut = contentOut.clone();
 				tmpOut.append(projectName+".xul");		
@@ -883,15 +918,15 @@ var LilyPatchExporter = {
 				
 				//readonlypatch.xul
 				if(!obj.hideMainCbx) {
-					var tmpIn = contentIn.clone();
+					var tmpIn = xulIn.clone();
 					tmpIn.append("readonlypatch.xul");
-					var tmpOut = contentOut.clone();
+					var tmpOut = xulOut.clone();
 					tmpOut.append("readonlypatch.xul");				
 					LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
 				} else {
-					var tmpIn = contentIn.clone();
+					var tmpIn = xulIn.clone();
 					tmpIn.append("hiddenpatch.xul");
-					var tmpOut = contentOut.clone();
+					var tmpOut = xulOut.clone();
 					tmpOut.append("hiddenpatch.xul");				
 					LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));					
 				}
