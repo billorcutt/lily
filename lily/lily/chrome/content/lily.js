@@ -880,14 +880,14 @@ var Lily =
     	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/xul/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);		
 
 		if(exportParams.saved) {
-			Lily.getCurrentPatch().patchView.showWindowStatusActivity(true);
+			//Lily.getCurrentPatch().patchView.showWindowStatusActivity(true);
 			Lily.getCurrentPatch().patchView.setWindowStatusText("Saving as addon...")			
-			LilyUtils.runInBackGround(function(){
+			//LilyUtils.runInBackGround(function(){
 				LilyPatchExporter.savePatchAsAddOn(exportParams);	
-			},function(){
-				Lily.getCurrentPatch().patchView.showWindowStatusActivity(false);
+			//},function(){
+			//	Lily.getCurrentPatch().patchView.showWindowStatusActivity(false);
 				Lily.getCurrentPatch().patchView.clearWindowStatusText();				
-			})
+			//})
 		}
 		
 	},
@@ -906,14 +906,14 @@ var Lily =
     	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/xul/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);			
 		
 		if(exportParams.saved) {
-			Lily.getCurrentPatch().patchView.showWindowStatusActivity(true);
+			//Lily.getCurrentPatch().patchView.showWindowStatusActivity(true);
 			Lily.getCurrentPatch().patchView.setWindowStatusText("Saving as app...")			
-			LilyUtils.runInBackGround(function(){
+			//LilyUtils.runInBackGround(function(){
 				LilyPatchExporter.savePatchAsApp(exportParams);	
-			},function(){
-				Lily.getCurrentPatch().patchView.showWindowStatusActivity(false);
+			//},function(){
+			//	Lily.getCurrentPatch().patchView.showWindowStatusActivity(false);
 				Lily.getCurrentPatch().patchView.clearWindowStatusText();				
-			})
+			//})
 		}		
 		
 	},	
