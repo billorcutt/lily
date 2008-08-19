@@ -4,7 +4,7 @@ if(typeof Lily == "undefined") {
 	var url_array = [
 		"chrome://global/content/nsDragAndDrop.js",
 		"chrome://global/content/nsTransferable.js",
-		"chrome://lily/content/lib.js",
+		"chrome://lily/content/lib/animator.js",
 		"chrome://lily/content/utils/core.js",
 		"chrome://lily/content/utils/file.js",
 		"chrome://lily/content/utils/font.js",
