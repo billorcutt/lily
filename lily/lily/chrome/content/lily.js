@@ -964,8 +964,11 @@ var Lily =
 			var file = fp.file;
 
 			//update the patch name before we serialize
-			//yes, this is a mess
-			if(this.patchObj[pID].obj.title == "Untitled") {
+			//if the patch is unsaved or the title has not been set with patch properties			
+			if(
+				this.patchObj[pID].obj.title == "Untitled" || 
+				(this.patchObj[pID].obj.title == LilyUtils.stripExtension(this.patchObj[pID].file.leafName))
+			) {
 				this.patchObj[pID].obj.title=LilyUtils.stripExtension(file.leafName);
 				this.patchObj[pID].obj.patchView.setPatchTitle(LilyUtils.stripExtension(file.leafName));				
 			}
