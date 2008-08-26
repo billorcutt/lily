@@ -335,9 +335,10 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	
 		Arguments: 
 			objID - object id.
+			replaceWithSame - true if we're deleting as part of a replace operation
 	*/		
 	//delete object
-	this.deleteObject=function(objID) { 
+	this.deleteObject=function(objID,replaceWithSame) { 
 		
 		var obj=this.getObj(objID); //get the object
 		if(obj)	{
@@ -358,7 +359,13 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 				obj.destroy();	//remove ui & cleanup
 			
 			obj=null;	//remove this ref
-			this.patchModel.removeNode(objID);  //remove ref to node from model
+			
+			/*
+				FIXME: because i'm doing a string compare on the json to see if a patch has changed (because i _think_ its 
+				faster), i want to reuse the reference in the model if i'm just replacing an object so it won't affect the way 
+				the patch serializes...
+			*/
+			if(!replaceWithSame) this.patchModel.removeNode(objID);  //remove ref to node from model
 			
 			LilyInspectorWindow.clear(); //clear the inspector window
 			
@@ -374,20 +381,22 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			create an instance of an external with a given classname.
 	
 		Arguments: 
-			name	- external name. (required)
-			pID 	- subpatch ID.  (optional) //FIXME this should go away.
-			t 		- top in pixels. (optional)
-			l 		- left in pixels (optional)
-			id		- object id (optional)
-			args	- object args as a string (optional)
+			name			- external name. (required)
+			pID 			- subpatch ID.  (optional) //FIXME this should go away.
+			t 				- top in pixels. (optional)
+			l 				- left in pixels (optional)
+			id				- object id (optional)
+			args			- object args as a string (optional)
+			resizeFlag		- true if the object has been resized
+			replaceWithSame	- true if we're replacing with the same extern.
 		
 		Returns: 
 			returns the created object instance.
 	*/			
 	//create object- args: className, top, left, objID, variable_length_arguments_to_obj //only the first arg is required.
-	this.createObject=function(name,pID,t,l,id,args,resizeFlag) {
+	this.createObject=function(name,pID,t,l,id,args,resizeFlag,replaceWithSame) {
 				
-		if(this.getObj(id))
+		if(this.getObj(id) && !replaceWithSame)
 			return null;
 		
 		//so messy...
@@ -473,20 +482,21 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		var args=newArgs;
 						
 		var saveConnections=(oldObj.controller.objView.display==newObjName)?true:false;
-		var newID=(oldObj.controller.objView.display==newObjName)?id:null;
+		var replaceWithSame=(oldObj.controller.objView.display==newObjName);		
+		var newID=replaceWithSame?id:null;
 		
 		//if we're just modifying the args, grab the old connections
 		if(saveConnections)
 			var savedConnections=this.saveConnections(id);
 		
 		//delete object we're replacing
-		this.deleteObject(id);
+		this.deleteObject(id,replaceWithSame);
 		
 		//create new object
-		var o=this.createObject(newObjName,null,y,x,newID,args);
+		var o=this.createObject(newObjName,null,y,x,newID,args,null,replaceWithSame);
 				
 		//if we're recreating the same extern
-		if(newID) {
+		if(replaceWithSame) {
 			//set some object properties
 			if(typeof oldObj.fontSize!="undefined")
 				o.setFontSize(oldObj.fontSize);
