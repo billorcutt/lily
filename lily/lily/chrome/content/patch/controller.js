@@ -773,32 +773,25 @@ function LilyPatchController(pID,parent)
 	}(this);
 
 ///////////////////////////////////////////////////////////////////
-	
-	//this handlers work only for the patch windows- need some keypress handlers for the main window- for new & open commands
-/*
-	this.patchKeypress=function(e)	{			
-		switch(e.which)	{							
-			case 101:
-				if(LilyUtils.controlOrCommand(e)) {	//if the right modifiers are down...
-					e.preventDefault(); //on windows prevent web search window from popping up.					
-					thisPtr.toggleEditable(); //toggle the edit state
-				}
-				break;
-		}
-	}
-*/
 
 	//use the patch id since these are a permanent part of the patch.
 	this.addDefaultPatchListeners=function() {			
-//		this.attachPatchObserver(this.pID,"keypress",this.patchKeypress,"all");
-		//this.attachPatchObserver(this.pID,"mousedown",function(event){event.preventDefault();},"all");
-		this.attachPatchObserver(this.pID,"editabilityChange",this.toggleEditState,"all");
+		this.attachPatchObserver(this.pID,"editabilityChange",this.toggleEditState,"all");				
 		this.attachPatchObserver(this.pID,"mousedown",this.updateMousePosition,"edit");
 		this.attachPatchObserver(this.pID,"mouseup",this.updateMouseAction,"edit");		
 		this.attachPatchObserver(this.pID,"mousedown",this.marqueeSelection.mousedown,"edit");
 		this.attachPatchObserver(this.pID,"mouseup",this.marqueeSelection.mouseup,"edit");		
 		this.attachPatchObserver(this.pID,"dblclick",createObjectOnDblClick,"edit");
 		this.attachPatchObserver(this.pID,"click",toggleEditStateOnClick,"all");
+		
+		if(thisPtr.patch.usesTmpFile) {
+			this.attachPatchObserver(this.pID,"mouseup",function(){
+				thisPtr.patch.savePatch(); //if we're in an edit patch for patcher, then save when a change is made
+			},"edit");
+			this.attachPatchObserver(this.pID,"editabilityChange",function(){
+				thisPtr.patch.savePatch(); //if we're in an edit patch for patcher, then save when a change is made
+			},"all");	
+		}
 	}
 				
 }

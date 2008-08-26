@@ -187,11 +187,17 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			patch string
 	*/
 	//returns the last saved patch string
-	this.getPatchData=function() {
-		if(Lily.patchObj[this.patchID]&&Lily.patchObj[this.patchID].json)
+	this.getPatchData=function() {		
+		if(Lily.patchObj[this.patchID]&&Lily.patchObj[this.patchID].json) {
 			return Lily.patchObj[this.patchID].json;
-		else
-			return null;
+		} else if(Lily.patchObj[this.patchID]&&Lily.patchObj[this.patchID].file){
+			//FIXME – this is hugely slow but seems the only way around the bug with patcher right now. will revisit...
+			var data = LilyUtils.readFile(Lily.patchObj[this.patchID].file);
+			Lily.patchObj[this.patchID].json=data;
+			return data;
+		} else {
+			return "";
+		}	
 	}	
 	
 	/*
