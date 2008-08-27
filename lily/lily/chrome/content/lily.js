@@ -838,7 +838,7 @@ var Lily =
 	*/	
 	savePatch: function(pID) {
 		var id=pID||this.currPatch;		
-		//LilyDebugWindow.print(this.patchObj[id].obj.patchModel.serializeDom()); //debug
+		LilyDebugWindow.print(this.patchObj[id].obj.patchModel.serializeDom()); //debug
 		if(!this.patchObj[id].file) {//if we dont have a file yet 
 			this.writeNewPatch(id);
 		} else {
