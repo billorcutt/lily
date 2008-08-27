@@ -1034,9 +1034,14 @@ var Lily =
 
 			var flags = prompts.BUTTON_POS_0 * prompts.BUTTON_TITLE_SAVE +
 			            prompts.BUTTON_POS_1 * prompts.BUTTON_TITLE_CANCEL  + 
-			            prompts.BUTTON_POS_2 * prompts.BUTTON_TITLE_DONT_SAVE;	
-
-			if(this.patchObj[id].obj.getPatchData()!=this.patchObj[id].obj.patchModel.serializeDom() && !this.patchObj[id].obj.readonly) {
+			            prompts.BUTTON_POS_2 * prompts.BUTTON_TITLE_DONT_SAVE;
+			
+			//auto save patch edit window
+			if(this.patchObj[id].obj.usesTmpFile) {
+				this.savePatch(id);
+				this.patchObj[id].obj.close(); //clean up the patch & close the window.
+				this.closePatch(id); //cleanup at the app level.
+			} else if(this.patchObj[id].obj.getPatchData()!=this.patchObj[id].obj.patchModel.serializeDom() && !this.patchObj[id].obj.readonly) {
 
 				var button=prompts.confirmEx(this.patchObj[id].obj.patchView.xulWin, "", "Save changes to patch?", flags, "", "", "", null, {value: false});
 

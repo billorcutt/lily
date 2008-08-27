@@ -174,7 +174,11 @@ function LilyPatchView(pID,parent,extWin)
 	
 	this.setTempWindowStatus=function(txt,time) {
 		this.setWindowStatusText(txt);
-		setTimeout(function(){thisPtr.clearWindowStatusText();},time);
+		setTimeout(function(){
+			if(typeof thisPtr.clearWindowStatusText == "function") {
+				thisPtr.clearWindowStatusText();	
+			}
+		},time);
 	}	
 		
 	this.setWindowStatusText=function(txt) {

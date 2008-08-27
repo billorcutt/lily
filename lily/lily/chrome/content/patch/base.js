@@ -188,10 +188,15 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	*/
 	//returns the last saved patch string
 	this.getPatchData=function() {
-		if(Lily.patchObj[this.patchID]&&Lily.patchObj[this.patchID].json)
+		if(Lily.patchObj[this.patchID] && Lily.patchObj[this.patchID].json) {
 			return Lily.patchObj[this.patchID].json;
-		else
-			return null;
+		} else if(Lily.patchObj[this.patchID] && Lily.patchObj[this.patchID].file){
+			var data = LilyUtils.readFile(Lily.patchObj[this.patchID].file);
+			Lily.patchObj[this.patchID].json = data;
+			return data;
+		} else {
+			return "";
+		}	
 	}	
 	
 	/*
