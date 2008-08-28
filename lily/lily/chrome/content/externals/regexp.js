@@ -35,8 +35,8 @@ function $regexp(args)
 		
 //	LilyDebugWindow.print(">>> "+args.match(/\w\/[gim]*\s(\S+.*$)/))	
 		
-	var regxp=(args.match(/(^\/\S+.+\/[gim]*)/))?(args.match(/(^\/\S+.+\/[gim]*)/)[1]):"";
-	var sub=(args.match(/\w\/[gim]*\s(\S+.*$)/))?(args.match(/\w\/[gim]*\s(\S+.*$)/)[1]):"";
+	var regxp=(args.match(/(^\/\S?.+\/[gim]*)/))?(args.match(/(^\/\S?.+\/[gim]*)/)[1]):"";
+	var sub=(args.match(/\w\/[gim]*\s(\S?.*$)/))?(args.match(/\w\/[gim]*\s(\S?.*$)/)[1]):"";
 		
 	if(!args.length) {
 		LilyDebugWindow.error("the regexp object needs arguments to be useful.");
