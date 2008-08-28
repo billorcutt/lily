@@ -221,9 +221,34 @@ function LilyObjectController (obj) {
 		//this.editing=false;
 	}
 	
+	this.overResizeHandle=function(e) {
+		//get the handle dimensions
+		var bottom_left = thisPtr.objView.parent.left+thisPtr.objView.parent.width;
+		var bottom_top = thisPtr.objView.parent.top+thisPtr.objView.parent.height+5;
+		var top_left = bottom_left-3;
+		var top_top = bottom_top-3;		
+		
+		//get mouse coords
+		var x = parseInt(e.clientX);
+		var y = parseInt(e.clientY);
+		
+		log(bottom_left+" "+bottom_top+" "+top_left+" "+top_top+" "+x+" "+y);
+		
+		if(
+			(x>=top_left && x<=bottom_left) &&
+			(y>=top_top && y<=bottom_top)
+		) {
+			log("returning true");
+			return true;
+		}
+		
+		log("returning false");
+		return false;
+	}
+	
 	//funnel events to drag & resize
 	this.selectDelegate=function(e) {
-		if(e.shiftKey && LilyUtils.controlOrCommand(e)) {
+		if((e.shiftKey && LilyUtils.controlOrCommand(e))/* || thisPtr.overResizeHandle(e)*/) {
 			
 			if(e.type=="mousedown") {
 				thisPtr.objResizeControl.mousedown(e);
@@ -242,14 +267,6 @@ function LilyObjectController (obj) {
 	}
 	
 	this.deselect=function(e) {
-	
-		//this.objectSelected=null;
-		//this.editing=false;
-		
-		//if(e)
-		//	log("deselect "+e+" "+e.detail+" "+e["dispatched"]+" "+thisPtr.id)
-		//else
-		//	log("deselect- no e "+thisPtr.id)
 				
 		if(!thisPtr.isSelected || thisPtr.objDrag.dragging || (e && e.type=="paste"))
 			return;	
@@ -600,12 +617,13 @@ function LilyObjectController (obj) {
 			
 //			LilyDebugWindow.print(e.clientX+" "+window.innerWidth+" "+e.clientY+" "+window.innerHeight)
 						
-			//kill the resize if we're too close to the edgedr
+			//kill the resize if we're too close to the edge or not in resize mode
 			if(
 					e.clientX <= 10||
 					e.clientY <= 10||
 					e.clientX >= (thisPtr.patch.patchView.xulWin.innerWidth-10)||
-					e.clientY >= (thisPtr.patch.patchView.xulWin.innerHeight-40)
+					e.clientY >= (thisPtr.patch.patchView.xulWin.innerHeight-40)||
+					!(e.shiftKey&&LilyUtils.controlOrCommand(e))
 			) {
 				//log("exit resize")
 				thisPtr.mouseup();				
