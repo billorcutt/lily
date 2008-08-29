@@ -222,38 +222,44 @@ function LilyObjectController (obj) {
 	}
 	
 	this.overResizeHandle=function(e) {
+		
+		var bwidth = (thisPtr.objView.parent.borderWidth||0)*2;
+		var offset = 5;
+		var padding = 10;
+		
 		//get the handle dimensions
-		var bottom_left = thisPtr.objView.parent.left+thisPtr.objView.parent.width;
-		var bottom_top = thisPtr.objView.parent.top+thisPtr.objView.parent.height+5;
-		var top_left = bottom_left-3;
-		var top_top = bottom_top-3;		
+		var bottom_left = thisPtr.objView.parent.left+thisPtr.objView.parent.width+bwidth+offset+padding;
+		var bottom_top 	= thisPtr.objView.parent.top+thisPtr.objView.parent.height+bwidth+offset+padding;
+		var top_left 	= thisPtr.objView.parent.left+thisPtr.objView.parent.width+bwidth-padding;
+		var top_top 	= thisPtr.objView.parent.top+thisPtr.objView.parent.height+bwidth-padding;
 		
 		//get mouse coords
 		var x = parseInt(e.clientX);
 		var y = parseInt(e.clientY);
 		
-		log(bottom_left+" "+bottom_top+" "+top_left+" "+top_top+" "+x+" "+y);
+		//log(bottom_left+" "+bottom_top+" "+top_left+" "+top_top+" "+x+" "+y);
 		
 		if(
 			(x>=top_left && x<=bottom_left) &&
 			(y>=top_top && y<=bottom_top)
 		) {
-			log("returning true");
+			//log("returning true");
 			return true;
 		}
 		
-		log("returning false");
+		//log("returning false");
 		return false;
 	}
 	
 	//funnel events to drag & resize
 	this.selectDelegate=function(e) {
-		if((e.shiftKey && LilyUtils.controlOrCommand(e))/* || thisPtr.overResizeHandle(e)*/) {
+		if((e.shiftKey && LilyUtils.controlOrCommand(e)) || thisPtr.overResizeHandle(e)) {
 			
 			if(e.type=="mousedown") {
 				thisPtr.objResizeControl.mousedown(e);
 			} else if(e.type=="mouseup") {
-				thisPtr.objResizeControl.mouseup(e);	
+				thisPtr.objResizeControl.mouseup(e);
+				thisPtr.objDrag.mouseup(e);					
 			}			
 				
 		} else {
@@ -261,7 +267,8 @@ function LilyObjectController (obj) {
 			if(e.type=="mousedown") {
 				thisPtr.objDrag.mousedown(e);
 			} else if(e.type=="mouseup") {
-				thisPtr.objDrag.mouseup(e);	
+				thisPtr.objDrag.mouseup(e);
+				thisPtr.objResizeControl.mouseup(e);
 			}
 		}		
 	}
@@ -556,7 +563,8 @@ function LilyObjectController (obj) {
 		this.height=0;
 		this.width=0;
 		this.cb=null;
-		this.resizeFlag=false;		
+		this.resizeFlag=false;
+		this.resizeType="handle";	
 		var thisPtr=this;
 
 		//reset the size
@@ -595,6 +603,7 @@ function LilyObjectController (obj) {
 			thisPtr.patchController.attachPatchObserver(thisPtr.patchController.pID,"mousemove",resize,"select");
 			thisPtr.objController.patchView.setWindowStatusText("width:"+(thisPtr.width)+"px height:"+(thisPtr.height)+"px");
 			thisPtr.resizeFlag=true;
+			thisPtr.resizeType=((e.shiftKey&&LilyUtils.controlOrCommand(e)))?"modifier":"handle";
 			parent.obj.hasBeenResized=true;			
 		}
 		
@@ -623,7 +632,7 @@ function LilyObjectController (obj) {
 					e.clientY <= 10||
 					e.clientX >= (thisPtr.patch.patchView.xulWin.innerWidth-10)||
 					e.clientY >= (thisPtr.patch.patchView.xulWin.innerHeight-40)||
-					!(e.shiftKey&&LilyUtils.controlOrCommand(e))
+					(!(e.shiftKey&&LilyUtils.controlOrCommand(e)) && thisPtr.resizeType=="modifier")
 			) {
 				//log("exit resize")
 				thisPtr.mouseup();				

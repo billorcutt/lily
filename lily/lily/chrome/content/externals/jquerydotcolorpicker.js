@@ -33,7 +33,8 @@ function $jquerydotcolorpicker()
 {
 	var thisPtr=this;
 	this.ui={};	
-	this.outlet1 = new this.outletClass("outlet1",this,"color hex string");		
+	this.outlet1 = new this.outletClass("outlet1",this,"color hex string");
+	this.resize=false;		
 	
 	function initColorPicker() {			
 		iframe.objFrame.contentWindow.$('#picker').farbtastic(change);		
