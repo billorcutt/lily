@@ -227,11 +227,15 @@ function LilyObjectController (obj) {
 		var offset = 5;
 		var padding = 10;
 		
+		var ui = thisPtr.objView.getObjView();			
+		var computed_width = ui.offsetWidth;
+		var computed_height = ui.offsetHeight;
+		
 		//get the handle dimensions
-		var bottom_left = thisPtr.objView.parent.left+thisPtr.objView.parent.width+bwidth+offset+padding;
-		var bottom_top 	= thisPtr.objView.parent.top+thisPtr.objView.parent.height+bwidth+offset+padding;
-		var top_left 	= thisPtr.objView.parent.left+thisPtr.objView.parent.width+bwidth-padding;
-		var top_top 	= thisPtr.objView.parent.top+thisPtr.objView.parent.height+bwidth-padding;
+		var bottom_left = thisPtr.objView.parent.left+computed_width+bwidth+offset+padding;
+		var bottom_top 	= thisPtr.objView.parent.top+computed_height+bwidth+offset+padding;
+		var top_left 	= thisPtr.objView.parent.left+computed_width+bwidth-padding;
+		var top_top 	= thisPtr.objView.parent.top+computed_height+bwidth-padding;
 		
 		//get mouse coords
 		var x = parseInt(e.clientX);
