@@ -1345,14 +1345,19 @@ var LilyPatchExporter = {
 
 						//recursively add files to the zip							
 						LilyUtils.directorySearch(buildDir,function(entry){
-							zipper.addEntryFile(entry.path.substring((buildDir.path.length+1),entry.path.length),9,entry,false);
+							zipper.addEntryFile(entry.path.substring((buildDir.path.length+1),entry.path.length).replace(/\\/g,"/"),9,entry,false);
 						})
 
 						zipper.close();							
 
 						//FIXME **** on windows this fails in dev due to .svn directories ****
 						// now remove build dir
-						rootDir.remove(true);	
+						try {
+							rootDir.remove(true);
+						} catch(e) {
+							LilyDebugWindow.error("Couldn't remove build directory.");
+						}
+							
 					}
 				
 				];
