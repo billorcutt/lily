@@ -61,12 +61,7 @@
 				
 				//init the dialog
 				function init() {
-					
-					setTimeout(function(){
-						window.innerHeight+=(window.scrollMaxY>0)?(window.scrollMaxY+0):0;
-						window.innerWidth+=(window.scrollMaxX>0)?(window.scrollMaxX+0):0;
-					},100);
-				
+									
 					if(returnObject.type=="addon") {
 						  document.getElementById("xulRunnerRow").setAttribute("hidden",true);
 					} else {
@@ -87,7 +82,7 @@
 				
 			]]>
 		</script>
-		<vbox style="overflow: auto; font-size: 12px; font-family:verdana,DejaVu Sans,sans-serif; margin:20px">
+		<vbox style="overflow: visible; font-size: 12px; font-family:verdana,DejaVu Sans,sans-serif; margin:20px">
 			<grid>
 				<columns>
 					<column/>
