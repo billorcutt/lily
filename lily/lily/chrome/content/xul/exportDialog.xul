@@ -61,6 +61,12 @@
 				
 				//init the dialog
 				function init() {
+					
+					setTimeout(function(){
+						window.innerHeight+=(window.scrollMaxY>0)?(window.scrollMaxY+0):0;
+						window.innerWidth+=(window.scrollMaxX>0)?(window.scrollMaxX+0):0;
+					},100);
+				
 					if(returnObject.type=="addon") {
 						  document.getElementById("xulRunnerRow").setAttribute("hidden",true);
 					} else {
