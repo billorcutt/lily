@@ -42,18 +42,12 @@ function $slider(args)
 			
 	var bgcolor=argsArr[0]||"#FF0000";
 	var roundness=argsArr[1]||0;
-	var bwidth=argsArr[2]||0;
-	var bcolor=argsArr[3]||"#000000";
-	var bstyle=argsArr[4]||"solid";
 	this.orientation=(argsArr.length>=6&&typeof argsArr[5]!="undefined")?argsArr[5]:"horizontal"; //slider orientation	
 	this.rangeStart=(argsArr.length>=7&&typeof argsArr[6]!="undefined")?parseInt(argsArr[6]):1; //slider range
 	this.rangeEnd=(argsArr.length>=8&&typeof argsArr[7]!="undefined")?parseInt(argsArr[7]):20; //slider range
 	
 	this.handleColor=bgcolor;
 	this.cornerRoundness=roundness;
-	this.borderWidth=bwidth;
-	this.borderColor=bcolor;
-	this.borderStyle=bstyle;
 	
 	//default size
 	var default_height = 50;
@@ -80,19 +74,6 @@ function $slider(args)
 	this.setInspectorConfig([
 		{name:"handleColor",value:thisPtr.handleColor,label:"Handle Color",type:"text",input:"text"},
 		{name:"cornerRoundness",value:thisPtr.cornerRoundness,label:"% Corner Roundness",type:"number",input:"text"},
-		{name:"borderWidth",value:thisPtr. borderWidth,label:"Border Width",type:"number",input:"text"},
-		{name:"borderColor",value:thisPtr. borderColor,label:"Border Color",type:"text",input:"text"},				
-		{name:"borderStyle",value:thisPtr. borderStyle,label:"Border Style",type:"string",options:[
-			{label:"None",value:"none"},
-			{label:"Dashed",value:"dashed"},
-			{label:"Dotted",value:"dotted"},
-			{label:"Double",value:"double"},
-			{label:"Groove",value:"groove"},
-			{label:"Inset",value:"inset"},
-			{label:"Outset",value:"outset"},
-			{label:"Ridge",value:"ridge"},
-			{label:"Solid",value:"solid"}
-		],input:"select"},
 		{name:"orientation",value:thisPtr.orientation,label:"Orientation",type:"string",options:[{label:"Vertical",value:"vertical"},{label:"Horizontal",value:"horizontal"}],input:"radio"},
 		{name:"rangeStart",value:thisPtr.rangeStart,label:"Range Start",type:"number",input:"text"},
 		{name:"rangeEnd",value:thisPtr.rangeEnd,label:"Range End",type:"number",input:"text"}			
@@ -107,21 +88,18 @@ function $slider(args)
 			thisPtr[x]=vals[x];
 			
 		//update the arg str
-		this.args=vals["handleColor"]+" "+vals["cornerRoundness"]+" "+vals["borderWidth"]+" "+vals["borderColor"]+" "+vals["borderStyle"]+" "+vals["orientation"]+" "+vals["rangeStart"]+" "+vals["rangeEnd"];
+		this.args=vals["handleColor"]+" "+vals["cornerRoundness"]+" "+vals["orientation"]+" "+vals["rangeStart"]+" "+vals["rangeEnd"];
 
 		handle.style.background=vals["handleColor"];
 		handle.style.MozBorderRadius=vals["cornerRoundness"]+"%";
-		handle.style.borderWidth=vals["borderWidth"]+"px";
-		handle.style.borderColor=vals["borderColor"];
-		handle.style.borderStyle=vals["borderStyle"];
 		
 		thisPtr.init();
 			
 	}
 		
 	//custom html
-	var slider_html = "<div style=\"width:"+default_width+"px;height:"+default_height+"px\" id=\""+ this.createElID("slider") +"\">"+
-	"<div id=\""+ this.createElID("sliderHandle") +"\" style=\"-moz-border-radius:"+roundness+"%;border:"+bwidth+"px "+bcolor+" "+bstyle+";position:relative;height:"+handleHeight+";width:"+handleWidth+";background:"+bgcolor+"\"></div>" +
+	var slider_html = "<div style=\"border:0px #000000 solid;width:"+default_width+"px;height:"+default_height+"px\" id=\""+ this.createElID("slider") +"\">"+
+	"<div id=\""+ this.createElID("sliderHandle") +"\" style=\"-moz-border-radius:"+roundness+"%;position:relative;height:"+handleHeight+";width:"+handleWidth+";background:"+bgcolor+"\"></div>" +
 	"</div>";
 		
 	this.ui=new LilyObjectView(this,slider_html);

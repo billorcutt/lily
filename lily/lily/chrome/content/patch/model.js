@@ -119,8 +119,7 @@ function LilyModel(parent)
 				continue;
 			}
 			
-			if(this.objArray[x].getObjectType()=="object") {
-			
+			if(this.objArray[x].getObjectType()=="object") {			
 				j+="'name':"+quote+this.objArray[x].name+quote+comma;
 				j+="'top':"+this.objArray[x].top+comma;
 				j+="'left':"+this.objArray[x].left+comma;
@@ -128,6 +127,9 @@ function LilyModel(parent)
 				j+="'fontSize':"+quote+this.objArray[x].fontSize+quote+comma;
 				j+="'fontFamily':"+quote+this.objArray[x].fontFamily+quote+comma;
 				j+="'fontColor':"+quote+this.objArray[x].fontColor+quote+comma;				
+				j+="'borderWidth':"+quote+this.objArray[x].borderWidth+quote+comma;
+				j+="'borderStyle':"+quote+this.objArray[x].borderStyle+quote+comma;
+				j+="'borderColor':"+quote+this.objArray[x].borderColor+quote+comma;							
 				j+="'opacity':"+this.objArray[x].opacity+comma;
 				j+="'zIndex':"+this.objArray[x].zIndex+comma;
 				j+="'height':"+this.objArray[x].height+comma;
@@ -136,7 +138,8 @@ function LilyModel(parent)
 				j+="'hiddenInPerf':"+this.objArray[x].hiddenInPerf+comma;
 				j+="'groupName':"+quote+this.objArray[x].groupName+quote+comma;
 				j+="'cssName':"+quote+this.objArray[x].cssName+quote+comma;
-				j+="'customColor':"+quote+this.objArray[x].customColor+quote+comma;	
+				j+="'customColor':"+quote+this.objArray[x].customColor+quote+comma;
+				j+="'customBorder':"+quote+this.objArray[x].customBorder+quote+comma;					
 				j+="'hasBeenResized':"+quote+this.objArray[x].hasBeenResized+quote+comma;					
 																																											
 				if(this.objArray[x].args)

@@ -42,6 +42,10 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 	this.fontSize=this.parent.fontSize; //font size
 	this.fontFamily=this.parent.fontFamily; //font family
 	this.fontColor="#000000"; //font color- maps to style property "color"	
+	this.borderColor="#000000"; //color
+	this.borderStyle="solid";
+	this.borderWidth=0;
+	this.customBorder=false; //if true then the border is saved.	
 	this.hiddenInPerf=false;
 	this.opacity=1.0; //transparency
 	this.zIndex=1; //zindex
@@ -110,7 +114,16 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 		}
 	}
 	
-	//set group name property
+	//set custom border property
+	this.setCustomBorder=function(val) {
+		if(val=="true") {
+			this.customBorder=true;
+		} else {
+			this.customBorder=false;	
+		}
+	}	
+	
+	//set custom color property
 	this.setCustomColor=function(val) {
 		if(val=="true") {
 			this.customColor=true;
@@ -122,7 +135,67 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 	//set the perm color
 	this.setPermColor=function(color) {
 		this.setColor(color,true);
-	}			
+	}
+		
+	this.setBorderColor=function(bcolor,perm) {
+		
+		if(bcolor) {
+			var ui=this.controller.objView.getInputWrapper();
+
+			if(ui) ui.style.borderColor=bcolor;
+				
+			if(this.displayElement) //update custom ui
+				this.displayElement.style.borderColor=bcolor;
+					
+			this.borderColor=bcolor;
+			
+			if(perm||false)
+				this.customBorder=true; //		
+		}
+	} 
+	
+	this.setBorderStyle=function(bstyle,perm) {
+				
+		if(bstyle) {
+			var ui=this.controller.objView.getInputWrapper();
+			
+			if(ui) ui.style.borderStyle=bstyle;
+				
+			if(this.displayElement) //update custom ui
+				this.displayElement.style.borderStyle=bstyle;
+				
+			this.borderStyle=bstyle;
+
+			this.objectMoved(); //notifiy listeners- make this object moved.
+			this.controller.updatePos(); //update model
+	//		this.controller.objView.updateObjSize();
+	
+			if(perm||false)
+				this.customBorder=true; //				
+		}
+	}
+	
+	this.setBorderSize=function(bsize,perm) {
+		
+		if(bsize) {
+			
+			var ui=this.controller.objView.getInputWrapper();
+			
+			if(ui) ui.style.borderWidth=bsize+"px";
+				
+			if(this.displayElement) //update custom ui
+				this.displayElement.style.borderWidth=bsize+"px";
+				
+			this.borderWidth=bsize;
+
+			this.objectMoved(); //notifiy listeners- make this object moved.
+			this.controller.updatePos(); //update model
+	//		this.controller.objView.updateObjSize();
+	
+			if(perm||false)
+				this.customBorder=true; //				
+		}
+	}				
 	
 	//color
 	this.setColor=function(color, perm) {

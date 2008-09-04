@@ -101,6 +101,9 @@
 				<menu id="menu_ObjectFont" label="&lily.Font;">
 			        <menupopup statustext="false" id="menu_ObjectFontPopup" onpopupshowing="opener.LilyMenuBar.setFontValue(this);"/>
 				</menu>
+				<menu id="menu_ObjectBorder" label="&lily.Border;">
+			        <menupopup statustext="false" id="menu_ObjectBorderPopup" onpopupshowing="opener.LilyMenuBar.setBorderValue(this);"/>
+				</menu>				
 				<menuitem id="menu_ObjectColor" label="&lily.Color;" oncommand="opener.Lily.openColorPicker('object')"/>														
 				<menuitem id="bringForwardItem" key="lilyBringForwardKey" label="&lily.BringForward;" oncommand="opener.Lily.bringForward()"/>
 				<menuitem id="sendBackItem" key="lilySendBackKey" label="&lily.SendBack;" oncommand="opener.Lily.sendBack()"/>
@@ -175,6 +178,9 @@
 		<menu style="display:none" id="contextMenu_ObjectFont" label="&lily.Font;">
 	        <menupopup id="contextMenu_ObjectFontPopup" onpopupshowing="opener.LilyMenuBar.setFontValue(this);"/>
 		</menu>
+		<menu style="display:none" id="contextMenu_ObjectBorder" label="&lily.Border;">
+	        <menupopup id="contextMenu_ObjectBorderPopup" onpopupshowing="opener.LilyMenuBar.setBorderValue(this);"/>
+		</menu>		
 		<menuitem style="display:none" id="contextBringForwardItem" label="&lily.BringForward;" oncommand="opener.Lily.bringForward()"/>
 		<menuitem style="display:none" id="contextSendBackItem" label="&lily.SendBack;" oncommand="opener.Lily.sendBack()"/>
 		<menuitem style="display:none" id="contextReloadItem" label="&lily.Reload;" oncommand="opener.Lily.reload()"/>

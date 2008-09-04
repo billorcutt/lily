@@ -441,7 +441,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			//set font using the patch default values
 			o.setFontFamily(o.fontFamily);
 			o.setFontSize(o.fontSize);
-			o.setFontColor(o.fontColor);			
+			o.setFontColor(o.fontColor);						
 			
 			//set to the default color
 			o.setColor(o.color);
@@ -503,12 +503,23 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		//if we're recreating the same extern
 		if(replaceWithSame) {
 			//set some object properties
+			//font
 			if(typeof oldObj.fontSize!="undefined")
 				o.setFontSize(oldObj.fontSize);
 			if(typeof oldObj.fontFamily!="undefined")
 				o.setFontFamily(oldObj.fontFamily);
 			if(typeof oldObj.fontColor!="undefined")
-				o.setFontColor(oldObj.fontColor);					
+				o.setFontColor(oldObj.fontColor);
+			//border
+			if(typeof oldObj.customBorder!="undefined")
+				o.setCustomBorder(oldObj.customBorder);
+			if(typeof oldObj.borderWidth!="undefined" && o.customBorder)
+				o.setBorderSize(oldObj.borderWidth,true);							
+			if(typeof oldObj.borderStyle!="undefined" && o.customBorder)
+				o.setBorderStyle(oldObj.borderStyle,true);
+			if(typeof oldObj.borderColor!="undefined" && o.customBorder)
+				o.setBorderColor(oldObj.borderColor,true);
+			//opacity,zindex,size,visibility										
 			if(typeof oldObj.opacity!="undefined")
 				o.setTransparency(oldObj.opacity);
 			if(typeof oldObj.zIndex!="undefined")
@@ -519,12 +530,14 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 				o.setWidth(oldObj.width);
 			if(typeof oldObj.height!="undefined")
 				o.setHeight(oldObj.height);
+			//name,cssname,hideinperf	
 			if(typeof oldObj.hiddenInPerf!="undefined")
 				o.controller.setHiddenInPerf(oldObj.hiddenInPerf);
 			if(typeof oldObj.groupName!="undefined")
 				o.setGroupName(oldObj.groupName);
 			if(typeof oldObj.cssName!="undefined" && oldObj.cssName)
 				o.setCSSName(oldObj.cssName);
+			//color	
 			if(typeof oldObj.customColor!="undefined")
 				o.setCustomColor(oldObj.customColor);
 			if(typeof oldObj.color!="undefined" && o.customColor)
@@ -866,7 +879,15 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 					if(typeof oArray[x].fontFamily!="undefined")
 						o.setFontFamily(oArray[x].fontFamily);
 					if(typeof oArray[x].fontColor!="undefined")
-						o.setFontColor(oArray[x].fontColor);					
+						o.setFontColor(oArray[x].fontColor);
+					if(typeof oArray[x].customBorder!="undefined")
+						o.setCustomBorder(oArray[x].customBorder);												
+					if(typeof oArray[x].borderWidth!="undefined" && o.customBorder)
+						o.setBorderSize(oArray[x].borderWidth,true);
+					if(typeof oArray[x].borderStyle!="undefined" && o.customBorder)
+						o.setBorderStyle(oArray[x].borderStyle,true);
+					if(typeof oArray[x].borderColor!="undefined" && o.customBorder)
+						o.setBorderColor(oArray[x].borderColor,true);											
 					if(typeof oArray[x].opacity!="undefined")
 						o.setTransparency(oArray[x].opacity);
 					if(typeof oArray[x].zIndex!="undefined")

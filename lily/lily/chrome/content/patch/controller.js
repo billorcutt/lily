@@ -87,7 +87,10 @@ function LilyPatchController(pID,parent)
 					color:this.patch.getObj(selObj[i]).color,				
 					fontSize:this.patch.getObj(selObj[i]).fontSize,
 					fontFace:this.patch.getObj(selObj[i]).fontFamily,
-					fontColor:this.patch.getObj(selObj[i]).fontColor,					
+					fontColor:this.patch.getObj(selObj[i]).fontColor,
+					borderWidth:this.patch.getObj(selObj[i]).borderWidth,
+					borderStyle:this.patch.getObj(selObj[i]).borderStyle,
+					borderColor:this.patch.getObj(selObj[i]).borderColor,										
 					className:this.patch.getObj(selObj[i]).name,
 					hideInPerf:this.patch.getObj(selObj[i]).hiddenInPerf
 			});
@@ -151,6 +154,35 @@ function LilyPatchController(pID,parent)
 		return this.hasSelection;
 	}
 	
+//////////////////////////////////////////////////////////////////
+
+	//where we store updated border info destined for selected objects
+	this.selectedBorder={borderStyle:null,borderWidth:null,borderColor:null};
+
+	//notify objects that are registered for the border changed event.
+	this.setBorder=function() {
+		this.notifyPatchListeners("borderChanged");
+		this.refreshSelectedObjects();
+		setTimeout(function(){thisPtr.revertBorderToDefault();},100); //clear the font after we've notified the listeners.
+	}
+
+	//return the new border info.
+	this.getBorder=function() {
+		return [this.selectedBorder["borderStyle"],this.selectedBorder["borderWidth"]+("px"),this.selectedBorder["borderColor"]];
+	}	
+
+	//store the new border info.
+	this.setSelectedBorder=function(name,value) {
+		this.selectedBorder[name]=value;
+	}
+
+	//clear new border
+	this.revertBorderToDefault=function() {
+		this.selectedBorder["borderStyle"]=null;
+		this.selectedBorder["borderWidth"]=null;
+		this.selectedBorder["borderColor"]=null;		
+	}
+
 //////////////////////////////////////////////////////////////////
 	
 	//where we store updated font info destined for selected objects

@@ -109,9 +109,19 @@ function LilyObjectController (obj) {
 		}	else if(LilyUtils.controlOrCommand(e) && e.altKey) {
 			this.patchController.startConnection(id,true);
 		}
-//		LilyDebugWindow.print("out connect " + id);
+//		log("out connect " + id);
 		return false;		
 	}
+	
+	this.updateBorder=function() {
+		var borderArr=thisPtr.patch.patchController.getBorder();
+
+		thisPtr.objView.parent.setBorderStyle(borderArr[0],true);
+		thisPtr.objView.parent.setBorderSize(parseInt(borderArr[1]),true);
+		thisPtr.objView.parent.setBorderColor(borderArr[2],true);				
+
+		//log(borderArr.toSource());
+	}	
 	
 	this.updateFont=function() {
 		var fontArr=thisPtr.patch.patchController.getFont();
@@ -120,7 +130,7 @@ function LilyObjectController (obj) {
 		thisPtr.objView.parent.setFontSize(parseInt(fontArr[1]));
 		thisPtr.objView.parent.setFontColor(fontArr[2]);				
 		
-//		LilyDebugWindow.print(fontArr.toSource());
+//		log(fontArr.toSource());
 	}
 	
 	this.updateColor=function() {
@@ -169,6 +179,9 @@ function LilyObjectController (obj) {
 				fontSize:thisPtr.objView.parent.fontSize,
 				fontFace:thisPtr.objView.parent.fontFamily,
 				fontColor:thisPtr.objView.parent.fontColor,
+				borderWidth:thisPtr.objView.parent.borderWidth,
+				borderStyle:thisPtr.objView.parent.borderStyle,
+				borderColor:thisPtr.objView.parent.borderColor,				
 				className:thisPtr.objView.parent.name,
 				hideInPerf:thisPtr.objView.parent.hiddenInPerf
 		});
@@ -186,9 +199,9 @@ function LilyObjectController (obj) {
 		
 		//font
 		thisPtr.patchController.attachPatchObserver(thisPtr.id,"fontChanged",thisPtr.updateFont,"select");
-
-		//name
-//		thisPtr.patchController.attachPatchObserver(thisPtr.id,"nameChanged",thisPtr.updateNames,"select");
+		
+		//border
+		thisPtr.patchController.attachPatchObserver(thisPtr.id,"borderChanged",thisPtr.updateBorder,"select");		
 		
 		//color
 		thisPtr.patchController.attachPatchObserver(thisPtr.id,"colorChanged",thisPtr.updateColor,"select");
@@ -299,8 +312,8 @@ function LilyObjectController (obj) {
 		//font listener
 		thisPtr.patchController.removePatchObserver(thisPtr.id,"fontChanged",thisPtr.updateFont,"select");
 
-		//name
-//		thisPtr.patchController.removePatchObserver(thisPtr.id,"nameChanged",thisPtr.updateNames,"select");
+		//border listener
+		thisPtr.patchController.removePatchObserver(thisPtr.id,"borderChanged",thisPtr.updateBorder,"select");
 		
 		//color
 		thisPtr.patchController.removePatchObserver(thisPtr.id,"colorChanged",thisPtr.updateColor,"select");				

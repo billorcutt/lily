@@ -485,7 +485,7 @@ var LilyMenuBar = {
 			
 		}
 				
-	},
+	},	
 	
 	deselectFontValue: function(menu) {
 		
@@ -584,6 +584,140 @@ var LilyMenuBar = {
 		
 		menu.statusText="true";
 	},
+	
+	initBorderMenus:function(win) {
+		//preload the font menu
+		if(win && win.document.getElementById("menu_ObjectBorderPopup")&&win.document.getElementById("contextMenu_ObjectBorderPopup")) {
+			this.setBorderList(win.document.getElementById("menu_ObjectBorderPopup"));
+			this.setBorderList(win.document.getElementById("contextMenu_ObjectBorderPopup"));
+		}		
+	},
+
+	setBorderValue: function(menu) {
+		this.deselectBorderValue(menu); //clear the font menu
+
+		var menuArr=menu.childNodes;
+
+		var patch=Lily.getCurrentPatch().patchController;
+		var size=patch.getSelectedObjectsProperty("borderStyle");
+		var style=patch.getSelectedObjectsProperty("borderWidth");
+		
+		for(var i=0;i<menuArr.length;i++) {
+
+			var label=menuArr[i].getAttribute("label");	
+			//FIXME XXXX *** hack until we normalize the patches.			
+			if(size==label||style && (style.toString().toLowerCase()==label.toLowerCase())) {
+				menuArr[i].setAttribute("checked",true);			
+			}
+
+		}
+	},	
+
+	deselectBorderValue: function(menu) {			
+		var menuArr=menu.childNodes;
+
+		for(var i=0;i<menuArr.length;i++) {
+			menuArr[i].setAttribute("checked",false);
+		}
+	},	
+	
+	setBorderList: function(menu) {
+				
+		if(menu.statusText=="true") {
+			return;	
+		}
+		
+		var styleArray = [
+			"none",
+			"dashed",
+			"dotted",
+			"double",
+			"groove",
+			"inset",
+			"outset",
+			"ridge",
+			"solid"
+		];
+		
+		var win = LilyUtils.getActiveXULWindow(); ///get the chrome window for the patch.				
+
+        // For each search term, create a menu item element
+        var tempItem = null;
+        tempItem = win.document.createElement("menuitem");
+
+		//set attributes			
+        tempItem.setAttribute("label", "Color...");
+        tempItem.setAttribute("name", "borderColor");
+        tempItem.setAttribute("id", "bc");
+        tempItem.setAttribute("type", "radio");	
+		
+        tempItem.setAttribute("oncommand", "opener.Lily.openColorPicker('border')");	
+
+        // Add the item to our menu
+        menu.appendChild(tempItem);
+		
+		menu.appendChild(win.document.createElement("menuseparator"));		
+		
+	    // Load the search terms into our menu
+	    for(var i=0; i<15; i++)
+	    {
+	        // For each search term, create a menu item element
+	        var tempItem = null;
+	        tempItem = win.document.createElement("menuitem");
+
+			//set attributes			
+	        tempItem.setAttribute("label", i);
+	        tempItem.setAttribute("name", "borderWidth");
+	        tempItem.setAttribute("id", "bs"+i);	
+	        tempItem.setAttribute("type", "radio");	
+			
+	        tempItem.setAttribute("oncommand", "opener.Lily.setBorder(\"borderWidth\","+ i +")");	
+
+	        // Add the item to our menu
+	        menu.appendChild(tempItem);
+	    }		
+		
+	    // Load the search terms into our menu
+	    for(var i=15; i<150; i+=5)
+	    {
+	        // For each search term, create a menu item element
+	        var tempItem = null;
+	        tempItem = win.document.createElement("menuitem");
+
+			//set attributes			
+	        tempItem.setAttribute("label", i);
+	        tempItem.setAttribute("name", "borderWidth");
+	        tempItem.setAttribute("id", "bs"+i);	
+	        tempItem.setAttribute("type", "radio");	
+			
+	        tempItem.setAttribute("oncommand", "opener.Lily.setBorder(\"borderWidth\","+ i +")");	
+
+	        // Add the item to our menu
+	        menu.appendChild(tempItem);
+	    }	
+
+		menu.appendChild(win.document.createElement("menuseparator"));
+
+	    // Load the search terms into our menu
+	    for(var i=0; i<styleArray.length; i++)
+	    {
+	        // For each search term, create a menu item element
+	        var tempItem = null;
+	        tempItem = win.document.createElement("menuitem");
+
+			//set attributes			
+	        tempItem.setAttribute("label", styleArray[i]);
+	        tempItem.setAttribute("id", styleArray[i]);	
+	        tempItem.setAttribute("name", "borderStyle");
+	        tempItem.setAttribute("type", "radio");
+			
+	        tempItem.setAttribute("oncommand", "opener.Lily.setBorder(\"borderStyle\",\""+styleArray[i]+"\")");	
+
+	        // Add the item to our menu
+	        menu.appendChild(tempItem);
+	    }		
+		menu.statusText="true";
+	},	
 				
 	setObjectList: function(menu,help,context,opener) {
 		

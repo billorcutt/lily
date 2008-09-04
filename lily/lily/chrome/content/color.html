@@ -45,7 +45,7 @@
 				colorpicker=$.farbtastic($('#picker'),change);
 				document.getElementById("displayHex").addEventListener("change",function(){change(this.value)},false);
 
-				if(windowType=="patch"||windowType=="font")
+				if(windowType=="patch"||windowType=="font"||windowType=="border")
 					document.getElementById("transparencyDiv").style.display="none";
 				else
 					document.getElementById("transparencyDiv").style.display="block";

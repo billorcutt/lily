@@ -327,7 +327,10 @@ function LilyPatchView(pID,parent,extWin)
 		//window listener for contextmenu event
 		thisPtr.oWin.addEventListener("contextmenu",LilyMenuBar.onContextMenu,false); //move this function.
 		//preload the font menus
-		setTimeout(function(){LilyMenuBar.initFontMenus(thisPtr.xulWin)},2000);		
+		setTimeout(function(){LilyMenuBar.initFontMenus(thisPtr.xulWin)},2000);	
+		
+		//preload the font menus
+		setTimeout(function(){LilyMenuBar.initBorderMenus(thisPtr.xulWin)},2000);			
 				
 		//add patch listeners
 		thisPtr.controller.addDefaultPatchListeners();

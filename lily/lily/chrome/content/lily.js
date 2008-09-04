@@ -1256,6 +1256,9 @@ var Lily =
 		} else if(type=="font") {
 			var color = this.patchObj[this.currPatch].obj.patchController.getSelectedObjectsProperty("fontColor");
 			height = 350;
+		} else if(type=="border") {
+			var color = this.patchObj[this.currPatch].obj.patchController.getSelectedObjectsProperty("borderColor");
+			height = 350;
 		} else {
 			var color = this.patchObj[this.currPatch].obj.patchController.getSelectedObjectsProperty("color");
 		}
@@ -1269,7 +1272,9 @@ var Lily =
 				Lily.setPatchColor(val);
 			else if(type=="font") {
 				Lily.setFont("fontColor",val,null);
-			} else {
+			} else if(type=="border") {
+					Lily.setBorder("borderColor",val,null);
+			}else {
 				Lily.setColor(val,null,true);	
 			}	
 		},initVals);
@@ -1420,6 +1425,23 @@ var Lily =
 			this.patchObj[id].obj.patchController.setFont(); //notify patch listeners that the font has changed.
 		}
 	},
+	
+	/*
+		Method: setBorder
+			dispatch menu command.
+			
+		Arguments: 
+			name - border style, 
+			value - border size, 
+			pID - patch ID.											
+	*/
+	setBorder: function(name, value, pID) {
+		var id=pID||this.currPatch;		
+		if(this.patchObj[id]) {
+			this.patchObj[id].obj.patchController.setSelectedBorder(name,value); //store the updated value in the current patch	
+			this.patchObj[id].obj.patchController.setBorder(); //notify patch listeners that the font has changed.
+		}
+	},	
 	
 	/*
 		Method: setSharedValue

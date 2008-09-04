@@ -34,34 +34,15 @@ function $panel(args)
 	var thisPtr=this;
 	var bgcolor=args.split(" ")[0]||this.color;
 	var roundness=args.split(" ")[1]||0;
-	var bwidth=args.split(" ")[2]||0;
-	var bcolor=args.split(" ")[3]||"#000000";
-	var bstyle=args.split(" ")[4]||"solid";
 			
 	this.color=bgcolor;
 	this.cornerRoundness=roundness;
-	this.borderWidth=bwidth;
-	this.borderColor=bcolor;
-	this.borderStyle=bstyle;
 	
 	this.args=args;	
 	this.allowFont=false; //dont allow font changes
 	
 	this.setInspectorConfig([
-		{name:"cornerRoundness",value:thisPtr.cornerRoundness,label:"% Corner Roundness",type:"number",input:"text"},
-		{name:"borderWidth",value:thisPtr. borderWidth,label:"Border Width",type:"number",input:"text"},
-		{name:"borderColor",value:thisPtr. borderColor,label:"Border Color",type:"text",input:"text"},				
-		{name:"borderStyle",value:thisPtr. borderStyle,label:"Border Style",type:"string",options:[
-			{label:"None",value:"none"},
-			{label:"Dashed",value:"dashed"},
-			{label:"Dotted",value:"dotted"},
-			{label:"Double",value:"double"},
-			{label:"Groove",value:"groove"},
-			{label:"Inset",value:"inset"},
-			{label:"Outset",value:"outset"},
-			{label:"Ridge",value:"ridge"},
-			{label:"Solid",value:"solid"}
-		],input:"select"}
+		{name:"cornerRoundness",value:thisPtr.cornerRoundness,label:"% Corner Roundness",type:"number",input:"text"}
 	]);	
 	
 	//save the values returned by the inspector- returned in form {valueName:value...}
@@ -73,19 +54,16 @@ function $panel(args)
 			thisPtr[x]=vals[x];
 			
 		//update the arg str
-		this.args=this.color+" "+vals["cornerRoundness"]+" "+vals["borderWidth"]+" "+vals["borderColor"]+" "+vals["borderStyle"];
+		this.args=this.color+" "+vals["cornerRoundness"];
 
 //		this.controller.objResizeControl.clearSize();
 		this.displayElement.style.MozBorderRadius=vals["cornerRoundness"]+"%";
-		this.displayElement.style.borderWidth=vals["borderWidth"]+"px";
-		this.displayElement.style.borderColor=vals["borderColor"];
-		this.displayElement.style.borderStyle=vals["borderStyle"];
 //		this.controller.objResizeControl.resetSize();
 			
 	}	
 
 	//custom html
-	this.ui=new LilyObjectView(this,"<div style=\"-moz-border-radius:"+roundness+"%;border:"+bwidth+"px "+bcolor+" "+bstyle+";width:100px;height:100px;background:" + bgcolor + "\" id=\""+ this.createElID("panel") +"\"></div>");
+	this.ui=new LilyObjectView(this,"<div style=\"-moz-border-radius:"+roundness+"%;border:0px #000000 solid;width:100px;height:100px;background:" + bgcolor + "\" id=\""+ this.createElID("panel") +"\"></div>");
 	this.ui.draw();
 	
 	this.resizeElement=thisPtr.ui.getElByID(thisPtr.createElID("panel"));
