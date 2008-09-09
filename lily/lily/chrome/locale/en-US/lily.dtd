@@ -36,6 +36,7 @@
 <!ENTITY  lily.ObjectMenu           "Externals">
 <!ENTITY  lily.GetInfo              "Get Info...">
 <!ENTITY  lily.Font              	"Font">
+<!ENTITY  lily.Border              	"Border">
 <!ENTITY  lily.Color              	"Color...">
 <!ENTITY  lily.Name			        "Edit Names...">
 <!ENTITY  lily.BringForward         "Bring Forward">

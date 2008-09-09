@@ -159,11 +159,20 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 		if(bstyle) {
 			var ui=this.controller.objView.getInputWrapper();
 			
-			if(ui) ui.style.borderStyle=bstyle;
-				
-			if(this.displayElement) //update custom ui
+			if(this.resetSize) {
+				this.controller.objResizeControl.clearSize();
+			}			
+			
+			if(ui && !this.displayElement) {
+				ui.style.borderStyle=bstyle;
+			} else if(this.displayElement) {
 				this.displayElement.style.borderStyle=bstyle;
-				
+			}
+			
+			if(this.resetSize) {
+				this.controller.objResizeControl.resetSize();
+			}			
+							
 			this.borderStyle=bstyle;
 
 			this.objectMoved(); //notifiy listeners- make this object moved.
@@ -178,13 +187,21 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 	this.setBorderSize=function(bsize,perm) {
 		
 		if(bsize) {
-			
 			var ui=this.controller.objView.getInputWrapper();
 			
-			if(ui) ui.style.borderWidth=bsize+"px";
-				
-			if(this.displayElement) //update custom ui
+			if(this.resetSize) {
+				this.controller.objResizeControl.clearSize();
+			}			
+			
+			if(ui && !this.displayElement) {
+				ui.style.borderWidth=bsize+"px";
+			} else if(this.displayElement) {
 				this.displayElement.style.borderWidth=bsize+"px";
+			} //update custom ui
+			
+			if(this.resetSize) {
+				this.controller.objResizeControl.resetSize();
+			}			
 				
 			this.borderWidth=bsize;
 

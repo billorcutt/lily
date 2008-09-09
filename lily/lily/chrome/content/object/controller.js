@@ -236,10 +236,10 @@ function LilyObjectController (obj) {
 	
 	this.overResizeHandle=function(e) {
 		
-		var bwidth = (thisPtr.objView.parent.borderWidth||0)*2;
+		var bwidth = 0;//(thisPtr.objView.parent.borderWidth||0)*2;
 		var offset = 5;
 		var padding = 10;
-		
+			
 		var ui = thisPtr.objView.getObjView();			
 		var computed_width = ui.offsetWidth;
 		var computed_height = ui.offsetHeight;
