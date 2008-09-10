@@ -98,8 +98,6 @@ LilyComponents._editor=function(context,container,content,setFunc,getFunc,render
 
 			parent.controller.removeObserver(parent.objID,"keyup",resizeTextArea,"edit");
 			parent.controller.removeObserver(parent.objID,"click",resizeTextArea,"edit");						
-
-			parent.controller.patchController.attachPatchObserver(parent.objID,"deleteKey",function(){parent.parent.deleteObject(parent.objID)},"select");
 			
 			var txt=parent.ui.getElByID(parent.createElID("_editor")).value;
 
