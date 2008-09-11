@@ -34,33 +34,47 @@ function $date()
 {
 	var thisPtr=this;
 
-	this.inlet1=new this.inletClass("inlet1",this,"\"bang\" outputs ms since 1970, \"now\" outputs GMT date, \"date\" outputs local date, \"time\" outputs local time.");
-	this.outlet1 = new this.outletClass("outlet1",this,"date");	
+	this.inlet1=new this.inletClass("inlet1",this,"\"bang\" outputs the current time/date. an input date is parsed and output.");
+
+	this.outlet1 = new this.outletClass("outlet1",this,"UTC Date/Time String");
+	this.outlet2 = new this.outletClass("outlet2",this,"Local Date/Time String");
+	this.outlet3 = new this.outletClass("outlet3",this,"Time in ms since 1970");
+	this.outlet4 = new this.outletClass("outlet4",this,"Year");
+	this.outlet5 = new this.outletClass("outlet5",this,"Month");
+	this.outlet6 = new this.outletClass("outlet6",this,"Date");	
+	this.outlet7 = new this.outletClass("outlet7",this,"Day");
+	this.outlet8 = new this.outletClass("outlet8",this,"Hours");	
+	this.outlet9 = new this.outletClass("outlet9",this,"Minutes");
+	this.outlet10 = new this.outletClass("outlet10",this,"Seconds");
+	this.outlet11 = new this.outletClass("outlet11",this,"Milliseconds");
+	this.outlet12 = new this.outletClass("outlet12",this,"Timezone offeset from GMT");					
 	
 	this.inlet1["bang"]=function() {
-			thisPtr.outlet1.doOutlet(Date.now());
+		output_date(new Date(Date.now()));																	
+	}
+			
+	this.inlet1["anything"]=function(dateStr) {	
+		if(typeof dateStr == "string") {
+			output_date(new Date(dateStr));
+		} else if(typeof dateStr == "number") {
+			output_date(new Date(dateStr));
+		}
 	}
 	
-	this.inlet1["now"]=function() {
-			thisPtr.outlet1.doOutlet(new Date(Date.now()).toString());
+	function output_date(date) {
+		thisPtr.outlet12.doOutlet(date.getTimezoneOffset()); //offset		
+		thisPtr.outlet11.doOutlet(date.getMilliseconds()); //ms
+		thisPtr.outlet10.doOutlet(date.getSeconds()); //seconds
+		thisPtr.outlet9.doOutlet(date.getMinutes()); //minutes
+		thisPtr.outlet8.doOutlet(date.getHours()); //hours
+		thisPtr.outlet7.doOutlet(date.getDay()); //day
+		thisPtr.outlet6.doOutlet(date.getDate()); //date
+		thisPtr.outlet5.doOutlet(date.getMonth()); //month
+		thisPtr.outlet4.doOutlet(date.getFullYear()); //year
+		thisPtr.outlet3.doOutlet(date.getTime()); //ms since 1970
+		thisPtr.outlet2.doOutlet(date.toLocaleString()); //locale string
+		thisPtr.outlet1.doOutlet(date.toUTCString()); //utc date string
 	}
-	
-	this.inlet1["date"]=function() {
-			thisPtr.outlet1.doOutlet(new Date(Date.now()).toLocaleDateString());
-	}
-	
-	this.inlet1["set"]=function(dateStr) {		
-			var date_value = (isNaN(parseInt(dateStr)) || dateStr.match(/\D/g))?dateStr:parseInt(dateStr)  //find correct regexp here...
-			thisPtr.outlet1.doOutlet(new Date(date_value).toLocaleDateString());
-	}	
-	
-	this.inlet1["time"]=function() {
-			thisPtr.outlet1.doOutlet(new Date(Date.now()).toLocaleTimeString());
-	}
-	
-	this.inlet1["parse"]=function(date) {
-			thisPtr.outlet1.doOutlet(Date.parse(date));
-	}					
 		
 	return this;
 }
