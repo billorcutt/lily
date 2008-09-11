@@ -53,11 +53,13 @@ function $date()
 		output_date(new Date(Date.now()));																	
 	}
 			
-	this.inlet1["anything"]=function(dateStr) {	
+	this.inlet1["anything"]=function(dateStr) {
 		if(typeof dateStr == "string") {
 			output_date(new Date(dateStr));
 		} else if(typeof dateStr == "number") {
 			output_date(new Date(dateStr));
+		} else if(typeof dateStr == "object") {
+			output_date(new Date(dateStr+""));
 		}
 	}
 	
