@@ -54,12 +54,12 @@ function $date()
 	}
 			
 	this.inlet1["anything"]=function(dateStr) {
-		if(typeof dateStr == "string") {
-			output_date(new Date(dateStr));
-		} else if(typeof dateStr == "number") {
-			output_date(new Date(dateStr));
-		} else if(typeof dateStr == "object") {
+		
+		var dateStr = (parseInt(dateStr))?parseInt(dateStr):dateStr; //coerce it into the proper type
+		if(typeof dateStr == "object") {
 			output_date(new Date(dateStr+""));
+		} else {
+			output_date(new Date(dateStr));
 		}
 	}
 	
