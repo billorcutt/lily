@@ -53,7 +53,7 @@ function $iframe(args)
 		//update the arg str
 		this.args=""+vals["src"]+" "+vals["noBorders"];
 
-		if(iframe)iframe.objFrame.src=LilyUtils.stripLTQuotes(vals["src"]);
+		if(iframe)iframe.objFrame.src=processURL(LilyUtils.stripLTQuotes(vals["src"]));
 		setBorders(vals["noBorders"]);
 			
 	}	
@@ -66,10 +66,25 @@ function $iframe(args)
 	this.ui={};	
 	var iframe=new LilyComponents._iframe(this,this.src,null,null,null,frameInit);
 
+	function processURL(url) {
+		
+		//if there's a protocol, we're done...
+		if(LilyUtils.containsProtocol(url))
+			return url;	
+			
+		//otherwise look for it in the file system.
+		var path = LilyUtils.getFilePath(url);	
+			
+		if(path) 
+			return "file://"+path;
+		else
+			return "chrome://lily/content/blank.html";
+		
+	}
 	
 	//set the src
 	this.inlet1["anything"]=function(src) {
-		iframe.objFrame.src=LilyUtils.stripLTQuotes(src);
+		iframe.objFrame.src=processURL(LilyUtils.stripLTQuotes(src));
 	}
 	
 	//set the src

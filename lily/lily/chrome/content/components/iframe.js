@@ -74,7 +74,7 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 	var frameCover=null;	
 	
 	//src for the iframe
-	var src=source||"chrome://lily/content/blank.html";
+	var src=processURL(source);
 	
 	//pass the calling context a ref to the view
 	parent.ui=new LilyObjectView(parent,'<iframe src="'+src+'" scrolling="'+ scroll +'" id="'+parent.createElID("iframe")+'" style="height:100%;width:100%;margin:0px;border:0px;padding:0px;visibility:hidden"></iframe>');
@@ -113,6 +113,22 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 			frameCover.style.zIndex=parent.zIndex+1;
 		}
 	}
+	
+	function processURL(url) {
+		
+		//if there's a protocol, we're done...
+		if(LilyUtils.containsProtocol(url))
+			return url;	
+			
+		//otherwise look for it in the file system.
+		var path = LilyUtils.getFilePath(url);	
+			
+		if(path) 
+			return "file://"+path;
+		else
+			return "chrome://lily/content/blank.html";
+		
+	}	
 	
 	//clean up when the object is deleted
 	function destroy() {
