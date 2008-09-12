@@ -124,7 +124,7 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 		var path = LilyUtils.getFilePath(url);	
 			
 		if(path) 
-			return "file://"+path;
+			return encodeURI("file://"+path);
 		else
 			return "chrome://lily/content/blank.html";
 		

@@ -73,7 +73,7 @@ function $pic(args)
 		var path = LilyUtils.getFilePath(url);	
 			
 		if(path) 
-			return "file://"+path;
+			return encodeURI("file://"+path);
 		else
 			return "chrome://lily/content/images/glass.gif";
 		
@@ -127,8 +127,8 @@ function $pic(args)
 
 	function onexit(e) {
 		thisPtr.ui.deSelectObjView(e);	
-	}	
-	
+	}
+		
 	//custom html
 	this.ui=new LilyObjectView(this,"<img onmousedown=\"return false\" id=\""+ this.createElID("pic") +"\" src=\""+ processURL(LilyUtils.stripLTQuotes(this.src)) +"\" style=\"-moz-border-radius:"+this.cornerRoundness+"%;width:100px;height:100px\;background-image:url(\'"+ processURL(LilyUtils.stripLTQuotes(this.bgSrc)) +"\');background-position: 2px 0px; background-repeat: repeat\"/>");
 	this.ui.draw();

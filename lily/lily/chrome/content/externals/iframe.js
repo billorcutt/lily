@@ -76,7 +76,7 @@ function $iframe(args)
 		var path = LilyUtils.getFilePath(url);	
 			
 		if(path) 
-			return "file://"+path;
+			return encodeURI("file://"+path);
 		else
 			return "chrome://lily/content/blank.html";
 		
