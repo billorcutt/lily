@@ -22,7 +22,9 @@
 	
 	<!-- Menubar  -->
 	<menubar id="lilyReadOnlyMenubar">
-		<menuitem id="menu_FileQuitItem" label="&lily.Quit;" oncommand="opener.Lily.quit(true)"/>				
+		<menu id="menu_LilyReadOnlyPopup">
+			<menuitem id="menu_FileQuitItem" label="&lily.Quit;" oncommand="opener.Lily.quit(true)"/>
+		</menu>			
 	</menubar>	
 	
 	<vbox flex="1">
