@@ -122,22 +122,23 @@ function $googledotmap()
 	}		
 	
 	function loadMap() {
-      if (typeof iframe.objFrame.contentWindow.GBrowserIsCompatible == "function" && iframe.objFrame.contentWindow.GBrowserIsCompatible()) {
-		//create map
-		map = new api.GMap2(iframe.objFrame.contentDocument.getElementById(thisPtr.createElID("map")));
-		map.enableContinuousZoom();
-		//add click listener
-		api.GEvent.addListener(map, "click", function(marker, point) {
-			if(point) {
-				thisPtr.outlet1.doOutlet({longitude:point.lng(),latitude:point.lat()})
-			}
-		});		
-      }
+		
+		if (typeof api.GBrowserIsCompatible == "function" && api.GBrowserIsCompatible()) {
+			//create map
+			map = new api.GMap2(iframe.objFrame.contentDocument.getElementById(thisPtr.createElID("map")));
+			map.enableContinuousZoom();
+			//add click listener
+			api.GEvent.addListener(map, "click", function(marker, point) {
+				if(point) {
+					thisPtr.outlet1.doOutlet({longitude:point.lng(),latitude:point.lat()})
+				}
+			});		
+		}
     }
 		
 	function frameInit() {
 		iframe.objFrame.contentDocument.getElementById("bodyElement").innerHTML='<div id="'+thisPtr.createElID("map")+'" style="padding:0px;border:0px;margin:0px;width:'+orgWidth+'px;height:'+orgHeight+'px"></div>';
-		api=iframe.objFrame.contentWindow;
+		api=(iframe.objFrame.contentWindow.GMap2)?iframe.objFrame.contentWindow:iframe.objFrame.contentWindow.wrappedJSObject;
 		loadMap();
 		thisPtr.outlet2.doOutlet("bang");			
 	}

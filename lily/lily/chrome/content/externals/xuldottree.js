@@ -56,9 +56,10 @@ function $xuldottree(args)
 			
 	function initTable() {
 		
-		//get the window element		
-		win = iframe.objFrame.contentWindow.document.getElementsByTagName("window")[0]; //set up the pointers
-		doc = iframe.objFrame.contentWindow.document; //get the doc
+		//get the window element
+		var doc_path = (iframe.objFrame.contentWindow.document)?iframe.objFrame.contentWindow.document:iframe.objFrame.contentWindow.wrappedJSObject.document;
+		win = doc_path.getElementsByTagName("window")[0]; //set up the pointers
+		doc = doc_path; //get the doc
 		
 		makeTable(gColLabels.length); //use the column labels to set the number of cols.
 	}

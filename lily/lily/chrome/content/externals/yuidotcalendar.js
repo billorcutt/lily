@@ -45,7 +45,8 @@ function $yuidotcalendar()
 	var thisYear = this.today.getFullYear();
 			
 	function initCal() {
-		cal1 = new iframe.objFrame.contentWindow.YAHOO.widget.Calendar("cal1","cal1Container"); 
+		var yahoo_path = (iframe.objFrame.contentWindow.YAHOO)?iframe.objFrame.contentWindow.YAHOO:iframe.objFrame.contentWindow.wrappedJSObject.YAHOO;
+		cal1 = new yahoo_path.widget.Calendar("cal1","cal1Container"); 
 		cal1.render();
 		cal1.selectEvent.subscribe(selectFunc);
 	}

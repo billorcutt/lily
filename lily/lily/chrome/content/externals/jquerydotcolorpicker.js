@@ -36,8 +36,9 @@ function $jquerydotcolorpicker()
 	this.outlet1 = new this.outletClass("outlet1",this,"color hex string");
 	this.resize=false;		
 	
-	function initColorPicker() {			
-		iframe.objFrame.contentWindow.$('#picker').farbtastic(change);		
+	function initColorPicker() {
+		var jquery_dollar_sign = (iframe.objFrame.contentWindow.$)?iframe.objFrame.contentWindow.$:iframe.objFrame.contentWindow.wrappedJSObject.$;					
+		jquery_dollar_sign('#picker').farbtastic(change);		
 	}
 	
 	function change(v){
