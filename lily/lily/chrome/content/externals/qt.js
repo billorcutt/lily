@@ -261,15 +261,19 @@ function $qt(args)
 		var resize = sizeOnLoad||false;		
 		
 	//	LilyDebugWindow.print("resize me..."+node.GetRectangle()+" "+resize);
-		rectOnLoad=node.GetRectangle();
+	
+		if(thisPtr.parent.isTopLevelPatch()) {
+			rectOnLoad=node.GetRectangle();
+			//determine if we have an audio or a video file.
+			var tmp = rectOnLoad.split(",");
+			var audio = ((parseInt(tmp[0])+parseInt(tmp[1])+parseInt(tmp[2])+parseInt(tmp[3]))<=0)?true:false;			
+		}
+		
 		mediaLoaded=true;
-
-		//determine if we have an audio or a video file.
-		var tmp = rectOnLoad.split(",");
-		var audio = ((parseInt(tmp[0])+parseInt(tmp[1])+parseInt(tmp[2])+parseInt(tmp[3]))<=0)?true:false;
 
 		//resize if the resize flag is set or if we're transitioning from audio to video or vice versa.
 		if(
+			thisPtr.parent.isTopLevelPatch()&&
 			resize||
 			((thisPtr.height==12&&thisPtr.width==100)&&!audio)||
 			(!(thisPtr.height==12&&thisPtr.width==100)&&audio)
