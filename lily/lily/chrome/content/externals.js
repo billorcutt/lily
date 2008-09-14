@@ -54,6 +54,12 @@ var LilyObjectList = {
 	objDisplay:{},
 	
 	/*
+		Property: objDisplayArr
+			sorted array of all external objects display names.
+	*/
+	objDisplayArr:null,	
+	
+	/*
 		Property: objLeaf
 			hash table of all external objects leaf names.
 	*/
@@ -312,6 +318,9 @@ var LilyObjectList = {
 			returns a alphabetically sorted array of names.
 	*/	
 	getNames:function() {
+		
+		if(this.objDisplayArr) return this.objDisplayArr;
+		
 		var tmp=[];
 		for(var i=0;i<this.objArray.length;i++) {			
 			tmp.push(this.objArray[i]);
@@ -326,6 +335,10 @@ var LilyObjectList = {
 			   return 0;			
 			
 		});
+		
+		//cache it
+		this.objDisplayArr=tmp;
+		
 		return tmp;
 	},
 	
