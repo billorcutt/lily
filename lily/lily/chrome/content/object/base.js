@@ -191,11 +191,12 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 			
 			if(this.resetSize) {
 				this.controller.objResizeControl.clearSize();
-			}			
+			}	
 			
 			if(ui && !this.displayElement) {
 				ui.style.borderWidth=bsize+"px";
 			} else if(this.displayElement) {
+				if(!this.displayElement.style.borderStyle) this.displayElement.style.borderStyle = "solid";			
 				this.displayElement.style.borderWidth=bsize+"px";
 			} //update custom ui
 			

@@ -37,6 +37,7 @@ function $yuidotcalendar()
 	this.inlet1=new this.inletClass("inlet1",this, "date string");
 	this.ui={};	
 	this.resize=false;
+	this.allowFont=false; //don't allow font changes	
 	
 	this.today = new Date(); 
 	
