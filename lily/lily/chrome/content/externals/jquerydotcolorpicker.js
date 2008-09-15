@@ -34,7 +34,9 @@ function $jquerydotcolorpicker()
 	var thisPtr=this;
 	this.ui={};	
 	this.outlet1 = new this.outletClass("outlet1",this,"color hex string");
-	this.resize=false;		
+	this.resize=false;
+	this.allowFont=false; //don't allow font changes
+	this.allowBorder=false; //no custom border			
 	
 	function initColorPicker() {
 		var jquery_dollar_sign = (iframe.objFrame.contentWindow.$)?iframe.objFrame.contentWindow.$:iframe.objFrame.contentWindow.wrappedJSObject.$;					

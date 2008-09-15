@@ -135,7 +135,8 @@ function $iframe(args)
 	}
 	
 	iframe.objFrame.addEventListener("load",frameLoad,false);	
-	this.controller.setNoBorders(this.noBorders);	
+	this.controller.setNoBorders(this.noBorders);
+	this.displayElement = iframe.wrapper;
 	
 	return this;
 }

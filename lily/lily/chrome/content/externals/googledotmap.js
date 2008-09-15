@@ -33,6 +33,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 function $googledotmap()
 {
 	var thisPtr=this;
+
+	this.allowFont=false; //don't allow font changes
+	this.allowBorder=false; //no custom border	
 	this.ui={};	
 	
 	var api=null;

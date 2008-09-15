@@ -187,7 +187,7 @@ function $subpatch(args)
 						
 		var sizeArr=LilyUtils.extractPatchSize(data); //get the patch size w/o having to eval the json.
 		var parentDir=(file.parent.isDirectory())?file.parent:null; //patch's parent dir.
-		thisPatch.obj = new LilyPatch(pid,Lily,sizeArr[0],sizeArr[1],false,{type:"iframe",win:thisPtr.displayElement,parent:thisPtr.parent.patchView.xulWin}); //call the patch constructor
+		thisPatch.obj = new LilyPatch(pid,Lily,sizeArr[0],sizeArr[1],false,{type:"iframe",win:thisPtr.resizeElement,parent:thisPtr.parent.patchView.xulWin}); //call the patch constructor
 
 		thisPatch.obj.callback=function(){
 			
@@ -262,7 +262,7 @@ function $subpatch(args)
 	
 	//create the new patch using the iframe
 	function frameLoad() {
-		thisPtr.displayElement.removeEventListener("load",frameLoad,true); //remove this so we don't loop
+		thisPtr.resizeElement.removeEventListener("load",frameLoad,true); //remove this so we don't loop
 		if(thisPtr.fPath&&thisPatch.json&&thisPatch.file) { 
 			openPatch(thisPatch.json,thisPatch.file);			
 		}//open the patch if we've got the data
@@ -275,7 +275,8 @@ function $subpatch(args)
 	this.ui={};	
 	var iframe=new LilyComponents._iframe(this,null,200,200,"no",frameLoad);	//no scrolling
 	
-	this.displayElement=this.resizeElement=iframe.objFrame; //
+	this.resizeElement=iframe.objFrame; //
+	this.displayElement=iframe.wrapper;	
 //	this.displayElement.addEventListener("load",frameLoad,false); //we'll use this once for init only	
 	this.controller.setNoBorders(true);
 	

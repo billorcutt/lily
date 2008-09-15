@@ -77,7 +77,7 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 	var src=processURL(source);
 	
 	//pass the calling context a ref to the view
-	parent.ui=new LilyObjectView(parent,'<iframe src="'+src+'" scrolling="'+ scroll +'" id="'+parent.createElID("iframe")+'" style="height:100%;width:100%;margin:0px;border:0px;padding:0px;visibility:hidden"></iframe>');
+	parent.ui=new LilyObjectView(parent,'<div style="height:100%" id="'+parent.createElID("iframe_wrapper")+'"><iframe src="'+src+'" scrolling="'+ scroll +'" id="'+parent.createElID("iframe")+'" style="height:100%;width:100%;margin:0px;border:0px;padding:0px;visibility:hidden"></iframe></div>');
 	parent.ui.draw();
 				
 	//bang on load
@@ -108,7 +108,7 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 			frameCover.style.zIndex=-9999;
 		} else {
 			frameCover.style.visibility="visible";
-//			frameCover.style.backgroundColor='red';				
+			//frameCover.style.backgroundColor='red';				
 			//frameCover.style.zIndex=9999;
 			frameCover.style.zIndex=parent.zIndex+1;
 		}
@@ -177,6 +177,8 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 	frameCover.style.left=(parent.left)+"px";
 	frameCover.style.top=(parent.top+5)+"px";
 	frameCover.style.zIndex=parent.zIndex+1; //this is a problem- needs to be tied to the zindex of the object
+	
+	this.wrapper = parent.ui.getElByID(parent.createElID("iframe_wrapper"));
 	
 	//try to set this
 	parent["frameCover"]=frameCover;

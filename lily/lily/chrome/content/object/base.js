@@ -58,12 +58,13 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 	this.customColor=false; //if true then the color is saved.
 	this.resetSize=true; //should we reset the object size and reflow on font size changes, etc
 	this.allowFont=true; //allow the font family/size/color changes
-	this.allowColor=true; //allow color changes			
+	this.allowColor=true; //allow color changes
+	this.allowBorder=true; //no custom border			
 	this.resize=true; //should the object be resizable
 	this.displayArgs=true; //should we see objects arguments (for non-UI objects only)
 	this.loadsSubPatchByName = false; //true when a subpatch is invoked by name
 	this.hasBeenResized=false; //true when an extern has resized by hand.
-	this.isPaste=false; //true if we're creating this as a paste
+	this.isPaste=false; //true if we're creating this as a paste		
 	
 	this.ui=null; //to filled in when view instantiates
 	this.document=null; //ditto
@@ -139,7 +140,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 		
 	this.setBorderColor=function(bcolor,perm) {
 		
-		if(bcolor) {
+		if(bcolor && this.allowBorder) {
 			var ui=this.controller.objView.getInputWrapper();
 
 			if(ui) ui.style.borderColor=bcolor;
@@ -156,7 +157,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 	
 	this.setBorderStyle=function(bstyle,perm) {
 				
-		if(bstyle) {
+		if(bstyle && this.allowBorder) {
 			var ui=this.controller.objView.getInputWrapper();
 			
 			if(this.resetSize) {
@@ -186,7 +187,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 	
 	this.setBorderSize=function(bsize,perm) {
 		
-		if(bsize) {
+		if(bsize && this.allowBorder) {
 			var ui=this.controller.objView.getInputWrapper();
 			
 			if(this.resetSize) {

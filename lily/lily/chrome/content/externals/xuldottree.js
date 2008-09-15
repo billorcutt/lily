@@ -318,6 +318,7 @@ function $xuldottree(args)
 	}
 	
 	var iframe=new LilyComponents._iframe(this,"chrome://lily/content/lib/base.xul",200,200,"no",frameInit);
+	this.displayElement = iframe.wrapper;	
 	
 	function frameInit() {
 		initTable();

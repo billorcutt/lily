@@ -36,8 +36,9 @@ function $yuidotcalendar()
 	this.outlet1 = new this.outletClass("outlet1",this,"\"bang\" outputs selected date, \"next\", \"previous\" & click selects and outputs date");
 	this.inlet1=new this.inletClass("inlet1",this, "date string");
 	this.ui={};	
-	this.resize=false;
-	this.allowFont=false; //don't allow font changes	
+	this.resize=false; //no resizing
+	this.allowFont=false; //don't allow font changes
+	this.allowBorder=false; //no custom border	
 	
 	this.today = new Date(); 
 	
