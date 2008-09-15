@@ -318,7 +318,7 @@ function LilyObjectView (obj,HTML,cmdStr) {
 				this.inputWrapper.style.background="#FFFFFF";
 				this.contentContainer.style.background="#FFFFFF";				
 			}	
-			this.contentContainer.style.borderColor="#000000";
+			if(!this.parent.customBorder) this.contentContainer.style.borderColor="#000000";
 			this.objViewNode.style.display="inherit";
 			changeInletOutletVisibility("block","visible");
 			
