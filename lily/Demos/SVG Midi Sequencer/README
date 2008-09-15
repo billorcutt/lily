@@ -12,3 +12,6 @@ HOWTO
 
 * Open a terminal window and start the Chuck patch in this directory- "chuck osc2midi.ck"
 
+
+UPDATE: the svg extern is deprecated and is included here only for compatibility. use the processing external for future development.
+
