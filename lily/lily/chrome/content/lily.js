@@ -844,6 +844,7 @@ var Lily =
 		} else {
 			this.writePatch(id); //patch has been saved at least once
 		}
+		this.patchObj[id].obj.isDirty=false; //flip the bit back
 	},
 	
 	/*
