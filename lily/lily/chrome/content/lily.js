@@ -1041,7 +1041,7 @@ var Lily =
 				this.savePatch(id);
 				this.patchObj[id].obj.close(); //clean up the patch & close the window.
 				this.closePatch(id); //cleanup at the app level.
-			} else if(this.patchObj[id].obj.getPatchData()!=this.patchObj[id].obj.patchModel.serializeDom() && !this.patchObj[id].obj.readonly) {
+			} else if(this.patchObj[id].obj.isDirty && !this.patchObj[id].obj.readonly) {
 
 				var button=prompts.confirmEx(this.patchObj[id].obj.patchView.xulWin, "", "Save changes to patch?", flags, "", "", "", null, {value: false});
 

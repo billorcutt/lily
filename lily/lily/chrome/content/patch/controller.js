@@ -680,7 +680,10 @@ function LilyPatchController(pID,parent)
 	this.updateMouseAction=function(e) {
 		var mouseUpTime=new Date();
 		var diff=mouseUpTime.getTime()-mouseDownTime.getTime();
-		thisPtr.isMouseDown=false;		
+		thisPtr.isMouseDown=false;
+		//lazy assumation that mouseup on the patch in edit mode means an edit has been made
+		// ******* FIXME *******		
+		thisPtr.patch.isDirty=true;			
 		if(diff>300) {
 			okToCreate=false;
 			setTimeout(function(){okToCreate=true;},1000);

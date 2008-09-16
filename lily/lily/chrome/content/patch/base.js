@@ -44,6 +44,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	this.hidden=hide||false; //
 	this.zoomLevel=1;
 	this.usesTmpFile=false; //i.e. a temporary patch for editing a patcher.
+	this.isDirty=false; //has the patch changed from the saved version.
 	
 	var thisPtr=this;
 	
