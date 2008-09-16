@@ -857,6 +857,7 @@ var Lily =
 	saveAsPatch: function(pID) {
 		var id=pID||this.currPatch;		
 		this.writeNewPatch(id);
+		this.patchObj[pID].obj.isDirty=false; //flip the bit back		
 	},
 	
 	/*
