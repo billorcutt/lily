@@ -341,10 +341,9 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	
 		Arguments: 
 			objID - object id.
-			replaceWithSame - true if we're deleting as part of a replace operation
 	*/		
 	//delete object
-	this.deleteObject=function(objID,replaceWithSame) { 
+	this.deleteObject=function(objID) { 
 		
 		var obj=this.getObj(objID); //get the object
 		if(obj)	{
@@ -366,12 +365,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			
 			obj=null;	//remove this ref
 			
-			/*
-				FIXME: because i'm doing a string compare on the json to see if a patch has changed (because i _think_ its 
-				faster), i want to reuse the reference in the model if i'm just replacing an object so it won't affect the way 
-				the patch serializes...
-			*/
-			if(!replaceWithSame) this.patchModel.removeNode(objID);  //remove ref to node from model
+			this.patchModel.removeNode(objID);  //remove ref to node from model
 			
 			LilyInspectorWindow.clear(); //clear the inspector window
 			
@@ -394,15 +388,14 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			id				- object id (optional)
 			args			- object args as a string (optional)
 			resizeFlag		- true if the object has been resized
-			replaceWithSame	- true if we're replacing with the same extern.
 		
 		Returns: 
 			returns the created object instance.
 	*/			
 	//create object- args: className, top, left, objID, variable_length_arguments_to_obj //only the first arg is required.
-	this.createObject=function(name,pID,t,l,id,args,resizeFlag,replaceWithSame) {
+	this.createObject=function(name,pID,t,l,id,args,resizeFlag) {
 				
-		if(this.getObj(id) && !replaceWithSame)
+		if(this.getObj(id))
 			return null;
 		
 		//so messy...
@@ -496,10 +489,10 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			var savedConnections=this.saveConnections(id);
 		
 		//delete object we're replacing
-		this.deleteObject(id,replaceWithSame);
+		this.deleteObject(id);
 		
 		//create new object
-		var o=this.createObject(newObjName,null,y,x,newID,args,null,replaceWithSame);
+		var o=this.createObject(newObjName,null,y,x,newID,args);
 				
 		//if we're recreating the same extern
 		if(replaceWithSame) {
