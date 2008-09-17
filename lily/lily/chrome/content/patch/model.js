@@ -476,6 +476,23 @@ function LilyModel(parent)
 	}
 	
 	/*
+		Method: getSelectedConnections
+			return array of just the selected connections
+		
+		Returns: 
+			returns array of objects
+	*/
+	this.getSelectedConnections=function() {
+		var tmp=[];
+		for(var x in this.objArray) {
+			if(this.objArray[x].getIsSelected()&&this.objArray[x].getObjectType()=="connection") {
+				tmp.push(x);
+			}	
+		}
+		return tmp;
+	}	
+	
+	/*
 		Method: getObjectCount
 			return an object count
 		

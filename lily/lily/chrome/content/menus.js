@@ -153,6 +153,7 @@ var LilyMenuBar = {
 		
 		var menuNodes = menu.childNodes;
 		var len = Lily.getCurrentPatch().patchController.getSelectedObjectsLength();
+		var connect_length = Lily.getCurrentPatch().patchController.getSelectedConnectionsLength();
 		var editable = (Lily.getCurrentPatch().patchController.getEditable()=="edit");
 		
 		for(var i=0;i<menuNodes.length;i++) {
@@ -209,6 +210,41 @@ var LilyMenuBar = {
 	
 					}	
 
+				} else if(
+					(
+						menuNodes[i].getAttribute("id")=="hideInPerfItem"||
+						menuNodes[i].getAttribute("id")=="showInPerfItem"				
+					) 
+					&& 
+					(
+						connect_length //enable the above items only if there are selected connections
+					) 
+				) {
+
+					menuNodes[i].setAttribute("disabled",false);
+				
+					var hide = Lily.getCurrentPatch().patchController.getSelectedConnectionsProperty("hiddenInPerf");
+
+					if(hide==true) {
+	
+						if(menuNodes[i].getAttribute("id")=="hideInPerfItem")
+							menuNodes[i].setAttribute("disabled",true); 
+
+						if(menuNodes[i].getAttribute("id")=="showInPerfItem")
+							menuNodes[i].setAttribute("disabled",false); 
+
+					} else if(hide==false) {
+
+						if(menuNodes[i].getAttribute("id")=="hideInPerfItem")
+							menuNodes[i].setAttribute("disabled",false); 
+
+						if(menuNodes[i].getAttribute("id")=="showInPerfItem")
+							menuNodes[i].setAttribute("disabled",true); 
+
+					} else {
+						menuNodes[i].setAttribute("disabled",false); 
+					}
+					
 				} else {
 					menuNodes[i].setAttribute("disabled",true);
 				}

@@ -105,6 +105,31 @@ function LilyPatchController(pID,parent)
 		return i;
 	}
 	
+	//get selectedconnections length
+	this.getSelectedConnectionsLength=function() {
+		var tmp = this.patch.patchModel.getSelectedConnections();
+		return tmp.length;
+	}
+	
+	//just returns the selected connections hide/show property
+	this.getSelectedConnectionsProperty=function(prop) {
+		var tmp = this.patch.patchModel.getSelectedConnections();
+		var prev = null;
+		for(var i=0;i<tmp.length;i++) {
+			var connection = this.patch.getObj(tmp[i]);
+			if(typeof connection[prop]!="undefined") {
+				//FIXME *** normalize the font names ***
+				var value = connection[prop];
+				if(prev!=null&&prev!=value) { //return null if the value isn't the same for all objects
+					return null;
+				} else {
+					prev=value;
+				}
+			}
+		}
+		return prev;
+	}	
+	
 	//getter for selectedObjects property
 	this.getSelectedObjectsProperty=function(prop) {
 		var prev = null;
