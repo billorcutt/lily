@@ -33,7 +33,7 @@ if(typeof Lily == "undefined") {
 		"chrome://lily/content/object/view.js",						
 		
 		"chrome://lily/content/services.js",
-		"chrome://lily/content/lily.js",
+		"chrome://lily/content/app.js",
 		"chrome://lily/content/menus.js",
 		"chrome://lily/content/exporter.js"
 	]

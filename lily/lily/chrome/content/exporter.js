@@ -372,9 +372,9 @@ var LilyPatchExporter = {
 					function() {
 						//lily.js
 						var tmpIn = contentIn.clone();
-						tmpIn.append("lily.js");
+						tmpIn.append("app.js");
 						var tmpOut = contentOut.clone();
-						tmpOut.append("lily.js");
+						tmpOut.append("app.js");
 						var data = LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName));
 						data = data.replace(/nameSpace: "lily",/,"nameSpace: \""+projectName+"\",");			
 						LilyUtils.writeFile(tmpOut,data);
@@ -1041,9 +1041,9 @@ var LilyPatchExporter = {
 					function() {
 						//lily.js
 						var tmpIn = contentIn.clone();
-						tmpIn.append("lily.js");
+						tmpIn.append("app.js");
 						var tmpOut = contentOut.clone();
-						tmpOut.append("lily.js");
+						tmpOut.append("app.js");
 						var data = LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName));
 						data = data.replace(/nameSpace: "lily",/,"nameSpace: \""+projectName+"\",");			
 						LilyUtils.writeFile(tmpOut,data);
