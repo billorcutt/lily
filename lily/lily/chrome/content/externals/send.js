@@ -44,8 +44,8 @@ function $send(args)
 	this.inlet1=new this.inletClass("inlet1",this,"message to send to matching receive objects");
 	
 	function getObjectArray(name) {
-		if(typeof Lily.receiveObjects[name] == "object")
-			return Lily.receiveObjects[name];
+		if(typeof LilyApp.receiveObjects[name] == "object")
+			return LilyApp.receiveObjects[name];
 		else
 			return [];
 	}

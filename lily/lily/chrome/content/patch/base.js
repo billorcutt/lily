@@ -189,11 +189,11 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	*/
 	//returns the last saved patch string
 	this.getPatchData=function() {
-		if(Lily.patchObj[this.patchID] && Lily.patchObj[this.patchID].json) {
-			return Lily.patchObj[this.patchID].json;
-		} else if(Lily.patchObj[this.patchID] && Lily.patchObj[this.patchID].file){
-			var data = LilyUtils.readFile(Lily.patchObj[this.patchID].file);
-			Lily.patchObj[this.patchID].json = data;
+		if(LilyApp.patchObj[this.patchID] && LilyApp.patchObj[this.patchID].json) {
+			return LilyApp.patchObj[this.patchID].json;
+		} else if(LilyApp.patchObj[this.patchID] && LilyApp.patchObj[this.patchID].file){
+			var data = LilyUtils.readFile(LilyApp.patchObj[this.patchID].file);
+			LilyApp.patchObj[this.patchID].json = data;
 			return data;
 		} else {
 			return "";
@@ -209,8 +209,8 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	*/	
 	//returns a handle to this patch file
 	this.getPatchFile=function() {
-		if(Lily.patchObj[this.patchID]&&Lily.patchObj[this.patchID].file)
-			return Lily.patchObj[this.patchID].file;
+		if(LilyApp.patchObj[this.patchID]&&LilyApp.patchObj[this.patchID].file)
+			return LilyApp.patchObj[this.patchID].file;
 		else
 			return null;
 	}
@@ -224,8 +224,8 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	*/	
 	//returns a handle to the parent directory
 	this.getPatchDir=function() {
-		if(Lily.patchObj[this.patchID]&&Lily.patchObj[this.patchID].file&&Lily.patchObj[this.patchID].file.parent)
-			return Lily.patchObj[this.patchID].file.parent;
+		if(LilyApp.patchObj[this.patchID]&&LilyApp.patchObj[this.patchID].file&&LilyApp.patchObj[this.patchID].file.parent)
+			return LilyApp.patchObj[this.patchID].file.parent;
 		else
 			return null;
 	}
@@ -684,7 +684,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		var file=(fPath)?LilyUtils.getFileHandle(fPath):null;
 		
 		if(file)
-			return Lily.openPatchFromFile(file,true,true);
+			return LilyApp.openPatchFromFile(file,true,true);
 		else
 			LilyDebugWindow.error("error- patch not found.");
 	}	
@@ -706,7 +706,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		var file=(fPath)?LilyUtils.getFileHandle(fPath):null;
 		
 		if(file)
-			return Lily.openPatchFromFile(file,true,false);
+			return LilyApp.openPatchFromFile(file,true,false);
 		else
 			LilyDebugWindow.error("error- patch not found.");
 	}	
@@ -728,7 +728,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 		var file=(fPath)?LilyUtils.getFileHandle(fPath):null;
 		
 		if(file)
-			return Lily.openPatchFromFile(file,false,false);
+			return LilyApp.openPatchFromFile(file,false,false);
 		else
 			LilyDebugWindow.error("error- patch not found.");
 	}
@@ -742,8 +742,8 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	*/
 	//open an empty patch window.
 	this.newPatch=function() {
-		var patchID = Lily.newPatch();
-		return Lily.patchObj[patchID].obj;
+		var patchID = LilyApp.newPatch();
+		return LilyApp.patchObj[patchID].obj;
 	}
 
 	/*
@@ -795,7 +795,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	*/
 	//alias to open help patch.
 	this.openHelp=function(name) {
-		Lily.openHelpPatch(name);
+		LilyApp.openHelpPatch(name);
 	}
 	
 	this.checkVersion=function(ver) {
@@ -989,7 +989,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			update the patch data.		
 	*/
 	this.updatePatchData=function() {
-		Lily.patchObj[this.patchID].json = this.patchModel.serializeDom();
+		LilyApp.patchObj[this.patchID].json = this.patchModel.serializeDom();
 	}
 
 	/*
@@ -998,7 +998,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	*/
 	//save a patch
 	this.savePatch=function() {
-		Lily.savePatch(this.patchID);
+		LilyApp.savePatch(this.patchID);
 	}
 	
 	/*
@@ -1007,7 +1007,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	*/
 	//copy selected objects
 	this.copy=function() {
-		Lily.clipboard=thisPtr.patchModel.serializeDom(true);
+		LilyApp.clipboard=thisPtr.patchModel.serializeDom(true);
 	}
 	
 	/*
@@ -1016,7 +1016,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	*/
 	//cut selected objects
 	this.cut=function() {
-		Lily.clipboard=thisPtr.patchModel.serializeDom(true);
+		LilyApp.clipboard=thisPtr.patchModel.serializeDom(true);
 		thisPtr.patchController.notifyPatchListeners("deleteKey");
 		thisPtr.patchController.notifyPatchListeners("patchModified");		
 	}
@@ -1038,10 +1038,10 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	//paste contents of clipboard- update the object ids to avoid duplicate ids
 	//need to modify this so that this is disabled during editing
 	this.paste=function() {
-		if(Lily.clipboard) {
+		if(LilyApp.clipboard) {
 			if(!thisPtr.patchController.isMouseDown)thisPtr.patchController.deselectAll()
 			var id=this.generateUID(); //new id
-			thisPtr.openPatch(Lily.clipboard,id);
+			thisPtr.openPatch(LilyApp.clipboard,id);
 			thisPtr.patchController.notifyPatchListeners("patchModified");
 		}			
 	}
@@ -1064,7 +1064,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	*/
 	//exposing this here for thispatch...
 	this.closePatch=function() {
-		Lily.close();
+		LilyApp.close();
 	}
 	
 	//close a patch
@@ -1174,8 +1174,8 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 
 	this.getModule=function(className) {
 				
-		if(typeof Lily["$"+LilyObjectList.objDisplay[className]] != "undefined") {
-			return Lily["$"+LilyObjectList.objDisplay[className]]; //external
+		if(typeof LilyApp["$"+LilyObjectList.objDisplay[className]] != "undefined") {
+			return LilyApp["$"+LilyObjectList.objDisplay[className]]; //external
 		} else if(LilyObjectList.search(className)) {
 			return LilyObjectList.search(className).path; //if its a patch, just return the path
 		} else {
@@ -1190,7 +1190,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 						return LilyObjectList.search(className).path; //if its a patch, just return the path
 					}
 				} else {
-					return Lily["$"+LilyObjectList.objDisplay[className]];
+					return LilyApp["$"+LilyObjectList.objDisplay[className]];
 				}	
 			}
 		}

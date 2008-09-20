@@ -67,8 +67,8 @@ LilyUtils.jsDump = function(str) {
 		returns object meta data.
 */
 LilyUtils.getObjectMetaData = function(objName) {
-	if(typeof Lily["$"+objName+"MetaData"] != "undefined") {
-		return Lily["$"+objName+"MetaData"];			
+	if(typeof LilyApp["$"+objName+"MetaData"] != "undefined") {
+		return LilyApp["$"+objName+"MetaData"];			
 	} else { //if its not defined then return some barebones value
 		return {
 			textName:objName,

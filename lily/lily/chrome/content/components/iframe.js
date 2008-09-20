@@ -198,7 +198,7 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 	//a hack to return focus to the window
 	//FIXME *** commenting this out, since it suddenly started causing problems
 	//uncommenting this out now to see if it works in FF3
-	parent.parent.patchView.oWin.addEventListener("blur",function(event){setTimeout(function(){ if((parent.parent.patchController&&!parent.parent.patchController.editing) && Lily.getCurrentPatch().patchID==parent.parent.patchID){thisPtr.objFrame.blur();}},0);},false);
+	parent.parent.patchView.oWin.addEventListener("blur",function(event){setTimeout(function(){ if((parent.parent.patchController&&!parent.parent.patchController.editing) && LilyApp.getCurrentPatch().patchID==parent.parent.patchID){thisPtr.objFrame.blur();}},0);},false);
 	
 	return this;
 }

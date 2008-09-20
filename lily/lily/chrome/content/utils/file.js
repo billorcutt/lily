@@ -399,8 +399,8 @@ LilyUtils.getFilePath = function(filepath) {
 			file.initWithPath(filepath);		
 		} catch(e) {
 			//didn't work so try it as an relative path
-			if(Lily.getCurrentPatch()) {			
-				var parentDir=Lily.getCurrentPatch().getFirstParentPatch().getPatchDir(); //get the parent dir
+			if(LilyApp.getCurrentPatch()) {			
+				var parentDir=LilyApp.getCurrentPatch().getFirstParentPatch().getPatchDir(); //get the parent dir
 				if(parentDir) { //got it
 					try {
 						file.initWithPath((parentDir.path+this.getDirSeparator()+filepath));	//try it			

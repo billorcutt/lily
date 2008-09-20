@@ -7,17 +7,17 @@
 ]>
 
 <window
-	onclose="opener.Lily.close(window.arguments[1]);return false;"
+	onclose="opener.LilyApp.close(window.arguments[1]);return false;"
 	onload="window.arguments[0]();"
-	onfocus="opener.Lily.makePatchCurrent(window.arguments[1]);"
-	onclick="opener.Lily.makePatchCurrent(window.arguments[1]);"	
+	onfocus="opener.LilyApp.makePatchCurrent(window.arguments[1]);"
+	onclick="opener.LilyApp.makePatchCurrent(window.arguments[1]);"	
 	title="Untitled"
     id="lilyReadOnlyPatchWindow"
     orient="vertical"
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<keyset id="lilyReadOnlyKeySet">
-	  <key id="lilyReadOnlyCloseKey" modifiers="accel" key="W" oncommand="opener.Lily.close()"/>
+	  <key id="lilyReadOnlyCloseKey" modifiers="accel" key="W" oncommand="opener.LilyApp.close()"/>
 	</keyset>
 	
 	<!-- Menubar  -->
@@ -26,7 +26,7 @@
 		<!-- File Menu -->
 		<menu id="menu_ReadOnlyLilyFilePopup" label="&lily.FileMenu;">
 	        <menupopup id="menu_ReadOnlyFilePopupMenu">
-	            <menuitem id="closeReadOnlyPatchItem" label="&lily.Close;" oncommand="opener.Lily.close()"/>				
+	            <menuitem id="closeReadOnlyPatchItem" label="&lily.Close;" oncommand="opener.LilyApp.close()"/>				
 			</menupopup>
 		</menu>
 	</menubar>	

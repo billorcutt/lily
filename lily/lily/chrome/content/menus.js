@@ -72,9 +72,9 @@ var LilyMenuBar = {
 			
 			} else {
 	//			LilyDebugWindow.print("done editing.")		//
-				win.document.getElementById("contextPasteItem").setAttribute("oncommand","opener.Lily.paste()");
-				win.document.getElementById("pasteItemLily").setAttribute("oncommand","opener.Lily.paste()");
-				win.document.getElementById("lilyPasteKey").setAttribute("oncommand","opener.Lily.paste()");
+				win.document.getElementById("contextPasteItem").setAttribute("oncommand","opener.LilyApp.paste()");
+				win.document.getElementById("pasteItemLily").setAttribute("oncommand","opener.LilyApp.paste()");
+				win.document.getElementById("lilyPasteKey").setAttribute("oncommand","opener.LilyApp.paste()");
 								
 			}
 		
@@ -126,7 +126,7 @@ var LilyMenuBar = {
 			appended.addEventListener("command",function(e){
 				var name = e.target.getAttribute("label");
 				var enumerator = LilyUtils.getWindowEnumerator();
-				var currWinID = Lily.currPatch;
+				var currWinID = LilyApp.currPatch;
 				while(enumerator.hasMoreElements()) {
 					var win = enumerator.getNext();
 					if(win.title==name && currWinID!=win.windowID) {
@@ -152,9 +152,9 @@ var LilyMenuBar = {
 	setObjectMenu: function(menu) {
 		
 		var menuNodes = menu.childNodes;
-		var len = Lily.getCurrentPatch().patchController.getSelectedObjectsLength();
-		var connect_length = Lily.getCurrentPatch().patchController.getSelectedConnectionsLength();
-		var editable = (Lily.getCurrentPatch().patchController.getEditable()=="edit");
+		var len = LilyApp.getCurrentPatch().patchController.getSelectedObjectsLength();
+		var connect_length = LilyApp.getCurrentPatch().patchController.getSelectedConnectionsLength();
+		var editable = (LilyApp.getCurrentPatch().patchController.getEditable()=="edit");
 		
 		for(var i=0;i<menuNodes.length;i++) {
 			
@@ -186,7 +186,7 @@ var LilyMenuBar = {
 				
 					if(menuNodes[i].getAttribute("id")=="hideInPerfItem"||menuNodes[i].getAttribute("id")=="showInPerfItem") {
 	
-						var hide = Lily.getCurrentPatch().patchController.getSelectedObjectsProperty("hideInPerf");
+						var hide = LilyApp.getCurrentPatch().patchController.getSelectedObjectsProperty("hideInPerf");
 
 						if(hide==true) {
 		
@@ -223,7 +223,7 @@ var LilyMenuBar = {
 
 					menuNodes[i].setAttribute("disabled",false);
 				
-					var hide = Lily.getCurrentPatch().patchController.getSelectedConnectionsProperty("hiddenInPerf");
+					var hide = LilyApp.getCurrentPatch().patchController.getSelectedConnectionsProperty("hiddenInPerf");
 
 					if(hide==true) {
 	
@@ -258,14 +258,14 @@ var LilyMenuBar = {
 	setEditMenu: function(menu) {
 		
 		var menuNodes = menu.childNodes;
-		var len = Lily.getCurrentPatch().patchController.getSelectedObjectsLength();
-		var editable = (Lily.getCurrentPatch().patchController.getEditable()=="edit");				
+		var len = LilyApp.getCurrentPatch().patchController.getSelectedObjectsLength();
+		var editable = (LilyApp.getCurrentPatch().patchController.getEditable()=="edit");				
 		
 		for(var i=0;i<menuNodes.length;i++) {
 			
 			if(len&&menuNodes[i].getAttribute("id")!="pasteItemLily") {
 				menuNodes[i].setAttribute("disabled",false);
-			} else if(Lily.clipboard&&menuNodes[i].getAttribute("id")=="pasteItemLily"&&editable) {
+			} else if(LilyApp.clipboard&&menuNodes[i].getAttribute("id")=="pasteItemLily"&&editable) {
 				menuNodes[i].setAttribute("disabled",false);	
 			} else if(menuNodes[i].getAttribute("id")=="selectAllItemLily"&&editable) {
 				menuNodes[i].setAttribute("disabled",false);	
@@ -280,7 +280,7 @@ var LilyMenuBar = {
 	setPatchMenu: function(menu) {
 		
 		var menuNodes = menu.childNodes;		
-		var edit = Lily.getCurrentPatch().patchController.getEditable();		
+		var edit = LilyApp.getCurrentPatch().patchController.getEditable();		
 				
 		for(var i=0;i<menuNodes.length;i++) {
 			
@@ -290,7 +290,7 @@ var LilyMenuBar = {
 				else
 					menuNodes[i].setAttribute("checked",false);	
 			} else { //the color menu
-				if(Lily.getCurrentPatch().patchController.getEditable()!="edit")
+				if(LilyApp.getCurrentPatch().patchController.getEditable()!="edit")
 					menuNodes[i].setAttribute("disabled",true);
 				else
 					menuNodes[i].setAttribute("disabled",false);
@@ -301,7 +301,7 @@ var LilyMenuBar = {
 	onContextMenu: function(e) {
 
 		var win=LilyUtils.getActiveXULWindow(); //get the chrome window.
-		var editable = (Lily.getCurrentPatch().patchController.getEditable()=="edit");
+		var editable = (LilyApp.getCurrentPatch().patchController.getEditable()=="edit");
 		
 		//hide the menu items.
 		var contextMenu = win.document.getElementById("lilyContextMenu");
@@ -357,7 +357,7 @@ var LilyMenuBar = {
 					//if paste, then make the separator visible
 					if(children[i].id=="contextPasteItem") {
 						win.document.getElementById("contextEditSeparator").style.display="inherit";
-						if(!Lily.clipboard) { 
+						if(!LilyApp.clipboard) { 
 							children[i].setAttribute("disabled",true); //if the clipboard's empty, then disable paste
 						} else {
 							children[i].setAttribute("disabled",false); 
@@ -406,7 +406,7 @@ var LilyMenuBar = {
 						
 						win.document.getElementById("contextHelpSeparator").style.display="inherit";
 						
-						var name = Lily.getCurrentPatch().patchController.getSelectedObjectsProperty("className");
+						var name = LilyApp.getCurrentPatch().patchController.getSelectedObjectsProperty("className");
 						
 						if(!name) {
 							children[i].setAttribute("disabled",true);
@@ -420,7 +420,7 @@ var LilyMenuBar = {
 
 						win.document.getElementById("contextEditSeparator").style.display="inherit";
 
-						if(!Lily.clipboard && children[i].id=="contextPasteItem") { 
+						if(!LilyApp.clipboard && children[i].id=="contextPasteItem") { 
 							children[i].setAttribute("disabled",true); //if the clipboard's empty, then disable paste
 						} else {
 							children[i].setAttribute("disabled",false); 
@@ -443,7 +443,7 @@ var LilyMenuBar = {
 						children[i].setAttribute("disabled",false); 
 						
 						if(children[i].id=="contextHideInPerfItem"||children[i].id=="contextShowInPerfItem") {
-							var hide = Lily.getCurrentPatch().patchController.getSelectedObjectsProperty("hideInPerf");
+							var hide = LilyApp.getCurrentPatch().patchController.getSelectedObjectsProperty("hideInPerf");
 
 							//LilyDebugWindow.print(">>> "+hide)
 
@@ -497,7 +497,7 @@ var LilyMenuBar = {
 	},
 	
 	getDefaultFont: function() {
-		var cp=Lily.getCurrentPatch();
+		var cp=LilyApp.getCurrentPatch();
 		return cp.getPatchFont();
 	},
 	
@@ -507,7 +507,7 @@ var LilyMenuBar = {
 			
 		var menuArr=menu.childNodes;//win.document.getElementById("menu_ObjectFontPopup").childNodes;
 		
-		var patch=Lily.getCurrentPatch().patchController;
+		var patch=LilyApp.getCurrentPatch().patchController;
 		var size=patch.getSelectedObjectsProperty("fontSize");
 		var face=patch.getSelectedObjectsProperty("fontFace");				
 
@@ -552,7 +552,7 @@ var LilyMenuBar = {
         tempItem.setAttribute("id", "fc");	
         tempItem.setAttribute("type", "radio");	
 		
-        tempItem.setAttribute("oncommand", "opener.Lily.openColorPicker('font')");	
+        tempItem.setAttribute("oncommand", "opener.LilyApp.openColorPicker('font')");	
 
         // Add the item to our menu
         menu.appendChild(tempItem);
@@ -572,7 +572,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("id", "fs"+i);	
 	        tempItem.setAttribute("type", "radio");	
 			
-	        tempItem.setAttribute("oncommand", "opener.Lily.setFont(\"fontSize\","+ i +")");	
+	        tempItem.setAttribute("oncommand", "opener.LilyApp.setFont(\"fontSize\","+ i +")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -591,7 +591,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("id", "fs"+i);	
 	        tempItem.setAttribute("type", "radio");	
 			
-	        tempItem.setAttribute("oncommand", "opener.Lily.setFont(\"fontSize\","+ i +")");	
+	        tempItem.setAttribute("oncommand", "opener.LilyApp.setFont(\"fontSize\","+ i +")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -612,7 +612,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("name", "fontFamily");
 	        tempItem.setAttribute("type", "radio");
 			
-	        tempItem.setAttribute("oncommand", "opener.Lily.setFont(\"fontFamily\",\""+this.fontArray[i]+"\")");	
+	        tempItem.setAttribute("oncommand", "opener.LilyApp.setFont(\"fontFamily\",\""+this.fontArray[i]+"\")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -634,7 +634,7 @@ var LilyMenuBar = {
 
 		var menuArr=menu.childNodes;
 
-		var patch=Lily.getCurrentPatch().patchController;
+		var patch=LilyApp.getCurrentPatch().patchController;
 		var size=patch.getSelectedObjectsProperty("borderStyle");
 		var style=patch.getSelectedObjectsProperty("borderWidth");
 		
@@ -687,7 +687,7 @@ var LilyMenuBar = {
         tempItem.setAttribute("id", "bc");
         tempItem.setAttribute("type", "radio");	
 		
-        tempItem.setAttribute("oncommand", "opener.Lily.openColorPicker('border')");	
+        tempItem.setAttribute("oncommand", "opener.LilyApp.openColorPicker('border')");	
 
         // Add the item to our menu
         menu.appendChild(tempItem);
@@ -707,7 +707,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("id", "bs"+i);	
 	        tempItem.setAttribute("type", "radio");	
 			
-	        tempItem.setAttribute("oncommand", "opener.Lily.setBorder(\"borderWidth\","+ i +")");	
+	        tempItem.setAttribute("oncommand", "opener.LilyApp.setBorder(\"borderWidth\","+ i +")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -726,7 +726,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("id", "bs"+i);	
 	        tempItem.setAttribute("type", "radio");	
 			
-	        tempItem.setAttribute("oncommand", "opener.Lily.setBorder(\"borderWidth\","+ i +")");	
+	        tempItem.setAttribute("oncommand", "opener.LilyApp.setBorder(\"borderWidth\","+ i +")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -747,7 +747,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("name", "borderStyle");
 	        tempItem.setAttribute("type", "radio");
 			
-	        tempItem.setAttribute("oncommand", "opener.Lily.setBorder(\"borderStyle\",\""+styleArray[i]+"\")");	
+	        tempItem.setAttribute("oncommand", "opener.LilyApp.setBorder(\"borderStyle\",\""+styleArray[i]+"\")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -793,9 +793,9 @@ var LilyMenuBar = {
 		        allItem.setAttribute("label", arrNames[i].menuName);
 
 				if(isHelp)
-					allItem.setAttribute("oncommand", opener+".Lily.openHelpPatch(\""+ LilyUtils.stripExtension(arrNames[i].name) +"\")");
+					allItem.setAttribute("oncommand", opener+".LilyApp.openHelpPatch(\""+ LilyUtils.stripExtension(arrNames[i].name) +"\")");
 				else
-		        	allItem.setAttribute("oncommand", opener+".Lily.newObject(\""+ LilyUtils.stripExtension(arrNames[i].name) +"\",null,"+isContext+")");	
+		        	allItem.setAttribute("oncommand", opener+".LilyApp.newObject(\""+ LilyUtils.stripExtension(arrNames[i].name) +"\",null,"+isContext+")");	
 
 		        // Add the item to our menu
 		        allPop.appendChild(allItem);	
@@ -830,9 +830,9 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("id", context+objArr[i].menuName+"Item");	
 			
 			if(isHelp)
-				tempItem.setAttribute("oncommand", opener+".Lily.openHelpPatch(\""+ LilyUtils.stripExtension(objArr[i].name) +"\")");
+				tempItem.setAttribute("oncommand", opener+".LilyApp.openHelpPatch(\""+ LilyUtils.stripExtension(objArr[i].name) +"\")");
 			else
-	        	tempItem.setAttribute("oncommand", opener+".Lily.newObject(\""+ LilyUtils.stripExtension(objArr[i].name) +"\",null,"+isContext+")");	
+	        	tempItem.setAttribute("oncommand", opener+".LilyApp.newObject(\""+ LilyUtils.stripExtension(objArr[i].name) +"\",null,"+isContext+")");	
 
 	        // Add the item to our menu
 			catPop.appendChild(tempItem);
@@ -843,8 +843,8 @@ var LilyMenuBar = {
 	},
 	
 	setDebugMenu: function(win) {
-		win.document.getElementById("setDebugItem").setAttribute("checked",Lily.debug);
-		win.document.getElementById("setTraceItem").setAttribute("checked",Lily.trace);				
+		win.document.getElementById("setDebugItem").setAttribute("checked",LilyApp.debug);
+		win.document.getElementById("setTraceItem").setAttribute("checked",LilyApp.trace);				
 	}
 	
 }

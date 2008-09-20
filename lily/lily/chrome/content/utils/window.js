@@ -70,8 +70,8 @@ LilyUtils.getWindowEnumerator = function(type) {
 */
 LilyUtils.getActiveWindow = function() {
 	//getMostRecentWindow
-	if(Lily.getCurrentPatch()) {
-		return Lily.getCurrentPatch().patchView.oWin;
+	if(LilyApp.getCurrentPatch()) {
+		return LilyApp.getCurrentPatch().patchView.oWin;
 	} else {
 		var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
 		return wm.getMostRecentWindow(null);
@@ -87,8 +87,8 @@ LilyUtils.getActiveWindow = function() {
 */
 LilyUtils.getActiveXULWindow = function() {
 	//getMostRecentWindow
-	if(Lily.getCurrentPatch()) {
-		return Lily.getCurrentPatch().patchView.xulWin;
+	if(LilyApp.getCurrentPatch()) {
+		return LilyApp.getCurrentPatch().patchView.xulWin;
 	} else {
 		var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
 		return wm.getMostRecentWindow(null);
@@ -144,7 +144,7 @@ LilyUtils.getOpenDialogCoords = function(w,h) {
 		an array of x,y coords
 */
 LilyUtils.getOpenDialogOffset = function(w,h) {
-	var tmp = Lily.getCurrentPatch();
+	var tmp = LilyApp.getCurrentPatch();
 
 	if(	tmp &&
 		parseInt(tmp.patchView.xulWin.screenX) && 

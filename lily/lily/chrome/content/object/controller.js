@@ -207,7 +207,7 @@ function LilyObjectController (obj) {
 		thisPtr.patchController.attachPatchObserver(thisPtr.id,"colorChanged",thisPtr.updateColor,"select");
 		
 		//open file
-		thisPtr.patchController.attachPatchObserver(thisPtr.id,"click",function(event){if(event.metaKey&&event.altKey){Lily.openExtFile(Lily["$"+thisPtr.obj.name+"MetaData"].textName);}},"select");				
+		thisPtr.patchController.attachPatchObserver(thisPtr.id,"click",function(event){if(event.metaKey&&event.altKey){LilyApp.openExtFile(LilyApp["$"+thisPtr.obj.name+"MetaData"].textName);}},"select");				
 			
 		//set name values	
 //		LilyMenuBar.setNameValue(thisPtr.objView.parent.groupName,thisPtr.objView.parent.cssName);	
@@ -319,7 +319,7 @@ function LilyObjectController (obj) {
 		thisPtr.patchController.removePatchObserver(thisPtr.id,"colorChanged",thisPtr.updateColor,"select");				
 
 		//open file
-		thisPtr.patchController.removePatchObserver(thisPtr.id,"click",function(event){if(event.metaKey&&event.altKey){Lily.openExtFile(Lily["$"+thisPtr.obj.name+"MetaData"].textName);}},"select");				
+		thisPtr.patchController.removePatchObserver(thisPtr.id,"click",function(event){if(event.metaKey&&event.altKey){LilyApp.openExtFile(LilyApp["$"+thisPtr.obj.name+"MetaData"].textName);}},"select");				
 
 		//zindex
 		thisPtr.patchController.removePatchObserver(thisPtr.id,"bringForward",thisPtr.setBringForward,"select");
@@ -922,7 +922,7 @@ function LilyObjectController (obj) {
 			if(e.altKey && thisPtr.copied && !thisPtr.pasted) { //alt-drag copy
 				thisPtr.obj.parent.paste();
 				thisPtr.pasted=true;
-				Lily.clipboard=null; //only paste once
+				LilyApp.clipboard=null; //only paste once
 			}	
 			
 			thisPtr.ui.style.left=(thisPtr.startX + e.clientX - thisPtr.mouseX)+"px";

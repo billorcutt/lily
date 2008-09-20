@@ -44,7 +44,7 @@ function $oscreceive(param)
         .getService(Components.interfaces.nsILilyService).wrappedJSObject;
 
 	//initialize- params: obj id, callback, osc-port, debug, namespace, window, debugwindow
-	oscservice.initialize(this.objID, this.handler, port, Lily.debug, Lily.nameSpace, window, LilyDebugWindow);
+	oscservice.initialize(this.objID, this.handler, port, LilyApp.debug, LilyApp.nameSpace, window, LilyDebugWindow);
 	
 	function parseXML(str) {
 		var xml_doc = LilyUtils.parseXML(str);

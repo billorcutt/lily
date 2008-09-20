@@ -43,7 +43,7 @@ function $oscsend(param)
         .getService(Components.interfaces.nsILilyService).wrappedJSObject;
 
 	//initialize- params: obj id, callback, osc-port, debug, namespace, window
-	oscservice.initialize(this.objID, null, port, Lily.debug, Lily.nameSpace, window, LilyDebugWindow);
+	oscservice.initialize(this.objID, null, port, LilyApp.debug, LilyApp.nameSpace, window, LilyDebugWindow);
 	
 	//send the message
 	this.inlet1["anything"]=function(msg) {

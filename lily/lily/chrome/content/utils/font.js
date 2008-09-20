@@ -85,13 +85,13 @@ LilyUtils.sizeFontForPlatform = function(font_size) {
 */
 LilyUtils.getCompatibleFont = function(font) {
 	
-	if(!Lily["font-compat-table"]) {	
+	if(!LilyApp["font-compat-table"]) {	
 		LilyUtils.readSyncFromURL("chrome://lily/content/config/font-compat.txt",function(txt){
-			Lily["font-compat-table"]=eval("("+txt+")");
+			LilyApp["font-compat-table"]=eval("("+txt+")");
 		});
 	}
 			
-	var tmp = Lily["font-compat-table"][font.toLowerCase()];
+	var tmp = LilyApp["font-compat-table"][font.toLowerCase()];
 	if(tmp) {
 		return tmp;
 	} else {

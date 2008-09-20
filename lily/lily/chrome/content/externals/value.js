@@ -38,11 +38,11 @@ function $value(args)
 	this.inlet1=new this.inletClass("inlet1",this,"value to share, \"bang\" outputs value, \"send\" forwards message to receive objects");		
 	
 	this.inlet1["anything"]=function(val) {
-		Lily.setSharedValue(objName,val);
+		LilyApp.setSharedValue(objName,val);
 	}
 	
 	this.inlet1["bang"]=function() {
-		var val=Lily.getSharedValue(objName);
+		var val=LilyApp.getSharedValue(objName);
 		if(val!=undefined)
 			thisPtr.outlet1.doOutlet(val);
 	}

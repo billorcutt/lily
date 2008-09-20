@@ -24,7 +24,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 /*
-	Script: lily.js
+	Script: app.js
 		Contains the Lily application class.
 		
 	Author:
@@ -39,7 +39,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		 Top-level Lily application object.		
 */
 
-var Lily = 
+var LilyApp = 
 {	
 	
 	/*
@@ -126,7 +126,7 @@ var Lily =
 		observe: function(subject, topic, data) {
 			var cancelQuit = subject.QueryInterface(Ci.nsISupportsPRBool);
 			cancelQuit.data = true;
-			Lily.shutdown(true);
+			LilyApp.shutdown(true);
 		},
 		register: function() {
 		  var observerService = Components.classes["@mozilla.org/observer-service;1"]
@@ -313,7 +313,7 @@ var Lily =
 				
 			onError: function(message, fileName, line, pos, flags, exception){
 				var type = (flags & Components.interfaces.jsdIErrorHook.REPORT_WARNING) ? "warning" : "error";
-				if (type=="error" && Lily.debug) {
+				if (type=="error" && LilyApp.debug) {
 					LilyDebugWindow.error("ERROR : '"+message+"' FILE : "+fileName+" LINE : "+line);	
 				}
 			}
@@ -408,7 +408,7 @@ var Lily =
 		//do a shutdown if the main window is closed		
 		window.addEventListener("close",function(e) {
 			e.preventDefault();
-			Lily.shutdown(false);
+			LilyApp.shutdown(false);
 		},true);
 				
 		this.initialized=true;
@@ -484,7 +484,7 @@ var Lily =
 	*/	
 	newPatchFromMenu: function() {
 		if(!this.initialized) LilyDebugWindow.open();
-		setTimeout(function(){Lily.newPatch();},100); //give the debug window a chance to open, in the event there are errors
+		setTimeout(function(){LilyApp.newPatch();},100); //give the debug window a chance to open, in the event there are errors
 	},
 
 	/*
@@ -511,12 +511,12 @@ var Lily =
 		var hidden = hide||false;	
 		
 		this.patchObj[pID]={obj:new LilyPatch(pID,this,w,h,readonly,null,hidden),id:pID,file:null,json:null}; //object, id, file
-		setTimeout(function(){Lily.patchObj[pID].obj.updatePatchData();},1000); //save a copy of the patch string	
+		setTimeout(function(){LilyApp.patchObj[pID].obj.updatePatchData();},1000); //save a copy of the patch string	
 		this.makePatchCurrent(pID);
 		
 		//this will be overwritten if this is called as part of openpatch();
 		//FIXME - reenable this when i have some content
-		//this.patchObj[pID].obj.callback=function(){Lily.openFirstTimeMessage();}
+		//this.patchObj[pID].obj.callback=function(){LilyApp.openFirstTimeMessage();}
 		
 		return pID;
 		
@@ -611,7 +611,7 @@ var Lily =
 	*/	
 	openPatchFromMenu: function() {
 		if(!this.initialized) LilyDebugWindow.open();
-		setTimeout(function(){Lily.openPatch();},100); //give the debug window a chance to open, in the event there are errors
+		setTimeout(function(){LilyApp.openPatch();},100); //give the debug window a chance to open, in the event there are errors
 	},	
 		
 	/*
@@ -879,16 +879,16 @@ var Lily =
 		var exportParams = {id:patchID,type:"addon",platform:LilyUtils.navigatorPlatform()};	
 
 		//show a dialog to get the export details
-    	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/xul/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);		
+    	LilyApp.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/xul/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);		
 
 		if(exportParams.saved) {
-			Lily.getCurrentPatch().patchView.showWindowStatusActivity(true);
-			Lily.getCurrentPatch().patchView.setWindowStatusText("Saving as addon...")			
+			LilyApp.getCurrentPatch().patchView.showWindowStatusActivity(true);
+			LilyApp.getCurrentPatch().patchView.setWindowStatusText("Saving as addon...")			
 
 			//pass in callback
 			LilyPatchExporter.savePatchAsAddOn(exportParams,function(){
-				Lily.getCurrentPatch().patchView.showWindowStatusActivity(false);
-				Lily.getCurrentPatch().patchView.clearWindowStatusText();				
+				LilyApp.getCurrentPatch().patchView.showWindowStatusActivity(false);
+				LilyApp.getCurrentPatch().patchView.clearWindowStatusText();				
 			});	
 		}
 	},
@@ -904,15 +904,15 @@ var Lily =
 		var exportParams = {id:patchID,type:"app",platform:LilyUtils.navigatorPlatform()};			
 
 		//show a dialog to get the export details
-    	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/xul/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);			
+    	LilyApp.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/xul/exportDialog.xul", "lilyExportDialog", "chrome,titlebar,toolbar,centerscreen,modal",exportParams);			
 		
 		if(exportParams.saved) {
-			Lily.getCurrentPatch().patchView.showWindowStatusActivity(true);
-			Lily.getCurrentPatch().patchView.setWindowStatusText("Saving as app...");
+			LilyApp.getCurrentPatch().patchView.showWindowStatusActivity(true);
+			LilyApp.getCurrentPatch().patchView.setWindowStatusText("Saving as app...");
 						
 			LilyPatchExporter.savePatchAsApp(exportParams,function(){
-				Lily.getCurrentPatch().patchView.showWindowStatusActivity(false);
-				Lily.getCurrentPatch().patchView.clearWindowStatusText();				
+				LilyApp.getCurrentPatch().patchView.showWindowStatusActivity(false);
+				LilyApp.getCurrentPatch().patchView.clearWindowStatusText();				
 			});
 		}		
 		
@@ -1271,13 +1271,13 @@ var Lily =
 		
 		win.openDialog("chrome://lily/content/xul/color.xul", "cWin","width=250,height="+height+",left="+tmp[0]+",top="+tmp[1]+",close=no,scrollbars=no,dialog=yes,resizable=no,toolbar=no,menubar=no,location=no,status=no,chrome=yes,alwaysRaised=yes",function (val) {
 			if(type=="patch")
-				Lily.setPatchColor(val);
+				LilyApp.setPatchColor(val);
 			else if(type=="font") {
-				Lily.setFont("fontColor",val,null);
+				LilyApp.setFont("fontColor",val,null);
 			} else if(type=="border") {
-					Lily.setBorder("borderColor",val,null);
+					LilyApp.setBorder("borderColor",val,null);
 			}else {
-				Lily.setColor(val,null,true);	
+				LilyApp.setColor(val,null,true);	
 			}	
 		},initVals);
 
@@ -1506,7 +1506,7 @@ var Lily =
 			opens the preferences dialog.																	
 	*/
 	openPrefs: function() {		
-    	Lily.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/prefs.xul", "lilyPrefsDialog", "chrome,titlebar,toolbar,centerscreen,modal",LilyAPIKeyManager,LilyDebugWindow);
+    	LilyApp.getCurrentPatch().patchView.xulWin.openDialog("chrome://lily/content/prefs.xul", "lilyPrefsDialog", "chrome,titlebar,toolbar,centerscreen,modal",LilyAPIKeyManager,LilyDebugWindow);
 	},
 
 	/*
@@ -1514,7 +1514,7 @@ var Lily =
 			opens the help message.																	
 	*/
 	openHelpMessage: function() {		
-    	Lily.getCurrentPatch().patchView.displayHelpDialog();		
+    	LilyApp.getCurrentPatch().patchView.displayHelpDialog();		
 	},
 
 	/*
@@ -1522,7 +1522,7 @@ var Lily =
 			toggles the debug flag.																	
 	*/
 	toggleDebug: function(item) {
-		Lily.debug=(item.getAttribute("checked")=="true")?true:false;
+		LilyApp.debug=(item.getAttribute("checked")=="true")?true:false;
 	},
 
 	/*
@@ -1530,7 +1530,7 @@ var Lily =
 			toggles the trace flag.																		
 	*/
 	toggleTrace: function(item) {
-		Lily.trace=(item.getAttribute("checked")=="true")?true:false;
+		LilyApp.trace=(item.getAttribute("checked")=="true")?true:false;
 	},
 	
 	/*
@@ -1558,9 +1558,9 @@ var Lily =
 			opens the first time message.																	
 	*/
 	openFirstTimeMessage: function() {
-		if(!Lily.firstTimeHelpDisplayed) {
-	    	Lily.getCurrentPatch().patchView.displayFirstTimeScreen();	
-			Lily.firstTimeHelpDisplayed=true; //set the flag	
+		if(!LilyApp.firstTimeHelpDisplayed) {
+	    	LilyApp.getCurrentPatch().patchView.displayFirstTimeScreen();	
+			LilyApp.firstTimeHelpDisplayed=true; //set the flag	
 		}		
 	},
 	

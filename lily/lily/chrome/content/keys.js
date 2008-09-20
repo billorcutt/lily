@@ -38,7 +38,7 @@ var LilyAPIKeyManager= {
 			load the key file from disk and into memory.
 	*/
 	initKeys:function() {
-		var pathToKeys = Lily.installDir.clone();
+		var pathToKeys = LilyApp.installDir.clone();
 		pathToKeys.append("chrome");		
 		pathToKeys.append("content");
 		pathToKeys.append("config");		

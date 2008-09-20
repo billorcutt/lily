@@ -136,8 +136,8 @@ var LilyInspectorWindow = {
 	toggle:function() {
 		
 		if(!this.iWin) {
-			if(Lily.getCurrentPatch()&&Lily.getCurrentPatch().patchController.getHasSelection())
-				Lily.getInfo();
+			if(LilyApp.getCurrentPatch()&&LilyApp.getCurrentPatch().patchController.getHasSelection())
+				LilyApp.getInfo();
 			else
 				this.open();
 		} else {
@@ -241,11 +241,11 @@ var LilyInspectorWindow = {
 	},
 	
 	saveInspector: function() {
-		if(LilyInspectorWindow.inspectorConfig.length && Lily.getCurrentPatch()) {
-			LilyInspectorWindow.inspectorConfigBackup=LilyInspectorWindow.cloneInspectorConfig(Lily.getCurrentPatch().getObj(LilyInspectorWindow.objID).getInspectorConfig()); //state of config at last save	
+		if(LilyInspectorWindow.inspectorConfig.length && LilyApp.getCurrentPatch()) {
+			LilyInspectorWindow.inspectorConfigBackup=LilyInspectorWindow.cloneInspectorConfig(LilyApp.getCurrentPatch().getObj(LilyInspectorWindow.objID).getInspectorConfig()); //state of config at last save	
 		}
 		var vals=LilyInspectorWindow.getInspectorValues();
-		Lily.getCurrentPatch().getObj(LilyInspectorWindow.objID).saveInspector(vals);
+		LilyApp.getCurrentPatch().getObj(LilyInspectorWindow.objID).saveInspector(vals);
 		LilyInspectorWindow.saveNames();		
 	},
 
@@ -263,7 +263,7 @@ var LilyInspectorWindow = {
 
 //			LilyDebugWindow.print("unloading... ");			
 
-			if(!Lily.getCurrentPatch().patchController.getHasSelection())	{
+			if(!LilyApp.getCurrentPatch().patchController.getHasSelection())	{
 				
 				this.saveInspector();
 				var config=this.inspectorConfig;			
@@ -302,7 +302,7 @@ var LilyInspectorWindow = {
 		if(!this.isOpen() || !this.isLoaded())
 			return obj;	
 			
-		var config=this.inspectorConfig; //Lily.getCurrentPatch().getObj(this.objID).getInspectorConfig();
+		var config=this.inspectorConfig; //LilyApp.getCurrentPatch().getObj(this.objID).getInspectorConfig();
 		
 		for(var i=0;i<config.length;i++) {
 
@@ -365,7 +365,7 @@ var LilyInspectorWindow = {
 		if(typeof id == "undefined") //if called without an id...
 			return;
 
-		var obj=Lily.getCurrentPatch().getObj(id);
+		var obj=LilyApp.getCurrentPatch().getObj(id);
 		var config=obj.getInspectorConfig(); //get the config to build the html string for the window.
 		
 //		LilyDebugWindow.print("initing... "+config.toSource());		
@@ -437,7 +437,7 @@ var LilyInspectorWindow = {
 		if(!LilyInspectorWindow.isOpen() || !LilyInspectorWindow.isLoaded())
 			return;		
 		
-		var obj=Lily.getCurrentPatch().getObj(LilyInspectorWindow.objID);
+		var obj=LilyApp.getCurrentPatch().getObj(LilyInspectorWindow.objID);
 		var group = LilyInspectorWindow.bWin.document.getElementById("groupNameInput").value;
 		var css =LilyInspectorWindow.bWin.document.getElementById("classNameInput").value;
 
@@ -469,10 +469,10 @@ var LilyInspectorWindow = {
 		if(!LilyInspectorWindow.isOpen() || !LilyInspectorWindow.isLoaded())
 			return;
 			
-//		var obj=Lily.getCurrentPatch().getObj(LilyInspectorWindow.objID);			
+//		var obj=LilyApp.getCurrentPatch().getObj(LilyInspectorWindow.objID);			
 
 //		var tmpObj={};				
-//		var configArr=LilyInspectorWindow.inspectorConfigSave;	//Lily.getCurrentPatch().getObj(LilyInspectorWindow.objID).getInspectorConfig();
+//		var configArr=LilyInspectorWindow.inspectorConfigSave;	//LilyApp.getCurrentPatch().getObj(LilyInspectorWindow.objID).getInspectorConfig();
 		var configArr=LilyInspectorWindow.inspectorConfigBackup;
 		
 //		LilyDebugWindow.print("restore "+configArr.toSource())

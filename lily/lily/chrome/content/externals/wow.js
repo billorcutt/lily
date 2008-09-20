@@ -275,7 +275,7 @@ function $wow(args) //window on window
 								
 		var sizeArr=LilyUtils.extractPatchSize(data); //get the patch size w/o having to eval the json.
 		var parentDir=(file.parent.isDirectory())?file.parent:null; //patch's parent dir.
-		thisPatch.obj = new LilyPatch(pid,Lily,sizeArr[0],sizeArr[1],false,{type:"iframe",win:_iframe,parent:thisPtr.parent.patchView.xulWin}); //call the patch constructor
+		thisPatch.obj = new LilyPatch(pid,LilyApp,sizeArr[0],sizeArr[1],false,{type:"iframe",win:_iframe,parent:thisPtr.parent.patchView.xulWin}); //call the patch constructor
 
 		thisPatch.obj.callback=function(){
 			

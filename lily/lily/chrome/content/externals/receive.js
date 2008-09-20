@@ -47,21 +47,21 @@ function $receive(args)
 	}
 	
 	//init
-	if(typeof Lily.receiveObjects[this.receiveName] == "undefined") {
-		Lily.receiveObjects[this.receiveName]=[this];
-	} else if(typeof Lily.receiveObjects[this.receiveName] == "object") {
-		Lily.receiveObjects[this.receiveName].push(this);
+	if(typeof LilyApp.receiveObjects[this.receiveName] == "undefined") {
+		LilyApp.receiveObjects[this.receiveName]=[this];
+	} else if(typeof LilyApp.receiveObjects[this.receiveName] == "object") {
+		LilyApp.receiveObjects[this.receiveName].push(this);
 	}
 	
 	//remove the ref to this instance.
 	this.destructor=function() {
-		if(typeof Lily.receiveObjects[thisPtr.receiveName] != "undefined") {
-			var tmp = Lily.receiveObjects[thisPtr.receiveName];
+		if(typeof LilyApp.receiveObjects[thisPtr.receiveName] != "undefined") {
+			var tmp = LilyApp.receiveObjects[thisPtr.receiveName];
 			for(var i=0;i<tmp.length;i++) {
 				if(tmp[i] === thisPtr) {
 					tmp.splice(i,1);
 					if(!tmp.length) {
-						delete Lily.receiveObjects[thisPtr.receiveName];
+						delete LilyApp.receiveObjects[thisPtr.receiveName];
 					}
 				}
 			}

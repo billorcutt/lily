@@ -96,7 +96,7 @@ function LilyModel(parent)
 		
 		j+="var patch="+oBrace;
 
-		j+="'version':"+quote+Lily.version+quote+comma;
+		j+="'version':"+quote+LilyApp.version+quote+comma;
 		j+="'platform':"+quote+LilyUtils.navigatorPlatform()+quote+comma; //save platform
 		j+="'title':"+quote+this.patch.title+quote+comma;
 		j+="'width':"+this.patch.width+comma;

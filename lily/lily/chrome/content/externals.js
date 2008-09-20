@@ -210,7 +210,7 @@ var LilyObjectList = {
 			var zipFile = LilyUtils.getFileHandle(path);			
 			var objName = LilyUtils.stripExtension(zipFile.leafName);
 			
-			var targetDir = Lily.resourceDir.clone();
+			var targetDir = LilyApp.resourceDir.clone();
 			targetDir.append(objName);
 			
 			if( !targetDir.exists() || !targetDir.isDirectory() ) {   // if it doesn't exist, create
@@ -259,7 +259,7 @@ var LilyObjectList = {
 		}
 				
 		source = LilyUtils.readFileFromPath(path,false).data;		
-		if(!/\.json/.test(path)) LilyUtils.loadScript("file://"+path,Lily); //only load externs, not patches
+		if(!/\.json/.test(path)) LilyUtils.loadScript("file://"+path,LilyApp); //only load externs, not patches
 		
 		return source; //return the source	
 	},
@@ -279,7 +279,7 @@ var LilyObjectList = {
 		var objName = (LilyUtils.hasExtension(name))?"$"+(LilyUtils.stripExtension(name)):"$"+name;
 			
 		//look to see if the name is defined
-		if(typeof Lily[objName] != "undefined") 
+		if(typeof LilyApp[objName] != "undefined") 
 			return true;
 		else
 			return false;
@@ -413,7 +413,7 @@ var LilyObjectList = {
 	*/
 	genExternDetailDocs:function() {
 		
-		var patch = Lily.getCurrentPatch();		
+		var patch = LilyApp.getCurrentPatch();		
 		var tmp = this.getNamesByCategory();
 		var i = 0;
 		var str = "";

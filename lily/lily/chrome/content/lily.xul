@@ -33,7 +33,7 @@
 	    <vbox id="lilyContentBox" collapsed="true" persist="height">
 	        <toolbox id="lilyToolbox">
 	            <toolbar id="lilyToolbar">
-	                <toolbarbutton id="lilyCloseButton" label="close" oncommand="Lily.closeSideBarPatch();"/>
+	                <toolbarbutton id="lilyCloseButton" label="close" oncommand="LilyApp.closeSideBarPatch();"/>
 	            </toolbar>
 	        </toolbox>
 	        <hbox id="lilyPanelBox" flex="1">
@@ -45,7 +45,7 @@
 	<!-- Context Menu -->
 	<menupopup id="contentAreaContextMenu">		
 		<menuseparator id="contextObjectSeparator"/>		
-		<menuitem id="contextOpenInLily" label="Open Link in Lily" oncommand="Lily.openPatchFromNet(gContextMenu.link.href);"/>
+		<menuitem id="contextOpenInLily" label="Open Link in Lily" oncommand="LilyApp.openPatchFromNet(gContextMenu.link.href);"/>
 		<menuseparator id="lilyExternContextMenuSeparator"/>
 	</menupopup>
 		
@@ -54,14 +54,14 @@
 	    <menu id="menu_lily" label="&lily.Lily;" insertbefore="javascriptConsole">
 	        <menupopup id="menu_LilyPopup">
 	
-            	<menuitem id="newPatchToolsItem" label="&lily.New;" oncommand="Lily.newPatchFromMenu()"/>
-            	<menuitem id="openPatchToolsItem" label="&lily.Open;" oncommand="Lily.openPatchFromMenu()"/>
-				<!--<menuitem id="openHiddenPatchToolsItem" label="&lily.OpenHidden;" oncommand="Lily.openPatch(null,null,true,true);if(!LilyDebugWindow.isOpen()) { LilyDebugWindow.open(); }"/>
-				<menuitem id="closeHiddenPatchToolsItem" label="&lily.CloseHidden;" oncommand="Lily.close();LilyDebugWindow.close();"/>-->				
-				<!-- <menuitem id="openPatchSideBarToolsItem" label="&lily.OpenSideBar;" oncommand="Lily.openPatchInSidebar()"/> -->
+            	<menuitem id="newPatchToolsItem" label="&lily.New;" oncommand="LilyApp.newPatchFromMenu()"/>
+            	<menuitem id="openPatchToolsItem" label="&lily.Open;" oncommand="LilyApp.openPatchFromMenu()"/>
+				<!--<menuitem id="openHiddenPatchToolsItem" label="&lily.OpenHidden;" oncommand="LilyApp.openPatch(null,null,true,true);if(!LilyDebugWindow.isOpen()) { LilyDebugWindow.open(); }"/>
+				<menuitem id="closeHiddenPatchToolsItem" label="&lily.CloseHidden;" oncommand="LilyApp.close();LilyDebugWindow.close();"/>-->				
+				<!-- <menuitem id="openPatchSideBarToolsItem" label="&lily.OpenSideBar;" oncommand="LilyApp.openPatchInSidebar()"/> -->
 				
 				<!-- Prefs Menu -->					
-<!--	        <menuitem id="openLilyPrefsToolsItem" label="&lily.Options;" oncommand="Lily.openPrefs()"/> -->					
+<!--	        <menuitem id="openLilyPrefsToolsItem" label="&lily.Options;" oncommand="LilyApp.openPrefs()"/> -->					
 	        </menupopup>
 	    </menu>
 	</menupopup>

@@ -507,11 +507,11 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 //		LilyDebugWindow.print("was the alt key depressed? "+e.altKey);		
 		if((e.altKey && !LilyUtils.controlOrCommand(e)) && !thisPtr.controller.objDrag.pasted) {
 			if(thisPtr.name!="tmp") {
-				Lily.openHelpPatch((thisPtr.controller.objView.parent.loadsSubPatchByName)?thisPtr.controller.objView.parent.displayName:thisPtr.name);
+				LilyApp.openHelpPatch((thisPtr.controller.objView.parent.loadsSubPatchByName)?thisPtr.controller.objView.parent.displayName:thisPtr.name);
 			} else if(thisPtr.controller.objInputControl.objInput && thisPtr.controller.objInputControl.objInput.value) {
 				var name = thisPtr.controller.objInputControl.objInput.value.split(" ")[0];
 				if(name.length) {
-					Lily.openHelpPatch(name);	
+					LilyApp.openHelpPatch(name);	
 				}
 			}
 		}
@@ -639,7 +639,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 		
 		this.doOutlet=function(msg) {
 				var thisPtr=this;
-				if(Lily.trace && this.connected.length) LilyDebugWindow.trace("["+this.parent.name+"] sent: "+msg)
+				if(LilyApp.trace && this.connected.length) LilyDebugWindow.trace("["+this.parent.name+"] sent: "+msg)
 				for(var i=0;i < this.connected.length; i++) {				
 					var obj=this.patch.getObj(this.connected[i]);
 					obj.send(msg); //send  msg
@@ -666,7 +666,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 				var argStr=argArr.join(" ");
 			} 
 			
-			if(Lily.trace) LilyDebugWindow.trace("["+this.parent.name+"] received: "+msg)
+			if(LilyApp.trace) LilyDebugWindow.trace("["+this.parent.name+"] received: "+msg)
 			
 			if(typeof this[cmd]=="function") {
 				this[cmd](argStr);

@@ -563,7 +563,7 @@ function LilyPatchController(pID,parent)
 	
 	function toggleEditStateOnClick(e) {
 		if(LilyUtils.controlOrCommand(e)&&e.target.id=="canvas") {
-			Lily.toggleEdit();
+			LilyApp.toggleEdit();
 		}
 	}
 

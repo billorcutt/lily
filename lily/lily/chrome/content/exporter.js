@@ -66,7 +66,7 @@ var LilyPatchExporter = {
 	*/
 	savePatchAsApp: function(obj,callback) {
 
-		var id=obj.id||Lily.currPatch;
+		var id=obj.id||LilyApp.currPatch;
 		
 		var platform = LilyUtils.navigatorPlatform();
 
@@ -103,7 +103,7 @@ var LilyPatchExporter = {
 			if(platform=="apple") {
 				
 				//copy the folder over
-				var tmp = Lily.installDir.clone();
+				var tmp = LilyApp.installDir.clone();
 				tmp.append("PROJECTNAME");
 				tmp.copyTo(parentDir,(fp.file.leafName+".app"));
 
@@ -136,7 +136,7 @@ var LilyPatchExporter = {
 			if(rootDir.exists()) { //root directory exists...
 				
 				//copy the cross platform stuff.
-				var dependencies = Lily.patchObj[id].obj.getPatchDependencies();
+				var dependencies = LilyApp.patchObj[id].obj.getPatchDependencies();
 				var objArr = dependencies["classes"];
 				
 				//global to this function
@@ -151,7 +151,7 @@ var LilyPatchExporter = {
 				
 					function() {
 						//locale
-						var tmp = Lily.installDir.clone();
+						var tmp = LilyApp.installDir.clone();
 						tmp.append("chrome");		
 						tmp.append("locale");
 
@@ -163,7 +163,7 @@ var LilyPatchExporter = {
 					function() {
 						//components if we need 'em
 						if(objArr.toSource().indexOf("oscreceive")!=-1||objArr.toSource().indexOf("oscsend")!=-1) {
-							var tmp = Lily.installDir.clone();
+							var tmp = LilyApp.installDir.clone();
 							tmp.append("components");
 							tmp.copyTo(rootDir,null);
 						}	
@@ -171,7 +171,7 @@ var LilyPatchExporter = {
 					
 					function() {
 						//prefs
-						var tmp = Lily.installDir.clone();
+						var tmp = LilyApp.installDir.clone();
 						tmp.append("platform");
 						tmp.copyTo(rootDir,null);	
 					},
@@ -207,7 +207,7 @@ var LilyPatchExporter = {
 					
 					function() {
 						//content
-						contentIn = Lily.installDir.clone();
+						contentIn = LilyApp.installDir.clone();
 						contentIn.append("chrome");		
 						contentIn.append("content");
 						contentOut = rootDir.clone();
@@ -595,9 +595,9 @@ var LilyPatchExporter = {
 						//patch
 						var tmp = contentOut.clone();
 						tmp.append(obj.patchFileName+".json");
-						var data=Lily.patchObj[id].obj.patchModel.serializeDom();
+						var data=LilyApp.patchObj[id].obj.patchModel.serializeDom();
 						data=data.replace(/chrome:\/\/lily/g,("chrome://"+projectName));
-						Lily.patchObj[id].json=data; //update the patch string.			
+						LilyApp.patchObj[id].json=data; //update the patch string.			
 						tmp=LilyUtils.writeFile(tmp,data);
 					},
 					
@@ -619,10 +619,10 @@ var LilyPatchExporter = {
 					function() {
 						//copy the patch's parent directory if we need to and if the patch has been saved.
 						//******* FIXME ********  won't work with absolute paths, won't work with subfolders.																																
-						if(obj.includeParentDirCbx && Lily.patchObj[id].file) {
+						if(obj.includeParentDirCbx && LilyApp.patchObj[id].file) {
 
 							//copy the patch's parent dir
-							var parentDir = Lily.patchObj[id].file.parent.clone();
+							var parentDir = LilyApp.patchObj[id].file.parent.clone();
 
 							//recurse thru the resources dir converting text files as needed.
 							LilyUtils.directorySearch(parentDir,function(file) {
@@ -647,7 +647,7 @@ var LilyPatchExporter = {
 					
 					function() {
 						//write manifest
-						var fileIn = Lily.installDir.clone();
+						var fileIn = LilyApp.installDir.clone();
 						fileIn.append("chrome.manifest");
 						var fileOut = rootDir.clone();
 						fileOut.append("chrome");
@@ -737,7 +737,7 @@ var LilyPatchExporter = {
 							}
 
 							//read application.ini
-							var tmpIn = Lily.installDir.clone();
+							var tmpIn = LilyApp.installDir.clone();
 							tmpIn.append("PROJECTNAME");
 							tmpIn.append("Contents");
 							tmpIn.append("Resources");
@@ -783,7 +783,7 @@ var LilyPatchExporter = {
 			save a patch as an XPI.								
 	*/
 	savePatchAsAddOn: function(obj,callback) {	
-		var id=obj.id||Lily.currPatch;
+		var id=obj.id||LilyApp.currPatch;
 		
 		//we'll replace this later...
 		var projectName="";
@@ -814,7 +814,7 @@ var LilyPatchExporter = {
 			//par dir	
 			//var parentDir = fp.file.parent.clone();									
 			
-			var rootDir = fp.file.parent.clone();	//Lily.installDir.clone();
+			var rootDir = fp.file.parent.clone();	//LilyApp.installDir.clone();
 			rootDir.append("."+projectName+"_tmp");
 			
 			if( !rootDir.exists() || !rootDir.isDirectory() ) {   // if it doesn't exist, create
@@ -824,7 +824,7 @@ var LilyPatchExporter = {
 			//start copying
 			if(rootDir.exists()) { //root directory exists...
 				
-				var dependencies = Lily.patchObj[id].obj.getPatchDependencies();
+				var dependencies = LilyApp.patchObj[id].obj.getPatchDependencies();
 				var objArr = dependencies["classes"];
 				
 				//declare these globally for the parent function		
@@ -839,7 +839,7 @@ var LilyPatchExporter = {
 									
 					function() {
 						//locale
-						var tmp = Lily.installDir.clone();
+						var tmp = LilyApp.installDir.clone();
 						tmp.append("chrome");				
 						tmp.append("locale");						
 						
@@ -851,7 +851,7 @@ var LilyPatchExporter = {
 					function() {
 						if(objArr.toSource().indexOf("oscreceive")!=-1||objArr.toSource().indexOf("oscsend")!=-1) {
 							//components
-							var tmp = Lily.installDir.clone();
+							var tmp = LilyApp.installDir.clone();
 							tmp.append("components");
 							tmp.copyTo(rootDir,null);
 						}	
@@ -859,14 +859,14 @@ var LilyPatchExporter = {
 					
 					function() {
 						//prefs
-						var tmp = Lily.installDir.clone();
+						var tmp = LilyApp.installDir.clone();
 						tmp.append("platform");
 						tmp.copyTo(rootDir,null);
 					},
 					
 					function() {
 						//content
-						contentIn = Lily.installDir.clone();
+						contentIn = LilyApp.installDir.clone();
 						contentIn.append("chrome");				
 						contentIn.append("content");
 
@@ -1252,9 +1252,9 @@ var LilyPatchExporter = {
 						//patch
 						var tmp = contentOut.clone();
 						tmp.append(xpiFile.leafName+".json");
-						var data=Lily.patchObj[id].obj.patchModel.serializeDom();
+						var data=LilyApp.patchObj[id].obj.patchModel.serializeDom();
 						data=data.replace(/chrome:\/\/lily/g,("chrome://"+projectName))
-						Lily.patchObj[id].json=data; //update the patch string.			
+						LilyApp.patchObj[id].json=data; //update the patch string.			
 						tmp=LilyUtils.writeFile(tmp,data);
 					},
 					
@@ -1276,10 +1276,10 @@ var LilyPatchExporter = {
 					function() {
 						//copy the patch's parent directory if we need to and if the patch has been saved.
 						//******* FIXME ********  won't work with absolute paths, won't work with subfolders.																																
-						if(obj.includeParentDirCbx && Lily.patchObj[id].file) {
+						if(obj.includeParentDirCbx && LilyApp.patchObj[id].file) {
 
 							//copy the patch's parent dir
-							var parentDir = Lily.patchObj[id].file.parent.clone();
+							var parentDir = LilyApp.patchObj[id].file.parent.clone();
 
 							//recurse thru the resources dir converting text files as needed.
 							LilyUtils.directorySearch(parentDir,function(file) {
@@ -1305,7 +1305,7 @@ var LilyPatchExporter = {
 					
 					function() {
 						//write manifest
-						var fileIn = Lily.installDir.clone();
+						var fileIn = LilyApp.installDir.clone();
 						fileIn.append("chrome.manifest");
 						var fileOut = rootDir.clone();
 						fileOut.append("chrome.manifest");
@@ -1321,7 +1321,7 @@ var LilyPatchExporter = {
 						var homepageValue = obj.homepageURL||"http://www.lilyapp.org/";
 						var emailValue = (projectName+".id@"+projectName+".com"); //obj.emailAddress- using this instead of user email						
 						
-						var fileIn = Lily.installDir.clone();
+						var fileIn = LilyApp.installDir.clone();
 						fileIn.append("export.rdf");
 						var fileOut = rootDir.clone();
 						fileOut.append("install.rdf");

@@ -7,10 +7,10 @@
 ]>
 
 <window
-	onclose="opener.Lily.close(window.arguments[1]);return false;"
+	onclose="opener.LilyApp.close(window.arguments[1]);return false;"
 	onload="window.arguments[0]();"
-	onfocus="opener.Lily.makePatchCurrent(window.arguments[1]);"
-	onclick="opener.Lily.makePatchCurrent(window.arguments[1]);"	
+	onfocus="opener.LilyApp.makePatchCurrent(window.arguments[1]);"
+	onclick="opener.LilyApp.makePatchCurrent(window.arguments[1]);"	
 	title="Untitled"
     id="lilyHiddenPatchWindow"
 	style="background:transparent !important"
@@ -20,7 +20,7 @@
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<keyset id="lilyReadOnlyKeySet">
-	  <key id="lilyReadOnlyCloseKey" modifiers="accel" key="W" oncommand="opener.Lily.close()"/>
+	  <key id="lilyReadOnlyCloseKey" modifiers="accel" key="W" oncommand="opener.LilyApp.close()"/>
 	</keyset>
 	
 	<vbox height="0" width="0" style="height:0px;width:0px">

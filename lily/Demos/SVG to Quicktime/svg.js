@@ -244,9 +244,9 @@ function $svg(args) //args width/height
 	function _refresh() {
 		_kill();
 		releaseObservers();
-		Lily.toggleEdit();				
+		LilyApp.toggleEdit();				
 		thisPtr.parent.replaceObject(thisPtr,"svg",(thisPtr.width+" "+thisPtr.height));
-		Lily.toggleEdit();
+		LilyApp.toggleEdit();
 	}
 	
 	this.destructor=function() {

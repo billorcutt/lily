@@ -185,7 +185,7 @@ var LilyDebugWindow = {
 			var wrapper=this.bWin.document.createElement("div");
 			var lastMsg=this.dWinBody.appendChild(wrapper);
 			lastMsg.innerHTML="<p><a style=\"text-decoration:underline;color:blue;padding:10px;background:yellow\" onmouseup=\"this.style.color='blue'\" onmousedown=\"this.style.color='red'\" onclick=\"return false\" href=\"about:blank\">"+mess+" "+LilyObjectList.getDisplayName(helpName)+"</a></p>";
-			lastMsg.addEventListener("click",function(){Lily.openHelpPatch(helpName);},false);	
+			lastMsg.addEventListener("click",function(){LilyApp.openHelpPatch(helpName);},false);	
 			this.bWin.scrollTo(0,this.bWin.scrollMaxY);
 		}
 	},	

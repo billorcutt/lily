@@ -173,8 +173,8 @@ LilyUtils.extractSizeInSubPatch = function(data) {
 */	
 LilyUtils.getPIDFromPackage = function(name) {
 	var package_id = name+"\.id@"+name+"\.com";
-	for(var x in Lily.patchObj) {
-		if(Lily.patchObj[x].file && Lily.patchObj[x].file.path.indexOf(package_id)!=-1) {
+	for(var x in LilyApp.patchObj) {
+		if(LilyApp.patchObj[x].file && LilyApp.patchObj[x].file.path.indexOf(package_id)!=-1) {
 			return x;
 		}
 	}

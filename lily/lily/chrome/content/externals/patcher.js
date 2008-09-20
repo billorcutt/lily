@@ -35,7 +35,7 @@ function $patcher(param)
 //	this.resetSize=false; //don't reflow after a font change, etc.
 	var pid = "patch0";	//id for the patcher
 	var thisPatch = {obj:null,id:pid,file:null,json:null}; //this is the patch in the iframe
-	Lily.patcherReloadFlag = false; //true if we're reloading the object- tacking this on Lily since we need to persist this value while refreshing the object.
+	LilyApp.patcherReloadFlag = false; //true if we're reloading the object- tacking this on Lily since we need to persist this value while refreshing the object.
 	
 	var openPatchWin = null; //this is the patch object for the open edit window.
 
@@ -97,10 +97,10 @@ function $patcher(param)
 	function reloadPatch() {
 				
 		setTimeout(function(){
-			Lily.patcherReloadFlag=true; //start reload			
+			LilyApp.patcherReloadFlag=true; //start reload			
 			var o = thisPtr.parent.replaceObject(thisPtr,thisPtr.displayName,((isPatchString)?thisPtr.args:thisPtr.patchArgs.replace(/##\w+##/,"")));
 			o.controller.cleanupOutletConnections();	
-			Lily.patcherReloadFlag=false; //reload over
+			LilyApp.patcherReloadFlag=false; //reload over
 		},100);	
 			
 	}		
@@ -202,7 +202,7 @@ function $patcher(param)
 								
 		var sizeArr=LilyUtils.extractPatchSize(data); //get the patch size w/o having to eval the json.
 		var parentDir=(file.parent.isDirectory())?file.parent:null; //patch's parent dir.
-		thisPatch.obj = new LilyPatch(pid,Lily,sizeArr[0],sizeArr[1],false,{type:"iframe",win:iframe,parent:thisPtr.parent.patchView.xulWin}); //call the patch constructor
+		thisPatch.obj = new LilyPatch(pid,LilyApp,sizeArr[0],sizeArr[1],false,{type:"iframe",win:iframe,parent:thisPtr.parent.patchView.xulWin}); //call the patch constructor
 
 		thisPatch.obj.callback=function(){
 			
@@ -269,7 +269,7 @@ function $patcher(param)
 	//clean up the subpatch when closing the patch.
 	this.destructor=function() {
 		
-		if(!Lily.patcherReloadFlag) { //only when we're not reloading the object.
+		if(!LilyApp.patcherReloadFlag) { //only when we're not reloading the object.
 			if(isPatchString) { thisPatch.file.remove(false); } //remove the temp file if we have one.
 			if(thisPatch.obj) thisPatch.obj.close(); //clean up the patch
 			thisPatch = {obj:null,id:pid,file:null,json:null}; //reset the thispatch object	
@@ -294,7 +294,7 @@ function $patcher(param)
 	function openPatchWindow() {
 		
 		//open the patch window
-		openPatchWin=Lily.openPatchFromFile(thisPatch.file,false,false);
+		openPatchWin=LilyApp.openPatchFromFile(thisPatch.file,false,false);
 		
 		if(!thisPtr.fPath) openPatchWin.obj.usesTmpFile=true;	
 		
