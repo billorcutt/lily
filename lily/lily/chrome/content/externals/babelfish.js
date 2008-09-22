@@ -33,52 +33,54 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 function $babelfish()
 {
 	var thisPtr=this;	
-	var url="http://babelfish.altavista.com/tr?";
 	
+	//uses the google ajax language api - http://code.google.com/apis/ajaxlanguage/
+	var url="http://ajax.googleapis.com/ajax/services/language/translate?v=1.0";
+		
 	var langs = {
-					"chinese-simp english": "zh_en",
-					"chinese-trad english": "zt_en",
-					"english chinese-simp": "en_zh",
-					"english chinese-trad": "en_zt",
-					"english dutch": "en_nl",
-					"english french": "en_fr",
-					"english german": "en_de",
-					"english greek": "en_el",
-					"english italian": "en_it",
-					"english japanese": "en_ja",
-					"english korean": "en_ko",
-					"english portuguese": "en_pt",
-					"english russian": "en_ru",
-					"english spanish": "en_es",
-					"dutch english": "nl_en",
-					"dutch french": "nl_fr",
-					"french dutch": "fr_nl",
-					"french english": "fr_en",
-					"french german": "fr_de",
-					"french greek": "fr_el",
-					"french italian": "fr_it",
-					"french portuguese": "fr_pt",
-					"french spanish": "fr_es",
-					"german english": "de_en",
-					"german french": "de_fr",
-					"greek english": "el_en",
-					"greek french": "el_fr",
-					"italian english": "it_en",
-					"italian french": "it_fr",
-					"japanese english": "ja_en",
-					"korean english": "ko_en",
-					"portuguese english": "pt_en",
-					"portuguese french": "pt_fr",
-					"russian english": "ru_en",
-					"spanish english": "es_en",
-					"spanish french": "es_fr"
+					"chinese-simp english": "zh|en",
+					"chinese-trad english": "zt|en",
+					"english chinese-simp": "en|zh",
+					"english chinese-trad": "en|zt",
+					"english dutch": "en|nl",
+					"english french": "en|fr",
+					"english german": "en|de",
+					"english greek": "en|el",
+					"english italian": "en|it",
+					"english japanese": "en|ja",
+					"english korean": "en|ko",
+					"english portuguese": "en|pt",
+					"english russian": "en|ru",
+					"english spanish": "en|es",
+					"dutch english": "nl|en",
+					"dutch french": "nl|fr",
+					"french dutch": "fr|nl",
+					"french english": "fr|en",
+					"french german": "fr|de",
+					"french greek": "fr|el",
+					"french italian": "fr|it",
+					"french portuguese": "fr|pt",
+					"french spanish": "fr|es",
+					"german english": "de|en",
+					"german french": "de|fr",
+					"greek english": "el|en",
+					"greek french": "el|fr",
+					"italian english": "it|en",
+					"italian french": "it|fr",
+					"japanese english": "ja|en",
+					"korean english": "ko|en",
+					"portuguese english": "pt|en",
+					"portuguese french": "pt|fr",
+					"russian english": "ru|en",
+					"spanish english": "es|en",
+					"spanish french": "es|fr"
 				}		
 	
 	this.inlet1=new this.inletClass("inlet1",this,"list of 3 parameters: \"[language from] [language to] [text be translated]\"");
 	this.outlet1 = new this.outletClass("outlet1",this,"translated text");
 	this.outlet2 = new this.outletClass("outlet2",this,"bang on complete");	
 		
-	this.xhr=new LilyComponents._xhr(outputResponse,"text",this);	
+	this.xhr=new LilyComponents._xhr(outputResponse,"json",this);	
 	
 	this.inlet1["anything"]=function(str) {
 		
@@ -89,18 +91,19 @@ function $babelfish()
 		if(typeof lang=="undefined")
 			return LilyDebugWindow.error("Error: Language not found")
 			
-		thisPtr.xhr.loadXMLDoc(url+"lp="+lang+"&trtext="+msg);
+		thisPtr.xhr.loadXMLDoc(encodeURI(url+"&langpair="+lang+"&q="+msg));
 	}	
 	
-	function outputResponse(txt) {
+	function outputResponse(json) {
 		
-		if(!txt) {	//bail if there's nothing
+		if(!json || typeof json != "object") {	//bail if there's nothing
 			thisPtr.outlet2.doOutlet("bang");
 			return;		
 		}					
 
-		var result = txt.substring(txt.search("10px;>") + 6, txt.search('</div>'));
-		this.outlet1.doOutlet(result);
+		if(json.responseStatus==200) {
+			this.outlet1.doOutlet(json.responseData.translatedText);
+		}
 		
 		thisPtr.outlet2.doOutlet("bang");	//done
 	}	

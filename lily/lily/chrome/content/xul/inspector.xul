@@ -14,7 +14,7 @@
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<keyset id="lilyInspectorKeySet">
-	  <key id="lilyInspectorCloseKey" modifiers="accel" key="W" oncommand="opener.LilyInspectorWindow.toggle()"/>
+	  <key id="lilyInspectorCloseKey" modifiers="accel" key="W" oncommand="opener.Lily.default.LilyInspectorWindow.toggle()"/>
 	</keyset>
 	
 	<!-- Menubar  -->
@@ -23,7 +23,7 @@
 		<!-- File Menu -->
 		<menu id="menu_LilyInspectorPopup" label="&lily.InspectorWindow;">
 	        <menupopup id="menu_InspectorPopupMenu">
-	            <menuitem id="closeInspectorItem" label="&lily.Close;" oncommand="opener.LilyInspectorWindow.toggle()"/>	
+	            <menuitem id="closeInspectorItem" label="&lily.Close;" oncommand="opener.Lily.default.LilyInspectorWindow.toggle()"/>	
 			</menupopup>
 		</menu>
 		

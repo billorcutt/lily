@@ -14,8 +14,8 @@
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<keyset id="lilyDebugKeySet">
-	  <key id="lilyDebugClearKey" modifiers="accel" key="X" oncommand="opener.LilyDebugWindow.clear()"/>
-	  <key id="lilyDebugCloseKey" modifiers="accel" key="W" oncommand="opener.LilyDebugWindow.toggle()"/>
+	  <key id="lilyDebugClearKey" modifiers="accel" key="X" oncommand="opener.Lily.default.LilyDebugWindow.clear()"/>
+	  <key id="lilyDebugCloseKey" modifiers="accel" key="W" oncommand="opener.Lily.default.LilyDebugWindow.toggle()"/>
 	</keyset>
 	
 	<!-- Menubar  -->
@@ -24,8 +24,8 @@
 		<!-- Debug Menu -->
 		<menu id="menu_LilyDebugPopup" label="&lily.DebugMenu;">
 	        <menupopup id="menu_DebugPopupMenu">
-	            <menuitem id="clearDebugItem" key="lilyDebugClearKey" label="&lily.Clear;" oncommand="opener.LilyDebugWindow.clear()"/>
-	            <menuitem id="closeDebugItem" key="lilyDebugCloseKey" label="&lily.Close;" oncommand="opener.LilyDebugWindow.toggle()"/>	
+	            <menuitem id="clearDebugItem" key="lilyDebugClearKey" label="&lily.Clear;" oncommand="opener.Lily.default.LilyDebugWindow.clear()"/>
+	            <menuitem id="closeDebugItem" key="lilyDebugCloseKey" label="&lily.Close;" oncommand="opener.Lily.default.LilyDebugWindow.toggle()"/>	
 			</menupopup>
 		</menu>
 		

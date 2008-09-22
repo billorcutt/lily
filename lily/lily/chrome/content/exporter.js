@@ -302,7 +302,7 @@ var LilyPatchExporter = {
 						tmpIn.append("debug.xul");
 						var tmpOut = xulOut.clone();
 						tmpOut.append("debug.xul");			
-						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
+						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)).replace(/\.default\./g,'.'+projectName+'.'));
 					},
 					
 					function() {
@@ -966,7 +966,7 @@ var LilyPatchExporter = {
 						var tmpOut = xulOut.clone();
 						tmpOut.append("debug.xul");	
 
-						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
+						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)).replace(/\.default\./g,'.'+projectName+'.'));
 					},
 					
 					function() {
