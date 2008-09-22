@@ -1174,8 +1174,8 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 
 	this.getModule=function(className) {
 				
-		if(typeof LilyApp["$"+LilyObjectList.objDisplay[className]] != "undefined") {
-			return LilyApp["$"+LilyObjectList.objDisplay[className]]; //external
+		if(typeof Lily[LilyApp.nameSpace]["$"+LilyObjectList.objDisplay[className]] != "undefined") {
+			return Lily[LilyApp.nameSpace]["$"+LilyObjectList.objDisplay[className]]; //external
 		} else if(LilyObjectList.search(className)) {
 			return LilyObjectList.search(className).path; //if its a patch, just return the path
 		} else {
@@ -1190,7 +1190,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 						return LilyObjectList.search(className).path; //if its a patch, just return the path
 					}
 				} else {
-					return LilyApp["$"+LilyObjectList.objDisplay[className]];
+					return Lily[LilyApp.nameSpace]["$"+LilyObjectList.objDisplay[className]];
 				}	
 			}
 		}

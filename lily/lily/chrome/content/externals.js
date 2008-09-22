@@ -259,7 +259,7 @@ var LilyObjectList = {
 		}
 				
 		source = LilyUtils.readFileFromPath(path,false).data;		
-		if(!/\.json/.test(path)) LilyUtils.loadScript("file://"+path,LilyApp); //only load externs, not patches
+		if(!/\.json/.test(path)) LilyUtils.loadScript("file://"+path,Lily[LilyApp.nameSpace]); //only load externs, not patches
 		
 		return source; //return the source	
 	},
@@ -279,7 +279,7 @@ var LilyObjectList = {
 		var objName = (LilyUtils.hasExtension(name))?"$"+(LilyUtils.stripExtension(name)):"$"+name;
 			
 		//look to see if the name is defined
-		if(typeof LilyApp[objName] != "undefined") 
+		if(typeof Lily[LilyApp.nameSpace][objName] != "undefined") 
 			return true;
 		else
 			return false;

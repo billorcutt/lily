@@ -370,13 +370,13 @@ var LilyPatchExporter = {
 					},
 					
 					function() {
-						//lily.js
+						//app.js
 						var tmpIn = contentIn.clone();
 						tmpIn.append("app.js");
 						var tmpOut = contentOut.clone();
 						tmpOut.append("app.js");
 						var data = LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName));
-						data = data.replace(/nameSpace: "lily",/,"nameSpace: \""+projectName+"\",");			
+						data = data.replace(/nameSpace\: "default",/,"nameSpace: \""+projectName+"\",");			
 						LilyUtils.writeFile(tmpOut,data);
 					},
 					
@@ -386,7 +386,7 @@ var LilyPatchExporter = {
 						tmpIn.append("export-window.xul");
 						var tmpOut = contentOut.clone();
 						tmpOut.append(projectName+".xul");		
-						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/<PROJECT-NAME>/g,projectName).replace(/<PATCH-FILE-NAME>/g,obj.patchFileName).replace(/<PATCH-HIDDEN>/g,obj.hideMainCbx)); 
+						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/<PROJECT-NAME>/g,projectName).replace(/<PATCH-FILE-NAME>/g,obj.patchFileName).replace(/<PATCH-HIDDEN>/g,obj.hideMainCbx).replace(/\.default\./g,'.'+projectName+'.')); 
 					},
 					
 					function() {
@@ -480,13 +480,13 @@ var LilyPatchExporter = {
 							tmpIn.append("applicationpatch.xul");
 							var tmpOut = xulOut.clone();
 							tmpOut.append("readonlypatch.xul");				
-							LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
+							LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)).replace(/\.default\./g,'.'+projectName+'.'));
 						} else {
 							var tmpIn = xulIn.clone();
 							tmpIn.append("hiddenpatch.xul");
 							var tmpOut = xulOut.clone();
 							tmpOut.append("hiddenpatch.xul");				
-							LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));					
+							LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)).replace(/\.default\./g,'.'+projectName+'.'));					
 						}
 					},
 					
@@ -588,7 +588,7 @@ var LilyPatchExporter = {
 						tmpIn.append("bootstrap.js");
 						var tmpOut = contentOut.clone();
 						tmpOut.append("bootstrap.js");				
-						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
+						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)).replace(/Lily\[\"default\"\]/g,'Lily["'+projectName+'"]'));
 					},
 					
 					function() {
@@ -1045,7 +1045,7 @@ var LilyPatchExporter = {
 						var tmpOut = contentOut.clone();
 						tmpOut.append("app.js");
 						var data = LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName));
-						data = data.replace(/nameSpace: "lily",/,"nameSpace: \""+projectName+"\",");			
+						data = data.replace(/nameSpace\: "default",/,"nameSpace: \""+projectName+"\",");			
 						LilyUtils.writeFile(tmpOut,data);
 					},
 					
@@ -1055,7 +1055,7 @@ var LilyPatchExporter = {
 						tmpIn.append("export.xul");
 						var tmpOut = contentOut.clone();
 						tmpOut.append(projectName+".xul");		
-						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/<PROJECT-NAME>/g,(projectName)).replace(/<PROJECT-HIDE>/g,obj.hideMainCbx).replace(/<START-ON-LOAD>/g,obj.startOnLoadCbx));
+						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/<PROJECT-NAME>/g,(projectName)).replace(/<PROJECT-HIDE>/g,obj.hideMainCbx).replace(/<START-ON-LOAD>/g,obj.startOnLoadCbx).replace(/\.default\./g,'.'+projectName+'.'));
 
 					},
 					
@@ -1150,13 +1150,13 @@ var LilyPatchExporter = {
 							tmpIn.append("readonlypatch.xul");
 							var tmpOut = xulOut.clone();
 							tmpOut.append("readonlypatch.xul");				
-							LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));
+							LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)).replace(/\.default\./g,'.'+projectName+'.'));
 						} else {
 							var tmpIn = xulIn.clone();
 							tmpIn.append("hiddenpatch.xul");
 							var tmpOut = xulOut.clone();
 							tmpOut.append("hiddenpatch.xul");				
-							LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));					
+							LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)).replace(/\.default\./g,'.'+projectName+'.'));					
 						}
 					},
 					
@@ -1245,7 +1245,7 @@ var LilyPatchExporter = {
 						tmpIn.append("bootstrap.js");
 						var tmpOut = contentOut.clone();
 						tmpOut.append("bootstrap.js");				
-						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)));	
+						LilyUtils.writeFile(tmpOut,LilyUtils.readFile(tmpIn).replace(/chrome:\/\/lily/g,("chrome://"+projectName)).replace(/Lily\[\"default\"\]/g,'Lily["'+projectName+'"]'));	
 					},
 					
 					function() {

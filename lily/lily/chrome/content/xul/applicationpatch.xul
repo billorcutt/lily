@@ -7,23 +7,23 @@
 ]>
 
 <window
-	onclose="opener.LilyApp.quit(true);return false;"
+	onclose="opener.Lily.default.LilyApp.quit(true);return false;"
 	onload="window.arguments[0]();"
-	onfocus="opener.LilyApp.makePatchCurrent(window.arguments[1]);"
-	onclick="opener.LilyApp.makePatchCurrent(window.arguments[1]);"	
+	onfocus="opener.Lily.default.LilyApp.makePatchCurrent(window.arguments[1]);"
+	onclick="opener.Lily.default.LilyApp.makePatchCurrent(window.arguments[1]);"	
 	title="Untitled"
     orient="vertical"	
     id="lilyReadOnlyPatchWindow"
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<keyset id="lilyReadOnlyKeySet">
-	  <key id="lilyReadOnlyQuitKey" modifiers="accel" key="Q" oncommand="opener.LilyApp.quit(true)"/>
+	  <key id="lilyReadOnlyQuitKey" modifiers="accel" key="Q" oncommand="opener.Lily.default.LilyApp.quit(true)"/>
 	</keyset>
 	
 	<!-- Menubar  -->
 	<menubar id="lilyReadOnlyMenubar">
 		<menu id="menu_LilyReadOnlyPopup">
-			<menuitem id="menu_FileQuitItem" label="&lily.Quit;" oncommand="opener.LilyApp.quit(true)"/>
+			<menuitem id="menu_FileQuitItem" label="&lily.Quit;" oncommand="opener.Lily.default.LilyApp.quit(true)"/>
 		</menu>			
 	</menubar>	
 	

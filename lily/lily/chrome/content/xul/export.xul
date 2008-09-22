@@ -33,7 +33,7 @@
 	    <vbox id="lilyContentBox" collapsed="true" persist="height">
 	        <toolbox id="lilyToolbox">
 	            <toolbar id="lilyToolbar">
-	                <toolbarbutton id="lilyCloseButton" label="close" oncommand="LilyApp.closeSideBarPatch();"/>
+	                <toolbarbutton id="lilyCloseButton" label="close" oncommand="Lily.default.LilyApp.closeSideBarPatch();"/>
 	            </toolbar>
 	        </toolbox>
 	        <hbox id="lilyPanelBox" flex="1">
@@ -49,14 +49,14 @@
 					checked="false" 
 					id="open<PROJECT-NAME>PatchItem" 
 					label="<PROJECT-NAME>" 
-					oncommand="LilyApp.openAddOnPatch('<PROJECT-NAME>',this,<PROJECT-HIDE>)"/>
+					oncommand="Lily.default.LilyApp.openAddOnPatch('<PROJECT-NAME>',this,<PROJECT-HIDE>)"/>
 	</menupopup>
 	
 	<script>
 		if(<START-ON-LOAD>) {
 			window.addEventListener("load",function(){
 				document.getElementById("open<PROJECT-NAME>PatchItem").setAttribute("checked","true");
-				LilyApp.openAddOnPatch('<PROJECT-NAME>',{getAttribute:function(){return "true";}
+				Lily.default.LilyApp.openAddOnPatch('<PROJECT-NAME>',{getAttribute:function(){return "true";}
 			},<PROJECT-HIDE>)},false);
 		}
 	</script>

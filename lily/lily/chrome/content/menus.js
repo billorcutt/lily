@@ -72,9 +72,9 @@ var LilyMenuBar = {
 			
 			} else {
 	//			LilyDebugWindow.print("done editing.")		//
-				win.document.getElementById("contextPasteItem").setAttribute("oncommand","opener.LilyApp.paste()");
-				win.document.getElementById("pasteItemLily").setAttribute("oncommand","opener.LilyApp.paste()");
-				win.document.getElementById("lilyPasteKey").setAttribute("oncommand","opener.LilyApp.paste()");
+				win.document.getElementById("contextPasteItem").setAttribute("oncommand","opener.Lily."+LilyApp.nameSpace+".LilyApp.paste()");
+				win.document.getElementById("pasteItemLily").setAttribute("oncommand","opener.Lily."+LilyApp.nameSpace+".LilyApp.paste()");
+				win.document.getElementById("lilyPasteKey").setAttribute("oncommand","opener.Lily."+LilyApp.nameSpace+".LilyApp.paste()");
 								
 			}
 		
@@ -552,7 +552,7 @@ var LilyMenuBar = {
         tempItem.setAttribute("id", "fc");	
         tempItem.setAttribute("type", "radio");	
 		
-        tempItem.setAttribute("oncommand", "opener.LilyApp.openColorPicker('font')");	
+        tempItem.setAttribute("oncommand", "opener.Lily."+LilyApp.nameSpace+".LilyApp.openColorPicker('font')");	
 
         // Add the item to our menu
         menu.appendChild(tempItem);
@@ -572,7 +572,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("id", "fs"+i);	
 	        tempItem.setAttribute("type", "radio");	
 			
-	        tempItem.setAttribute("oncommand", "opener.LilyApp.setFont(\"fontSize\","+ i +")");	
+	        tempItem.setAttribute("oncommand", "opener.Lily."+LilyApp.nameSpace+".LilyApp.setFont(\"fontSize\","+ i +")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -591,7 +591,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("id", "fs"+i);	
 	        tempItem.setAttribute("type", "radio");	
 			
-	        tempItem.setAttribute("oncommand", "opener.LilyApp.setFont(\"fontSize\","+ i +")");	
+	        tempItem.setAttribute("oncommand", "opener.Lily."+LilyApp.nameSpace+".LilyApp.setFont(\"fontSize\","+ i +")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -612,7 +612,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("name", "fontFamily");
 	        tempItem.setAttribute("type", "radio");
 			
-	        tempItem.setAttribute("oncommand", "opener.LilyApp.setFont(\"fontFamily\",\""+this.fontArray[i]+"\")");	
+	        tempItem.setAttribute("oncommand", "opener.Lily."+LilyApp.nameSpace+".LilyApp.setFont(\"fontFamily\",\""+this.fontArray[i]+"\")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -687,7 +687,7 @@ var LilyMenuBar = {
         tempItem.setAttribute("id", "bc");
         tempItem.setAttribute("type", "radio");	
 		
-        tempItem.setAttribute("oncommand", "opener.LilyApp.openColorPicker('border')");	
+        tempItem.setAttribute("oncommand", "opener.Lily."+LilyApp.nameSpace+".LilyApp.openColorPicker('border')");	
 
         // Add the item to our menu
         menu.appendChild(tempItem);
@@ -707,7 +707,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("id", "bs"+i);	
 	        tempItem.setAttribute("type", "radio");	
 			
-	        tempItem.setAttribute("oncommand", "opener.LilyApp.setBorder(\"borderWidth\","+ i +")");	
+	        tempItem.setAttribute("oncommand", "opener.Lily."+LilyApp.nameSpace+".LilyApp.setBorder(\"borderWidth\","+ i +")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -726,7 +726,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("id", "bs"+i);	
 	        tempItem.setAttribute("type", "radio");	
 			
-	        tempItem.setAttribute("oncommand", "opener.LilyApp.setBorder(\"borderWidth\","+ i +")");	
+	        tempItem.setAttribute("oncommand", "opener.Lily."+LilyApp.nameSpace+".LilyApp.setBorder(\"borderWidth\","+ i +")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -747,7 +747,7 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("name", "borderStyle");
 	        tempItem.setAttribute("type", "radio");
 			
-	        tempItem.setAttribute("oncommand", "opener.LilyApp.setBorder(\"borderStyle\",\""+styleArray[i]+"\")");	
+	        tempItem.setAttribute("oncommand", "opener.Lily."+LilyApp.nameSpace+".LilyApp.setBorder(\"borderStyle\",\""+styleArray[i]+"\")");	
 
 	        // Add the item to our menu
 	        menu.appendChild(tempItem);
@@ -793,9 +793,9 @@ var LilyMenuBar = {
 		        allItem.setAttribute("label", arrNames[i].menuName);
 
 				if(isHelp)
-					allItem.setAttribute("oncommand", opener+".LilyApp.openHelpPatch(\""+ LilyUtils.stripExtension(arrNames[i].name) +"\")");
+					allItem.setAttribute("oncommand", opener+".Lily."+LilyApp.nameSpace+".LilyApp.openHelpPatch(\""+ LilyUtils.stripExtension(arrNames[i].name) +"\")");
 				else
-		        	allItem.setAttribute("oncommand", opener+".LilyApp.newObject(\""+ LilyUtils.stripExtension(arrNames[i].name) +"\",null,"+isContext+")");	
+		        	allItem.setAttribute("oncommand", opener+".Lily."+LilyApp.nameSpace+".LilyApp.newObject(\""+ LilyUtils.stripExtension(arrNames[i].name) +"\",null,"+isContext+")");	
 
 		        // Add the item to our menu
 		        allPop.appendChild(allItem);	
@@ -830,9 +830,9 @@ var LilyMenuBar = {
 	        tempItem.setAttribute("id", context+objArr[i].menuName+"Item");	
 			
 			if(isHelp)
-				tempItem.setAttribute("oncommand", opener+".LilyApp.openHelpPatch(\""+ LilyUtils.stripExtension(objArr[i].name) +"\")");
+				tempItem.setAttribute("oncommand", opener+".Lily."+LilyApp.nameSpace+".LilyApp.openHelpPatch(\""+ LilyUtils.stripExtension(objArr[i].name) +"\")");
 			else
-	        	tempItem.setAttribute("oncommand", opener+".LilyApp.newObject(\""+ LilyUtils.stripExtension(objArr[i].name) +"\",null,"+isContext+")");	
+	        	tempItem.setAttribute("oncommand", opener+".Lily."+LilyApp.nameSpace+".LilyApp.newObject(\""+ LilyUtils.stripExtension(objArr[i].name) +"\",null,"+isContext+")");	
 
 	        // Add the item to our menu
 			catPop.appendChild(tempItem);

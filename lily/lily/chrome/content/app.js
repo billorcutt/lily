@@ -68,7 +68,7 @@ var LilyApp =
 		Property: nameSpace
 			name space
 	*/	
-	nameSpace: "lily",	
+	nameSpace: "default",	
 	
 	/*
 		Property: currPatch
@@ -190,7 +190,7 @@ var LilyApp =
 			the new patch ID.
 	*/
 	generatePatchID: function() {
-		return this.incPatchCount();
+		return (this.incPatchCount()+"_"+this.nameSpace);
 	},
 	
 	/*
