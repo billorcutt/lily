@@ -190,7 +190,8 @@ var LilyPatchExporter = {
 
 							var newPrefs = '\n' +
 							'pref("toolkit.defaultChromeURI", "chrome://'+projectName+'/content/'+projectName+'.xul");\n' +
-							'pref("browser. hiddenWindowChromeURL", "chrome://'+projectName+'/content/'+projectName+'.xul");\n' +					
+//							'pref("browser.hiddenWindowChromeURL", "chrome://'+projectName+'/content/'+projectName+'.xul");\n' +					
+							'pref("toolkit.defaultChromeFeatures", "titlebar=no");\n' +
 							'pref("browser.dom.window.dump.enabled", true);\n' +
 							'pref("javascript.options.showInConsole", true);\n' +
 							'pref("javascript.options.strict", true);\n' +
