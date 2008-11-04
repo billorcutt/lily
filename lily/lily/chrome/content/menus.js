@@ -168,6 +168,7 @@ var LilyMenuBar = {
 					(
 						menuNodes[i].getAttribute("id")=="menu_ObjectFont"||
 						menuNodes[i].getAttribute("id")=="menu_ObjectColor"||
+						menuNodes[i].getAttribute("id")=="menu_ObjectBorder"||
 						menuNodes[i].getAttribute("id")=="getInfoItem"||
 						menuNodes[i].getAttribute("id")=="hideInPerfItem"||
 						menuNodes[i].getAttribute("id")=="showInPerfItem"||
@@ -392,6 +393,7 @@ var LilyMenuBar = {
 					children[i].id=="contextHelpItem"||
 
 					children[i].id=="contextMenu_ObjectColor"||
+					children[i].id=="menu_ObjectBorder"||					
 					children[i].id=="contextMenu_ObjectFont"||	
 					children[i].id=="contextHideInPerfItem"||
 					children[i].id=="contextShowInPerfItem"||					
@@ -431,6 +433,7 @@ var LilyMenuBar = {
 					//object
 					if(
 						children[i].id=="contextMenu_ObjectColor"||
+						children[i].id=="menu_ObjectBorder"||						
 						children[i].id=="contextMenu_ObjectFont"||
 						children[i].id=="contextHideInPerfItem"||
 						children[i].id=="contextShowInPerfItem"||
