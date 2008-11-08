@@ -29,9 +29,10 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 *	@constructor
 *	@extends LilyObjectBase
 */
-function $dir()
+function $dir(recursive)
 {
-	var thisPtr=this;	
+	var thisPtr=this;
+	var recur=(recursive&&recursive == "true")?true:false;
 	
 	this.inlet1=new this.inletClass("inlet1",this,"path to directory to list");	
 	this.outlet1 = new this.outletClass("outlet1",this,"directory contents, one at a time.");	
@@ -41,11 +42,17 @@ function $dir()
 		var dir = LilyUtils.getFileHandle(path);
 		
 		if(dir.exists()&&dir.isDirectory()) {
-			var contents = dir.directoryEntries;
-			while (contents.hasMoreElements()) {
-			  var file = contents.getNext().QueryInterface(Components.interfaces.nsIFile);
-			  thisPtr.outlet1.doOutlet({name:file.leafName,directory:file.isDirectory(),path:file.path,hidden:(file.isHidden())});
-			}			
+			if(recur) {
+				LilyUtils.directorySearch(dir,function(file){
+				  thisPtr.outlet1.doOutlet({name:file.leafName,directory:file.isDirectory(),path:file.path,hidden:(file.isHidden())});
+				});				
+			} else {
+				var contents = dir.directoryEntries;
+				while (contents.hasMoreElements()) {
+				  var file = contents.getNext().QueryInterface(Components.interfaces.nsIFile);
+				  thisPtr.outlet1.doOutlet({name:file.leafName,directory:file.isDirectory(),path:file.path,hidden:(file.isHidden())});
+				}
+			}						
 		} else {
 			LilyDebugWindow.error(path+" does not exist or is not a folder")
 		}		

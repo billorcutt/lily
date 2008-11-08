@@ -146,7 +146,11 @@ function $textfile(path)
 		
 		if(p) {
 			//get the path to the patch if we need it
-			fPath = (p)?LilyUtils.getFilePath(p):"";				
+			fPath = (p)?LilyUtils.getFilePath(p):"";
+			if(!fPath) {
+				LilyDebugWindow.error("Path "+p+" not found");
+				return;	
+			}			
 		}
 			
 		//read the file.	

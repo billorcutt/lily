@@ -62,13 +62,13 @@ function $regexp(args)
 		var result = re.test(msg);
 		thisPtr.outlet3.doOutlet(result);
 		
-//		LilyDebugWindow.print(regxp+" "+sub+" "+msg)
+		thisPtr.outlet2.doOutlet(msg.replace(re,sub)); //always output the result of replace			
 		
-		if(sub&&result)
-			thisPtr.outlet2.doOutlet(msg.replace(re,sub));				
-		
+		//bang if no match
 		if(result)	
-			thisPtr.outlet1.doOutlet(msg.match(re));				
+			thisPtr.outlet1.doOutlet(msg.match(re));
+		else
+			thisPtr.outlet1.doOutlet("bang");
 		
 	}
 	
