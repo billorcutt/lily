@@ -64,6 +64,7 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 	var thisPtr=this;
 	var h=height||200;
 	var w=width||200;
+	var framePadding = 2;
 	var scroll=scrolling||"auto";
 	var cb=callback||null;
 	
@@ -84,8 +85,8 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 	function frameInit() {
 		thisPtr.objFrame.removeEventListener("load",frameInit,true);
 		thisPtr.objFrame.style.visibility="visible"; //for the initial load
-		frameCover.style.height=(parent.height+5)+"px"; //size the cover to fit
-		frameCover.style.width=(parent.width+5)+"px";
+		frameCover.style.height=(parent.height+framePadding)+"px"; //size the cover to fit
+		frameCover.style.width=(parent.width+framePadding)+"px";
 		if(typeof cb == "function") { cb(); } //do the callback
 	}
 	
@@ -138,13 +139,13 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 	//callback to object drag
 	parent.controller.objDrag.cb=function(x,y) {
 		frameCover.style.left=x+"px";
-		frameCover.style.top=(y+5)+"px";
+		frameCover.style.top=(y+(framePadding*2))+"px";
 	}	
 	
 	//callback to resize
 	parent.controller.objResizeControl.cb=function(height,width) {
-		frameCover.style.height=(height+5)+"px";
-		frameCover.style.width=(width+5)+"px";
+		frameCover.style.height=(height+(parent.borderWidth*2)+framePadding)+"px";
+		frameCover.style.width=(width+framePadding)+"px";
 	}	
 	
 	this.objFrame=parent.ui.getElByID(parent.createElID("iframe"));
@@ -158,8 +159,8 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 	this.resize=function(w,h) {
 		parent.setHeight(h);
 		parent.setWidth(w);
-		frameCover.style.height=(h+5)+"px";
-		frameCover.style.width=(w+5)+"px";		
+		frameCover.style.height=(h+(parent.borderWidth*2)+framePadding)+"px";
+		frameCover.style.width=(w+framePadding)+"px";		
 	}
 	
 	//set the object size
@@ -172,10 +173,10 @@ LilyComponents._iframe=function(context,source,height,width,scrolling,callback)
 	//init the div over the iframe
 	frameCover=parent.parent.patchView.displayHTML("");
 	frameCover.id=parent.createElID("frameCover");
-//	frameCover.style.backgroundColor='red';	 //debug
+	//frameCover.style.backgroundColor='red';	 //debug
 	frameCover.style.position='absolute';
 	frameCover.style.left=(parent.left)+"px";
-	frameCover.style.top=(parent.top+5)+"px";
+	frameCover.style.top=(parent.top+(framePadding*2))+"px";
 	frameCover.style.zIndex=parent.zIndex+1; //this is a problem- needs to be tied to the zindex of the object
 	
 	this.wrapper = parent.ui.getElByID(parent.createElID("iframe_wrapper"));

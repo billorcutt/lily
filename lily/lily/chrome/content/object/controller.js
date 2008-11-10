@@ -606,6 +606,10 @@ function LilyObjectController (obj) {
 				thisPtr.obj.setHeight(newHeight);
 				thisPtr.obj.setWidth(newWidth);	
 				
+				//callbac
+				if(thisPtr.cb)
+					thisPtr.cb(newHeight,newWidth);				
+				
 				thisPtr.objController.cleanupOutletConnections(); //adjust the outlets connections to the new size				
 			}		
 		}		

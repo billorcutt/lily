@@ -201,12 +201,12 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 				this.displayElement.style.borderWidth=bsize+"px";
 			} //update custom ui
 			
+			this.borderWidth=bsize;			
+			
 			if(this.resetSize) {
 				this.controller.objResizeControl.resetSize();
 			}			
-				
-			this.borderWidth=bsize;
-
+			
 			this.objectMoved(); //notifiy listeners- make this object moved.
 			this.controller.updatePos(); //update model
 	//		this.controller.objView.updateObjSize();
