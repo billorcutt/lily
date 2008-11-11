@@ -187,7 +187,7 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 	
 	this.setBorderSize=function(bsize,perm) {
 		
-		if(bsize && this.allowBorder) {
+		if(typeof bsize != "undefined" && bsize != null && this.allowBorder) {
 			var ui=this.controller.objView.getInputWrapper();
 			
 			if(this.resetSize) {
@@ -197,14 +197,25 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 			if(ui && !this.displayElement) {
 				ui.style.borderWidth=bsize+"px";
 			} else if(this.displayElement) {
-				if(!this.displayElement.style.borderStyle) this.displayElement.style.borderStyle = "solid";			
-				this.displayElement.style.borderWidth=bsize+"px";
+				if(!this.displayElement.style.borderStyle) this.displayElement.style.borderStyle = "solid";
+				if(bsize == 0) {						
+						this.displayElement.style.borderWidth="";
+						this.displayElement.style.border="";
+				} else {
+					this.displayElement.style.borderWidth=bsize+"px";					
+				}	
 			} //update custom ui
 			
-			this.borderWidth=bsize;			
+			this.borderWidth=bsize;	
+			
+			//
+			var oldHeight = this.height;
+			var oldWidth = this.width;		
 			
 			if(this.resetSize) {
 				this.controller.objResizeControl.resetSize();
+				this.setHeight(oldHeight);
+				this.setWidth(oldWidth);
 			}			
 			
 			this.objectMoved(); //notifiy listeners- make this object moved.
