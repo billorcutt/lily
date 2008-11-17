@@ -823,7 +823,7 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			this.patchModel.addSubPatch(this.patchID,false,this);
 		
 		if(typeof patch != "undefined") {
-		
+					
 			this.checkVersion(patch.version); //check the patch version- not using this for anything yet...	
 			
 			var pPlatform = patch.platform||"apple"; //default it to mac
@@ -851,6 +851,30 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 			//1st pass- create objects
 			for(var x in oArray) { 
 				if(oArray[x].type=="object") {
+					
+					//FIXME this panel border code here temporarily for backward compatibility
+					/******************************************************************/				
+					if(oArray[x].name=="panel") {
+						for(var i=0; i<oArray[x].inspectorConfig.length; i++) {
+							var config = oArray[x].inspectorConfig[i];					
+							if(
+								config.name=="borderWidth"||
+								config.name=="borderColor"||
+								config.name=="borderStyle"																		
+							) {
+								oArray[x][config.name] = config.value;
+								if(config.name=="borderWidth" && parseInt(config.value)>0) {
+									oArray[x]["customBorder"]="true";
+								} else if(config.name=="borderColor" && config.value!="#000000") {
+									oArray[x]["customBorder"]="true";	
+								} else if(config.name=="borderStyle" && config.value!="solid") {
+									oArray[x]["customBorder"]="true";
+								}
+							}
+						}	
+					}
+					//FIXME this panel border code here temporarily for backward compatibility
+					/******************************************************************/					
 				
 					//if the object isn't found- look in the patch directory/subdirectories.
 					if(!LilyObjectList.isLoaded(oArray[x].name) && dir) {

@@ -170,8 +170,13 @@ function LilyObjectBase(name,parent,pID,top,left,id,args)
 				this.displayElement.style.borderStyle=bstyle;
 			}
 			
+			var oldHeight = this.height;
+			var oldWidth = this.width;		
+			
 			if(this.resetSize) {
 				this.controller.objResizeControl.resetSize();
+				this.setHeight(oldHeight);
+				this.setWidth(oldWidth);
 			}			
 							
 			this.borderStyle=bstyle;
