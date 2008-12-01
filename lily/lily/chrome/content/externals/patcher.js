@@ -113,7 +113,7 @@ function $patcher(param)
 			var filepath = LilyUtils.getFilePath(thisPtr.fPath.replace(/file:\/\//,""));
 
 			if(!filepath) { //bail if the path isn't correct
-				LilyDebugWindow.error("patch not found");
+				LilyDebugWindow.error("patcher: patch not found");
 				return;
 			}
 

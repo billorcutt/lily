@@ -256,6 +256,17 @@ function LilyPatch(pID,parent,width,height,locked,extWindow,hide)
 	}
 
 	/*
+		Method: quitApp
+			returns an array of references to all the external instances in this patch.
+		
+		Returns: 
+			returns an array of references.
+	*/
+	this.quitApp=function() {
+		LilyApp.quit(true);
+	}
+
+	/*
 		Method: getAllObj
 			returns an array of references to all the external instances in this patch.
 		

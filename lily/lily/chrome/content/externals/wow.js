@@ -196,7 +196,7 @@ function $wow(args) //window on window
 		var filepath = LilyUtils.getFilePath(thisPtr.fPath);
 
 		if(!filepath) { //bail if the path isn't correct
-			LilyDebugWindow.error("patch not found");
+			LilyDebugWindow.error("wow: patch not found");
 			return;
 		}
 

@@ -54,6 +54,9 @@ function $regexp(args)
 		
 		try {
 			var re=eval(regxp);
+			if(!re) {
+				throw {name:"Syntax Error",message:"Invalid Regular Expression"};
+			}
 		} catch(e) {
 			LilyDebugWindow.error(e.name + ": " + e.message);
 			return;
