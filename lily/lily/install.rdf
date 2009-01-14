@@ -9,7 +9,7 @@
   <RDF:Description RDF:about="urn:mozilla:install-manifest"
                    em:id="{3eba6510-7445-11db-9fe1-0800200c9a66}"
                    em:name="Lily"
-                   em:version="0.1-public_beta-2"
+                   em:version="0.1-public_beta-3"
                    em:creator="Bill Orcutt"
                    em:description="Visual programming for the Mozilla framework."
                    em:homepageURL="http://www.lilyapp.org/"

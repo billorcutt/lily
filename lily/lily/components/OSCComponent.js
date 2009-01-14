@@ -272,6 +272,7 @@ OSCComponent.prototype.initialize = function (id, listener, osc_port, trace, nam
 	
 	var thisPtr=this;
 	this._platform = (win.navigator.platform.toLowerCase().indexOf("win") != -1) ? "windows" : "mac-linux" ;
+	nameSpace = (nameSpace=="default")?"lily":nameSpace;
     
     this._traceFlag = (trace);
     this._trace("OSCComponent.initialize {");
