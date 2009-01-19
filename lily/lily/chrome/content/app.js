@@ -62,7 +62,7 @@ var LilyApp =
 		Property: version
 			version string
 	*/	
-	version: "0.1-public_beta-2",
+	version: "0.1-public_beta-3",
 	
 	/*
 		Property: nameSpace
