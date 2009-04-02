@@ -114,8 +114,8 @@
 		<!-- Window Menu -->													
 		<menu id="menu_LilyWindowPopup" label="&lily.WindowMenu;">
 	        <menupopup id="menu_WindowsPopupMenu" onpopupshowing="opener.Lily.default.LilyMenuBar.setWindowMenu(this,window)">
-	            <menuitem id="debugWindowOption" label="&lily.DebugWindow;" type="checkbox" autocheck="true" checked="false" option="debugWindow" oncommand="opener.LilyDebugWindow.toggle(this)"/>
-	            <menuitem id="inspectorWindowOption" label="&lily.InspectorWindow;" type="checkbox" autocheck="true" checked="false" option="inspectorWindow" oncommand="opener.LilyInspectorWindow.toggle(this)"/>		
+	            <menuitem id="debugWindowOption" label="&lily.DebugWindow;" type="checkbox" autocheck="true" checked="false" option="debugWindow" oncommand="opener.Lily.default.LilyDebugWindow.toggle(this)"/>
+	            <menuitem id="inspectorWindowOption" label="&lily.InspectorWindow;" type="checkbox" autocheck="true" checked="false" option="inspectorWindow" oncommand="opener.Lily.default.LilyInspectorWindow.toggle(this)"/>		
 				<menuseparator id="lilyWindowSeparator"/>
 			</menupopup>			
 		</menu>
@@ -141,8 +141,8 @@
 				<menuitem id="setTraceItem" type="checkbox" autocheck="true" checked="false" label="&lily.SetTrace;" oncommand="opener.Lily.default.LilyApp.toggleTrace(this)"/>
 				<menuitem id="dumpListenerItem" label="&lily.DumpListeners;" oncommand="opener.Lily.default.LilyApp.dumpListeners()"/>
 				<!--
-				<menuitem id="docExternListItem" label="Generate External Object List Docs" oncommand="opener.LilyObjectList.genExternListDocs()"/>
-				<menuitem id="docExternListItem" label="Generate External Object Detail Docs" oncommand="opener.LilyObjectList.genExternDetailDocs()"/>
+				<menuitem id="docExternListItem" label="Generate External Object List Docs" oncommand="opener.Lily.default.LilyObjectList.genExternListDocs()"/>
+				<menuitem id="docExternListItem" label="Generate External Object Detail Docs" oncommand="opener.Lily.default.LilyObjectList.genExternDetailDocs()"/>
 				-->
 			</menupopup>
 		</menu>
