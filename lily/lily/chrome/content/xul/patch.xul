@@ -126,7 +126,7 @@
 
             	<menuitem id="openLilyHelpScreenItem" key="lilyHelpMessageKey" label="&lily.OpenHelp;" oncommand="opener.Lily.default.LilyApp.openHelpMessage()"/>	
             	<menuitem id="openLilyPrefsItem" label="&lily.Options;" oncommand="opener.Lily.default.LilyApp.openPrefs()"/>
-            	<menuitem id="reportALilyBug" label="&lily.ReportABug;" oncommand="window.open('http://lily.devjavu.com/newticket')"/>	
+            	<menuitem id="reportALilyBug" label="&lily.ReportABug;" oncommand="window.open('http://code.google.com/p/lilyapp/issues/entry')"/>	
 	
 				<menu id="menu_ObjectHelp" label="&lily.ObjectHelp;">
 			        <menupopup statustext="false" id="menu_ObjectHelpPopup" onpopupshowing="opener.Lily.default.LilyMenuBar.setObjectList(this,true,'','opener')"/>
