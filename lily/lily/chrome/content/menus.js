@@ -109,7 +109,7 @@ var LilyMenuBar = {
 	        tempItem = pWin.document.createElement("menuitem"); //create the menu item.
 
 			//set attributes			
-	        tempItem.setAttribute("label",win.title);	
+	        tempItem.setAttribute("label",win.document.title);	
 	        tempItem.setAttribute("type","checkbox");
 	        tempItem.setAttribute("autocheck",true);
 	        tempItem.setAttribute("checked",false);
@@ -129,7 +129,7 @@ var LilyMenuBar = {
 				var currWinID = LilyApp.currPatch;
 				while(enumerator.hasMoreElements()) {
 					var win = enumerator.getNext();
-					if(win.title==name && currWinID!=win.windowID) {
+					if(win.document.title==name && currWinID!=win.windowID) {
 						win.focus();
 					}
 				}

@@ -241,7 +241,7 @@ var LilyInspectorWindow = {
 	},
 	
 	saveInspector: function() {
-		if(LilyInspectorWindow.inspectorConfig.length && LilyApp.getCurrentPatch()) {
+		if(LilyInspectorWindow.inspectorConfig.length && LilyApp.getCurrentPatch() && LilyApp.getCurrentPatch().getObj(LilyInspectorWindow.objID)) {
 			LilyInspectorWindow.inspectorConfigBackup=LilyInspectorWindow.cloneInspectorConfig(LilyApp.getCurrentPatch().getObj(LilyInspectorWindow.objID).getInspectorConfig()); //state of config at last save	
 		}
 		var vals=LilyInspectorWindow.getInspectorValues();

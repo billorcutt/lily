@@ -117,7 +117,7 @@ function LilyPatchView(pID,parent,extWin)
 	this.setPatchTitle=function(title) {
 		var patch_title=(/-help/.test(title))?title.replace(/dot/,"."):title; //if its a help patch, replace "dot" with "."
 		this.oWin.document.title=patch_title;
-		this.xulWin.title=patch_title;
+		this.xulWin.document.title=patch_title;
 		this.patch.title=patch_title;
 	}
 	

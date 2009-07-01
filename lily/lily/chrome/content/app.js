@@ -464,7 +464,7 @@ var LilyApp =
 		
 		if(!dir.exists()) { 
 			//need error stuff here
-			LilyDebugWindow.error("error- directory "+ pathToDir +" not found.");
+			LilyDebugWindow.error("Error – Search path directory "+ pathToDir +" not found.");
 			return;
 		} else {
 			//recurse thru the directories calling this function

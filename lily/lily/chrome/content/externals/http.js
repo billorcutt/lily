@@ -47,7 +47,7 @@ function $http()
 	    }, 
 
 	    //Called when this Mozilla window is closed 
-	    onUnload : function(loadEvent) { 
+	    onUnload : function() { 
 	        var observerService = Components.classes["@mozilla.org/observer-service;1"] 
 	                                .getService(Components.interfaces.nsIObserverService); 
 	        observerService.removeObserver(httpRequestObserver, "http-on-modify-request"); 
@@ -79,7 +79,11 @@ function $http()
 	};		
 	
 	HTTPChannel.onLoad(); 
-	window.addEventListener("unload", function(event) { HTTPChannel.onUnload(event); }, false);	
+	window.addEventListener("unload", function(event) { HTTPChannel.onUnload(); }, false);	
+	
+	this.destructor=function() {
+		HTTPChannel.onUnload();
+	}	
 	
 	return this;
 }
